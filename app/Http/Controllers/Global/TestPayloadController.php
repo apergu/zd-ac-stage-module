@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Global;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class TestPayloadController extends Controller
 {
@@ -28,7 +29,10 @@ class TestPayloadController extends Controller
    */
   public function store(Request $request)
   {
-    return $request;
+    Log::debug('--- Incoming POST Request --');
+    Log::debug($request->toArray());
+
+    return $request->toArray();
   }
 
   /**
@@ -52,7 +56,10 @@ class TestPayloadController extends Controller
    */
   public function update(Request $request, string $id)
   {
-    return $request;
+    Log::debug('--- Incoming PUT Request --');
+    Log::debug($request->toArray());
+
+    return $request->toArray();
   }
 
   /**

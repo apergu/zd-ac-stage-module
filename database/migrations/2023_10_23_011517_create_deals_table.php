@@ -12,10 +12,10 @@ return new class () extends Migration {
   {
     Schema::create('deals', function (Blueprint $table) {
       $table->id();
-      $table->unsignedBigInteger('zd_deal_id');
-      $table->unsignedBigInteger('zd_deal_name')->nullable();
+      $table->string('zd_deal_id');
+      $table->string('zd_deal_name')->nullable();
       $table->unsignedBigInteger('ac_deal_id')->nullable();
-      $table->unsignedBigInteger('ac_deal_name')->nullable();
+      $table->string('ac_deal_name')->nullable();
       $table->timestamps();
     });
   }

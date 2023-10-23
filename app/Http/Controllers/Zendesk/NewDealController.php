@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\ZenDesk;
+namespace App\Http\Controllers\Zendesk;
 
 use App\Http\Controllers\Controller;
 use App\Models\AcStage;

@@ -60,6 +60,8 @@ class ContactController extends Controller
     // Retrieve Contact Data
     $ac_contact = $request->contact;
 
+    Log::debug(json_encode($ac_contact, JSON_PRETTY_PRINT));
+
     // Save to database
     $contact = Contact::create([
       'ac_contact_id' => $ac_contact['id'],
@@ -84,6 +86,7 @@ class ContactController extends Controller
       'zd_contact_name' => $zd_contact['first_name'],
     ]);
 
+    Log::debug('--- ZD: Create New Contact --');
     Log::debug($zd_response);
     Log::debug(json_encode($zd_response, JSON_PRETTY_PRINT));
 

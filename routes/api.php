@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActiveCampaign\ContactController;
 use App\Http\Controllers\ActiveCampaign\DealController as AcDealController;
 use App\Http\Controllers\ActiveCampaign\SyncStageController as AcSyncStageController;
 use App\Http\Controllers\Global\TestPayloadController;
@@ -29,6 +30,7 @@ Route::group(['prefix' => 'zendesk', 'as' => 'zendesk.'], function () {
 });
 
 Route::group(['prefix' => 'activecampaign', 'as' => 'activecampaign.'], function () {
+  Route::resource('contact', ContactController::class)->only(['index', 'store', 'update']);
   Route::resource('deal', AcDealController::class)->only(['index', 'store', 'update']);
   Route::get('stages/sync', [AcSyncStageController::class, 'index'])->name('stages-sync');
 });

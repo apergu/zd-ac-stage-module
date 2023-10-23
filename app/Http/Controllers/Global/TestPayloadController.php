@@ -56,7 +56,7 @@ class TestPayloadController extends Controller
    */
   public function update(Request $request, string $id)
   {
-    Log::debug('--- Incoming PUT Request --');
+    Log::debug('--- Incoming PUT Request ---');
     Log::debug($request->toArray());
 
     return $request->toArray();

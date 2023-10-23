@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AcStage;
 use App\Models\ZdStage;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -47,6 +48,47 @@ class Controller extends BaseController
       }
     });
     Log::debug('--- END: ZendDesk > Pipelines > Stage NotFound ---');
+  }
+
+  public function acStageSync()
+  {
+    Log::debug('--- AC Stage Syncing --');
+    $field_id = 6;
+
+    // AC: Get Deal Status: List
+    $response = Http::withHeaders([
+      'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
+    ])->get(env('ACTIVECAMPAIGN_URL') . '/api/3/fields/' . $field_id);
+
+    $ac_stages = collect($response['fieldOptions']);
+
+    $ac_stages->each(function ($val, $key) {
+      $data = $val;
+
+      // Search Existing on DB by name
+      $search = AcStage::where('id', $data['id'])->where('name', $data['value'])->first();
+      if (!$search) { // Create if not exist
+        Log::debug('--- AC Stage Created --');
+        $stage = AcStage::create([
+          'id' => $data['id'],
+          'name' => $data['value']
+        ]);
+
+        Log::debug($stage);
+      } elseif ($search->id != $val['id'] || $search->name != $data['value']) {
+        Log::debug('--- AC Stage Updated --');
+        Log::debug($search);
+
+        $search->update([
+          'id' => $data['id'],
+          'name' => $data['value']
+        ]);
+
+        Log::debug($search);
+      }
+    });
+
+    return $this->responseOK();
   }
 
   public function zdStageSync()

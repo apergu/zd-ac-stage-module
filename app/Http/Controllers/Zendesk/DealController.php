@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Zendesk;
 
 use App\Http\Controllers\Controller;
+use App\Models\AcStage;
 use App\Models\Deal;
+use App\Models\ZdStage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -17,7 +19,7 @@ class DealController extends Controller
   public function index()
   {
     $response = Http::withHeaders([
-      'Api-Token' => '16d3896a3fc4a459b0eb9b0480537532a00f27df49f4ac6911a6ceff4eabc49c784f5548'
+      'Api-Token' => env('ZENDESK_ACCESS_TOKEN')
     ])->post('http://dhutapratama.com:5000/test', [
       'deal' => [
         'account' => '1',
@@ -70,8 +72,8 @@ class DealController extends Controller
     ]);
 
     $response = Http::withHeaders([
-      'Api-Token' => '16d3896a3fc4a459b0eb9b0480537532a00f27df49f4ac6911a6ceff4eabc49c784f5548'
-    ])->post('https://dhutapratama.api-us1.com/api/3/deals', [
+      'Api-Token' => env('ZENDESK_ACCESS_TOKEN')
+    ])->post(env('ACTIVECAMPAIGN_URL').'/api/3/deals', [
       'deal' => [
         'account' => '1',
         'owner' => '1',
@@ -140,25 +142,20 @@ class DealController extends Controller
       return $this->responseOK();
     }
 
-    return $deal;
+    // Search Existing Stage
+    $zd_stage = ZdStage::where('id', $request->move_stage_id)->first();
+    if (!$deal) {
+      // TODO: Resync Stage
+      return $this->responseOK();
+    }
+
+    $ac_stage = AcStage::where('name', $zd_stage->name)->first();
 
     $response = Http::withHeaders([
-      'Api-Token' => '16d3896a3fc4a459b0eb9b0480537532a00f27df49f4ac6911a6ceff4eabc49c784f5548'
-    ])->post('https://dhutapratama.api-us1.com/api/3/deals', [
+      'Api-Token' => env('ZENDESK_ACCESS_TOKEN')
+    ])->put(env('ACTIVECAMPAIGN_URL').'/api/3/deals/' . $deal->ac_deal_id, [
       'deal' => [
-        'account' => '1',
-        'owner' => '1',
-        'stage' => '1',
-        'value' => 10000,
-        'currency' => 'idr',
-
-        'title' => $request->deal_name,
-        'fields' => [
-          [
-            'customFieldId' => 3,
-            'fieldValue' => $request->deal_id
-          ]
-        ]
+        'stage' => $ac_stage->id,
       ]
     ]);
 

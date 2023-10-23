@@ -6,6 +6,8 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "activecampaign/api-php": "^2.0",
+        "basecrm/basecrm-php": "^1.4",
         "guzzlehttp/guzzle": "^7.8",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",

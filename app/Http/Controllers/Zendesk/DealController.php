@@ -125,7 +125,56 @@ class DealController extends Controller
    */
   public function update(Request $request, string $id)
   {
-        //
+    // Expected Request Payload
+    // {
+    //     "deal_id": "162572281",
+    //     "deal_name": "Haruka",
+    //     "move_stage_id": "33462412",
+    //     "change_at": "2023-10-22T06:25:13Z",
+    //     "change_by": "7194235"
+    // }
+
+    // Search Existing Deal
+    $deal = Deal::where('zd_deal_id', $request->deal_id)->first();
+    if (!$deal) {
+      return $this->responseOK();
+    }
+
+    return $deal;
+
+    $response = Http::withHeaders([
+      'Api-Token' => '16d3896a3fc4a459b0eb9b0480537532a00f27df49f4ac6911a6ceff4eabc49c784f5548'
+    ])->post('https://dhutapratama.api-us1.com/api/3/deals', [
+      'deal' => [
+        'account' => '1',
+        'owner' => '1',
+        'stage' => '1',
+        'value' => 10000,
+        'currency' => 'idr',
+
+        'title' => $request->deal_name,
+        'fields' => [
+          [
+            'customFieldId' => 3,
+            'fieldValue' => $request->deal_id
+          ]
+        ]
+      ]
+    ]);
+
+    $res_json = $response->json();
+
+    Log::debug('--- RESPONSE ---');
+    Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
+
+    // Update deal from active campaign
+    $ac_deal = $res_json['deal'];
+    $deal->update([
+      'ac_deal_id' => $ac_deal['id'],
+      'ac_deal_name' => $ac_deal['title'],
+    ]);
+
+    return $res_json;
   }
 
   /**

@@ -64,8 +64,8 @@ class ContactController extends Controller
 
     // Save to database
     $contact = Contact::create([
-      'ac_contact_id' => $ac_contact->['id'],
-      'ac_contact_name' => $ac_contact->['first_name'],
+      'ac_contact_id' => $ac_contact['id'],
+      'ac_contact_name' => $ac_contact['first_name'],
     ]);
 
     // Create New Lead to Zendesk
@@ -83,7 +83,7 @@ class ContactController extends Controller
     Log::debug($zd_response);
     Log::debug(json_encode($zd_response, JSON_PRETTY_PRINT));
 
-    $zd_contact = $zd_response->data;
+    $zd_contact = $zd_response['data'];
 
     $contact->update([
       'zd_contact_id' => $zd_contact['id'],

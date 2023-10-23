@@ -18,7 +18,7 @@ class SyncStageController extends Controller
 
     $response = Http::withHeaders([
       'Api-Token' => '16d3896a3fc4a459b0eb9b0480537532a00f27df49f4ac6911a6ceff4eabc49c784f5548'
-    ])->get(env('ACTIVECAMPAIGN_URL').'/api/3/dealStages');
+    ])->get(env('ACTIVECAMPAIGN_URL') . '/api/3/dealStages');
 
     $response = collect($response->json()['dealStages']);
     $response->each(function ($val, $key) {
@@ -39,8 +39,8 @@ class SyncStageController extends Controller
         Log::debug($search);
 
         $search->update([
-          'id' => $val['id'],
-          'name' => $val['title']
+          'id' => $data['id'],
+          'name' => $data['title']
         ]);
 
         Log::debug($search);

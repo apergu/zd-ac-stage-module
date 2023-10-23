@@ -76,7 +76,7 @@ class NewDealController extends Controller
     // Update AC: Contact > Deal Status
     $response = Http::withHeaders([
       'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
-    ])->post(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $contact->ac_contact_id, [
+    ])->put(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $contact->ac_contact_id, [
       'contact' => [
         'fieldValues' => [
           [

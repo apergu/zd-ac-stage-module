@@ -71,7 +71,7 @@ class ContactController extends Controller
     // Create New Lead to Zendesk
     $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
     $zd_leads = $zd_client->leads;
-    $zd_contact = $zd_leads->create([
+    $zd_leads = $zd_leads->create([
       'first_name' => $ac_contact['first_name'],
       'last_name' => $ac_contact['last_name'] ?? 'null',
       'tags' => ['AC Webhook'],
@@ -81,14 +81,14 @@ class ContactController extends Controller
         'ActiveCampaign Contact ID' => $ac_contact['id'],
       ]
     ]);
-    Log::debug('--- ZD: Create New Contact --');
-    Log::debug($zd_contact);
-    Log::debug(json_encode($zd_contact, JSON_PRETTY_PRINT));
+    Log::debug('--- ZD: Create New Leads --');
+    Log::debug($zd_leads);
+    Log::debug(json_encode($zd_leads, JSON_PRETTY_PRINT));
 
-    $contact->update([
-      'zd_contact_id' => $zd_contact['id'],
-      'zd_contact_name' => $zd_contact['first_name'],
-    ]);
+    // $contact->update([
+    //   'zd_contact_id' => $zd_contact['id'],
+    //   'zd_contact_name' => $zd_contact['first_name'],
+    // ]);
 
     return $this->responseOK();
   }

@@ -35,8 +35,8 @@ class SyncStageController extends Controller
         Log::debug($search);
 
         $search->update([
-          'id' => $val['id'],
-          'name' => $val['name']
+          'id' => $data['id'],
+          'name' => $data['name']
         ]);
 
         Log::debug($search);

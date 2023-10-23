@@ -1,26 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Global;
 
+use App\Http\Controllers\Controller;
 use App\Models\ZdStage;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
-class Controller extends BaseController
+class SyncStagesController extends Controller
 {
-  use AuthorizesRequests;
-  use ValidatesRequests;
-
-  public function responseOK(): JsonResponse
-  {
-    return response()->json(['status' => 'success']);
-  }
-
-  public function syncStages()
+  /**
+   * Display a listing of the resource.
+   */
+  public function index()
   {
     // Setup
     $client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
@@ -47,9 +40,11 @@ class Controller extends BaseController
       }
     });
     Log::debug('--- END: ZendDesk > Pipelines > Stage NotFound ---');
+
+    return $response['fieldOptions'];
   }
 
-  public function zdStageSync()
+  private function zdStageSync()
   {
     Log::debug('--- ZD Stage Syncing --');
 
@@ -82,5 +77,53 @@ class Controller extends BaseController
         Log::debug($search);
       }
     });
+  }
+
+  /**
+   * Show the form for creating a new resource.
+   */
+  public function create()
+  {
+        //
+  }
+
+  /**
+   * Store a newly created resource in storage.
+   */
+  public function store(Request $request)
+  {
+        //
+  }
+
+  /**
+   * Display the specified resource.
+   */
+  public function show(string $id)
+  {
+        //
+  }
+
+  /**
+   * Show the form for editing the specified resource.
+   */
+  public function edit(string $id)
+  {
+        //
+  }
+
+  /**
+   * Update the specified resource in storage.
+   */
+  public function update(Request $request, string $id)
+  {
+        //
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   */
+  public function destroy(string $id)
+  {
+        //
   }
 }

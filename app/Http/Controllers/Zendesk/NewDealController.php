@@ -72,6 +72,17 @@ class NewDealController extends Controller
         'message' => 'ActiveCampaign: ZendDesk: Pipeline > Stage, is not found, please check laravel.log'
       ]);
     }
+    Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $contact->ac_contact_id);
+    Log::debug([
+      'contact' => [
+        'fieldValues' => [
+          [
+            'field' => 6,
+            'fieldValue' => $ac_stage->name
+          ]
+        ]
+      ]
+    ]);
 
     // Update AC: Contact > Deal Status
     $response = Http::withHeaders([

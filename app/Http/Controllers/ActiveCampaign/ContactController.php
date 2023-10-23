@@ -76,7 +76,9 @@ class ContactController extends Controller
       'last_name' => $ac_contact['last_name'] ?? 'null',
       'tags' => ['AC Webhook'],
       'custom_fields' => [
-        'ac_contact_id' => $ac_contact['id']
+        'ac_contact_id' => $ac_contact['id'],
+        'known_via' => 'tom',
+        'ActiveCampaign Contact ID' => $ac_contact['id'],
       ]
     ]);
     Log::debug('--- ZD: Create New Contact --');

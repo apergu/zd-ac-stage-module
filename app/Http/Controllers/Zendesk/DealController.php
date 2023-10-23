@@ -72,8 +72,8 @@ class DealController extends Controller
     ]);
 
     $response = Http::withHeaders([
-      'Api-Token' => env('ZENDESK_ACCESS_TOKEN')
-    ])->post(env('ACTIVECAMPAIGN_URL').'/api/3/deals', [
+      'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
+    ])->post(env('ACTIVECAMPAIGN_URL') . '/api/3/deals', [
       'deal' => [
         'account' => '1',
         'owner' => '1',
@@ -152,8 +152,8 @@ class DealController extends Controller
     $ac_stage = AcStage::where('name', $zd_stage->name)->first();
 
     $response = Http::withHeaders([
-      'Api-Token' => env('ZENDESK_ACCESS_TOKEN')
-    ])->put(env('ACTIVECAMPAIGN_URL').'/api/3/deals/' . $deal->ac_deal_id, [
+      'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
+    ])->put(env('ACTIVECAMPAIGN_URL') . '/api/3/deals/' . $deal->ac_deal_id, [
       'deal' => [
         'stage' => $ac_stage->id,
       ]

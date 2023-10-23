@@ -73,7 +73,7 @@ class ContactController extends Controller
     $zd_leads = $zd_client->leads;
     $zd_contact = $zd_leads->create([
       'first_name' => $ac_contact['first_name'],
-      'last_name' => $ac_contact['last_name'],
+      'last_name' => $ac_contact['last_name'] ?? 'null',
       'tags' => ['AC Webhook'],
       'custom_fields' => [
         'ac_contact_id' => $ac_contact['id']

@@ -78,7 +78,7 @@ class NewDealController extends Controller
         'fieldValues' => [
           [
             'field' => 6,
-            'fieldValue' => $ac_stage->name
+            'value' => $ac_stage->name
           ]
         ]
       ]

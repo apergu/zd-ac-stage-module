@@ -17,7 +17,7 @@ class SyncStageController extends Controller
     Log::debug('--- AC Stage Syncing --');
 
     $response = Http::withHeaders([
-      'Api-Token' => '16d3896a3fc4a459b0eb9b0480537532a00f27df49f4ac6911a6ceff4eabc49c784f5548'
+      'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
     ])->get(env('ACTIVECAMPAIGN_URL') . '/api/3/dealStages');
 
     $response = collect($response->json()['dealStages']);

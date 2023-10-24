@@ -6,6 +6,7 @@ use App\Http\Controllers\ActiveCampaign\SyncStageController as AcSyncStageContro
 use App\Http\Controllers\Global\SyncStagesController;
 use App\Http\Controllers\Global\TestPayloadController;
 use App\Http\Controllers\Zendesk\DealController as ZdDealDealController;
+use App\Http\Controllers\Zendesk\DealOnStageChangedController;
 use App\Http\Controllers\Zendesk\NewDealController;
 use App\Http\Controllers\Zendesk\SyncStageController as ZdSyncStageController;
 use Illuminate\Http\Request;
@@ -27,8 +28,10 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::group(['prefix' => 'zendesk', 'as' => 'zendesk.'], function () {
-  Route::resource('deal', ZdDealDealController::class)->only(['index', 'store', 'update']);
+//   Route::resource('deal', ZdDealDealController::class)->only(['index', 'store', 'update']);
   Route::resource('deals/ac-contact', NewDealController::class)->only(['index', 'store', 'update']);
+  Route::put('deal/on-stage-changed', [DealOnStageChangedController::class, 'index']);
+
   Route::resource('leads/ac-contact', NewDealController::class)->only(['index', 'store', 'update']);
   Route::get('stages/sync', [ZdSyncStageController::class, 'index'])->name('stages-sync');
 });

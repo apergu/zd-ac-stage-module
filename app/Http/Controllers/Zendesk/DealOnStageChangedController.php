@@ -53,7 +53,7 @@ class DealOnStageChangedController extends Controller
         'fieldValues' => [
           [
             'field' => 6,
-            'fieldValue' => $zd_stage->name
+            'value' => $zd_stage->name
           ]
         ]
       ]

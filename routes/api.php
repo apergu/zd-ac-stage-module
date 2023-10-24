@@ -29,6 +29,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'zendesk', 'as' => 'zendesk.'], function () {
   Route::resource('deal', ZdDealDealController::class)->only(['index', 'store', 'update']);
   Route::resource('deals/ac-contact', NewDealController::class)->only(['index', 'store', 'update']);
+  Route::resource('leads/ac-contact', NewDealController::class)->only(['index', 'store', 'update']);
   Route::get('stages/sync', [ZdSyncStageController::class, 'index'])->name('stages-sync');
 });
 

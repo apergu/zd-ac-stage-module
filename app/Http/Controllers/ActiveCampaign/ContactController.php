@@ -5,6 +5,7 @@ namespace App\Http\Controllers\ActiveCampaign;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
 class ContactController extends Controller
@@ -74,6 +75,8 @@ class ContactController extends Controller
     $zd_leads = $zd_leads->create([
       'first_name' => $ac_contact['first_name'],
       'last_name' => $ac_contact['last_name'] ?? 'null',
+      'email' => $ac_contact['email'] ?? '',
+      'phone' => $ac_contact['phone'] ?? '',
       'tags' => ['AC Webhook'],
       'custom_fields' => [
         'ActiveCampaign Contact ID' => $ac_contact['id'],
@@ -87,6 +90,29 @@ class ContactController extends Controller
     //   'zd_contact_id' => $zd_contact['id'],
     //   'zd_contact_name' => $zd_contact['first_name'],
     // ]);
+
+    Log::debug('--- REQUEST ---');
+    Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $contact->ac_contact_id);
+    $payload = [
+      'contact' => [
+        'fieldValues' => [
+          [
+            'field' => 5,
+            'value' => 'New Client - Inbound'
+          ]
+        ]
+      ]
+    ];
+    Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
+
+    $response = Http::withHeaders([
+      'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
+    ])->put(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $contact->ac_contact_id, $payload);
+
+    $res_json = $response->json();
+
+    Log::debug('--- RESPONSE ---');
+    Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
     return $this->responseOK();
   }

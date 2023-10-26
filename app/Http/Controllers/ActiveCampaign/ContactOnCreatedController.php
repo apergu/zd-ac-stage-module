@@ -42,7 +42,9 @@ class ContactOnCreatedController extends Controller
   public function index(Request $request)
   {
     Log::debug('--- AC: New Contact Created --');
-    Log::debug(json_encode($request->getContent(), JSON_PRETTY_PRINT));
+    // Request is in x-www-form-urlencoded
+    // Log::debug($request->getContent());
+    Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
 
     // Retrieve Contact Data
     $ac_contact = $request->contact;

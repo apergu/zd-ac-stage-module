@@ -8,32 +8,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
-class ContactController extends Controller
+class ContactOnCreatedController extends Controller
 {
-  /**
-   * Display a listing of the resource.
-   */
-  public function index()
-  {
-        //
-  }
-
-  /**
-   * Show the form for creating a new resource.
-   */
-  public function create()
-  {
-        //
-  }
-
-  /**
-   * Store a newly created resource in storage.
-   */
-  public function store(Request $request)
-  {
-    Log::debug('--- AC: New Contact Created --');
-    // Incoming Data
-    // array (
+  // Incoming Data
+  // array (
     //     'url' => NULL,
     //     'type' => 'subscribe',
     //     'date_time' => '2013-01-01 12:00:00',
@@ -58,9 +36,18 @@ class ContactController extends Controller
     //     ),
     //   )
 
+  /**
+   * Store a newly created resource in storage.
+   */
+  public function index(Request $request)
+  {
+    Log::debug('--- AC: New Contact Created --');
+    Log::debug(json_encode($request->getContent(), JSON_PRETTY_PRINT));
+
     // Retrieve Contact Data
     $ac_contact = $request->contact;
 
+    Log::debug('--- AC: Contact Section --');
     Log::debug(json_encode($ac_contact, JSON_PRETTY_PRINT));
 
     // Save to database
@@ -70,20 +57,24 @@ class ContactController extends Controller
     ]);
 
     // Create New Lead to Zendesk
-    $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
-    $zd_leads = $zd_client->leads;
-    $zd_leads = $zd_leads->create([
+    Log::debug('--- ZD-Request: Create New Leads --');
+    $payload = [
       'first_name' => $ac_contact['first_name'],
-      'last_name' => $ac_contact['last_name'] ?? 'null',
+      'last_name' => $ac_contact['last_name'] ?? '',
       'email' => $ac_contact['email'] ?? '',
       'phone' => $ac_contact['phone'] ?? '',
       'tags' => ['AC Webhook'],
       'custom_fields' => [
         'ActiveCampaign Contact ID' => $ac_contact['id'],
       ]
-    ]);
-    Log::debug('--- ZD: Create New Leads --');
-    Log::debug($zd_leads);
+    ];
+    Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
+
+    $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+    $zd_leads = $zd_client->leads;
+    $zd_leads = $zd_leads->create($payload);
+
+    Log::debug('--- ZD-Response: Create New Leads --');
     Log::debug(json_encode($zd_leads, JSON_PRETTY_PRINT));
 
     // $contact->update([
@@ -91,7 +82,7 @@ class ContactController extends Controller
     //   'zd_contact_name' => $zd_contact['first_name'],
     // ]);
 
-    Log::debug('--- REQUEST ---');
+    Log::debug('--- AC: Update on Lead Status  ---');
     Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $contact->ac_contact_id);
     $payload = [
       'contact' => [
@@ -115,37 +106,5 @@ class ContactController extends Controller
     Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
     return $this->responseOK();
-  }
-
-  /**
-   * Display the specified resource.
-   */
-  public function show(string $id)
-  {
-        //
-  }
-
-  /**
-   * Show the form for editing the specified resource.
-   */
-  public function edit(string $id)
-  {
-        //
-  }
-
-  /**
-   * Update the specified resource in storage.
-   */
-  public function update(Request $request, string $id)
-  {
-        //
-  }
-
-  /**
-   * Remove the specified resource from storage.
-   */
-  public function destroy(string $id)
-  {
-        //
   }
 }

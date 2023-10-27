@@ -18,7 +18,10 @@ class Controller extends BaseController
 
   public function responseOK(): JsonResponse
   {
-    return response()->json(['status' => 'success']);
+    Log::debug('--- End Of Event ---');
+    $response = ['status' => 'success'];
+
+    return response()->json($response);
   }
 
   public function syncStages()

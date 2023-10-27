@@ -83,8 +83,8 @@ class ContactOnCreatedController extends Controller
     $res_json = $response->json();
 
     $organization = [
-      'name' => '',
-      'type' => '',
+      'organization_name' => '',
+      'sub_industry' => '',
     ];
     $field_values = collect($res_json['fieldValues']);
     $field_values->each(function ($v, $k) use ($organization) {

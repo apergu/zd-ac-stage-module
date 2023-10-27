@@ -91,7 +91,7 @@ class ContactOnCreatedController extends Controller
     $field_values = collect($res_json['fieldValues']);
     Log::debug($field_values);
 
-    $field_values->each(function ($v, $k) use ($organization) {
+    $field_values->each(function ($v, $k) use (&$organization) {
       if ($v['field'] == '1') {
         $organization['organization_name'] = $v['value'];
         Log::debug(json_encode($organization, JSON_PRETTY_PRINT));

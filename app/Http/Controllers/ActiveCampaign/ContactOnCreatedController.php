@@ -81,6 +81,8 @@ class ContactOnCreatedController extends Controller
     ])->put(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $contact->ac_contact_id, $payload);
 
     $res_json = $response->json();
+    Log::debug('--- AC-Response: Update on Lead Status ---');
+    Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
     $organization = [
       'organization_name' => '',
@@ -88,16 +90,16 @@ class ContactOnCreatedController extends Controller
     ];
     $field_values = collect($res_json['fieldValues']);
     Log::debug($field_values);
+
     $field_values->each(function ($v, $k) use ($organization) {
       if ($v['field'] == '1') {
         $organization['organization_name'] = $v['value'];
+        Log::debug(json_encode($organization, JSON_PRETTY_PRINT));
       } elseif ($v['field'] == '2') {
         $organization['sub_industry'] = $v['value'];
+        Log::debug(json_encode($organization, JSON_PRETTY_PRINT));
       }
     });
-
-    Log::debug('--- AC-Response: Update on Lead Status ---');
-    Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
     // Create New Lead to Zendesk
     Log::debug('--- ZD-Request: Create New Leads --');

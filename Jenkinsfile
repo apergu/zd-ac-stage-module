@@ -10,11 +10,11 @@ pipeline {
   //environment
   environment {
     // Repository
-    def GIT_CREDENTIAL = "gitlab.dev1.my.id"
-    def GIT_URL = sh(returnStdout: true, script: 'git config --get remote.origin.url').trim()
-    def GIT_NAME = sh(returnStdout: true, script: 'basename -s .git `git config --get remote.origin.url`').trim()
-    def GIT_HASH = sh(returnStdout: true, script: 'git log -1 --pretty=format:"%h"').trim()
-    def GIT_SUBJECT = sh(returnStdout: true, script: 'git log -1 --pretty=format:"%s"').trim()
+    // def GIT_CREDENTIAL = "gitlab.dev1.my.id"
+    // def GIT_URL = sh(returnStdout: true, script: 'git config --get remote.origin.url').trim()
+    // def GIT_NAME = sh(returnStdout: true, script: 'basename -s .git `git config --get remote.origin.url`').trim()
+    // def GIT_HASH = sh(returnStdout: true, script: 'git log -1 --pretty=format:"%h"').trim()
+    // def GIT_SUBJECT = sh(returnStdout: true, script: 'git log -1 --pretty=format:"%s"').trim()
 
     def GIT_TAG = sh(returnStdout: true, script: 'git describe --tags `git rev-list --tags --max-count=1').trim()
 
@@ -25,12 +25,12 @@ pipeline {
     def AUTHOR_EMAIL = sh(returnStdout: true, script: 'git log -1 --pretty=format:"%ae"').trim()
     def AUTHOR_DATE_RELATIVE = sh(returnStdout: true, script: 'git log -1 --pretty=format:"%ar"').trim()
 
-    // Slack Notification
-    def NOTIFICATION="false"
-    def ALWAYS ="1974D2"
-    def FAILURE="ee000d"
-    def SUCCESS="1fff00"
-    def HOOKS="https://hooks.slack.com/services/***"
+    // // Slack Notification
+    // def NOTIFICATION="false"
+    // def ALWAYS ="1974D2"
+    // def FAILURE="ee000d"
+    // def SUCCESS="1fff00"
+    // def HOOKS="https://hooks.slack.com/services/***"
   }
 
   stages {
@@ -155,7 +155,7 @@ pipeline {
     //     """
     //   }
     // }
-//   }
+  }
 
 //   post {
 //     failure {

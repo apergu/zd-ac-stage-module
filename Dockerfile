@@ -1,4 +1,4 @@
-FROM 8.1.25-fpm-alpine3.18
+FROM php:8.1.25-fpm-alpine3.18
 
 # Environment
 ENV PROJECT = "zdac-module"

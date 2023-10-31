@@ -1,7 +1,7 @@
 FROM php:8.1-cli
 
 # Environment
-ENV PROJECT = "zdac-module"
+ENV PROJECT zdac-module
 
 # Install required PHP extensions and RabbitMQ client
 RUN docker-php-ext-install bcmath pdo pdo_mysql

@@ -13,7 +13,7 @@ pipeline {
     def GIT_CREDENTIAL = "git.dev1.my.id"
     // def GIT_URL = sh(returnStdout: true, script: 'git config --get remote.origin.url').trim()
     // def GIT_NAME = sh(returnStdout: true, script: 'basename -s .git `git config --get remote.origin.url`').trim()
-    // def GIT_HASH = sh(returnStdout: true, script: 'git log -1 --pretty=format:"%h"').trim()
+    def GIT_HASH = sh(returnStdout: true, script: 'git log -1 --pretty=format:"%h"').trim()
     // def GIT_SUBJECT = sh(returnStdout: true, script: 'git log -1 --pretty=format:"%s"').trim()
 
     // def GIT_TAG = sh(returnStdout: true, script: 'git describe --tags `git rev-list --tags --max-count=1`').trim()
@@ -77,19 +77,25 @@ pipeline {
       }
     }
 
-    // stage("BUILD") {
-    //   steps {
-    //     script {
-    //     //   FAILED_STAGE=env.STAGE_NAME
-    //       echo "BUILD"
-    //       docker build --build-arg PROJECT=zdac_module --build-arg PORT=3535 -t zdac_module:${GIT_TAG} -f Dockerfile .
-    //     }
-    //     // sh label: 'STEP BUILD', script:
-    //     // """
-    //     //   make build -B
-    //     // """
-    //   }
-    // }
+    stage("BUILD") {
+      steps {
+        script {
+        //   FAILED_STAGE=env.STAGE_NAME
+          echo "BUILD"
+        }
+        // docker build --build-arg PROJECT=zdac_module --build-arg PORT=3535 -t zdac_module:${GIT_TAG} -f Dockerfile .
+        sh label: 'Building Script', script:
+        """
+        docker build --build-arg PROJECT=zdac_module --build-arg PORT=3535 -t zdac_module:${GIT_HASH} -f Dockerfile .
+        """
+
+
+        // sh label: 'STEP BUILD', script:
+        // """
+        //   make build -B
+        // """
+      }
+    }
 
     // stage("TEST") {
     //   steps {

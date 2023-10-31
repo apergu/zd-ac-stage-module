@@ -10,7 +10,7 @@ pipeline {
   //environment
   environment {
     // Repository
-    // def GIT_CREDENTIAL = "gitlab.dev1.my.id"
+    def GIT_CREDENTIAL = "git.dev1.my.id"
     // def GIT_URL = sh(returnStdout: true, script: 'git config --get remote.origin.url').trim()
     // def GIT_NAME = sh(returnStdout: true, script: 'basename -s .git `git config --get remote.origin.url`').trim()
     // def GIT_HASH = sh(returnStdout: true, script: 'git log -1 --pretty=format:"%h"').trim()

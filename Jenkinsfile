@@ -86,7 +86,7 @@ pipeline {
         // docker build --build-arg PROJECT=zdac_module --build-arg PORT=3535 -t zdac_module:${GIT_TAG} -f Dockerfile .
         sh label: 'Building Script', script:
         """
-        docker build --build-arg PROJECT=zdac_module --build-arg PORT=3535 -t zdac_module:${GIT_HASH} -f Dockerfile .
+        docker build -t zdac_module:${GIT_HASH} -f Dockerfile .
         """
 
 

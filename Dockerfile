@@ -11,4 +11,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["php -v", "/usr/bin/php -v",  "/usr/bin/php /var/www/${PROJECT}/artisan serve --host=0.0.0.0 --port=8080"]
+# CMD ["/usr/bin/php -v",  "/usr/bin/php /var/www/${PROJECT}/artisan serve --host=0.0.0.0 --port=8080"]

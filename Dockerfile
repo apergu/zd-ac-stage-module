@@ -1,4 +1,4 @@
-FROM php:8.1.25-fpm-alpine3.18
+FROM php:8.1.25-cli
 
 # Environment
 ENV PROJECT = "zdac-module"
@@ -11,4 +11,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["php artisan serve --host=0.0.0.0 --port=8080"]
+CMD ["php", "artisan serve --host=0.0.0.0 --port=8080"]

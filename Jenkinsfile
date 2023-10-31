@@ -37,11 +37,11 @@ pipeline {
     stage("PREPARE") {
       steps {
         script {
-        //   FAILED_STAGE=env.STAGE_NAME
-          echo "PREPARE"
+            // FAILED_STAGE=env.STAGE_NAME
+            echo "PREPARE"
 
-          cp .env.dev .env
-          composer i
+            cp .env.dev .env
+            composer i
         }
 
         // // PULL REPO
@@ -73,21 +73,19 @@ pipeline {
       }
     }
 
-    stage("BUILD") {
-      steps {
-        script {
-        //   FAILED_STAGE=env.STAGE_NAME
-          echo "BUILD"
-
-          docker build --build-arg PROJECT=zdac_module --build-arg PORT=3535 -t zdac_module:${GIT_TAG} -f Dockerfile .
-
-        }
-        // sh label: 'STEP BUILD', script:
-        // """
-        //   make build -B
-        // """
-      }
-    }
+    // stage("BUILD") {
+    //   steps {
+    //     script {
+    //     //   FAILED_STAGE=env.STAGE_NAME
+    //       echo "BUILD"
+    //       docker build --build-arg PROJECT=zdac_module --build-arg PORT=3535 -t zdac_module:${GIT_TAG} -f Dockerfile .
+    //     }
+    //     // sh label: 'STEP BUILD', script:
+    //     // """
+    //     //   make build -B
+    //     // """
+    //   }
+    // }
 
     // stage("TEST") {
     //   steps {
@@ -157,7 +155,7 @@ pipeline {
     //     """
     //   }
     // }
-  }
+//   }
 
 //   post {
 //     failure {

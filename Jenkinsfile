@@ -39,10 +39,14 @@ pipeline {
         script {
             // FAILED_STAGE=env.STAGE_NAME
             echo "PREPARE"
+        }
 
+        // Install Script
+        sh label: 'Preparation Script', script:
+        """
             cp .env.dev .env
             composer i
-        }
+        """
 
         // // PULL REPO
         // git branch: """${env.BRANCH_NAME}""",

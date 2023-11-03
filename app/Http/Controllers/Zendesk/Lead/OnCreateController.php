@@ -39,7 +39,7 @@ class OnCreateController extends Controller
 
       Log::debug('--- AC-Response: Search Contact By Email ---');
       $contacts = $response->json('contacts');
-      Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
+      Log::debug(json_encode($contacts, JSON_PRETTY_PRINT));
 
       // If contact exist update contact
       if (count($contacts) > 0) {
@@ -77,7 +77,7 @@ class OnCreateController extends Controller
 
     $response = Http::withHeaders([
       'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
-    ])->post(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts');
+    ])->post(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts', $payload);
 
     Log::debug('--- AC-Response: Create New Contact ---');
     $res_json = $response->json();

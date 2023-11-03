@@ -1,17 +1,8 @@
 <?php
 
-use App\Http\Controllers\ActiveCampaign\ContactController;
-use App\Http\Controllers\ActiveCampaign\ContactOnCreatedController;
-use App\Http\Controllers\ActiveCampaign\DealController as AcDealController;
-use App\Http\Controllers\ActiveCampaign\SyncStageController as AcSyncStageController;
-use App\Http\Controllers\Global\SyncStagesController;
-use App\Http\Controllers\Global\TestPayloadController;
-use App\Http\Controllers\Zendesk\DealController as ZdDealDealController;
-use App\Http\Controllers\Zendesk\DealOnStageChangedController;
-use App\Http\Controllers\Zendesk\LeadOnUpdateController;
-use App\Http\Controllers\Zendesk\NewDealController;
-use App\Http\Controllers\Zendesk\SyncStageController as ZdSyncStageController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\ActiveCampaign\Contact\OnCreateController as AcContactOnCreateController;
+use App\Http\Controllers\Zendesk\Deal\OnChangeController as ZdDealOnChangeController;
+use App\Http\Controllers\Zendesk\Lead\OnChangeController as ZdLeadOnChangeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,27 +15,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+Route::group(['prefix' => 'v1'], function () {
+  Route::group(['prefix' => 'zendesk', 'as' => 'zendesk.'], function () {
+    Route::put('deal/on-change', [ZdDealOnChangeController::class, 'index']);
+    Route::put('lead/on-change', [ZdLeadOnChangeController::class, 'index']);
+  });
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
-Route::group(['prefix' => 'zendesk', 'as' => 'zendesk.'], function () {
-  Route::put('deal/on-stage-changed', [DealOnStageChangedController::class, 'index']);
-  Route::put('lead/on-update', [LeadOnUpdateController::class, 'index']);
-
-//   Route::resource('deal', ZdDealDealController::class)->only(['index', 'store', 'update']);
-  Route::resource('deals/ac-contact', NewDealController::class)->only(['index', 'store', 'update']);
-  Route::resource('leads/ac-contact', NewDealController::class)->only(['index', 'store', 'update']);
-  Route::get('stages/sync', [ZdSyncStageController::class, 'index'])->name('stages-sync');
+  Route::group(['prefix' => 'activecampaign', 'as' => 'activecampaign.'], function () {
+    Route::post('contact/on-create', [AcContactOnCreateController::class, 'index']);
+  });
 });
-
-Route::group(['prefix' => 'activecampaign', 'as' => 'activecampaign.'], function () {
-  Route::post('contact', [ContactOnCreatedController::class, 'index']);
-
-  Route::resource('deal', AcDealController::class)->only(['index', 'store', 'update']);
-  Route::get('stages/sync', [AcSyncStageController::class, 'index'])->name('stages-sync');
-});
-
-Route::resource('test', TestPayloadController::class)->only(['store', 'update']);
-Route::resource('synchronize', SyncStagesController::class)->only(['index']);

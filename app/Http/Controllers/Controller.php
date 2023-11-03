@@ -24,6 +24,31 @@ class Controller extends BaseController
     return response()->json($response);
   }
 
+  public function ZdStageGet($stage_id)
+  {
+    Log::debug('--- ZD-Request: Get Stages --');
+
+    $client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+    $stages = $client->stages;
+
+    $stage_name = '';
+
+    $response = collect($stages->all());
+    $response->each(function ($val, $key) use ($stage_id, &$stage_name) {
+      $stage = $val['data'];
+
+      if ($stage['id'] == $stage_id) {
+        Log::debug(json_encode($stage, JSON_PRETTY_PRINT));
+
+        $stage_name = $stage['name'];
+      }
+    });
+
+    Log::debug('--- ZD-Request: End Get Stages --');
+
+    return $stage_name;
+  }
+
   public function syncStages()
   {
     // Setup

@@ -96,7 +96,7 @@ class OnCreateController extends Controller
       'organization_name' => $organization['organization_name'],
       'tags' => ['AC Webhook'],
       'custom_fields' => [
-        'Industry' => $organization['sub_industry'],
+        'Sub Industry' => $organization['sub_industry'],
         'ActiveCampaign Contact ID' => $ac_contact['id'],
       ]
     ];

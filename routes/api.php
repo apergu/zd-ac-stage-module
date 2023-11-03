@@ -3,6 +3,7 @@
 use App\Http\Controllers\ActiveCampaign\Contact\OnCreateController as AcContactOnCreateController;
 use App\Http\Controllers\Zendesk\Deal\OnChangeController as ZdDealOnChangeController;
 use App\Http\Controllers\Zendesk\Lead\OnChangeController as ZdLeadOnChangeController;
+use App\Http\Controllers\Zendesk\Lead\OnCreateController as ZdLeadOnCreateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +18,9 @@ use Illuminate\Support\Facades\Route;
 */
 Route::group(['prefix' => 'v1'], function () {
   Route::group(['prefix' => 'zendesk', 'as' => 'zendesk.'], function () {
-    Route::put('deal/on-change', [ZdDealOnChangeController::class, 'index']);
+    Route::post('lead/on-create', [ZdLeadOnCreateController::class, 'index']);
     Route::put('lead/on-change', [ZdLeadOnChangeController::class, 'index']);
+    Route::put('deal/on-change', [ZdDealOnChangeController::class, 'index']);
   });
 
   Route::group(['prefix' => 'activecampaign', 'as' => 'activecampaign.'], function () {

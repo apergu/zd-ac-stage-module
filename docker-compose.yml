@@ -1,88 +1,10 @@
 version: '3'
 services:
-#   db:
-#     image: postgres:14
-#     container_name: db
-#     # networks:
-#     #   - net
-#     environment:
-#       POSTGRES_USER: privy
-#       POSTGRES_DB: privy
-#       POSTGRES_PASSWORD: pa55w0rdprivy
-#     volumes:
-#       - db-data:/var/lib/postgresql/data/
-#     ports:
-#       - "5432:5432"
-#     restart: always
-
-#   nodejs:
-#     image: node:latest
-#     depends_on:
-#       - middleware
-#     build:
-#       context: .
-#       dockerfile: ./node-app/Dockerfile
-#     ports:
-#       - "3000:3000"
-#     command: npm start
-#     # networks:
-#     #   - net
-#     restart: always
-
-  middleware:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+  integrator:
+    image: dhutapratama/privy-aczd-module:latest
+    container_name: integrator
     ports:
       - "8090:8080"
-    # depends_on:
-    #   - db
     restart: always
-    # networks:
-    #   - net
     environment:
-    #   APP_PORT: 9001
-      APP_NAME: ACZD-Module
-    #   DB_DSN: postgres://privy:pa55w0rdprivy@db:5432/privy
-    #   DB_NAME: privy
-    #   DB_MAX_OPEN_CONN: 4
-    #   DB_MAX_IDLE_CONN: 20
-    #   DB_MAX_LIFE_CONN: 3
-    #   JWT_VERIFYKEY: ""
-    #   JWT_SIGNATURE: rahmanteja
-    #   JWT_EXPIRATION: 3600
-    #   JWT_AUD: "icon-plus"
-    #   JWT_ISS: icon-plus
-    #   REFRESH_JWT_VERIFYKEY: ""
-    #   REFRESH_JWT_SIGNATURE: rahmanteja
-    #   REFRESH_JWT_EXPIRATION: 3600
-    #   REFRESH_JWT_AUD: "icon-plus"
-    #   REFRESH_JWT_ISS: icon-plus
-    #   IS_REDIS: 0
-    #   REDIS_ADDR: ""
-    #   REDIS_PWD: ""
-    #   REDIS_DB: ""
-    #   BASIC_AUTH_USERNAME: tes
-    #   BASIC_AUTH_PASSWORD: tes-password
-    #   PRIVY_HOST: https://8113915-sb1.restlets.api.netsuite.com
-    #   PRIVY_USERNAME: f8b4fb43614c756a168b1d1367607569ae547e8ffb6001b0ec7526641627c112
-    #   PRIVY_PASSWORD: 7e068bf2d6a20f9fd949efee8eca6927b440181b2bfa8d2dbbbe4af05a285aae
-    # links:
-    #   - db
-  # apache2:
-  #   image: httpd:latest
-  #   ports:
-  #     - "80:8080"
-  #   volumes:
-  #     - ./apache2/apergu.tech.conf:/etc/apache2/sites-available/apergu.tech.conf
-  #   depends_on:
-  #     - middleware
-  #   links:
-  #     - middleware
-
-# volumes:
-#   db-data:
-
-    # networks:
-    #   net:
-    #     driver: bridge
+      APP_NAME: integrator-Module

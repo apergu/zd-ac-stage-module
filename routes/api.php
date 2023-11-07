@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ActiveCampaign\Contact\OnCreateController as AcContactOnCreateController;
+use App\Http\Controllers\Privy\CreateDealController;
+use App\Http\Controllers\Privy\UpdateDealController;
 use App\Http\Controllers\Zendesk\Deal\OnChangeController as ZdDealOnChangeController;
 use App\Http\Controllers\Zendesk\Lead\OnChangeController as ZdLeadOnChangeController;
 use App\Http\Controllers\Zendesk\Lead\OnCreateController as ZdLeadOnCreateController;
@@ -25,5 +27,10 @@ Route::group(['prefix' => 'v1'], function () {
 
   Route::group(['prefix' => 'activecampaign', 'as' => 'activecampaign.'], function () {
     Route::post('contact/on-create', [AcContactOnCreateController::class, 'index']);
+  });
+
+  Route::group(['prefix' => 'privy', 'as' => 'privy.'], function () {
+    Route::post('zendesk/deal', [CreateDealController::class, 'index']);
+    Route::put('zendesk/deal', [UpdateDealController::class, 'index']);
   });
 });

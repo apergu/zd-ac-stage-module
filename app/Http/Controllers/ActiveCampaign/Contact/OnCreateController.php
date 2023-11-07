@@ -47,19 +47,8 @@ class OnCreateController extends Controller
     $organization = [
       'organization_name' => '',
       'sub_industry' => '',
+      'enterprise_id' => '',
     ];
-
-    // OLD
-    // $field_values = collect($res_json['fieldValues']);
-    // Log::debug($field_values);
-
-    // $field_values->each(function ($v, $k) use (&$organization) {
-    //   if ($v['field'] == '1') {
-    //     $organization['organization_name'] = $v['value'];
-    //   } elseif ($v['field'] == '2') {
-    //     $organization['sub_industry'] = $v['value'];
-    //   }
-    // });
 
     if (isset($fieldValues)) {
       $fields = collect($fieldValues);
@@ -69,8 +58,16 @@ class OnCreateController extends Controller
           $organization['organization_name'] = $v['value'];
         } elseif ($v['field'] == '2') {
           $organization['sub_industry'] = $v['value'];
+        } elseif ($v['field'] == '7') {
+          $organization['enterprise_id'] = $v['value'];
         }
       });
+    }
+
+    if ($organization['enterprise_id'] != '') {
+      Log::debug('--- AC-Skip: Enterprise ID Available ---');
+
+      return $this->responseOK();
     }
 
     Log::debug(json_encode($organization, JSON_PRETTY_PRINT));

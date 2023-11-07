@@ -25,7 +25,7 @@ class StageSeeder extends Seeder
     Log::debug('--- ZD Stage Syncing --');
 
     $client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
-    $deals = $client->deals;
+    // $deals = $client->deals;
     $stages = $client->stages;
 
     $response = collect($stages->all());

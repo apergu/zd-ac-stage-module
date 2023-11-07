@@ -99,7 +99,7 @@ class OnCreateController extends Controller
         'fieldValues' => [
           [
             'field' => 1,
-            'value' => $request->organization_name
+            'value' => $request->company_name
           ],
           [
             'field' => 2,

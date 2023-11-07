@@ -1,10 +1,26 @@
 version: '3'
 services:
-  integrator:
+  aczd:
     image: dhutapratama/privy-aczd-module:latest
-    container_name: integrator
-    ports:
-      - "8090:8080"
+    container_name: aczd
     restart: always
+    ports:
+      - "9002:9002"
+    # depends_on:
+    #   - aczd-db
     environment:
-      APP_NAME: integrator-Module
+      APP_NAME: activecampaign_zendesk-module
+      DB_CONNECTION: mysql
+      DB_HOST: 127.0.0.1
+      DB_PORT: 3306
+      DB_DATABASE: aczd
+      DB_USERNAME: root
+      DB_PASSWORD: secret
+
+      # https://[name].zendesk.com/sales/settings/oauth
+      # Access token only shown in first time creating. Once created, copy and backup the code!
+      ZENDESK_ACCESS_TOKEN: "09b1442a014c186136f9e8eaffb131c8691e5524feee195d1238b6cb26f40ff1"
+
+      # https://[name].activehosted.com/app/settings/developer
+      ACTIVECAMPAIGN_URL: https://privy32170.api-us1.com
+      ACTIVECAMPAIGN_API_KEY: "a78876413a887baf1729c3667b0c55ff1aadf2d15968c0d758861e7acc85cebecac37b76"

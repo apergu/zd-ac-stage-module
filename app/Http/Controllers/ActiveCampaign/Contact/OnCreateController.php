@@ -32,28 +32,17 @@ class OnCreateController extends Controller
     //   'ac_contact_name' => $ac_contact['first_name'],
     // ]);
 
-    // Set Lead Status to "New Client - Inbound"
-    // Log::debug('--- AC-Request: Update on Lead Status  ---');
-    // Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $contact->ac_contact_id);
-    // $payload = [
-    //   'contact' => [
-    //     'fieldValues' => [
-    //       [
-    //         'field' => 5,
-    //         'value' => 'New Client - Inbound'
-    //       ]
-    //     ]
-    //   ]
-    // ];
-    // Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
+    // Get Active Campaign Contact
+    Log::debug('--- AC-Request: Get Contact Detail  ---');
+    Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $ac_contact['id']);
 
-    // $response = Http::withHeaders([
-    //   'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
-    // ])->put(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $contact->ac_contact_id, $payload);
+    $response = Http::withHeaders([
+      'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
+    ])->get(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $ac_contact['id']);
 
-    // $res_json = $response->json();
-    // Log::debug('--- AC-Response: Update on Lead Status ---');
-    // Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
+    $fieldValues = $response->json('fieldValues');
+    Log::debug('--- AC-Response: Get Contact Detail ---');
+    Log::debug(json_encode($fieldValues, JSON_PRETTY_PRINT));
 
     $organization = [
       'organization_name' => '',
@@ -72,14 +61,14 @@ class OnCreateController extends Controller
     //   }
     // });
 
-    if (isset($ac_contact['fields'])) {
-      $fields = collect($ac_contact['fields']);
+    if (isset($fieldValues)) {
+      $fields = collect($fieldValues);
 
       $fields->each(function ($v, $k) use (&$organization) {
-        if ($k == '1') {
-          $organization['organization_name'] = $v;
-        } elseif ($k == '2') {
-          $organization['sub_industry'] = $v;
+        if ($v['field'] == '1') {
+          $organization['organization_name'] = $v['value'];
+        } elseif ($v['field'] == '2') {
+          $organization['sub_industry'] = $v['value'];
         }
       });
     }

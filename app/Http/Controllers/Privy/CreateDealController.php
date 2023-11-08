@@ -37,7 +37,11 @@ class CreateDealController extends Controller
 
     $validated = $validator->validated();
 
-    // Get Contact by Email
+    //////////////////////
+    // PENGUMPULAN DATA //
+    //////////////////////
+
+    // Active Campaign - Get Contact by Email
     Log::debug('--- AC-Request: Get Contact Request --');
     Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $request->ac_contact_id);
     $payload = [
@@ -59,63 +63,56 @@ class CreateDealController extends Controller
     ])->get(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts?filters[email]=' . $validated['email']);
 
     Log::debug('--- AC-Response: Search Contact By Email ---');
-    $contacts = $response->json('contacts');
-    Log::debug(json_encode($contacts, JSON_PRETTY_PRINT));
+    $ac_contacts = $response->json('contacts');
+    Log::debug(json_encode($ac_contacts, JSON_PRETTY_PRINT));
 
-    // If contact by email exist update existing contact.
-    if (count($contacts) > 0) {
-      $contact = $contacts[0];
-      $contact = $this->get_contact($contact['id']);
-
-      // Field Values
-      $newFieldValues = [];
-      $custom_fields = collect($contact['fieldValues']);
-      $custom_fields->each(function ($v, $k) use ($validated, &$newFieldValues) {
-        // Field company_name
-        if ($v['field'] == 1) {
-          if ($v['value'] != $validated['company_name']) {
-            array_push($newFieldValues, [
-              'field' => $v['field'],
-              'value' => $validated['company_name']
-            ]);
-          }
-        }
-        // Field sub_industry
-        elseif ($v['field'] == 2) {
-          if ($v['value'] != $validated['sub_industry']) {
-            array_push($newFieldValues, [
-              'field' => $v['field'],
-              'value' => $validated['sub_industry']
-            ]);
-          }
-        }
-        // Field status
-        elseif ($v['field'] == 5) {
-          if ($v['value'] != $validated['status']) {
-            array_push($newFieldValues, [
-              'field' => $v['field'],
-              'value' => $validated['status']
-            ]);
-          }
-        }
-
-        // Field enterprise_id
-        elseif ($v['field'] == 7) {
-          if ($v['value'] != $validated['enterprise_id']) {
-            array_push($newFieldValues, [
-              'field' => $v['field'],
-              'value' => $validated['enterprise_id']
-            ]);
-          }
-        }
-      });
-
-      return $this->update_contact($validated, $contact['contact'], $newFieldValues);
+    // Zendesk - Get Contact By Email
+    try {
+      $zd_contacts = $this->zd_get_contact($validated['email']);
+    } catch (RequestError $e) {
+      return response()->json([
+        'status' => 'error',
+        'message' => $e->getMessage()
+      ], 404);
+    } catch (Exception $e) {
+      return response()->json([
+        'status' => 'error',
+        'message' => $e->getMessage()
+      ], 404);
     }
 
-    return $this->create_contact($validated);
+    ////////////////////////////
+    // PEMROSESAN DATA KONTAK //
+    ////////////////////////////
+
+    // Active Campaign
+    if (count($ac_contacts) > 0) {
+      // Contact Exist
+      $this->ac_update_contact($validated, $ac_contacts[0]);
+    } else {
+      // Contact Not Exist
+      $this->ac_create_contact($validated);
+    }
+
+    // Zendesk
+   if (count($zd_contacts) > 0) {
+     // Contact Exist
+     $this->zd_update_contact($validated, $zd_contacts[0]);
+   } else {
+     // Contact Not Exist
+     $this->zd_create_contact($validated);
+   }
+
+    ///////////////////////////
+    // PEMROSESAN DATA DEALS //
+    ///////////////////////////
+
+    // $this->zd_update_contact();
 
     // TODO: Create ZD Contact
+
+    // return $zd_contact;
+
     // TODO: Create ZD Deal by contact
 
     // -----------------
@@ -171,7 +168,7 @@ class CreateDealController extends Controller
     return $this->responseOK();
   }
 
-  private function get_contact($contact_id)
+  private function ac_get_contact($contact_id)
   {
     Log::debug('--- AC-Request: Get Contact ---');
     Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $contact_id);
@@ -211,7 +208,7 @@ class CreateDealController extends Controller
     // Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
   }
 
-  private function create_contact(array $validated)
+  private function ac_create_contact(array $validated)
   {
     Log::debug('--- AC-Request: Create Contact ---');
     Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts');
@@ -254,9 +251,55 @@ class CreateDealController extends Controller
     return $this->responseOK();
   }
 
-  private function update_contact(array $validated, $contact, $fieldValues)
+  private function ac_update_contact(array $validated, $contact)
   {
+    $contact = $this->ac_get_contact($contact['id']);
+
+    // Field Values
+    $fieldValues = [];
+    $custom_fields = collect($contact['fieldValues']);
+    $custom_fields->each(function ($v, $k) use ($validated, &$fieldValues) {
+      // Field company_name
+      if ($v['field'] == 1) {
+        if ($v['value'] != $validated['company_name']) {
+          array_push($fieldValues, [
+            'field' => $v['field'],
+            'value' => $validated['company_name']
+          ]);
+        }
+      }
+      // Field sub_industry
+      elseif ($v['field'] == 2) {
+        if ($v['value'] != $validated['sub_industry']) {
+          array_push($fieldValues, [
+            'field' => $v['field'],
+            'value' => $validated['sub_industry']
+          ]);
+        }
+      }
+      // Field status
+      elseif ($v['field'] == 5) {
+        if ($v['value'] != $validated['status']) {
+          array_push($fieldValues, [
+            'field' => $v['field'],
+            'value' => $validated['status']
+          ]);
+        }
+      }
+
+      // Field enterprise_id
+      elseif ($v['field'] == 7) {
+        if ($v['value'] != $validated['enterprise_id']) {
+          array_push($fieldValues, [
+            'field' => $v['field'],
+            'value' => $validated['enterprise_id']
+          ]);
+        }
+      }
+    });
+
     // Build Contact
+    $contact = $contact['contact'];
     $newContact = [
       'fieldValues' => $fieldValues
     ];
@@ -296,6 +339,134 @@ class CreateDealController extends Controller
     $res_json = $response->json();
     Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
-    return $this->responseOK();
+    // return $this->responseOK();
+  }
+
+  private function zd_get_contact(string $email)
+  {
+    Log::debug('--- ZD-Request: Get Contact By Email ---');
+
+    $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+    $zd_contacts = $zd_client->contacts;
+
+    $params = [
+      'email' => $email
+    ];
+
+    Log::debug(json_encode($params, JSON_PRETTY_PRINT));
+
+    $zd_contacts = $zd_contacts->all($params);
+
+    Log::debug('--- ZD-Response: Get Contact By Email ---');
+    Log::debug(json_encode($zd_contacts, JSON_PRETTY_PRINT));
+
+    return $zd_contacts;
+  }
+
+  private function zd_create_contact(array $validated)
+  {
+    Log::debug('--- ZD-Request: Create Contact ---');
+
+    $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+    $zd_contacts = $zd_client->contacts;
+
+    $params = [
+      'email' => $validated['email'],
+      'is_organization' => true,
+      'name' => $validated['company_name'],
+      'first_name' => $validated['first_name'],
+      'last_name' => $validated['last_name'],
+      'phone' => $validated['phone'],
+      'tags' => [
+        'Privy Webhook',
+      ],
+      'custom_fields' => [
+        'Sub Industry' => $validated['sub_industry'],
+        'Enterprise ID' => $validated['enterprise_id']
+      ]
+    ];
+
+    Log::debug(json_encode($params, JSON_PRETTY_PRINT));
+
+    $zd_contacts = $zd_contacts->create($params);
+
+    Log::debug('--- ZD-Response: Create Contact ---');
+    Log::debug(json_encode($zd_contacts, JSON_PRETTY_PRINT));
+
+    return $zd_contacts;
+  }
+
+  private function zd_update_contact(array $validated, $contact)
+  {
+    $contact = $contact['data'];
+
+    Log::debug('--- ZD-Request: Update Contact ---');
+
+    $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+    $zd_contacts = $zd_client->contacts;
+
+    // Parameter
+    $params = [];
+
+    // Email
+    if ($validated['email'] != $contact['email']) {
+      $params['email'] = $validated['email'];
+    }
+
+    // Name
+    if ($validated['company_name'] != $contact['name']) {
+      $params['name'] = $validated['company_name'];
+    }
+
+    // First Name
+    if ($validated['first_name'] != $contact['first_name']) {
+      $params['first_name'] = $validated['first_name'];
+    }
+
+    // Last Name
+    if ($validated['last_name'] != $contact['last_name']) {
+      $params['last_name'] = $validated['last_name'];
+    }
+
+    // Phone
+    if ($validated['phone'] != $contact['phone']) {
+      $params['phone'] = $validated['phone'];
+    }
+
+    // Custom Fields
+    $custom_fields = [];
+
+    // Sub industry
+    if (isset($contact['custom_fields']['Sub Industry'])) {
+      if ($validated['sub_industry'] != $contact['custom_fields']['Sub Industry']) {
+        $custom_fields['Sub Industry'] = $validated['sub_industry'];
+      }
+    } else {
+      $custom_fields['Sub Industry'] = $validated['sub_industry'];
+    }
+
+    // Enterprise ID
+    if (isset($contact['custom_fields']['Enterprise ID'])) {
+      if ($validated['enterprise_id'] != $contact['custom_fields']['Enterprise ID']) {
+        $custom_fields['Enterprise ID'] = $validated['enterprise_id'];
+      }
+    } else {
+      $custom_fields['Enterprise ID'] = $validated['enterprise_id'];
+    }
+
+    if (count($custom_fields) > 0) {
+      $params['custom_fields'] = $custom_fields;
+    }
+
+    Log::debug(json_encode($params, JSON_PRETTY_PRINT));
+
+    if (count($params)) {
+      $zd_contacts = $zd_contacts->update($contact['id'], $params);
+
+      Log::debug('--- ZD-Response: Update Contact ---');
+      Log::debug(json_encode($zd_contacts, JSON_PRETTY_PRINT));
+    } else {
+      Log::debug('--- ZD-Response: Dont Update Contact ---');
+    }
   }
 }

@@ -26,6 +26,7 @@ class CreateDealController extends Controller
       'company_name' => ['required', 'string'],  // : "PT 01",
       'status' => ['required', 'string'],  // : "New Client - Inbound",
       'sub_industry' => ['required', 'string'],  // : "Financial Services - Insurance Broker"
+      'deal_name' => ['required', 'string'],
     ]);
 
     if ($validator->fails()) {
@@ -97,73 +98,30 @@ class CreateDealController extends Controller
     // Zendesk
    if (count($zd_contacts) > 0) {
      // Contact Exist
-     $this->zd_update_contact($validated, $zd_contacts[0]);
+     $zd_contact = $this->zd_update_contact($validated, $zd_contacts[0]);
    } else {
      // Contact Not Exist
-     $this->zd_create_contact($validated);
+     $zd_contact = $this->zd_create_contact($validated);
    }
 
     ///////////////////////////
     // PEMROSESAN DATA DEALS //
     ///////////////////////////
+    // $deals = $this->zd_get_deals($zd_contact);
+    // if (count($deals) > 0) {
+    //   $deal = $this->zd_select_deals($deals);
 
-    // $this->zd_update_contact();
-
-    // TODO: Create ZD Contact
-
-    // return $zd_contact;
-
-    // TODO: Create ZD Deal by contact
-
-    // -----------------
-
-    // $response = Http::withHeaders([
-    //   'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
-    // ])->put(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $request->ac_contact_id, $payload);
-
-    // Log::debug('--- AC-Request: Get Contact Response --');
-
-    // $res_json = $response->json();
-    // Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
-
-    // // Get Deal
-    // Log::debug('--- ZD-Request: Get Deal ---');
-
-    // $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
-    // $zd_deals = $zd_client->deals;
-
-    // try {
-    //   $zd_deals = $zd_deals->get($request->zd_deal_id);
-    // } catch (RequestError $e) {
-    //   return response()->json([
-    //     'status' => 'error',
-    //     'message' => $e->getMessage()
-    //   ], 404);
-    // } catch (Exception $e) {
-    //   return response()->json([
-    //     'status' => 'error',
-    //     'message' => $e->getMessage()
-    //   ], 404);
+    //   // When deal is not available
+    //   if (!$deal) {
+    //     $this->zd_create_deals($zd_contacts[0], $validated);
+    //   } else {
+    //     $this->zd_update_deals($deal, $validated);
+    //   }
+    // } else {
+    //   $this->zd_create_deals($zd_contacts[0], $validated);
     // }
 
-    // Log::debug('--- ZD-Response: Get Deal ---');
-    // Log::debug(json_encode($zd_deals, JSON_PRETTY_PRINT));
-
-    // // Update Enterprise ID
-    // Log::debug('--- ZD-Request: Update Deal: Enterprise ID --');
-    // $payload = [
-    //   'custom_fields' => [
-    //     'Enterprise ID' => $request->enterprise_id,
-    //   ]
-    // ];
-    // Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
-
-    // $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
-    // $zd_deals = $zd_client->deals;
-    // $zd_deals = $zd_deals->update($request->zd_deal_id, $payload);
-
-    // Log::debug('--- ZD-Response: Update Deal: Enterprise ID --');
-    // Log::debug(json_encode($zd_deals, JSON_PRETTY_PRINT));
+    $this->zd_create_deals($zd_contact, $validated);
 
     return $this->responseOK();
   }
@@ -461,12 +419,144 @@ class CreateDealController extends Controller
     Log::debug(json_encode($params, JSON_PRETTY_PRINT));
 
     if (count($params)) {
-      $zd_contacts = $zd_contacts->update($contact['id'], $params);
+      $contact = $zd_contacts->update($contact['id'], $params);
 
       Log::debug('--- ZD-Response: Update Contact ---');
-      Log::debug(json_encode($zd_contacts, JSON_PRETTY_PRINT));
+      Log::debug(json_encode($contact, JSON_PRETTY_PRINT));
+
+      return $contact;
     } else {
       Log::debug('--- ZD-Response: Dont Update Contact ---');
+      return $contact;
     }
+  }
+
+  private function zd_get_deals($contact)
+  {
+    // $contact = $contact['data'];
+
+    Log::debug('--- ZD-Request: Get Deals By contact_id ---');
+
+    $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+    $zd_deals = $zd_client->deals;
+
+    $params = [
+      'contact_id' => $contact['id']
+    ];
+
+    Log::debug(json_encode($params, JSON_PRETTY_PRINT));
+
+    $zd_deals = $zd_deals->all($params);
+
+    Log::debug('--- ZD-Response: Get Deals By contact_id ---');
+    Log::debug(json_encode($zd_deals, JSON_PRETTY_PRINT));
+
+    return $zd_deals;
+  }
+
+  private function zd_create_deals($contact, $validated)
+  {
+    // $contact = $contact['data'];
+
+    Log::debug('--- ZD-Request: Create Deal ---');
+
+    $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+    $zd_deals = $zd_client->deals;
+
+    $params = [
+      'contact_id' => $contact['id'],
+      'name' => $validated['deal_name'],
+      'tags' => [
+        'Free Trial'
+      ],
+      'custom_fields' => [
+        'Enterprise ID' => $validated['enterprise_id']
+      ]
+    ];
+
+    Log::debug(json_encode($params, JSON_PRETTY_PRINT));
+
+    $zd_deals = $zd_deals->create($params);
+
+    Log::debug('--- ZD-Response: Create Deal ---');
+    Log::debug(json_encode($zd_deals, JSON_PRETTY_PRINT));
+
+    return $zd_deals;
+  }
+
+  private function zd_update_deals($deal, $validated)
+  {
+    $deal = $deal['data'];
+
+    Log::debug('--- ZD-Request: Update Deal: Enterprise ID ---');
+
+    $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+    $zd_deals = $zd_client->deals;
+
+    $params = [
+      'custom_fields' => [
+        'Enterprise ID' => $validated['enterprise_id']
+      ]
+    ];
+
+    Log::debug(json_encode($params, JSON_PRETTY_PRINT));
+
+    $zd_deals = $zd_deals->update($deal['id'], $params);
+
+    Log::debug('--- ZD-Response: Update Deal: Enterprise ID ---');
+    Log::debug(json_encode($zd_deals, JSON_PRETTY_PRINT));
+
+    return $zd_deals;
+  }
+
+  private function zd_select_deals($deals)
+  {
+    Log::debug('--- ZD-Request: Select Active Deal ---');
+
+    foreach ($deals as $deal) {
+      $deal_data = $deal['data'];
+      $stage = $this->zd_get_stage($deal_data['stage_id']);
+
+      // Stage
+      if (in_array($stage, ['Contacted (Text, Email, Call)'])) {
+        Log::debug('--- ZD-Response: Select Active Deal ---');
+
+        Log::debug(json_encode($deal, JSON_PRETTY_PRINT));
+        return $deal;
+      }
+    }
+    Log::debug('--- ZD-Response: No Deal Available ---');
+    return false;
+  }
+
+  private $stages = [];
+
+  public function zd_get_stage($stage_id)
+  {
+    Log::debug('--- ZD-Request: Get Stage By Id --');
+    if (count($this->stages) == 0) {
+      $client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+      $stages = $client->stages;
+      $stages = $stages->all();
+
+      Log::debug(json_encode($stages, JSON_PRETTY_PRINT));
+
+      $this->stages = $stages;
+    }
+
+    $stage_name = '';
+
+    $response = collect($this->stages);
+    $response->each(function ($val, $key) use ($stage_id, &$stage_name) {
+      $stage = $val['data'];
+
+      if ($stage['id'] == $stage_id) {
+        $stage_name = $stage['name'];
+      }
+    });
+
+    Log::debug('--- ZD-Request: Get Stage By Id --');
+
+    return $stage_name;
   }
 }

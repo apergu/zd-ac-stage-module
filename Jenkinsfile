@@ -18,6 +18,7 @@ pipeline {
 
     // def GIT_TAG = sh(returnStdout: true, script: 'git describe --tags `git rev-list --tags --max-count=1`').trim()
 
+    DOCKERHUB_CREDENTIALS = credentials('dockerhub')
 
 
 
@@ -111,19 +112,20 @@ pipeline {
     //   }
     // }
 
-    // stage("RELEASE") {
-    //   steps {
-    //     script {
-    //       FAILED_STAGE=env.STAGE_NAME
-    //       echo "RELEASE"
-    //     }
+    stage("RELEASE") {
+      steps {
+        script {
+          FAILED_STAGE=env.STAGE_NAME
+          echo "RELEASE"
+        }
 
-    //     sh label: 'STEP RELEASE', script:
-    //     """
-    //       make release -B
-    //     """
-    //   }
-    // }
+        sh label: 'STEP RELEASE', script:
+        """
+          echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin
+          docker push dhutapratama/privy-aczd-module:latest
+        """
+      }
+    }
 
     // stage("DEPLOYMENT") {
     //   steps {
@@ -167,7 +169,10 @@ pipeline {
     // }
   }
 
-//   post {
+  post {
+    always {
+      sh 'docker logout'
+    }
 //     failure {
 //       sh label: 'notif failure', script:
 //       """
@@ -200,5 +205,5 @@ pipeline {
 //         fi
 //       """
 //     }
-//   }
+  }
 }

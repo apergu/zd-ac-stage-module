@@ -4,6 +4,7 @@ use App\Http\Controllers\ActiveCampaign\Contact\OnCreateController as AcContactO
 use App\Http\Controllers\Privy\CreateDealController;
 use App\Http\Controllers\Privy\UpdateDealController;
 use App\Http\Controllers\Zendesk\Deal\OnChangeController as ZdDealOnChangeController;
+use App\Http\Controllers\Zendesk\Deal\OnCreateController as ZdDealOnCreateController;
 use App\Http\Controllers\Zendesk\Lead\OnChangeController as ZdLeadOnChangeController;
 use App\Http\Controllers\Zendesk\Lead\OnCreateController as ZdLeadOnCreateController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,8 @@ Route::group(['prefix' => 'v1'], function () {
   Route::group(['prefix' => 'zendesk', 'as' => 'zendesk.'], function () {
     Route::post('lead/on-create', [ZdLeadOnCreateController::class, 'index']);
     Route::put('lead/on-change', [ZdLeadOnChangeController::class, 'index']);
+
+    Route::post('deal/on-create', [ZdDealOnCreateController::class, 'index']);
     Route::put('deal/on-change', [ZdDealOnChangeController::class, 'index']);
   });
 

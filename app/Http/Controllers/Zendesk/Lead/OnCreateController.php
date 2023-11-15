@@ -25,9 +25,15 @@ class OnCreateController extends Controller
       Log::debug('--- AC-Response: Get Contact By ID ---');
       $res_json = $response->json();
       Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
+
+      $this->postLead($request);
+
       if (isset($res_json['contact'])) {
         return $this->update_contact($request, $res_json['contact']);
       }
+
+
+
     } else {
       // Validate email if not using contact id
 
@@ -84,6 +90,20 @@ class OnCreateController extends Controller
     Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
     return $this->responseOK();
+  }
+
+  private function postLead(Request $request)
+  {
+    Log::debug("-- ZENDESK ERP LEAD --");
+    $payload = [
+        'companyname' => $request->company_name,
+        'enterprise_id' => $request->enterprise_id,
+        'phone' => $request->mobile,
+        'crm_lead_id' => $request->zd_lead_id
+    ];
+
+    $resp = Http::post(env('NETSUITE_URL') . '/customer/lead', $payload);
+
   }
 
   private function update_contact(Request $request, $contact)

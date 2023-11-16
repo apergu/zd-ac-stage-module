@@ -109,7 +109,7 @@ class OnCreateController extends Controller
 
 
       Log::debug('--- ZD-ERP: Post Lead ---');
-      $res_json = $response->json();
+      $res_json = $resp->json();
       Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
       return $this->responseOK();

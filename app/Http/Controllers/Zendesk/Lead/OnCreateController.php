@@ -102,8 +102,15 @@ class OnCreateController extends Controller
         'crm_lead_id' => $request->zd_lead_id
     ];
 
-    $resp = Http::post(env('NETSUITE_URL') . '/customer/lead', $payload);
+    $resp = Http::withHeaders([
+        'Authorization' => 'Basic ' . env("NESUITE_AT")
+      ])->post(env('NETSUITE_URL') . '/customer/lead', $payload);
 
+      Log::debug('--- ZD-ERP: Post Lead ---');
+      $res_json = $response->json();
+      Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
+
+      return $this->responseOK();
   }
 
   private function update_contact(Request $request, $contact)

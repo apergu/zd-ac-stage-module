@@ -96,10 +96,11 @@ class OnCreateController extends Controller
   {
     Log::debug("-- ZENDESK ERP LEAD --");
     $payload = [
-        'companyname' => $request->company_name,
-        'enterprise_id' => $request->enterprise_id,
-        'phone' => $request->mobile,
-        'crm_lead_id' => $request->zd_lead_id
+        'customerName' => $request->company_name,
+        'enterprisePrivyId' => $request->enterprise_id,
+        'customerId' => $request->ac_contact_id,
+        'phoneNo' => $request->mobile,
+        'crmLeadId' => $request->zd_lead_id
     ];
 
     $resp = Http::withHeaders([

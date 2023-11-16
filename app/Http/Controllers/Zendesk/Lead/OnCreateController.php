@@ -103,8 +103,10 @@ class OnCreateController extends Controller
     ];
 
     $resp = Http::withHeaders([
-        'Authorization' => 'Basic ' . env("NESUITE_AT")
+        'Authorization' => 'Basic ' . base64_encode('tes' . ':' . 'tes-password'),
       ])->post(env('NETSUITE_URL') . '/customer/lead', $payload);
+
+
 
       Log::debug('--- ZD-ERP: Post Lead ---');
       $res_json = $response->json();

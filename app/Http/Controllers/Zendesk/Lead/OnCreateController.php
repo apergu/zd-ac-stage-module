@@ -16,7 +16,6 @@ class OnCreateController extends Controller
 
     $this->postLead($request);
 
-
     if ($request->ac_contact_id) {
       // Validate Contact Id exist
       Log::debug('--- AC-Request: Get Contact By ID ---');
@@ -100,7 +99,7 @@ class OnCreateController extends Controller
     $payload = [
         'customerName' => $request->company_name,
         // 'enterprisePrivyId' => $request->enterprise_id,
-        // 'customerId' => $request->ac_contact_id,
+        'customerId' => $request->ac_contact_id,
         'phoneNo' => $request->mobile,
         'crmLeadId' => $request->zd_lead_id
     ];

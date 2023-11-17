@@ -99,7 +99,7 @@ class OnCreateController extends Controller
     $payload = [
         'customerName' => $request->company_name,
         // 'enterprisePrivyId' => $request->enterprise_id,
-        'customerId' => $request->ac_contact_id,
+        'customerId' => $request->zd_lead_id,
         'phoneNo' => $request->mobile,
         'crmLeadId' => $request->zd_lead_id
     ];

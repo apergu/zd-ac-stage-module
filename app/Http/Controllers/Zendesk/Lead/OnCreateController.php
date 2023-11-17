@@ -14,6 +14,9 @@ class OnCreateController extends Controller
     Log::debug('--- Zendesk-Event: Lead on Create ---');
     Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
 
+    $this->postLead($request);
+
+
     if ($request->ac_contact_id) {
       // Validate Contact Id exist
       Log::debug('--- AC-Request: Get Contact By ID ---');
@@ -26,7 +29,6 @@ class OnCreateController extends Controller
       $res_json = $response->json();
       Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
-      $this->postLead($request);
 
       if (isset($res_json['contact'])) {
         return $this->update_contact($request, $res_json['contact']);

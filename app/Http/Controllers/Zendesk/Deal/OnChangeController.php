@@ -33,6 +33,8 @@ class OnChangeController extends Controller
         ]
       ]
     ];
+
+
     Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
 
     // Update AC: Contact > Deal Status
@@ -46,4 +48,6 @@ class OnChangeController extends Controller
 
     return $this->responseOK();
   }
+
+
 }

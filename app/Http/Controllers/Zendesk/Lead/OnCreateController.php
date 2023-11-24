@@ -101,7 +101,8 @@ class OnCreateController extends Controller
         // 'enterprisePrivyId' => $request->enterprise_id,
         'customerId' => $request->zd_lead_id,
         'phoneNo' => $request->mobile,
-        'crmLeadId' => $request->zd_lead_id
+        'crmLeadId' => $request->company_name,
+        'entityStatus' => '6'
     ];
 
     $resp = Http::withHeaders([
@@ -117,6 +118,8 @@ class OnCreateController extends Controller
 
       return $this->responseOK();
   }
+
+
 
   private function update_contact(Request $request, $contact)
   {

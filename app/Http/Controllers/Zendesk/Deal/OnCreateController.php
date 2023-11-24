@@ -41,7 +41,7 @@ class OnCreateController extends Controller
       'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
     ])->put(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $request->ac_contact_id, $payload);
 
-    if (strpos($string, 'Won')) {
+    if (strpos($stage_name, 'Won')) {
         Log::debug("-- ZD-ERP : Deal Won --");
         $this->postCustomer($request->deal_name);
         $this->postMerchant($request->deal_name);

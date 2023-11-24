@@ -70,7 +70,7 @@ class OnChangeController extends Controller
     $resp = Http::withHeaders([
         'Authorization' => 'Basic ' . base64_encode('tes' . ':' . 'tes-password'),
         'Content-Type' => 'application/json'
-      ])->post(env('NETSUITE_URL') . '/customer/lead/' . $id);
+      ])->put(env('NETSUITE_URL') . '/customer/lead/' . $id);
 
       Log::debug('--- ZD-ERP: Post Lead ---');
       $res_json = $resp->json();
@@ -92,7 +92,7 @@ class OnChangeController extends Controller
     // "zip": "zip"
     $payload = [
         "enterpriseId"=> $request,
-        "merchantId"=> 000,
+        "merchantId"=> "000",
         "merchantName"=> "Merchant " . $request,
         "address"=> "address",
         "email"=> "email@email.com",

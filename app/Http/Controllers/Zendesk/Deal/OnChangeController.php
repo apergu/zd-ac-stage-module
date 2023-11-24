@@ -64,7 +64,10 @@ class OnChangeController extends Controller
   {
 
     $payload = [
-        'entityStatus' => '13'
+        'customerName' => $id,
+        'entityStatus' => '13',
+        'crmLeadId' => $id,
+
     ];
 
     $resp = Http::withHeaders([
@@ -72,6 +75,8 @@ class OnChangeController extends Controller
         'Content-Type' => 'application/json'
       ])->put(env('NETSUITE_URL') . '/customer/lead/' . $id);
 
+
+      Log::debug(env('NETSUITE_URL') . '/customer/lead/' . $id);
       Log::debug('--- ZD-ERP: Post Lead ---');
       $res_json = $resp->json();
       Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));

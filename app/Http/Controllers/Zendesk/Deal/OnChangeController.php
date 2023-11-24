@@ -45,7 +45,7 @@ class OnChangeController extends Controller
     Log::debug("====== TEST ============");
     Log::debug($stage_name);
     Log::debug(strpos($stage_name, 'Won'));
-    if (strpos($stage_name, 'Won')) {
+    if (strpos($stage_name, 'Won') !== false) {
         Log::debug("-- ZD-ERP : Deal Won --");
         $this->postCustomer($request->deal_name);
         $this->postMerchant($request->deal_name);

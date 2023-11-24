@@ -73,7 +73,7 @@ class OnChangeController extends Controller
     $resp = Http::withHeaders([
         'Authorization' => 'Basic ' . base64_encode('tes' . ':' . 'tes-password'),
         'Content-Type' => 'application/json'
-      ])->put(env('NETSUITE_URL') . '/customer/lead/' . $id);
+      ])->put(env('NETSUITE_URL') . '/customer/lead/' . $id, $payload);
 
 
       Log::debug(env('NETSUITE_URL') . '/customer/lead/' . $id);

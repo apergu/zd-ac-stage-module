@@ -43,7 +43,7 @@ class OnChangeController extends Controller
     ])->put(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $request->ac_contact_id, $payload);
 
     Log::debug("====== TEST ============");
-    Log::debug(stage_name);
+    Log::debug($stage_name);
     Log::debug(strpos($stage_name, 'Won'));
     if (strpos($stage_name, 'Won')) {
         Log::debug("-- ZD-ERP : Deal Won --");

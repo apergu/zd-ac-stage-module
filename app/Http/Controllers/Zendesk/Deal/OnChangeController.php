@@ -71,7 +71,7 @@ class OnChangeController extends Controller
     ];
 
     $resp = Http::withHeaders([
-        'Authorization' => 'Basic ' . base64_encode('tes' . ':' . 'tes-password'),
+        'Authorization' => 'Basic ' . base64_encode(env(BASIC_AUTH_USERNAME) . ':' . env(BASIC_AUTH_PASSWORD)),
         'Content-Type' => 'application/json'
       ])->put(env('NETSUITE_URL') . '/customer/lead/' . $id, $payload);
 
@@ -107,7 +107,7 @@ class OnChangeController extends Controller
     ];
 
     $resp = Http::withHeaders([
-        'Authorization' => 'Basic ' . base64_encode('tes' . ':' . 'tes-password'),
+        'Authorization' => 'Basic ' . base64_encode(env(BASIC_AUTH_USERNAME) . ':' . env(BASIC_AUTH_PASSWORD)),
         'Content-Type' => 'application/json'
       ])->post(env('NETSUITE_URL') . '/merchant', $payload);
 
@@ -132,7 +132,7 @@ class OnChangeController extends Controller
     ];
 
     $resp = Http::withHeaders([
-        'Authorization' => 'Basic ' . base64_encode('tes' . ':' . 'tes-password'),
+        'Authorization' => 'Basic ' . base64_encode(env(BASIC_AUTH_USERNAME) . ':' . env(BASIC_AUTH_PASSWORD)),
         'Content-Type' => 'application/json'
       ])->post(env('NETSUITE_URL') . '/channel', $payload);
 

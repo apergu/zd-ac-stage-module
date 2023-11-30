@@ -106,7 +106,7 @@ class OnCreateController extends Controller
     ];
 
     $resp = Http::withHeaders([
-        'Authorization' => 'Basic ' . base64_encode('tes' . ':' . 'tes-password'),
+        'Authorization' => 'Basic ' . base64_encode(env(BASIC_AUTH_USERNAME) . ':' . env(BASIC_AUTH_PASSWORD)),
         'Content-Type' => 'application/json'
       ])->post(env('NETSUITE_URL') . '/customer/lead', $payload);
 

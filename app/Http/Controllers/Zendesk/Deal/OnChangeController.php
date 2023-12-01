@@ -34,7 +34,6 @@ class OnChangeController extends Controller
       ]
     ];
 
-
     Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
 
     // Update AC: Contact > Deal Status
@@ -42,13 +41,13 @@ class OnChangeController extends Controller
       'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
     ])->put(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $request->ac_contact_id, $payload);
 
-    Log::debug("====== TEST ============");
+    Log::debug('====== TEST ============');
     Log::debug($stage_name);
     Log::debug(strpos($stage_name, 'Won'));
     if (strpos($stage_name, 'Won') !== false) {
-        Log::debug("-- ZD-ERP : Deal Won --");
-        $this->postCustomer($request->deal_name);
-        $this->postMerchant($request->deal_name);
+      Log::debug('-- ZD-ERP : Deal Won --');
+      $this->postCustomer($request->deal_name);
+      $this->postMerchant($request->deal_name);
     }
 
     Log::debug('--- AC-Request: Update Contact Response --');
@@ -58,35 +57,30 @@ class OnChangeController extends Controller
     return $this->responseOK();
   }
 
-
-
   public function postCustomer($id)
   {
-
     $payload = [
-        'customerName' => $id,
-        'entityStatus' => '13',
-        'crmLeadId' => $id,
-        'phone' => "12345"
+      'customerName' => $id,
+      'entityStatus' => '13',
+      'crmLeadId' => $id,
+      'phone' => '12345'
     ];
 
     $resp = Http::withHeaders([
-        'Authorization' => 'Basic ' . base64_encode(env(BASIC_AUTH_USERNAME) . ':' . env(BASIC_AUTH_PASSWORD)),
-        'Content-Type' => 'application/json'
-      ])->put(env('NETSUITE_URL') . '/customer/lead/' . $id, $payload);
+      'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
+      'Content-Type' => 'application/json'
+    ])->put(env('NETSUITE_URL') . '/customer/lead/' . $id, $payload);
 
+    Log::debug(env('NETSUITE_URL') . '/customer/lead/' . $id);
+    Log::debug('--- ZD-ERP: Post Lead ---');
+    $res_json = $resp->json();
+    Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
-      Log::debug(env('NETSUITE_URL') . '/customer/lead/' . $id);
-      Log::debug('--- ZD-ERP: Post Lead ---');
-      $res_json = $resp->json();
-      Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
-
-      return $this->responseOK();
+    return $this->responseOK();
   }
 
   public function postMerchant($request)
   {
-
     // "enterpriseId": "PT. NOV 23 2023 4",
     // "merchantId": "MERC-23NOV",
     // "merchantName": "Merchant PT. NOV 23 2023 4",
@@ -96,54 +90,50 @@ class OnChangeController extends Controller
     // "city": "city",
     // "zip": "zip"
     $payload = [
-        "enterpriseId"=> $request,
-        "merchantId"=> "000",
-        "merchantName"=> "Merchant " . $request,
-        "address"=> "address",
-        "email"=> "email@email.com",
-        "state"=> "state",
-        "city"=> "city",
-        "zip"=> "zip"
+      'enterpriseId' => $request,
+      'merchantId' => '000',
+      'merchantName' => 'Merchant ' . $request,
+      'address' => 'address',
+      'email' => 'email@email.com',
+      'state' => 'state',
+      'city' => 'city',
+      'zip' => 'zip'
     ];
 
     $resp = Http::withHeaders([
-        'Authorization' => 'Basic ' . base64_encode(env(BASIC_AUTH_USERNAME) . ':' . env(BASIC_AUTH_PASSWORD)),
-        'Content-Type' => 'application/json'
-      ])->post(env('NETSUITE_URL') . '/merchant', $payload);
+      'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
+      'Content-Type' => 'application/json'
+    ])->post(env('NETSUITE_URL') . '/merchant', $payload);
 
-      Log::debug('--- ZD-ERP: Post Lead ---');
-      $res_json = $resp->json();
-      Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
+    Log::debug('--- ZD-ERP: Post Lead ---');
+    $res_json = $resp->json();
+    Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
-      return $this->responseOK();
+    return $this->responseOK();
   }
 
   public function postChannel($request)
   {
     $payload = [
-        "merchantId" => "",
-        "channelId" => "channelId-0005",
-        "channelName" => "channelName",
-        "address" => "address",
-        "email" => "email@email.com",
-        "state" => "state",
-        "city" => "city",
-        "zip" => "zip",
+      'merchantId' => '',
+      'channelId' => 'channelId-0005',
+      'channelName' => 'channelName',
+      'address' => 'address',
+      'email' => 'email@email.com',
+      'state' => 'state',
+      'city' => 'city',
+      'zip' => 'zip',
     ];
 
     $resp = Http::withHeaders([
-        'Authorization' => 'Basic ' . base64_encode(env(BASIC_AUTH_USERNAME) . ':' . env(BASIC_AUTH_PASSWORD)),
-        'Content-Type' => 'application/json'
-      ])->post(env('NETSUITE_URL') . '/channel', $payload);
+      'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
+      'Content-Type' => 'application/json'
+    ])->post(env('NETSUITE_URL') . '/channel', $payload);
 
-      Log::debug('--- ZD-ERP: Post Lead ---');
-      $res_json = $resp->json();
-      Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
+    Log::debug('--- ZD-ERP: Post Lead ---');
+    $res_json = $resp->json();
+    Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
-      return $this->responseOK();
+    return $this->responseOK();
   }
 }
-
-
-
-

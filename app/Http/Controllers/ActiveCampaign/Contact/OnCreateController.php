@@ -48,6 +48,7 @@ class OnCreateController extends Controller
       'organization_name' => '',
       'sub_industry' => '',
       'enterprise_id' => '',
+      'lead_id' => '',
     ];
 
     if (isset($fieldValues)) {
@@ -60,8 +61,17 @@ class OnCreateController extends Controller
           $organization['sub_industry'] = $v['value'];
         } elseif ($v['field'] == '7') {
           $organization['enterprise_id'] = $v['value'];
+        } elseif ($v['field'] == '8') {
+          $organization['lead_id'] = $v['value'];
         }
       });
+    }
+
+    /** Validation */
+    if ($organization['lead_id'] != '') {
+      Log::debug('--- AC-Skip: Lead ID Available ---');
+
+      return $this->responseOK();
     }
 
     if ($organization['enterprise_id'] != '') {

@@ -92,7 +92,6 @@ class FreetrialController extends Controller
 
   private function zd_lead_get()
   {
-    // Get Deal
     Log::debug('--- ZD-Request: Get Lead ---');
 
     $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);

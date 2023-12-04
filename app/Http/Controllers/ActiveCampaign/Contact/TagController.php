@@ -55,7 +55,7 @@ class TagController extends Controller
       $this->zd_lead_remove_tag($zd_lead['data'], $request->tag);
     } else {
       Log::debug('--- ActiveCampaign-Event: Unknown Event Type --');
-      Log::debug(json_encode($request->json('type'), JSON_PRETTY_PRINT));
+      Log::debug(json_encode($request->type, JSON_PRETTY_PRINT));
     }
 
     return $this->responseOK();

@@ -47,12 +47,12 @@ class TagController extends Controller
     Log::debug('--- LEAD: EXIST --');
     $zd_lead = $zd_leads[0];
 
-    if ($request->json('type') == 'contact_tag_added') {
+    if ($request->type == 'contact_tag_added') {
       Log::debug('--- ActiveCampaign-Event: Tag Added --');
-      $this->zd_lead_add_tag($zd_lead['data'], $request->json('tag'));
-    } elseif ($request->json('type') == 'contact_tag_removed') {
+      $this->zd_lead_add_tag($zd_lead['data'], $request->tag);
+    } elseif ($request->type == 'contact_tag_removed') {
       Log::debug('--- ActiveCampaign-Event: Tag Removed --');
-      $this->zd_lead_remove_tag($zd_lead['data'], $request->json('tag'));
+      $this->zd_lead_remove_tag($zd_lead['data'], $request->tag);
     } else {
       Log::debug('--- ActiveCampaign-Event: Unknown Event Type --');
       Log::debug(json_encode($request->json('type'), JSON_PRETTY_PRINT));

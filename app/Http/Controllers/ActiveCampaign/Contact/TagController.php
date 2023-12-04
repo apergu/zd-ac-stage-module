@@ -129,10 +129,12 @@ class TagController extends Controller
       return;
     }
 
+    $newTag = [];
     foreach ($tags as $key => $value) {
       if ($value == $tag) {
-        $tags->pull($key);
+        continue;
       }
+      array_push($newTag, $value);
     }
 
     Log::debug('--- Result: Continue ---');
@@ -143,7 +145,7 @@ class TagController extends Controller
     $zd_leads = $zd_client->leads;
 
     $params = [
-      'tags' => $tags->toArray()
+      'tags' => $newTag
     ];
 
     Log::debug(json_encode($params, JSON_PRETTY_PRINT));

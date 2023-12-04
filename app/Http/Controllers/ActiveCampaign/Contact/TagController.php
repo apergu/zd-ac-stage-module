@@ -131,7 +131,7 @@ class TagController extends Controller
 
     foreach ($tags as $key => $value) {
       if ($value == $tag) {
-        $tags->forget($key);
+        $tags->pull($key);
       }
     }
 

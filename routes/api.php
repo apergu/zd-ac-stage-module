@@ -22,16 +22,16 @@ use Illuminate\Support\Facades\Route;
 */
 Route::group(['prefix' => 'v1'], function () {
   Route::group(['prefix' => 'zendesk', 'as' => 'zendesk.'], function () {
-    Route::post('lead/on-create', [ZdLeadOnCreateController::class, 'index']);
-    Route::put('lead/on-change', [ZdLeadOnChangeController::class, 'index']);
+    Route::post('lead/on-create', [ZdLeadOnCreateController::class, 'index'])->middleware('basicAuth');
+    Route::put('lead/on-change', [ZdLeadOnChangeController::class, 'index'])->middleware('basicAuth');
 
-    Route::post('deal/on-create', [ZdDealOnCreateController::class, 'index']);
-    Route::put('deal/on-change', [ZdDealOnChangeController::class, 'index']);
+    Route::post('deal/on-create', [ZdDealOnCreateController::class, 'index'])->middleware('basicAuth');
+    Route::put('deal/on-change', [ZdDealOnChangeController::class, 'index'])->middleware('basicAuth');
   });
 
   Route::group(['prefix' => 'activecampaign', 'as' => 'activecampaign.'], function () {
-    Route::post('contact/on-create', [AcContactOnCreateController::class, 'index']);
-    Route::post('contact/tag', [TagController::class, 'index']);
+    Route::post('contact/on-create', [AcContactOnCreateController::class, 'index'])->middleware('apiKeyAuth');
+    Route::post('contact/tag', [TagController::class, 'index'])->middleware('apiKeyAuth');
   });
 
   Route::group(['prefix' => 'privy', 'as' => 'privy.'], function () {

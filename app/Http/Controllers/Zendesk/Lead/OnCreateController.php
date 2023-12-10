@@ -143,7 +143,11 @@ class OnCreateController extends Controller
           [
             'field' => 5,
             'value' => $request->status
-          ]
+          ],
+          [
+            'field' => 8, // Lead id
+            'value' => $request->zd_lead_id
+          ],
         ]
       ]
     ];

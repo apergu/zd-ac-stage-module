@@ -42,6 +42,5 @@ Route::group(['prefix' => 'v1'], function () {
 
   Route::group(['prefix' => 'privy', 'as' => 'privy.'], function () {
     Route::post('zendesk/lead', [FreetrialController::class, 'index']);
-    Route::put('zendesk/lead', [FreetrialController::class, 'index']);
   });
 });

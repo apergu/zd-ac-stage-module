@@ -40,22 +40,37 @@ class FreetrialController extends Controller
     $validated = $validator->validated();
 
     $leadID         = $validated['zd_lead_id'];
-    $existingData   = $this->zd_lead_get((int)$leadID);
-    $oldData        = $existingData->original['data'];
     $payloadRequest = $request->toArray();
     // Setup payload data
-    $payload        = $this->_setUpLeadOnChangePayload($oldData, $payloadRequest);
+    $payload        = $this->_setUpLeadOnChangePayload($leadID, $payloadRequest);
 
-    Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
-    Log::debug('--- ZD-Request: Update Lead ---');
-    $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
-    $zd_leads = $zd_client->leads;
-    $zd_leads = $zd_leads->update($leadID, $payload);
+    try {
+      Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
+      Log::debug('--- ZD-Request: Update Lead ---');
+      $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+      $zd_leads = $zd_client->leads;
+      $zd_leads = $zd_leads->update($leadID, $payload);
 
-    Log::debug('--- ZD-Response: Update Lead ---');
-    Log::debug(json_encode($zd_leads, JSON_PRETTY_PRINT));
+      Log::debug('--- ZD-Response: Update Lead ---');
+      Log::debug(json_encode($zd_leads, JSON_PRETTY_PRINT));
 
-    return $this->responseOK();
+      return response()->json([
+        'action' => 'updateLeads',
+        'status' => 'success',
+      ], 200);
+    } catch (RequestError $e) {
+      return response()->json([
+        'action' => 'updateLeads',
+        'status' => 'error',
+        'message' => $e->getMessage()
+      ], 404);
+    } catch (Exception $e) {
+      return response()->json([
+        'action' => 'updateLeads',
+        'status' => 'error',
+        'message' => $e->getMessage()
+      ], 404);
+    }
   }
 
   private function zd_lead_get($request)
@@ -107,6 +122,7 @@ class FreetrialController extends Controller
 
     if ($validator->fails()) {
       return response()->json([
+        'action' => 'createNewLeads',
         'status' => 'invalid',
         'data' => $validator->messages()->all()
       ], 400);
@@ -126,20 +142,28 @@ class FreetrialController extends Controller
         }
       }
       return response()->json([
+        'action' => 'createNewLeads',
         'status' => 'success',
         'data' => $dataLeads
       ], 200);
     } catch (RequestError $e) {
       return response()->json([
+        'action' => 'createNewLeads',
         'status' => 'error',
         'message' => $e->getMessage()
       ], 404);
     } catch (Exception $e) {
       return response()->json([
+        'action' => 'createNewLeads',
         'status' => 'error',
         'message' => $e->getMessage()
       ], 404);
     }
+  }
+
+  private function zendeskLeadOnChange($id, $payload)
+  {
+
   }
 
   private function zendeskLeadOnCreate($payload) 
@@ -184,8 +208,10 @@ class FreetrialController extends Controller
     return $payload;
   }
 
-  private function _setUpLeadOnChangePayload($oldData, $payload)
+  private function _setUpLeadOnChangePayload($leadID, $payload)
   {
+    $existingData   = $this->zd_lead_get((int)$leadID);
+    $oldData        = $existingData->original['data'];
     $first_name     = !isset($payload['first_name']) || $payload['first_name'] == "" ? $oldData['first_name']: $payload['first_name'];
     $last_name      = !isset($payload['last_name']) || $payload['last_name'] == "" ? $oldData['last_name']: $payload['last_name'];
     $payload        = array(

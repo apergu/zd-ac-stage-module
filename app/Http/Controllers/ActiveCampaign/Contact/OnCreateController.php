@@ -128,7 +128,7 @@ class OnCreateController extends Controller
 
     $response = Http::withHeaders([
       'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
-    ])->put(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $contact['id'], $payload);
+    ])->put(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $ac_contact['id'], $payload);
 
     Log::debug('--- AC-Response: Update Contact ---');
     $res_json = $response->json();

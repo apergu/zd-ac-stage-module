@@ -100,6 +100,8 @@ class TagController extends Controller
     Log::debug('--- Result: Continue ---');
     Log::debug(json_encode($tags->toArray(), JSON_PRETTY_PRINT));
 
+    sleep(5);
+
     Log::debug('--- ZD-Request: Update Lead Add Tag ---');
     $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
     $zd_leads = $zd_client->leads;

@@ -45,15 +45,7 @@ class FreetrialController extends Controller
     $payload        = $this->_setUpLeadOnChangePayload($leadID, $payloadRequest);
 
     try {
-      Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
-      Log::debug('--- ZD-Request: Update Lead ---');
-      $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
-      $zd_leads = $zd_client->leads;
-      $zd_leads = $zd_leads->update($leadID, $payload);
-
-      Log::debug('--- ZD-Response: Update Lead ---');
-      Log::debug(json_encode($zd_leads, JSON_PRETTY_PRINT));
-
+      $this->zendeskLeadOnChange($leadID, $payload);
       return response()->json([
         'action' => 'updateLeads',
         'status' => 'success',
@@ -163,7 +155,14 @@ class FreetrialController extends Controller
 
   private function zendeskLeadOnChange($id, $payload)
   {
+    Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
+    Log::debug('--- ZD-Request: Update Lead ---');
+    $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+    $zd_leads = $zd_client->leads;
+    $zd_leads = $zd_leads->update($id, $payload);
 
+    Log::debug('--- ZD-Response: Update Lead ---');
+    Log::debug(json_encode($zd_leads, JSON_PRETTY_PRINT));
   }
 
   private function zendeskLeadOnCreate($payload) 

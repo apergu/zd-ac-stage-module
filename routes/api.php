@@ -4,7 +4,7 @@ use App\Http\Controllers\ActiveCampaign\Contact\OnCreateController as AcContactO
 use App\Http\Controllers\ActiveCampaign\Contact\TagController;
 use App\Http\Controllers\Privy\CreateDealController;
 use App\Http\Controllers\Privy\UpdateDealController;
-use App\Http\Controllers\Privy\Lead\FreetrialController;
+use App\Http\Controllers\Privy\Lead\FreeTrialController;
 use App\Http\Controllers\Zendesk\Deal\OnChangeController as ZdDealOnChangeController;
 use App\Http\Controllers\Zendesk\Deal\OnCreateController as ZdDealOnCreateController;
 use App\Http\Controllers\Zendesk\Lead\OnChangeController as ZdLeadOnChangeController;
@@ -41,6 +41,6 @@ Route::group(['prefix' => 'v1'], function () {
   });
 
   Route::group(['prefix' => 'privy', 'as' => 'privy.'], function () {
-    Route::post('zendesk/lead', [FreetrialController::class, 'index']);
+    Route::post('zendesk/lead', [FreeTrialController::class, 'index']);
   });
 });

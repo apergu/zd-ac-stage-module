@@ -28,6 +28,10 @@ class OnCreateController extends Controller
             'field' => 6,
             'value' => $stage_name
           ],
+          [
+            'field' => 9,
+            'value' => $request->deal_id
+          ]
         ]
       ]
     ];

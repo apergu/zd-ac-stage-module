@@ -102,8 +102,37 @@ class OnCreateController extends Controller
     $zd_leads = $zd_client->leads;
     $zd_leads = $zd_leads->create($payload);
 
-    Log::debug('--- ZD-Response: Create New Leads --');
+    Log::debug('--- ZD-Response: Create New Leads ---');
     Log::debug(json_encode($zd_leads, JSON_PRETTY_PRINT));
+
+    $this->zd_update_contact($ac_contact, $zd_leads);
+
+    return $this->responseOK();
+  }
+
+  private function zd_update_contact($ac_contact, $zd_lead)
+  {
+    Log::debug('--- AC-Request: Update Contact ---');
+    Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $ac_contact['id']);
+    $payload = [
+      'contact' => [
+        'fieldValues' => [
+          [
+            'field' => 8, // Lead id
+            'value' => $zd_lead['id']
+          ],
+        ]
+      ]
+    ];
+    Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
+
+    $response = Http::withHeaders([
+      'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
+    ])->put(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $ac_contact['id'], $payload);
+
+    Log::debug('--- AC-Response: Update Contact ---');
+    $res_json = $response->json();
+    Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
     return $this->responseOK();
   }

@@ -10,7 +10,7 @@ pipeline {
   //environment
   environment {
     // Repository
-    def GIT_CREDENTIAL = "git.dev1.my.id"
+    // def GIT_CREDENTIAL = "git.dev1.my.id"
     def GIT_HASH = sh(returnStdout: true, script: 'git log -1 --pretty=format:"%h"').trim()
     // DOCKERHUB_CREDENTIALS = credentials('dockerhub')
   }
@@ -48,8 +48,9 @@ pipeline {
           FAILED_STAGE=env.STAGE_NAME
           echo "RELEASE"
 
-          withDockerRegistry([ credentialsId: "dockerhub", url: "" ])
-          dockerImage.push()
+          withDockerRegistry([ credentialsId: "dockerhub", url: "" ]){
+             dockerImage.push()
+          }
         }
       }
     }

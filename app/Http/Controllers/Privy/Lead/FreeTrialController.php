@@ -16,9 +16,9 @@ class FreetrialController extends Controller
   {
     Log::debug('--- Privy-Event: Free Trial ---');
     Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
-    if (isset($request->zd_lead_id)) {      
+    if (isset($request->zd_lead_id)) {
       return $this->lead_update_enterprise_id($request);
-    }    
+    }
     return $this->lead_create_enterprise_id($request);
   }
 
@@ -106,7 +106,7 @@ class FreetrialController extends Controller
   private function lead_create_enterprise_id($request)
   {
     $validator = Validator::make($request->all(), [
-      'first_name'          => ['required', 'string'], 
+      'first_name'          => ['required', 'string'],
       'last_name'           => ['required', 'string'],
       'enterprise_name'     => ['required', 'string'],
       'address'             => ['required', 'string'],
@@ -171,7 +171,7 @@ class FreetrialController extends Controller
     Log::debug(json_encode($zd_leads, JSON_PRETTY_PRINT));
   }
 
-  private function zendeskLeadOnCreate($payload) 
+  private function zendeskLeadOnCreate($payload)
   {
     Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
     Log::debug('--- ZD-Request: Create New Leads --');
@@ -185,7 +185,7 @@ class FreetrialController extends Controller
     return $zd_leads;
   }
 
-  private function _setUpLeadOnCreatePayload($data) 
+  private function _setUpLeadOnCreatePayload($data)
   {
     $payload = array(
       'first_name'        => $data['first_name'],
@@ -205,7 +205,8 @@ class FreetrialController extends Controller
         'Last name #1'          => $data['last_name'],
         'Company name #1'       => $data['enterprise_name'],
         'Email #1'              => $data['email'],
-        'NPWP'                  => $data['npwp']
+        'NPWP'                  => $data['npwp'],
+        'Enterprise ID'         => $data['enterprise_privy_id']
       )
     );
 
@@ -217,7 +218,7 @@ class FreetrialController extends Controller
     $existingData   = $this->zd_lead_get((int)$leadID);
     if (!isset($existingData->original['data'])) {
       return false;
-    } 
+    }
     $oldData        = $existingData->original['data'];
     $first_name     = !isset($payload['first_name']) || $payload['first_name'] == "" ? $oldData['first_name']: $payload['first_name'];
     $last_name      = !isset($payload['last_name']) || $payload['last_name'] == "" ? $oldData['last_name']: $payload['last_name'];

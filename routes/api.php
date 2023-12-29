@@ -35,10 +35,10 @@ Route::group(['prefix' => 'v1'], function () {
     Route::post('contact/tag', [TagController::class, 'index'])->middleware('apiKeyAuth');
   });
 
-  Route::group(['prefix' => 'privy', 'as' => 'privy.'], function () {
-    Route::post('zendesk/deal', [CreateDealController::class, 'index']);
-    Route::put('zendesk/deal', [UpdateDealController::class, 'index']);
-  });
+//   Route::group(['prefix' => 'privy', 'as' => 'privy.'], function () {
+//     Route::post('zendesk/deal', [CreateDealController::class, 'index']);
+//     Route::put('zendesk/deal', [UpdateDealController::class, 'index']);
+//   });
 
   Route::group(['prefix' => 'privy', 'as' => 'privy.'], function () {
     Route::post('zendesk/lead', [FreeTrialController::class, 'index']);

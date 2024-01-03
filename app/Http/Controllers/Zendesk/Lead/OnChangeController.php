@@ -14,11 +14,12 @@ class OnChangeController extends Controller
   {
     Log::debug('--- Zendesk-Event: Lead on Status Changed ---');
     Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
-
     Log::debug('--- AC-Request: Update Contact Request --');
     Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $request->ac_contact_id);
     $payload = [
       'contact' => [
+        'firstName'   => $request->first_name,
+        'lastName'    => $request->last_name,
         'fieldValues' => [
           [
             'field' => 5,

@@ -33,7 +33,6 @@ class OnCreateController extends Controller
       }
     } else {
       // Validate email if not using contact id
-
       Log::debug('--- AC-Request: Search Contact By Email ---');
       Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts?filters[email]=' . $request->email);
       $response = Http::withHeaders([
@@ -50,7 +49,6 @@ class OnCreateController extends Controller
         return $this->update_contact($request, $contact);
       }
     }
-
     // Create new contact
     Log::debug('--- AC-Request: Create New Contact ---');
     Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts');
@@ -93,10 +91,20 @@ class OnCreateController extends Controller
     $response = Http::withHeaders([
       'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
     ])->post(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts', $payload);
-
     Log::debug('--- AC-Response: Create New Contact ---');
     $res_json = $response->json();
     Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
+
+    Log::debug('--- ZD-Request: Update ActiveCampaign Contact ID ---');
+    foreach ($res_json['fieldValues'] as $rj) {
+      $contact = $rj['contact'];
+      $zdPayloadUpdate = [
+        'custom_fields' => (object) [
+          'ActiveCampaign Contact ID' => $contact
+        ]
+      ];
+    }
+    $this->updateACContactIDToZD($request->zd_lead_id, $zdPayloadUpdate);
 
     return $this->responseOK();
   }
@@ -166,5 +174,17 @@ class OnCreateController extends Controller
     Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
     return $this->responseOK();
+  }
+
+  private function updateACContactIDToZD($id, $payload) 
+  {
+    Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
+    Log::debug('--- ZD-Request: Update Lead ActiveCampaign Contact ID ---');
+    $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+    $zd_leads = $zd_client->leads;
+    $zd_leads = $zd_leads->update($id, $payload);
+
+    Log::debug('--- ZD-Response: Update Lead ActiveCampaign Contact ID ---');
+    Log::debug(json_encode($zd_leads, JSON_PRETTY_PRINT));
   }
 }

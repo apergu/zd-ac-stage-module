@@ -15,6 +15,7 @@ class OnCreateController extends Controller
     Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
 
     $this->postLead($request);
+    $this->updateCustomLeadId($request);
 
     if ($request->ac_contact_id) {
       // Validate Contact Id exist
@@ -132,6 +133,18 @@ class OnCreateController extends Controller
     Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
     return $this->responseOK();
+  }
+
+  // Auto Fill Lead ID custom field.
+  private function updateCustomLeadId(Request $request)
+  {
+    $zdPayloadUpdate = [
+      'custom_fields' => (object) [
+        'Lead ID' => $request->zd_lead_id
+      ]
+    ];
+
+    $this->updateACContactIDToZD($request->zd_lead_id, $zdPayloadUpdate);
   }
 
   private function update_contact(Request $request, $contact)

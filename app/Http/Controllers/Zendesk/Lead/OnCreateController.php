@@ -100,7 +100,8 @@ class OnCreateController extends Controller
       $contact = $rj['contact'];
       $zdPayloadUpdate = [
         'custom_fields' => (object) [
-          'ActiveCampaign Contact ID' => $contact
+          'ActiveCampaign Contact ID' => $contact,
+          'Lead ID' => $request->zd_lead_id
         ]
       ];
     }
@@ -176,7 +177,7 @@ class OnCreateController extends Controller
     return $this->responseOK();
   }
 
-  private function updateACContactIDToZD($id, $payload) 
+  private function updateACContactIDToZD($id, $payload)
   {
     Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
     Log::debug('--- ZD-Request: Update Lead ActiveCampaign Contact ID ---');

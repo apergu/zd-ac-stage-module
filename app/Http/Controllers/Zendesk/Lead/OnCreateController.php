@@ -138,6 +138,8 @@ class OnCreateController extends Controller
   // Auto Fill Lead ID custom field.
   private function updateCustomLeadId(Request $request)
   {
+    Log::debug('--- ZD-Request: Fill LeadID using Update Lead ActiveCampaign Contact ID ---');
+
     $zdPayloadUpdate = [
       'custom_fields' => (object) [
         'Lead ID' => $request->zd_lead_id

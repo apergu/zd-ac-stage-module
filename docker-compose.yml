@@ -1,7 +1,7 @@
 version: '3'
 services:
     aczd:
-        image: dhutapratama/privy-aczd-module:latest
+        image: apergudev/privy-aczd-module:latest
         container_name: aczd
         restart: always
         ports:

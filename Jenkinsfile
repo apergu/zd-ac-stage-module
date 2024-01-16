@@ -37,7 +37,7 @@ pipeline {
             FAILED_STAGE=env.STAGE_NAME
             echo "BUILD"
 
-            dockerImage = docker.build("dhutapratama/privy-aczd-module:${GIT_HASH}")
+            dockerImage = docker.build("apergudev/privy-aczd-module:${GIT_HASH}")
         }
       }
     }

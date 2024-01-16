@@ -45,7 +45,7 @@ class OnCreateController extends Controller
             Log::debug(json_encode($contacts, JSON_PRETTY_PRINT));
 
             // If contact exist update contact
-            if (count($contacts) > 0) {
+            if ($contacts != null && count($contacts) > 0) {
                 $contact = $contacts[0];
                 return $this->update_contact($request, $contact);
             }

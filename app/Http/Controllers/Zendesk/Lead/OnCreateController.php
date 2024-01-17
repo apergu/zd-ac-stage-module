@@ -98,6 +98,7 @@ class OnCreateController extends Controller
         ])->post(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts', $payload);
         Log::debug('--- AC-Response: Create New Contact ---');
         $res_json = $response->json();
+        Log::debug("RESPONSE JSON", $res_json);
         Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
 

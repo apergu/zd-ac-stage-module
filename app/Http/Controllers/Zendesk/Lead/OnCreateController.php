@@ -15,7 +15,6 @@ class OnCreateController extends Controller
         Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
 
         // $this->postLead($request);
-        $this->updateCustomLeadId($request);
 
         if ($request->ac_contact_id) {
             // Validate Contact Id exist
@@ -91,12 +90,16 @@ class OnCreateController extends Controller
         ];
         Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
 
+        $this->updateCustomLeadId($request);
+
+
         $response = Http::withHeaders([
             'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
         ])->post(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts', $payload);
         Log::debug('--- AC-Response: Create New Contact ---');
         $res_json = $response->json();
         Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
+
 
         if ($res_json != null) {
             Log::debug('--- ZD-Request: Update ActiveCampaign Contact ID ---');

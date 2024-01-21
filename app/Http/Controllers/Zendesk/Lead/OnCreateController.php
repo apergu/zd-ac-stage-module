@@ -92,12 +92,12 @@ class OnCreateController extends Controller
 
         $this->updateCustomLeadId($request);
 
+        Log::debug("RESPONSE URL", env('ACTIVECAMPAIGN_URL') . '/api/3/contacts');
 
         $response = Http::withHeaders([
             'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
         ])->post(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts', $payload);
         Log::debug('--- AC-Response: Create New Contact ---');
-        Log::debug("RESPONSE URL", env('ACTIVECAMPAIGN_URL') . '/api/3/contacts');
         Log::debug("RESPONSE JSON", $response);
         // Log::debug("RESPONSE LINK", $response);
         $res_json = $response->json();

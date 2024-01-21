@@ -92,7 +92,7 @@ class OnCreateController extends Controller
 
         $this->updateCustomLeadId($request);
 
-        Log::debug("RESPONSE URL", env('ACTIVECAMPAIGN_URL') . '/api/3/contacts');
+        Log::debug("RESPONSE URL", "env('ACTIVECAMPAIGN_URL') . '/api/3/contacts'");
 
         $response = Http::withHeaders([
             'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')

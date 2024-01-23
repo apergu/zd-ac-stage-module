@@ -201,7 +201,7 @@ class OnCreateController extends Controller
                     ],
                     [
                         'field' => 8, // Lead id
-                        'value' => $request->zd_lead_id
+                        'value' => $request->id
                     ],
                 ]
             ]

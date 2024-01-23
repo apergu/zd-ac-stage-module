@@ -201,7 +201,7 @@ class OnCreateController extends Controller
                     ],
                     [
                         'field' => 8, // Lead id
-                        'value' => $request->id
+                        'value' => $request->zd_lead_id
                     ],
                 ]
             ]
@@ -209,7 +209,9 @@ class OnCreateController extends Controller
         Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
 
         $response = Http::withHeaders([
-            'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
+            'Api-Token' => env('ACTIVECAMPAIGN_API_KEY'),
+            'content-type' => 'application/json',
+            'accept' => 'application/json'
         ])->put(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $contact['id'], $payload);
 
         Log::debug('--- AC-Response: Update Contact ---');

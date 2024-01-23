@@ -106,8 +106,18 @@ class OnCreateController extends Controller
 
         Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
+        Log::debug(['RESPONSE URL JSON' => $res_json]);
 
-        if ($res_json != null) {
+
+        if (isset($res_json['errors'])) {
+            # code...
+            Log::debug('--- AC-Request: Create New Contact ---');
+            return $this->responseError($res_json['errors'][0]['title']);
+        }
+
+
+
+        if ($res_json != null && isset($res_json['fieldValues'])) {
             Log::debug('--- ZD-Request: Update ActiveCampaign Contact ID ---');
             foreach ($res_json['fieldValues'] as $rj) {
                 $contact = $rj['contact'];

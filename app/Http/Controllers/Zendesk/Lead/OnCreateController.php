@@ -14,6 +14,8 @@ class OnCreateController extends Controller
         Log::debug('--- Zendesk-Event: Lead on Create ---');
         Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
 
+
+        Log::debug(["CONTACT ID" => $request->ac_contact_id]);
         // $this->postLead($request);
 
         if ($request->ac_contact_id) {
@@ -50,6 +52,9 @@ class OnCreateController extends Controller
             }
         }
         // Create new contact
+
+        $this->updateCustomLeadId($request);
+
 
         Log::debug('--- AC-Request: Create New Contact ---');
         Log::debug("GAS NEW CONTACT");
@@ -90,7 +95,6 @@ class OnCreateController extends Controller
         ];
         Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
 
-        $this->updateCustomLeadId($request);
 
 
         $response = Http::withHeaders([

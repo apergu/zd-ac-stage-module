@@ -209,7 +209,7 @@ class OnCreateController extends Controller
         Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
 
         $response = Http::withHeaders([
-            'Api-Token' => env('ACTIVECAMPAIGN_API_KEY'),
+            'Api-Token' => "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118",
             'content-type' => 'application/json',
             'accept' => 'application/json'
         ])->put(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $contact['id'], $payload);

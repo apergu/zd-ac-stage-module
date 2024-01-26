@@ -113,11 +113,11 @@ class OnCreateController extends Controller
         Log::debug(['RESPONSE URL JSON' => $res_json]);
 
 
-        if (isset($res_json['errors'])) {
-            # code...
-            Log::debug('--- AC-Request: Create New Contact ---');
-            return $this->responseError($res_json['errors'][0]['title']);
-        }
+        // if (isset($res_json['errors'])) {
+        //     # code...
+        //     Log::debug('--- AC-Request: Create New Contact ---');
+        //     return $this->responseError($res_json['errors'][0]['title']);
+        // }
 
 
 

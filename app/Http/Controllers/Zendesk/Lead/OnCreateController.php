@@ -18,6 +18,9 @@ class OnCreateController extends Controller
         Log::debug(["CONTACT ID" => $request->ac_contact_id]);
         // $this->postLead($request);
 
+        $this->updateCustomLeadId($request);
+
+
         if ($request->ac_contact_id) {
             // Validate Contact Id exist
             Log::debug('--- AC-Request: Get Contact By ID ---');
@@ -59,7 +62,6 @@ class OnCreateController extends Controller
         }
         // Create new contact
 
-        $this->updateCustomLeadId($request);
 
 
         Log::debug('--- AC-Request: Create New Contact ---');
@@ -132,10 +134,9 @@ class OnCreateController extends Controller
             foreach ($res_json['fieldValues'] as $rj) {
                 $contact = $rj['contact'];
                 $zdPayloadUpdate = [
-                    'organization_name' => $request->company_name,
                     'custom_fields' => (object) [
                         'ActiveCampaign Contact ID' => $contact,
-                        'Lead ID' => $request->zd_lead_id,
+                        'Lead ID' => $request->zd_lead_id
                     ]
                 ];
             }

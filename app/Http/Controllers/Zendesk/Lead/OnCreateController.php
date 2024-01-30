@@ -132,10 +132,10 @@ class OnCreateController extends Controller
             foreach ($res_json['fieldValues'] as $rj) {
                 $contact = $rj['contact'];
                 $zdPayloadUpdate = [
+                    'organization_name' => $request->company_name,
                     'custom_fields' => (object) [
                         'ActiveCampaign Contact ID' => $contact,
                         'Lead ID' => $request->zd_lead_id,
-                        'Company Name' => $request->company_name,
                     ]
                 ];
             }

@@ -65,16 +65,16 @@ class OnCreateController extends Controller
         $payload = [
             'customerName' => $request->deal_name,
             // 'enterprisePrivyId' => $request->enterprise_id,
-            'customerId' => $request->lead_id,
+            // 'customerId' => $request->lead_id,
             'phoneNo' => $request->mobile,
-            'crmLeadId' => $request->deal_name,
+            'crmLeadId' => $request->lead_id,
             'entityStatus' => '6'
         ];
 
         $resp = Http::withHeaders([
             'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
             'Content-Type' => 'application/json'
-        ])->post(env('NETSUITE_URL') . '/customer/lead', $payload);
+        ])->post(env('NETSUITE_URL') . '/customer', $payload);
 
         Log::debug('--- ZD-ERP: Post Lead ---');
         $res_json = $resp->json();

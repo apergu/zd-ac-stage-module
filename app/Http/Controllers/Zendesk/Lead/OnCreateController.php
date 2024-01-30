@@ -134,7 +134,8 @@ class OnCreateController extends Controller
                 $zdPayloadUpdate = [
                     'custom_fields' => (object) [
                         'ActiveCampaign Contact ID' => $contact,
-                        'Lead ID' => $request->zd_lead_id
+                        'Lead ID' => $request->zd_lead_id,
+                        'Company Name' => $request->company_name,
                     ]
                 ];
             }

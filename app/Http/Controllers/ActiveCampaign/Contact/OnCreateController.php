@@ -84,29 +84,32 @@ class OnCreateController extends Controller
 
         // Create New Lead to Zendesk
         Log::debug('--- ZD-Request: Create New Leads --');
-        $payload = [
-            'first_name' => $ac_contact['first_name'],
-            'last_name' => $ac_contact['last_name'] ?? '-',
-            'email' => $ac_contact['email'] ?? 'unknown@email.com',
-            'phone' => $ac_contact['phone'] ?? '',
-            // 'organization_name' => $organization['organization_name'],
-            'organization_name' => $ac_contact['fields']['1'] ?? '',
-            'tags' => ['AC Webhook'],
-            'custom_fields' => [
-                'Sub Industry' => $organization['sub_industry'],
-                'ActiveCampaign Contact ID' => $ac_contact['id'],
-            ]
-        ];
-        Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
+        if (isset($fieldValues)) {
+            # code...
+            $payload = [
+                'first_name' => $ac_contact['first_name'],
+                'last_name' => $ac_contact['last_name'] ?? '-',
+                'email' => $ac_contact['email'] ?? 'unknown@email.com',
+                'phone' => $ac_contact['phone'] ?? '',
+                // 'organization_name' => $organization['organization_name'],
+                'organization_name' => $ac_contact['fields']['1'] ?? '',
+                'tags' => ['AC Webhook'],
+                'custom_fields' => [
+                    'Sub Industry' => $organization['sub_industry'],
+                    'ActiveCampaign Contact ID' => $ac_contact['id'],
+                ]
+            ];
+            Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
 
-        $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
-        $zd_leads = $zd_client->leads;
-        $zd_leads = $zd_leads->create($payload);
+            $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+            $zd_leads = $zd_client->leads;
+            $zd_leads = $zd_leads->create($payload);
 
-        Log::debug('--- ZD-Response: Create New Leads ---');
-        Log::debug(json_encode($zd_leads, JSON_PRETTY_PRINT));
+            Log::debug('--- ZD-Response: Create New Leads ---');
+            Log::debug(json_encode($zd_leads, JSON_PRETTY_PRINT));
 
-        $this->zd_update_contact($ac_contact, $zd_leads);
+            $this->zd_update_contact($ac_contact, $zd_leads);
+        }
 
         return $this->responseOK();
     }

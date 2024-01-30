@@ -18,7 +18,7 @@ class OnCreateController extends Controller
         Log::debug(["CONTACT ID" => $request->ac_contact_id]);
         // $this->postLead($request);
 
-        $this->updateCustomLeadId($request);
+        // $this->updateCustomLeadId($request);
 
 
         if ($request->ac_contact_id) {

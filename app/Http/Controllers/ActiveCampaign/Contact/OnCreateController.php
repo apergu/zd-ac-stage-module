@@ -37,7 +37,7 @@ class OnCreateController extends Controller
         Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $ac_contact['id']);
 
         $response = Http::withHeaders([
-            'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
+            'Api-Token' => "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118"
         ])->get(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $ac_contact['id']);
 
         $fieldValues = $response->json('fieldValues');

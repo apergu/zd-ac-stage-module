@@ -48,7 +48,7 @@ class OnCreateController extends Controller
         Log::debug(strpos($stage_name, 'Won'));
         // if (strpos($stage_name, 'Won')) {
         Log::debug('-- ZD-ERP : Deal Won --');
-        $this->postLead($request->deal_name);
+        $this->postLead($request);
         // $this->postMerchant($request->deal_name);
         // }
 

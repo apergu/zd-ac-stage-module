@@ -46,14 +46,38 @@ class OnCreateController extends Controller
 
         Log::debug('====== TEST ============');
         Log::debug(strpos($stage_name, 'Won'));
-        if (strpos($stage_name, 'Won')) {
-            Log::debug('-- ZD-ERP : Deal Won --');
-            $this->postCustomer($request->deal_name);
-            $this->postMerchant($request->deal_name);
-        }
+        // if (strpos($stage_name, 'Won')) {
+        Log::debug('-- ZD-ERP : Deal Won --');
+        $this->postLead($request->deal_name);
+        // $this->postMerchant($request->deal_name);
+        // }
 
         Log::debug('--- AC-Request: Update Contact Response --');
         $res_json = $response->json();
+        Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
+
+        return $this->responseOK();
+    }
+
+    private function postLead(Request $request)
+    {
+        Log::debug('-- ZENDESK ERP LEAD --');
+        $payload = [
+            'customerName' => $request->company_name,
+            // 'enterprisePrivyId' => $request->enterprise_id,
+            'customerId' => $request->zd_lead_id,
+            'phoneNo' => $request->mobile,
+            'crmLeadId' => $request->company_name,
+            'entityStatus' => '6'
+        ];
+
+        $resp = Http::withHeaders([
+            'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
+            'Content-Type' => 'application/json'
+        ])->post(env('NETSUITE_URL') . '/customer/lead', $payload);
+
+        Log::debug('--- ZD-ERP: Post Lead ---');
+        $res_json = $resp->json();
         Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
         return $this->responseOK();

@@ -24,7 +24,10 @@ class OnCreateController extends Controller
             Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $request->ac_contact_id);
 
             $response = Http::withHeaders([
-                'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
+                // 'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
+                'Api-Token' => "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118",
+                'content-type' => 'application/json',
+                'accept' => 'application/json'
             ])->get(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $request->ac_contact_id);
             Log::debug('--- AC-Response: Get Contact By ID ---');
             $res_json = $response->json();
@@ -38,7 +41,10 @@ class OnCreateController extends Controller
             Log::debug('--- AC-Request: Search Contact By Email ---');
             Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts?filters[email]=' . $request->email);
             $response = Http::withHeaders([
-                'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
+                // 'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
+                'Api-Token' => "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118",
+                'content-type' => 'application/json',
+                'accept' => 'application/json'
             ])->get(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts?filters[email]=' . $request->email);
 
             Log::debug('--- AC-Response: Search Contact By Email ---');

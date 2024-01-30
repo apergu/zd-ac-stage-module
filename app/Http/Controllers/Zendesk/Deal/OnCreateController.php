@@ -63,11 +63,11 @@ class OnCreateController extends Controller
     {
         Log::debug('-- ZENDESK ERP LEAD --');
         $payload = [
-            'customerName' => $request->company_name,
+            'customerName' => $request->deal_name,
             // 'enterprisePrivyId' => $request->enterprise_id,
-            'customerId' => $request->zd_lead_id,
+            'customerId' => $request->lead_id,
             'phoneNo' => $request->mobile,
-            'crmLeadId' => $request->company_name,
+            'crmLeadId' => $request->deal_name,
             'entityStatus' => '6'
         ];
 

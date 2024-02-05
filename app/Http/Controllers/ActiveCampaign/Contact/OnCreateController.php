@@ -106,6 +106,9 @@ class OnCreateController extends Controller
             $zd_leads = $zd_leads->create($payload);
 
             Log::debug('--- ZD-Response: Create New Leads ---');
+
+            $this->updateCustomLeadId($request);
+
             Log::debug(json_encode($zd_leads, JSON_PRETTY_PRINT));
 
             $this->zd_update_contact($ac_contact, $zd_leads);
@@ -142,5 +145,32 @@ class OnCreateController extends Controller
         Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
         return $this->responseOK();
+    }
+
+    private function updateCustomLeadId(Request $request)
+    {
+        Log::debug('--- ZD-Request: Fill LeadID using Update Lead ActiveCampaign Contact ID ---');
+
+        $zdPayloadUpdate = [
+            'custom_fields' => (object) [
+                'Lead ID' => $request->id
+            ]
+        ];
+
+        $this->updateACContactIDToZD($request->id, $zdPayloadUpdate);
+    }
+
+
+
+    private function updateACContactIDToZD($id, $payload)
+    {
+        Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
+        Log::debug('--- ZD-Request: Update Lead ActiveCampaign Contact ID ---');
+        $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+        $zd_leads = $zd_client->leads;
+        $zd_leads = $zd_leads->update($id, $payload);
+
+        Log::debug('--- ZD-Response: Update Lead ActiveCampaign Contact ID ---');
+        Log::debug(json_encode($zd_leads, JSON_PRETTY_PRINT));
     }
 }

@@ -107,7 +107,7 @@ class OnCreateController extends Controller
 
             Log::debug('--- ZD-Response: Create New Leads ---');
 
-            $this->updateCustomLeadId($request);
+            // $this->updateCustomLeadId($request);
 
             Log::debug(json_encode($zd_leads, JSON_PRETTY_PRINT));
 
@@ -131,6 +131,8 @@ class OnCreateController extends Controller
                 ]
             ]
         ];
+
+        $this->updateCustomLeadId($zd_lead['id']);
         Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
 
         $response = Http::withHeaders([
@@ -147,17 +149,17 @@ class OnCreateController extends Controller
         return $this->responseOK();
     }
 
-    private function updateCustomLeadId(Request $request)
+    private function updateCustomLeadId($id)
     {
         Log::debug('--- ZD-Request: Fill LeadID using Update Lead ActiveCampaign Contact ID ---');
 
         $zdPayloadUpdate = [
             'custom_fields' => (object) [
-                'Lead ID' => $request->id
+                'Lead ID' => $id
             ]
         ];
 
-        $this->updateACContactIDToZD($request->id, $zdPayloadUpdate);
+        $this->updateACContactIDToZD($id, $zdPayloadUpdate);
     }
 
 

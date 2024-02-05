@@ -79,7 +79,7 @@ class OnCreateController extends Controller
         curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
 
         $headers = [
-            'Authorization: Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
+            'Authorization: Basic ' . base64_encode('pR1vY:pa55w0rd@pR1vY'),
             'Content-Type: application/json',
         ];
 

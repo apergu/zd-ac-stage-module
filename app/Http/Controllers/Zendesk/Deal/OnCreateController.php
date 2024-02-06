@@ -69,37 +69,49 @@ class OnCreateController extends Controller
             'entityStatus' => '6'
         ];
 
-        $payload = json_encode($payload);
-
-        $ch = curl_init();
-
-        curl_setopt($ch, CURLOPT_URL, env('NETSUITE_URL') . '/customer');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-
-        $headers = [
-            'Authorization: Basic ' . base64_encode('pR1vY:pa55w0rd@pR1vY'),
-            'Content-Type: application/json',
-        ];
-
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-        // Set timeouts
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5); // Connection timeout in seconds
-        curl_setopt($ch, CURLOPT_TIMEOUT, 10); // Overall timeout in seconds (including data transfer)
-
-        $result = curl_exec($ch);
-
-        if (curl_errno($ch)) {
-            echo 'Error: ' . curl_error($ch);
-        }
-
-        curl_close($ch);
+        $resp = Http::withHeaders([
+            'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
+            'Content-Type' => 'application/json'
+        ])->post(env('NETSUITE_URL') . '/customer', $payload);
 
         Log::debug('--- ZD-ERP: Post Lead ---');
-        $res_json = json_decode($result, true);
+        $res_json = $resp->json();
         Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
+
+
+        // $payload = json_encode($payload);
+
+
+
+        // $ch = curl_init();
+
+        // curl_setopt($ch, CURLOPT_URL, env('NETSUITE_URL') . '/customer');
+        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        // curl_setopt($ch, CURLOPT_POST, 1);
+        // curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+
+        // $headers = [
+        //     'Authorization: Basic ' . base64_encode('pR1vY:pa55w0rd@pR1vY'),
+        //     'Content-Type: application/json',
+        // ];
+
+        // curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        // // Set timeouts
+        // curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5); // Connection timeout in seconds
+        // curl_setopt($ch, CURLOPT_TIMEOUT, 10); // Overall timeout in seconds (including data transfer)
+
+        // $result = curl_exec($ch);
+
+        // if (curl_errno($ch)) {
+        //     echo 'Error: ' . curl_error($ch);
+        // }
+
+        // curl_close($ch);
+
+        // Log::debug('--- ZD-ERP: Post Lead ---');
+        // $res_json = json_decode($result, true);
+        // Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
         return $this->responseOK();
     }

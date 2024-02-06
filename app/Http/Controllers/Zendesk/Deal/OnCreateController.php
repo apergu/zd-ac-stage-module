@@ -48,7 +48,7 @@ class OnCreateController extends Controller
         Log::debug(strpos($stage_name, 'Won'));
         // if (strpos($stage_name, 'Won')) {
         Log::debug('-- ZD-ERP : Deal Won --');
-        $this->postLead($request);
+        // $this->postLead($request);
         // $this->postMerchant($request->deal_name);
         // }
 
@@ -72,7 +72,7 @@ class OnCreateController extends Controller
         $resp = Http::withHeaders([
             'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
             'Content-Type' => 'application/json'
-        ])->timeout(60 * 1000)->post(env('NETSUITE_URL') . '/customer', $payload);
+        ])->timeout(36 * 1000)->post(env('NETSUITE_URL') . '/customer', $payload);
 
 
         Log::debug('--- ZD-ERP: Post Lead ---');

@@ -50,7 +50,8 @@ class CreateDealController extends Controller
             'contact' => [
                 'fieldValues' => [
                     [
-                        'field' => 5,
+                        // 'field' => 5,
+                        'field' => 3, // SANDBOX
                         'value' => $request->status
                     ]
                 ]
@@ -191,11 +192,13 @@ class CreateDealController extends Controller
                         'value' => $validated['sub_industry']
                     ],
                     [
-                        'field' => 5,
+                        // 'field' => 5,
+                        'field' => 3, //SANDBOX
                         'value' => $validated['status']
                     ],
                     [
-                        'field' => 7,
+                        // 'field' => 7,
+                        'field' => 5, // SANDBOX
                         'value' => $validated['enterprise_id']
                     ]
                 ]
@@ -245,7 +248,8 @@ class CreateDealController extends Controller
                 }
             }
             // Field status
-            elseif ($v['field'] == 5) {
+            // elseif ($v['field'] == 5) {
+            elseif ($v['field'] == 3) { //SANDBOX
                 if ($v['value'] != $validated['status']) {
                     array_push($fieldValues, [
                         'field' => $v['field'],
@@ -255,7 +259,8 @@ class CreateDealController extends Controller
             }
 
             // Field enterprise_id
-            elseif ($v['field'] == 7) {
+            // elseif ($v['field'] == 7) {
+            elseif ($v['field'] == 5) { // SANDBOX
                 if ($v['value'] != $validated['enterprise_id']) {
                     array_push($fieldValues, [
                         'field' => $v['field'],

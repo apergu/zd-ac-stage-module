@@ -28,7 +28,8 @@ class OnChangeController extends Controller
             'contact' => [
                 'fieldValues' => [
                     [
-                        'field' => 6,
+                        // 'field' => 6,
+                        'field' => 4, // SB
                         'value' => $stage_name
                     ]
                 ]

@@ -26,11 +26,13 @@ class OnCreateController extends Controller
             'contact' => [
                 'fieldValues' => [
                     [
-                        'field' => 6,
+                        // 'field' => 6,
+                        'field' => 4, // SB
                         'value' => $stage_name
                     ],
                     [
-                        'field' => 9,
+                        // 'field' => 9,
+                        'field' => 7, // SB
                         'value' => $request->deal_id
                     ]
                 ]

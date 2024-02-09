@@ -86,15 +86,18 @@ class OnCreateController extends Controller
                         'value' => $request->sub_industry
                     ],
                     [
-                        'field' => 5,
+                        // 'field' => 5,
+                        'field' => 3,
                         'value' => $request->status
                     ],
                     [
-                        'field' => 7,
+                        // 'field' => 7,
+                        'field' => 5,
                         'value' => $request->enterprise_id
                     ],
                     [
-                        'field' => 8, // Lead id
+                        // 'field' => 8, // Lead id
+                        'field' => 6, // Lead id
                         'value' => $request->zd_lead_id
                     ],
                     //   [
@@ -208,11 +211,13 @@ class OnCreateController extends Controller
                         'value' => $request->sub_industry
                     ],
                     [
-                        'field' => 5,
+                        // 'field' => 5,
+                        'field' => 3,
                         'value' => $request->status
                     ],
                     [
-                        'field' => 8, // Lead id
+                        // 'field' => 8, // Lead id
+                        'field' => 6, // Lead id
                         'value' => $request->zd_lead_id
                     ],
                 ]

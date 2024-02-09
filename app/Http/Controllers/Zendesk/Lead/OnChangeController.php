@@ -23,11 +23,13 @@ class OnChangeController extends Controller
                 'lastName'    => $request->last_name,
                 'fieldValues' => [
                     [
-                        'field' => 5,
+                        // 'field' => 5,
+                        'field' => 3,
                         'value' => $request->status
                     ],
                     [
-                        'field' => 7,
+                        // 'field' => 7,
+                        'field' => 5,
                         'value' => $request->enterprise_id
                     ]
                 ]

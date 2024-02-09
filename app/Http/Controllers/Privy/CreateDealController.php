@@ -133,7 +133,8 @@ class CreateDealController extends Controller
 
         $response = Http::withHeaders([
             // 'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
-            'Api-Token' => "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118",
+            // 'Api-Token' => "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118",
+            'Api-Token' => "83098f1b9181f163ee582823ba5bdcde7a02db14d75b8fc3dc2eea91738a49a47e100e68", // SB
             'content-type' => 'application/json',
             'accept' => 'application/json'
         ])->get(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $contact_id);
@@ -203,7 +204,8 @@ class CreateDealController extends Controller
 
         $response = Http::withHeaders([
             //   'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
-            'Api-Token' => "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118",
+            // 'Api-Token' => "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118",
+            'Api-Token' => "83098f1b9181f163ee582823ba5bdcde7a02db14d75b8fc3dc2eea91738a49a47e100e68", // SB
             'content-type' => 'application/json',
             'accept' => 'application/json'
         ])->post(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts', $payload);

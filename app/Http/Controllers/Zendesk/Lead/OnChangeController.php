@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Zendesk\Lead;
 
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
-use Constant;
+use App\Http\Constant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;

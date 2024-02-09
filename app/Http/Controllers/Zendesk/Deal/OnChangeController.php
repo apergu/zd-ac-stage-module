@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Zendesk\Deal;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Models\ZdStage;
-use Constant;
+use App\Http\Constant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;

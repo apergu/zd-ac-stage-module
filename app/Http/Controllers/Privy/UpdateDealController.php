@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Privy;
 
 use App\Http\Controllers\Controller;
 use BaseCRM\Errors\RequestError;
-use Constant;
+use App\Http\Constant;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;

@@ -21,13 +21,13 @@ services:
 
             # https://[name].zendesk.com/sales/settings/oauth
             # Access token only shown in first time creating. Once created, copy and backup the code!
-            # ZENDESK_ACCESS_TOKEN: "09b1442a014c186136f9e8eaffb131c8691e5524feee195d1238b6cb26f40ff1"
-            # ZENDESK_ACCESS_TOKEN: "5622b90c9d0fe9cfd4061ecc090c890473079bf201047ffeb285d2a4369f7846"
+            # ZENDESK_ACCESS_TOKEN_DEV: "09b1442a014c186136f9e8eaffb131c8691e5524feee195d1238b6cb26f40ff1"
+            # ZENDESK_ACCESS_TOKEN_PROD: "5622b90c9d0fe9cfd4061ecc090c890473079bf201047ffeb285d2a4369f7846"
             ZENDESK_ACCESS_TOKEN: "26bed09778079a78eb96acb73feb1cb2d9b36267e992caa12b0d960c8f760e2c" # SANDBOX
 
             # https://[name].activehosted.com/app/settings/developer
-            # ACTIVECAMPAIGN_URL: https://privy32170.api-us1.com
-            # ACTIVECAMPAIGN_API_KEY: "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118"
+            # ACTIVECAMPAIGN_URL_PROD: https://privy32170.api-us1.com
+            # ACTIVECAMPAIGN_API_KEY_PROD: "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118"
             # Sandbox
             ACTIVECAMPAIGN_URL: https://privy1706071639.api-us1.com
             ACTIVECAMPAIGN_API_KEY: "83098f1b9181f163ee582823ba5bdcde7a02db14d75b8fc3dc2eea91738a49a47e100e68"

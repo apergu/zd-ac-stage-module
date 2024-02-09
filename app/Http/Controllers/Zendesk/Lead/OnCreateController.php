@@ -237,7 +237,8 @@ class OnCreateController extends Controller
     {
         Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
         Log::debug('--- ZD-Request: Update Lead ActiveCampaign Contact ID ---');
-        $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+        // $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+        $zd_client = new \BaseCRM\Client(['accessToken' => "26bed09778079a78eb96acb73feb1cb2d9b36267e992caa12b0d960c8f760e2c"]);
         $zd_leads = $zd_client->leads;
         $zd_leads = $zd_leads->update($id, $payload);
 

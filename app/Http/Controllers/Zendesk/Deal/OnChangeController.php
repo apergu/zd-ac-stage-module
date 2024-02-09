@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Zendesk\Deal;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Models\ZdStage;
+use Constant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -22,7 +23,7 @@ class OnChangeController extends Controller
         $stage_name = $this->ZdStageGet($request->stage_id);
 
         Log::debug('--- AC-Request: Update Contact Request --');
-        Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $request->ac_contact_id);
+        Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
         $payload = [
             'contact' => [
                 'fieldValues' => [
@@ -43,7 +44,7 @@ class OnChangeController extends Controller
             'Api-Token' => "83098f1b9181f163ee582823ba5bdcde7a02db14d75b8fc3dc2eea91738a49a47e100e68", // SB
             'content-type' => 'application/json',
             'accept' => 'application/json'
-        ])->put(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $request->ac_contact_id, $payload);
+        ])->put(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id, $payload);
 
         Log::debug('====== TEST ============');
         Log::debug($stage_name);

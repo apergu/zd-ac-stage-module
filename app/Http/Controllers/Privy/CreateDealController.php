@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Privy;
 
 use App\Http\Controllers\Controller;
 use BaseCRM\Errors\RequestError;
+use Constant;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -44,7 +45,7 @@ class CreateDealController extends Controller
 
         // Active Campaign - Get Contact by Email
         Log::debug('--- AC-Request: Get Contact Request --');
-        Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $request->ac_contact_id);
+        Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
         $payload = [
             'contact' => [
                 'fieldValues' => [
@@ -58,10 +59,10 @@ class CreateDealController extends Controller
         Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
 
         Log::debug('--- AC-Request: Search Contact By Email ---');
-        Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts?filters[email]=' . $validated['email']);
+        Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts?filters[email]=' . $validated['email']);
         $response = Http::withHeaders([
             'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
-        ])->get(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts?filters[email]=' . $validated['email']);
+        ])->get(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts?filters[email]=' . $validated['email']);
 
         Log::debug('--- AC-Response: Search Contact By Email ---');
         $ac_contacts = $response->json('contacts');
@@ -129,7 +130,7 @@ class CreateDealController extends Controller
     private function ac_get_contact($contact_id)
     {
         Log::debug('--- AC-Request: Get Contact ---');
-        Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $contact_id);
+        Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $contact_id);
 
         $response = Http::withHeaders([
             // 'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
@@ -137,7 +138,7 @@ class CreateDealController extends Controller
             'Api-Token' => "83098f1b9181f163ee582823ba5bdcde7a02db14d75b8fc3dc2eea91738a49a47e100e68", // SB
             'content-type' => 'application/json',
             'accept' => 'application/json'
-        ])->get(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $contact_id);
+        ])->get(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $contact_id);
 
         Log::debug('--- AC-Response: Get Contact ---');
 
@@ -173,7 +174,7 @@ class CreateDealController extends Controller
     private function ac_create_contact(array $validated)
     {
         Log::debug('--- AC-Request: Create Contact ---');
-        Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts');
+        Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts');
         $payload = [
             'contact' => [
                 'email' => $validated['email'],
@@ -208,7 +209,7 @@ class CreateDealController extends Controller
             'Api-Token' => "83098f1b9181f163ee582823ba5bdcde7a02db14d75b8fc3dc2eea91738a49a47e100e68", // SB
             'content-type' => 'application/json',
             'accept' => 'application/json'
-        ])->post(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts', $payload);
+        ])->post(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts', $payload);
 
         Log::debug('--- AC-Response: Create Contact ---');
         $res_json = $response->json();
@@ -291,7 +292,7 @@ class CreateDealController extends Controller
         }
 
         Log::debug('--- AC-Request: Update Contact ---');
-        Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $contact['id']);
+        Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $contact['id']);
         $payload = [
             'contact' => $newContact
         ];
@@ -299,7 +300,7 @@ class CreateDealController extends Controller
 
         $response = Http::withHeaders([
             'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
-        ])->put(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $contact['id'], $payload);
+        ])->put(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $contact['id'], $payload);
 
         Log::debug('--- AC-Response: Update Contact ---');
         $res_json = $response->json();

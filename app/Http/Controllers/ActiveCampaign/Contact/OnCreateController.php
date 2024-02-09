@@ -7,6 +7,7 @@ use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Constant;
 
 /**
  * Receive new created contact from ActiveCampaign and then create new deals to zendesk.
@@ -34,12 +35,12 @@ class OnCreateController extends Controller
 
         // Get Active Campaign Contact
         Log::debug('--- AC-Request: Get Contact Detail  ---');
-        Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $ac_contact['id']);
+        Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $ac_contact['id']);
 
         $response = Http::withHeaders([
             // 'Api-Token' => "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118"
             'Api-Token' => "83098f1b9181f163ee582823ba5bdcde7a02db14d75b8fc3dc2eea91738a49a47e100e68", // SB
-        ])->get(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $ac_contact['id']);
+        ])->get(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $ac_contact['id']);
 
         $fieldValues = $response->json('fieldValues');
         Log::debug('--- AC-Response: Get Contact Detail ---');
@@ -121,7 +122,7 @@ class OnCreateController extends Controller
     private function zd_update_contact($ac_contact, $zd_lead)
     {
         Log::debug('--- AC-Request: Update Contact ---');
-        Log::debug(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $ac_contact['id']);
+        Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $ac_contact['id']);
         $payload = [
             'contact' => [
                 'fieldValues' => [
@@ -142,7 +143,7 @@ class OnCreateController extends Controller
             'Api-Token' => "83098f1b9181f163ee582823ba5bdcde7a02db14d75b8fc3dc2eea91738a49a47e100e68", // SB
             'content-type' => 'application/json',
             'accept' => 'application/json'
-        ])->put(env('ACTIVECAMPAIGN_URL') . '/api/3/contacts/' . $ac_contact['id'], $payload);
+        ])->put(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $ac_contact['id'], $payload);
 
         Log::debug('--- AC-Response: Update Contact ---');
         $res_json = $response->json();

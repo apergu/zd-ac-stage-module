@@ -313,7 +313,7 @@ class CreateDealController extends Controller
     {
         Log::debug('--- ZD-Request: Get Contact By Email ---');
 
-        $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+        $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
         $zd_contacts = $zd_client->contacts;
 
         $params = [
@@ -334,7 +334,7 @@ class CreateDealController extends Controller
     {
         Log::debug('--- ZD-Request: Create Contact ---');
 
-        $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+        $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
         $zd_contacts = $zd_client->contacts;
 
         $params = [
@@ -369,7 +369,7 @@ class CreateDealController extends Controller
 
         Log::debug('--- ZD-Request: Update Contact ---');
 
-        $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+        $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
         $zd_contacts = $zd_client->contacts;
 
         // Parameter
@@ -446,7 +446,7 @@ class CreateDealController extends Controller
 
         Log::debug('--- ZD-Request: Get Deals By contact_id ---');
 
-        $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+        $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
         $zd_deals = $zd_client->deals;
 
         $params = [
@@ -469,7 +469,7 @@ class CreateDealController extends Controller
 
         Log::debug('--- ZD-Request: Create Deal ---');
 
-        $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+        $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
         $zd_deals = $zd_client->deals;
 
         $params = [
@@ -499,7 +499,7 @@ class CreateDealController extends Controller
 
         Log::debug('--- ZD-Request: Update Deal: Enterprise ID ---');
 
-        $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+        $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
         $zd_deals = $zd_client->deals;
 
         $params = [
@@ -544,7 +544,7 @@ class CreateDealController extends Controller
     {
         Log::debug('--- ZD-Request: Get Stage By Id --');
         if (count($this->stages) == 0) {
-            $client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+            $client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
             $stages = $client->stages;
             $stages = $stages->all();
 

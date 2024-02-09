@@ -7,7 +7,7 @@ use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use Constant;
+use App\Http\Constant;
 
 /**
  * Receive new created contact from ActiveCampaign and then create new deals to zendesk.
@@ -103,7 +103,7 @@ class OnCreateController extends Controller
             ];
             Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
 
-            $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+            $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
             $zd_leads = $zd_client->leads;
             $zd_leads = $zd_leads->create($payload);
 
@@ -171,7 +171,7 @@ class OnCreateController extends Controller
     {
         Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
         Log::debug('--- ZD-Request: Update Lead ActiveCampaign Contact ID ---');
-        // $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+        // $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
         $zd_client = new \BaseCRM\Client(['accessToken' => "26bed09778079a78eb96acb73feb1cb2d9b36267e992caa12b0d960c8f760e2c"]);
         $zd_leads = $zd_client->leads;
         $zd_leads = $zd_leads->update($id, $payload);

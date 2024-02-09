@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Privy\Lead;
 
+use App\Http\Constant;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use BaseCRM\Errors\RequestError;
@@ -76,7 +77,7 @@ class FreetrialController extends Controller
     {
         Log::debug('--- ZD-Request: Get Lead ---');
 
-        $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+        $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
         $zd_deals = $zd_client->leads;
 
         try {
@@ -166,7 +167,7 @@ class FreetrialController extends Controller
     {
         Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
         Log::debug('--- ZD-Request: Update Lead ---');
-        $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+        $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
         $zd_leads = $zd_client->leads;
         $zd_leads = $zd_leads->update($id, $payload);
 
@@ -178,7 +179,7 @@ class FreetrialController extends Controller
     {
         Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
         Log::debug('--- ZD-Request: Create New Leads --');
-        $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+        $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
         $zd_leads = $zd_client->leads;
         $zd_leads = $zd_leads->create($payload);
 

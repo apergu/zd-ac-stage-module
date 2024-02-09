@@ -36,7 +36,7 @@ class UpdateDealController extends Controller
         // Get Deal
         Log::debug('--- ZD-Request: Get Deal ---');
 
-        $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+        $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
         $zd_deals = $zd_client->deals;
 
         try {
@@ -86,7 +86,7 @@ class UpdateDealController extends Controller
     {
         Log::debug('--- ZD-Request: Update Contact ---');
 
-        $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+        $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
         $zd_contacts = $zd_client->contacts;
 
         // Parameter

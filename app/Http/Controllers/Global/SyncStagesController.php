@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Global;
 
+use App\Http\Constant;
 use App\Http\Controllers\Controller;
 use App\Models\ZdStage;
 use Illuminate\Http\Request;
@@ -10,86 +11,86 @@ use Illuminate\Support\Facades\Log;
 
 class SyncStagesController extends Controller
 {
-  /**
-   * Display a listing of the resource.
-   */
-  public function index()
-  {
-    // Setup
-    $client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
-    $stages = $client->stages;
-    $field_id = 6;
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        // Setup
+        $client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
+        $stages = $client->stages;
+        $field_id = 6;
 
-    // ZD: Stages sync to db.
-    $this->acStageSync();
-    $this->zdStageSync();
+        // ZD: Stages sync to db.
+        $this->acStageSync();
+        $this->zdStageSync();
 
-    // AC: Get Deal Status: List
-    $response = Http::withHeaders([
-      'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
-    ])->get(env('ACTIVECAMPAIGN_URL') . '/api/3/fields/' . $field_id);
+        // AC: Get Deal Status: List
+        $response = Http::withHeaders([
+            'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
+        ])->get(env('ACTIVECAMPAIGN_URL') . '/api/3/fields/' . $field_id);
 
-    $ac_stages = collect($response['fieldOptions']);
+        $ac_stages = collect($response['fieldOptions']);
 
-    Log::debug('--- BEGIN: ZendDesk > Pipelines > Stage NotFound ---');
-    $ac_stages->each(function ($val, $key) use ($stages) {
-      $zd_stage = ZdStage::where('name', $val['value'])->first();
+        Log::debug('--- BEGIN: ZendDesk > Pipelines > Stage NotFound ---');
+        $ac_stages->each(function ($val, $key) use ($stages) {
+            $zd_stage = ZdStage::where('name', $val['value'])->first();
 
-      if (!$zd_stage) {
-        // Notify Pipeline Stage is Never Created
-        Log::debug($val['value']);
-      }
-    });
-    Log::debug('--- END: ZendDesk > Pipelines > Stage NotFound ---');
+            if (!$zd_stage) {
+                // Notify Pipeline Stage is Never Created
+                Log::debug($val['value']);
+            }
+        });
+        Log::debug('--- END: ZendDesk > Pipelines > Stage NotFound ---');
 
-    return $response['fieldOptions'];
-  }
+        return $response['fieldOptions'];
+    }
 
-  /**
-   * Show the form for creating a new resource.
-   */
-  public function create()
-  {
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
         //
-  }
+    }
 
-  /**
-   * Store a newly created resource in storage.
-   */
-  public function store(Request $request)
-  {
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
         //
-  }
+    }
 
-  /**
-   * Display the specified resource.
-   */
-  public function show(string $id)
-  {
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
         //
-  }
+    }
 
-  /**
-   * Show the form for editing the specified resource.
-   */
-  public function edit(string $id)
-  {
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
         //
-  }
+    }
 
-  /**
-   * Update the specified resource in storage.
-   */
-  public function update(Request $request, string $id)
-  {
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
         //
-  }
+    }
 
-  /**
-   * Remove the specified resource from storage.
-   */
-  public function destroy(string $id)
-  {
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
         //
-  }
+    }
 }

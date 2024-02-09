@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\ActiveCampaign\Contact;
 
+use App\Http\Constant;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use BaseCRM\Errors\RequestError;
@@ -65,7 +66,7 @@ class TagController extends Controller
     {
         Log::debug('--- ZD-Request: Get Lead By ActiveCampaign Contact Id ---');
 
-        $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+        $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
         $zd_leads = $zd_client->leads;
 
         $params = [
@@ -103,7 +104,7 @@ class TagController extends Controller
         sleep(5);
 
         Log::debug('--- ZD-Request: Update Lead Add Tag ---');
-        $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+        $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
         $zd_leads = $zd_client->leads;
 
         $params = [
@@ -143,7 +144,7 @@ class TagController extends Controller
         Log::debug(json_encode($tags->toArray(), JSON_PRETTY_PRINT));
 
         Log::debug('--- ZD-Request: Update Lead Remove Tag ---');
-        $zd_client = new \BaseCRM\Client(['accessToken' => env('ZENDESK_ACCESS_TOKEN')]);
+        $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
         $zd_leads = $zd_client->leads;
 
         $params = [

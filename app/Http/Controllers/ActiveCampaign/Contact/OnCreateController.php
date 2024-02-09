@@ -127,7 +127,8 @@ class OnCreateController extends Controller
             'contact' => [
                 'fieldValues' => [
                     [
-                        'field' => 8, // Lead id
+                        // 'field' => 8, // Lead id
+                        'field' => 6, // Lead id
                         'value' => $zd_lead['id']
                     ],
                 ]

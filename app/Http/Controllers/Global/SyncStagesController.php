@@ -27,7 +27,7 @@ class SyncStagesController extends Controller
 
         // AC: Get Deal Status: List
         $response = Http::withHeaders([
-            'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
+            'Api-Token' => Constant::ACTIVECAMPAIGN_API_KEY
         ])->get(env('ACTIVECAMPAIGN_URL') . '/api/3/fields/' . $field_id);
 
         $ac_stages = collect($response['fieldOptions']);

@@ -210,7 +210,7 @@ class UpdateDealController extends Controller
         Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
 
         $response = Http::withHeaders([
-            'Api-Token' => env('ACTIVECAMPAIGN_API_KEY')
+            'Api-Token' => Constant::ACTIVECAMPAIGN_API_KEY
         ])->put(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $contact_id, $payload);
 
         Log::debug('--- AC-Response: Update Contact ---');

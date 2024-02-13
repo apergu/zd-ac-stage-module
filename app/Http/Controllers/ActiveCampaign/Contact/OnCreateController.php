@@ -85,29 +85,32 @@ class OnCreateController extends Controller
         Log::debug(json_encode($organization, JSON_PRETTY_PRINT));
 
         // Create New Lead to Zendesk
-        Log::debug('--- ZD-Request: Create New Leads --');
-        if (isset($fieldValues)) {
+        if ($organization['organization_name'] != '') {
             # code...
-            $payload = [
-                'first_name' => $ac_contact['first_name'],
-                'last_name' => $ac_contact['last_name'] ?? '-',
-                'email' => $ac_contact['email'] ?? 'unknown@email.com',
-                'phone' => $ac_contact['phone'] ?? '',
-                // 'organization_name' => $organization['organization_name'],
-                'organization_name' => $ac_contact['fields']['1'] ?? '',
-                'tags' => ['AC Webhook'],
-                'custom_fields' => [
-                    'Sub Industry' => $organization['sub_industry'],
-                    'ActiveCampaign Contact ID' => $ac_contact['id'],
-                ]
-            ];
-            Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
+            Log::debug('--- ZD-Request: Create New Leads --');
+            if (isset($fieldValues)) {
+                # code...
+                $payload = [
+                    'first_name' => $ac_contact['first_name'],
+                    'last_name' => $ac_contact['last_name'] ?? '-',
+                    'email' => $ac_contact['email'] ?? 'unknown@email.com',
+                    'phone' => $ac_contact['phone'] ?? '',
+                    // 'organization_name' => $organization['organization_name'],
+                    'organization_name' => $ac_contact['fields']['1'] ?? '',
+                    'tags' => ['AC Webhook'],
+                    'custom_fields' => [
+                        'Sub Industry' => $organization['sub_industry'],
+                        'ActiveCampaign Contact ID' => $ac_contact['id'],
+                    ]
+                ];
+                Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
 
-            $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
-            $zd_leads = $zd_client->leads;
-            $zd_leads = $zd_leads->create($payload);
+                $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
+                $zd_leads = $zd_client->leads;
+                $zd_leads = $zd_leads->create($payload);
 
-            Log::debug('--- ZD-Response: Create New Leads ---');
+                Log::debug('--- ZD-Response: Create New Leads ---');
+            }
 
             // $this->updateCustomLeadId($request);
 

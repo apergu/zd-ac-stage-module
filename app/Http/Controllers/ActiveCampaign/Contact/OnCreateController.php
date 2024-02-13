@@ -85,7 +85,7 @@ class OnCreateController extends Controller
         Log::debug(json_encode($organization, JSON_PRETTY_PRINT));
 
         // Create New Lead to Zendesk
-        if ($organization['organization_name'] != '') {
+        if ($ac_contact['fields']['1'] != '') {
             # code...
             Log::debug('--- ZD-Request: Create New Leads --');
             if (isset($fieldValues)) {

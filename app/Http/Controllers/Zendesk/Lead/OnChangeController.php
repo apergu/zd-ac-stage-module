@@ -17,10 +17,23 @@ class OnChangeController extends Controller
         Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
         Log::debug('--- AC-Request: Update Contact Request --');
         Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
+
+        $findAcAccount =  Http::withHeaders([
+            // 'Api-Token' => "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118",
+            'Api-Token' => "83098f1b9181f163ee582823ba5bdcde7a02db14d75b8fc3dc2eea91738a49a47e100e68", // SB
+            'content-type' => 'application/json',
+            'accept' => 'application/json'
+        ])->get(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
+
+        Log::debug("------- FIND ACCOUNT ------");
+        Log::debug($findAcAccount);
+        Log::debug("------- END FIND ACCOUNT ------");
+
+        $ac_stages = collect($findAcAccount['fieldValues']);
         $payload = [
             'contact' => [
-                'firstName'   => $request->first_name,
-                'lastName'    => $request->last_name,
+                'firstName'   => $ac_stages->first_name,
+                'lastName'    => $ac_stages->last_name,
                 'fieldValues' => [
                     [
                         // 'field' => 5,

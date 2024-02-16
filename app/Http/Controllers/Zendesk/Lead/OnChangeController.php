@@ -25,11 +25,11 @@ class OnChangeController extends Controller
             'accept' => 'application/json'
         ])->get(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
 
+        $ac_stages = collect($findAcAccount['fieldValues']);
         Log::debug("------- FIND ACCOUNT ------");
-        Log::debug($findAcAccount);
+        Log::debug($ac_stages);
         Log::debug("------- END FIND ACCOUNT ------");
 
-        $ac_stages = collect($findAcAccount['fieldValues']);
         $payload = [
             'contact' => [
                 'firstName'   => $ac_stages->first_name,

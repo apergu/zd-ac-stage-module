@@ -27,7 +27,7 @@ class OnChangeController extends Controller
 
         $ac_stages = collect($findAcAccount['fieldValues']);
         Log::debug("------- FIND ACCOUNT ------");
-        Log::debug($ac_stages);
+        Log::debug(json_encode($ac_stages, JSON_PRETTY_PRINT));
         Log::debug("------- END FIND ACCOUNT ------");
 
         $payload = [

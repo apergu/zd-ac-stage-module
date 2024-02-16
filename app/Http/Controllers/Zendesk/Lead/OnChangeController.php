@@ -32,8 +32,8 @@ class OnChangeController extends Controller
 
         $payload = [
             'contact' => [
-                'firstName'   => $ac_stages->first_name,
-                'lastName'    => $ac_stages->last_name,
+                'firstName'   => $request->first_name,
+                'lastName'    => $request->last_name,
                 'fieldValues' => [
                     [
                         // 'field' => 5,
@@ -70,7 +70,7 @@ class OnChangeController extends Controller
                     'custom_fields' => (object) [
                         // 'ActiveCampaign Contact ID' => $contact,
                         // 'Lead ID' => $request->zd_lead_id
-                        'Enterprise ID' => $request->enterprise_id
+                        'Enterprise ID' => $ac_stages[5]['value']
                     ]
                 ];
             }

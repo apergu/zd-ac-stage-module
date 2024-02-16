@@ -67,6 +67,8 @@ class OnChangeController extends Controller
             foreach ($res_json['fieldValues'] as $rj) {
                 $contact = $rj['contact'];
                 $zdPayloadUpdate = [
+                    'first_name' => $request->first_name,
+                    'last_name' => $request->last_name,
                     'custom_fields' => (object) [
                         // 'ActiveCampaign Contact ID' => $contact,
                         // 'Lead ID' => $request->zd_lead_id

@@ -27,7 +27,7 @@ class OnChangeController extends Controller
 
         $ac_stages = collect($findAcAccount['fieldValues']);
         Log::debug("------- FIND ACCOUNT ------");
-        Log::debug(json_encode($ac_stages, JSON_PRETTY_PRINT));
+        Log::debug(json_encode($ac_stages[4], JSON_PRETTY_PRINT));
         Log::debug("------- END FIND ACCOUNT ------");
 
         $payload = [
@@ -70,7 +70,7 @@ class OnChangeController extends Controller
                     'custom_fields' => (object) [
                         // 'ActiveCampaign Contact ID' => $contact,
                         // 'Lead ID' => $request->zd_lead_id
-                        'Enterprise ID' => $ac_stages[5]['value']
+                        'Enterprise ID' => $ac_stages[4]['value']
                     ]
                 ];
             }

@@ -31,6 +31,11 @@ class OnChangeController extends Controller
                         // 'field' => 6,
                         'field' => 4, // SB
                         'value' => $stage_name
+                    ],
+                    [
+                        // 'field' => 7,
+                        'field' => 5, //SB
+                        'value' => $request->enterprise_id
                     ]
                 ]
             ]

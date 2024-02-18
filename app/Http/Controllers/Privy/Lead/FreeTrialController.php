@@ -23,6 +23,22 @@ class FreetrialController extends Controller
         return $this->lead_create_enterprise_id($request);
     }
 
+    private function getLead($id)
+    {
+        $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
+        $zd_leads = $zd_client->leads;
+
+        try {
+            $zd_leads = $zd_leads->get($id);
+
+            return $zd_leads;
+        } catch (RequestError $e) {
+            return null;
+        } catch (Exception $e) {
+            return null;
+        }
+    }
+
     // Update enterprise id into zendesk lead.
     private function lead_update_enterprise_id($request)
     {
@@ -53,7 +69,12 @@ class FreetrialController extends Controller
         }
 
         try {
-            $this->zendeskLeadOnChange($leadID, $payload);
+            if ($this->getLead($leadID)) {
+                # code...
+                $this->zendeskDealOnchange($leadID, $payload);
+            } else {
+                $this->zendeskLeadOnChange($leadID, $payload);
+            }
             return response()->json([
                 'action' => 'updateLeads',
                 'status' => 'success',
@@ -72,6 +93,39 @@ class FreetrialController extends Controller
             ], 404);
         }
     }
+
+    private function zendeskDealOnchange($leadID, $payload)
+    {
+        try {
+
+            $http = Http::withHeaders([
+                'Authorization' => 'Bearer ' . Constant::ZENDESK_ACCESS_TOKEN,
+                'Content-Type' => 'application/json'
+            ]);
+
+            $data = [
+                'custom_fields' => [
+                    'Enterprise ID' => $payload->enterprise_id
+                ]
+            ];
+
+            $response = $http->post(Constant::ZENDESK_URL . '/api/v2/deals/upsert?custom_fields[Lead ID]=' . $leadID, [
+                'data' => $data
+            ]);
+
+            return response()->json([
+                'status' => 'success',
+                'data' => $response->json()
+            ], 200);
+        } catch (Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage()
+            ], 404);
+        }
+    }
+
+
 
     private function zd_lead_get($request)
     {

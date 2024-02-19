@@ -58,13 +58,13 @@ class OnChangeController extends Controller
         if (strpos($stage_name, 'Won') !== false) {
             Log::debug('-- ZD-ERP : Deal Won --');
             $this->postCustomer($request->deal_name);
-            $this->postMerchant($request->deal_name);
+            $this->postMerchant($request);
         }
 
         Log::debug('--- AC-Request: Update Contact Response --');
         $res_json = $response->json();
 
-        if ($res_json != null && isset($res_json['fieldValues']) && $request->enterprise_id != null) {
+        if ($res_json != null && isset($res_json['fieldValues']) && $request->enterprise_id != null && strpos($stage_name, 'Won') !== true) {
             Log::debug('--- ZD-Request: Update ActiveCampaign Contact ID ---');
             foreach ($res_json['fieldValues'] as $rj) {
                 $contact = $rj['contact'];
@@ -132,9 +132,9 @@ class OnChangeController extends Controller
         // "city": "city",
         // "zip": "zip"
         $payload = [
-            'enterpriseId' => $request,
+            'enterpriseId' => $request->enterprise_id,
             'merchantId' => '000',
-            'merchantName' => 'Merchant ' . $request,
+            'merchantName' => 'Merchant ' . $request->deal_name,
             'address' => 'address',
             'email' => 'email@email.com',
             'state' => 'state',

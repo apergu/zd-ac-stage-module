@@ -52,7 +52,7 @@ class OnCreateController extends Controller
         Log::debug(strpos($stage_name, 'Won'));
         Log::debug('-- ZD-ERP : Deal Won --');
 
-
+        $this->postLead($request);
         Log::debug('--- AC-Request: Update Contact Response --');
         $res_json = $response->json();
         Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
@@ -67,6 +67,7 @@ class OnCreateController extends Controller
             'customerName' => $request->deal_name,
             'phoneNo' => $request->mobile,
             'crmLeadId' => $request->lead_id,
+            'enterprisePrivyId' => $request->enterprise_id,
             'entityStatus' => '6'
         ];
 

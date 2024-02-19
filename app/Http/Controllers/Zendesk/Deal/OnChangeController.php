@@ -59,6 +59,7 @@ class OnChangeController extends Controller
             Log::debug('-- ZD-ERP : Deal Won --');
             $this->postCustomer($request->deal_name);
             $this->postMerchant($request);
+            // $this
         }
 
         Log::debug('--- AC-Request: Update Contact Response --');

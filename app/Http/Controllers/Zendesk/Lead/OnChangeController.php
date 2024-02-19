@@ -67,7 +67,7 @@ class OnChangeController extends Controller
 
         $res_json = $response->json();
 
-        if ($findAcAccount != null || $findAcAccount['fieldValues'] != null) {
+        if ($findAcAccount != null && $findAcAccount['fieldValues'] != null) {
             # code...
             $ac_stages = collect($findAcAccount['fieldValues']);
             Log::debug("------- FIND ACCOUNT ------");

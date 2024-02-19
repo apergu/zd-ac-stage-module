@@ -30,10 +30,11 @@ class OnChangeController extends Controller
             'accept' => 'application/json'
         ])->get(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
 
-        $ac_stages = collect($findAcAccount['fieldValues']);
-        Log::debug("------- FIND ACCOUNT ------");
-        // Log::debug(json_encode($ac_stages[4], JSON_PRETTY_PRINT));
-        Log::debug("------- END FIND ACCOUNT ------");
+
+        Log::debug("FINDACACCOUNT");
+        Log::debug(json_encode($findAcAccount, JSON_PRETTY_PRINT));
+
+
 
         $payload = [
             'contact' => [
@@ -66,23 +67,31 @@ class OnChangeController extends Controller
 
         $res_json = $response->json();
 
+        if ($findAcAccount != null || $findAcAccount['fieldValues'] != null) {
+            # code...
+            $ac_stages = collect($findAcAccount['fieldValues']);
+            Log::debug("------- FIND ACCOUNT ------");
+            Log::debug(json_encode($ac_stages[4], JSON_PRETTY_PRINT));
+            Log::debug("------- END FIND ACCOUNT ------");
 
-        if ($res_json != null && isset($res_json['fieldValues'])) {
-            Log::debug('--- ZD-Request: Update ActiveCampaign Contact ID ---');
-            foreach ($res_json['fieldValues'] as $rj) {
-                $contact = $rj['contact'];
-                $zdPayloadUpdate = [
-                    'first_name' => $request->first_name,
-                    'last_name' => $request->last_name,
-                    'custom_fields' => (object) [
-                        // 'ActiveCampaign Contact ID' => $contact,
-                        // 'Lead ID' => $request->zd_lead_id
-                        'Enterprise ID' => $ac_stages[4]['value']
-                    ]
-                ];
+            if ($res_json != null && isset($res_json['fieldValues'])) {
+                Log::debug('--- ZD-Request: Update ActiveCampaign Contact ID ---');
+                foreach ($res_json['fieldValues'] as $rj) {
+                    $contact = $rj['contact'];
+                    $zdPayloadUpdate = [
+                        'first_name' => $request->first_name,
+                        'last_name' => $request->last_name,
+                        'custom_fields' => (object) [
+                            // 'ActiveCampaign Contact ID' => $contact,
+                            // 'Lead ID' => $request->zd_lead_id
+                            'Enterprise ID' => $ac_stages[4]['value']
+                        ]
+                    ];
+                }
+                $this->updateACContactIDToZD($request->lead_id, $zdPayloadUpdate);
             }
-            $this->updateACContactIDToZD($request->lead_id, $zdPayloadUpdate);
         }
+
         Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
         return $this->responseOK();

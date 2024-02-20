@@ -69,6 +69,10 @@ class FreetrialController extends Controller
         }
 
         try {
+            $find = $this->getLead($leadID);
+            Log::debug('--- Find: Update Lead ---');
+            Log::debug(json_encode($find, JSON_PRETTY_PRINT));
+
             if ($this->getLead($leadID)) {
                 # code...
                 Log::debug('--- ADONARA UPDATEEEE DEAL --');

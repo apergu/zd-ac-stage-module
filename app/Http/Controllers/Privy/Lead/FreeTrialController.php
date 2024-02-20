@@ -306,6 +306,9 @@ class FreetrialController extends Controller
             ]
         ];
 
+        Log::debug('--- Payload: Update Lead ---');
+        Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
+        Log::debug('--- Old Data: Update Lead ---');
         return $payload;
     }
 }

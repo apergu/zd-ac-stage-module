@@ -75,11 +75,11 @@ class FreetrialController extends Controller
 
             if ($this->getLead($leadID)) {
                 # code...
-                Log::debug('--- ADONARA UPDATEEEE DEAL --');
-                $this->zendeskDealOnchange($leadID, $payload);
-            } else {
                 Log::debug('--- ADONARA UPDATEEEE LEAD --');
                 $this->zendeskLeadOnChange($leadID, $payload);
+            } else {
+                Log::debug('--- ADONARA UPDATEEEE DEAL --');
+                $this->zendeskDealOnchange($leadID, $payload);
             }
 
             return response()->json([

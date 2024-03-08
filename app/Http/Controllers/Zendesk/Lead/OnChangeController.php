@@ -83,8 +83,8 @@ class OnChangeController extends Controller
                         'last_name' => $request->last_name,
                         'custom_fields' => (object) [
                             // 'ActiveCampaign Contact ID' => $contact,
-                            // 'Lead ID' => $request->zd_lead_id
-                            'Enterprise ID' => $ac_stages[4]['value']
+                            'Lead ID' => $ac_stages[4]['value'],
+                            'Enterprise ID' => $request->enterprise_id ?? ""
                         ]
                     ];
                 }

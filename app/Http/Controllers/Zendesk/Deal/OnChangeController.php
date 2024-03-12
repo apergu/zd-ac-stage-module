@@ -105,6 +105,9 @@ class OnChangeController extends Controller
 
     public function postCustomer($request)
     {
+
+        Log::debug('TEST ENTERPRISE ID');
+        Log::debug($request->enterprise_id);
         $payload = [
             'enterprisePrivyId' => $request->enterprise_id,
             'customerName' => $request->deal_name,

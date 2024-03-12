@@ -60,7 +60,7 @@ class OnChangeController extends Controller
         Log::debug('====== TEST ENTERPRISE ID============');
         if (strpos($stage_name, 'Won') !== false) {
             Log::debug('-- ZD-ERP : Deal Won --');
-            $this->postCustomer($request->deal_name);
+            $this->postCustomer($request);
             $this->postMerchant($request);
             // $this
         }
@@ -103,21 +103,22 @@ class OnChangeController extends Controller
         Log::debug(json_encode($zd_leads, JSON_PRETTY_PRINT));
     }
 
-    public function postCustomer($id)
+    public function postCustomer($request)
     {
         $payload = [
-            'customerName' => $id,
+            'enterprisePrivyId' => $request->enterprise_id,
+            'customerName' => $request->deal_name,
             'entityStatus' => '13',
-            'crmLeadId' => $id,
+            'crmLeadId' => $request->deal_name,
             'phone' => '12345'
         ];
 
         $resp = Http::withHeaders([
             'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
             'Content-Type' => 'application/json'
-        ])->put(env('NETSUITE_URL') . '/customer/lead/' . $id, $payload);
+        ])->put(env('NETSUITE_URL') . '/customer/lead/' . $request->deal_name, $payload);
 
-        Log::debug(env('NETSUITE_URL') . '/customer/lead/' . $id);
+        Log::debug(env('NETSUITE_URL') . '/customer/lead/' . $request->deal_name);
         Log::debug('--- ZD-ERP: Post Lead ---');
         $res_json = $resp->json();
         Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
@@ -136,7 +137,7 @@ class OnChangeController extends Controller
         // "city": "city",
         // "zip": "zip"
         $payload = [
-            'enterpriseId' => $request->enterprise_id,
+            'enterpriseId' =>  $request->enterprise_id,
             'merchantId' => '000',
             'merchantName' => 'Merchant ' . $request->deal_name,
             'address' => 'address',

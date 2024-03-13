@@ -82,7 +82,7 @@ class OnChangeController extends Controller
                     ]
                 ];
             }
-            $this->updateACContactIDToZD($request->lead_id, $zdPayloadUpdate);
+            // $this->updateACContactIDToZD($request->lead_id, $zdPayloadUpdate);
         }
 
         Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));

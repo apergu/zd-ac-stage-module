@@ -25,7 +25,7 @@ class TopupController extends Controller
             $data = $request->all();
             $response = Http::withHeaders([
                 'Authorization' => 'Basic ' . $encodedCredentials,
-            ])->post(Constant::TOPUP_URL, $data);
+            ])->post(Constant::MIDDLEWARE_URL, $data);
             // Assuming the response is JSON, directly return it
             return response()->json($response->json(), $response->status());
         } catch (RequestError $e) {

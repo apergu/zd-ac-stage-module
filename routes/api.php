@@ -9,6 +9,7 @@ use App\Http\Controllers\Zendesk\Deal\OnChangeController as ZdDealOnChangeContro
 use App\Http\Controllers\Zendesk\Deal\OnCreateController as ZdDealOnCreateController;
 use App\Http\Controllers\Zendesk\Lead\OnChangeController as ZdLeadOnChangeController;
 use App\Http\Controllers\Zendesk\Lead\OnCreateController as ZdLeadOnCreateController;
+use App\Http\Controllers\TopupController as TopupController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,26 +22,28 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
 Route::group(['prefix' => 'v1'], function () {
-  Route::group(['prefix' => 'zendesk', 'as' => 'zendesk.'], function () {
-    Route::post('lead/on-create', [ZdLeadOnCreateController::class, 'index'])->middleware('basicAuth');
-    Route::put('lead/on-change', [ZdLeadOnChangeController::class, 'index'])->middleware('basicAuth');
+    Route::group(['prefix' => 'zendesk', 'as' => 'zendesk.'], function () {
+        Route::post('lead/on-create', [ZdLeadOnCreateController::class, 'index'])->middleware('basicAuth');
+        Route::put('lead/on-change', [ZdLeadOnChangeController::class, 'index'])->middleware('basicAuth');
 
-    Route::post('deal/on-create', [ZdDealOnCreateController::class, 'index'])->middleware('basicAuth');
-    Route::put('deal/on-change', [ZdDealOnChangeController::class, 'index'])->middleware('basicAuth');
-  });
+        Route::post('deal/on-create', [ZdDealOnCreateController::class, 'index'])->middleware('basicAuth');
+        Route::put('deal/on-change', [ZdDealOnChangeController::class, 'index'])->middleware('basicAuth');
+    });
 
-  Route::group(['prefix' => 'activecampaign', 'as' => 'activecampaign.'], function () {
-    Route::post('contact/on-create', [AcContactOnCreateController::class, 'index'])->middleware('apiKeyAuth');
-    Route::post('contact/tag', [TagController::class, 'index'])->middleware('apiKeyAuth');
-  });
+    Route::group(['prefix' => 'activecampaign', 'as' => 'activecampaign.'], function () {
+        Route::post('contact/on-create', [AcContactOnCreateController::class, 'index'])->middleware('apiKeyAuth');
+        Route::post('contact/tag', [TagController::class, 'index'])->middleware('apiKeyAuth');
+    });
 
-//   Route::group(['prefix' => 'privy', 'as' => 'privy.'], function () {
-//     Route::post('zendesk/deal', [CreateDealController::class, 'index']);
-//     Route::put('zendesk/deal', [UpdateDealController::class, 'index']);
-//   });
+    //   Route::group(['prefix' => 'privy', 'as' => 'privy.'], function () {
+    //     Route::post('zendesk/deal', [CreateDealController::class, 'index']);
+    //     Route::put('zendesk/deal', [UpdateDealController::class, 'index']);
+    //   });
 
-  Route::group(['prefix' => 'privy', 'as' => 'privy.'], function () {
-    Route::post('zendesk/lead', [FreeTrialController::class, 'index']);
-  });
+    Route::group(['prefix' => 'privy', 'as' => 'privy.'], function () {
+        Route::post('zendesk/lead', [FreeTrialController::class, 'index']);
+        Route::post('erp/topup', [TopupController::class, 'sendTopup']);
+    });
 });

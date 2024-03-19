@@ -7,6 +7,7 @@ use Exception;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use App\Http\Constant;
+use Illuminate\Support\Facades\Log;
 
 class TopupController extends Controller
 {
@@ -15,6 +16,7 @@ class TopupController extends Controller
     {
         try {
             // Assuming your variables are named $Username and $Password
+            Log::debug('--- ERP-Request: Topup Request --');
             $Username = 'pR1vY';
             $Password = 'pa55w0rd@pR1vY';
 
@@ -24,9 +26,14 @@ class TopupController extends Controller
             // Get all data from the request
             $data = $request->all();
             $response = Http::withHeaders([
-                'Authorization' => 'Basic ' . $encodedCredentials,
+                'Authorization' => 'Basic YXBlcmd1OnNlY3JldA==',
+                'application-key' => 'VUNSAT9GP6e5Rc7qv8ZDnh',
+                'Content-Type' => 'application/json',
             ])->post(Constant::MIDDLEWARE_URL, $data);
             // Assuming the response is JSON, directly return it
+
+            Log::debug('--- ERP-Response: Topup Response --');
+            Log::debug(json_encode($response->json(), JSON_PRETTY_PRINT));
             return response()->json($response->json(), $response->status());
         } catch (RequestError $e) {
             return response()->json([

@@ -28,6 +28,9 @@ class TopupController extends Controller
             $response = Http::withHeaders([
                 'Authorization' => 'Basic YXBlcmd1OnNlY3JldA==',
                 'application-key' => 'VUNSAT9GP6e5Rc7qv8ZDnh',
+                'application_creds_username' => 'apergu',
+                'application_creds_password' => '2dp$m48k#ut9',
+                'application_creds_key' => 'VUNSAT9GP6e5Rc7qv8ZDnh',
                 'Content-Type' => 'application/json',
             ])->post(Constant::MIDDLEWARE_URL, $data);
             // Assuming the response is JSON, directly return it

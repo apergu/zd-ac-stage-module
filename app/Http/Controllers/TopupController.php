@@ -26,13 +26,9 @@ class TopupController extends Controller
             // Get all data from the request
             $data = $request->all();
             $response = Http::withHeaders([
-                'Authorization' => 'Basic YXBlcmd1OnNlY3JldA==',
-                // 'application-key' => 'VUNSAT9GP6e5Rc7qv8ZDnh',
-                'application_creds_username' => 'apergu',
-                'application_creds_password' => '2dp$m48k#ut9',
-                'application_creds_key' => 'VUNSAT9GP6e5Rc7qv8ZDnh',
+                'Authorization' => 'Basic ' . $encodedCredentials,
                 'Content-Type' => 'application/json',
-            ])->post(Constant::TOPUP_URL, $data);
+            ])->post(Constant::MIDDLEWARE_URL, $data);
             // Assuming the response is JSON, directly return it
 
             Log::debug('--- ERP-Response: Topup Response --');

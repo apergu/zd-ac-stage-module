@@ -17,8 +17,8 @@ class TopupController extends Controller
         try {
             // Assuming your variables are named $Username and $Password
             Log::debug('--- ERP-Request: Topup Request --');
-            $Username = 'pR1vY';
-            $Password = 'pa55w0rd@pR1vY';
+            $Username = 'apergu';
+            $Password = '2dp$m48k#ut9';
 
             // Base64 encode the credentials
             $encodedCredentials = base64_encode("{$Username}:{$Password}");
@@ -26,11 +26,8 @@ class TopupController extends Controller
             // Get all data from the request
             $data = $request->all();
             $response = Http::withHeaders([
-                'Authorization' => 'Basic YXBlcmd1OnNlY3JldA==',
+                'Authorization' => 'Basic ' . $encodedCredentials,
                 'application-key' => 'VUNSAT9GP6e5Rc7qv8ZDnh',
-                'application_creds_username' => 'apergu',
-                'application_creds_password' => '2dp$m48k#ut9',
-                'application_creds_key' => 'VUNSAT9GP6e5Rc7qv8ZDnh',
                 'Content-Type' => 'application/json',
             ])->post(Constant::TOPUP_URL, $data);
             // Assuming the response is JSON, directly return it

@@ -15,11 +15,14 @@ class FreetrialController extends Controller
 {
     public function index(Request $request)
     {
+        dump('This controller method was hit!');
         Log::debug('--- Privy-Event: Free Trial ---');
         Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
         if (isset($request->zd_lead_id)) {
+            dump('kesini');
             return $this->lead_update_enterprise_id($request);
         }
+        dump('kesana');
         return $this->lead_create_enterprise_id($request);
     }
 
@@ -181,6 +184,7 @@ class FreetrialController extends Controller
         //     'enterprise_privy_id' => ['string']
         // ]);
 
+        dump('terserah');
         $validator = Validator::make($request->all(), [
             'enterprise_name' => ['required', 'string'],
             'email' => ['required', 'string'],

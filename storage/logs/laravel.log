@@ -441,3 +441,399 @@ Did you mean one of these?
 #3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
 #4 {main}
 "} 
+[2024-04-04 07:00:10] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-04 07:00:10] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "wandy32@yopmail.com",
+    "enterprise_name": "PT wandy32",
+    "enterprise_privy_id": "ENTPI32",
+    "first_name": null,
+    "last_name": null,
+    "npwp": null,
+    "state": null,
+    "zip": null
+}  
+[2024-04-04 07:00:10] local.ERROR: Undefined array key "first_name" {"exception":"[object] (ErrorException(code: 0): Undefined array key \"first_name\" at /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php:261)
+[stacktrace]
+#0 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(261): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
+#2 /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(200): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->_setUpLeadOnCreatePayload()
+#3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(23): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->lead_create_enterprise_id()
+#4 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->index()
+#5 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction()
+#6 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#7 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#8 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate\\Routing\\Route->run()
+#9 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#10 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#11 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#12 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#13 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(135): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#14 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter()
+#15 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#16 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#17 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then()
+#18 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack()
+#19 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate\\Routing\\Router->runRoute()
+#20 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute()
+#21 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch()
+#22 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#23 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#25 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#26 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#28 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#29 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#30 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#31 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#32 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#33 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#34 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#35 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#36 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#37 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#38 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#39 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#40 /home/wandy/Workspace/Apergu/zd-ac-stage-module/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#41 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('...')
+#42 {main}
+"} 
+[2024-04-04 07:05:22] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-04 07:05:22] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "wandy32@yopmail.com",
+    "enterprise_name": "PT wandy32",
+    "enterprise_privy_id": "ENTPI32",
+    "first_name": null,
+    "last_name": null,
+    "npwp": null,
+    "state": null,
+    "zip": null
+}  
+[2024-04-04 07:05:22] local.ERROR: Undefined array key "first_name" {"exception":"[object] (ErrorException(code: 0): Undefined array key \"first_name\" at /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php:263)
+[stacktrace]
+#0 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(263): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
+#2 /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(202): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->_setUpLeadOnCreatePayload()
+#3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(25): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->lead_create_enterprise_id()
+#4 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->index()
+#5 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction()
+#6 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#7 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#8 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate\\Routing\\Route->run()
+#9 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#10 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#11 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#12 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#13 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(135): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#14 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter()
+#15 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#16 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#17 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then()
+#18 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack()
+#19 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate\\Routing\\Router->runRoute()
+#20 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute()
+#21 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch()
+#22 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#23 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#25 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#26 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#28 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#29 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#30 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#31 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#32 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#33 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#34 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#35 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#36 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#37 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#38 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#39 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#40 /home/wandy/Workspace/Apergu/zd-ac-stage-module/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#41 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('...')
+#42 {main}
+"} 
+[2024-04-04 07:13:18] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-04 07:13:18] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "wandy32@yopmail.com",
+    "enterprise_name": "PT wandy32",
+    "enterprise_privy_id": "ENTPI32",
+    "first_name": null,
+    "last_name": null,
+    "npwp": null,
+    "state": null,
+    "zip": null
+}  
+[2024-04-04 07:13:18] local.ERROR: Undefined array key "first_name" {"exception":"[object] (ErrorException(code: 0): Undefined array key \"first_name\" at /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php:264)
+[stacktrace]
+#0 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(264): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
+#2 /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(203): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->_setUpLeadOnCreatePayload()
+#3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(26): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->lead_create_enterprise_id()
+#4 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->index()
+#5 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction()
+#6 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#7 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#8 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate\\Routing\\Route->run()
+#9 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#10 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#11 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#12 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#13 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(135): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#14 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter()
+#15 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#16 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#17 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then()
+#18 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack()
+#19 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate\\Routing\\Router->runRoute()
+#20 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute()
+#21 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch()
+#22 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#23 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#25 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#26 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#28 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#29 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#30 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#31 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#32 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#33 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#34 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#35 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#36 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#37 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#38 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#39 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#40 /home/wandy/Workspace/Apergu/zd-ac-stage-module/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#41 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('...')
+#42 {main}
+"} 
+[2024-04-04 07:15:34] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-04 07:15:34] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "wandy32@yopmail.com",
+    "enterprise_name": "PT wandy32",
+    "enterprise_privy_id": "ENTPI32",
+    "first_name": null,
+    "last_name": null,
+    "npwp": null,
+    "state": null,
+    "zip": null
+}  
+[2024-04-04 07:15:34] local.ERROR: Undefined array key "first_name" {"exception":"[object] (ErrorException(code: 0): Undefined array key \"first_name\" at /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php:264)
+[stacktrace]
+#0 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(264): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
+#2 /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(203): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->_setUpLeadOnCreatePayload()
+#3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(26): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->lead_create_enterprise_id()
+#4 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->index()
+#5 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction()
+#6 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#7 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#8 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate\\Routing\\Route->run()
+#9 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#10 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#11 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#12 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#13 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(135): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#14 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter()
+#15 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#16 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#17 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then()
+#18 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack()
+#19 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate\\Routing\\Router->runRoute()
+#20 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute()
+#21 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch()
+#22 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#23 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#25 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#26 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#28 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#29 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#30 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#31 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#32 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#33 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#34 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#35 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#36 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#37 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#38 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#39 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#40 /home/wandy/Workspace/Apergu/zd-ac-stage-module/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#41 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('...')
+#42 {main}
+"} 
+[2024-04-04 07:16:25] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-04 07:16:25] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "wandy32@yopmail.com",
+    "enterprise_name": "PT wandy32",
+    "enterprise_privy_id": "ENTPI32",
+    "first_name": null,
+    "last_name": null,
+    "npwp": null,
+    "state": null,
+    "zip": null
+}  
+[2024-04-04 07:16:25] local.ERROR: Undefined array key "first_name" {"exception":"[object] (ErrorException(code: 0): Undefined array key \"first_name\" at /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php:264)
+[stacktrace]
+#0 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(264): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
+#2 /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(203): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->_setUpLeadOnCreatePayload()
+#3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(26): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->lead_create_enterprise_id()
+#4 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->index()
+#5 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction()
+#6 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#7 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#8 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate\\Routing\\Route->run()
+#9 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#10 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#11 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#12 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#13 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(135): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#14 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter()
+#15 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#16 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#17 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then()
+#18 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack()
+#19 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate\\Routing\\Router->runRoute()
+#20 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute()
+#21 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch()
+#22 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#23 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#25 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#26 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#28 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#29 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#30 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#31 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#32 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#33 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#34 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#35 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#36 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#37 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#38 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#39 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#40 /home/wandy/Workspace/Apergu/zd-ac-stage-module/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#41 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('...')
+#42 {main}
+"} 
+[2024-04-04 07:25:53] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-04 07:25:53] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "wandy32@yopmail.com",
+    "enterprise_name": "PT wandy32",
+    "enterprise_privy_id": "ENTPI32",
+    "first_name": null,
+    "last_name": null,
+    "npwp": null,
+    "state": null,
+    "zip": null
+}  
+[2024-04-04 07:34:02] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-04 07:34:02] local.DEBUG: {
+    "country": "Indonesia",
+    "email": "wandy32@yopmail.com",
+    "enterprise_name": "PT wandy32",
+    "enterprise_privy_id": "ENTPI32"
+}  
+[2024-04-04 07:35:27] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-04 07:35:27] local.DEBUG: {
+    "country": "Indonesia",
+    "email": "wandy32@yopmail.com",
+    "enterprise_name": "PT wandy32",
+    "enterprise_privy_id": "ENTPI32"
+}  
+[2024-04-04 07:37:58] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-04 07:37:58] local.DEBUG: {
+    "country": "Indonesia",
+    "email": "wandy32@yopmail.com",
+    "enterprise_name": "PT wandy32",
+    "enterprise_privy_id": "ENTPI35"
+}  
+[2024-04-04 07:39:14] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-04 07:39:14] local.DEBUG: {
+    "address": "Jalan Ini No. 20",
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "email": "20belas@yopmail.com",
+    "enterprise_name": "PT Wandy dua puluh",
+    "enterprise_privy_id": "ENTPI20",
+    "first_name": "Wandy",
+    "last_name": "dua puluh",
+    "npwp": "1920384458201221",
+    "state": "Tanah Abang",
+    "zd_lead_id": null,
+    "zip": "902121"
+}  
+[2024-04-04 07:39:14] local.ERROR: Undefined array key "first_name" {"exception":"[object] (ErrorException(code: 0): Undefined array key \"first_name\" at /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php:265)
+[stacktrace]
+#0 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(265): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
+#2 /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(204): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->_setUpLeadOnCreatePayload()
+#3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(26): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->lead_create_enterprise_id()
+#4 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->index()
+#5 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction()
+#6 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#7 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#8 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate\\Routing\\Route->run()
+#9 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#10 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#11 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#12 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#13 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(135): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#14 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter()
+#15 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#16 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#17 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then()
+#18 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack()
+#19 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate\\Routing\\Router->runRoute()
+#20 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute()
+#21 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch()
+#22 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#23 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#25 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#26 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#28 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#29 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#30 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#31 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#32 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#33 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#34 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#35 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#36 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#37 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#38 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#39 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#40 /home/wandy/Workspace/Apergu/zd-ac-stage-module/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#41 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('...')
+#42 {main}
+"} 

@@ -182,7 +182,7 @@ class FreetrialController extends Controller
         // ]);
 
         $validator = Validator::make($request->all(), [
-            'customer_name' => ['required', 'string'],
+            'enterprise_name' => ['required', 'string'],
             'email' => ['required', 'string'],
             'enterprise_privy_id' => ['string']
         ]);

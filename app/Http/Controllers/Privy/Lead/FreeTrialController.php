@@ -167,20 +167,25 @@ class FreetrialController extends Controller
     // Create new lead.
     private function lead_create_enterprise_id($request)
     {
+        // $validator = Validator::make($request->all(), [
+        //     'first_name' => ['required', 'string'],
+        //     'last_name' => ['required', 'string'],
+        //     'enterprise_name' => ['required', 'string'],
+        //     'address' => ['required', 'string'],
+        //     'email' => ['required', 'string'],
+        //     'zip' => ['required', 'integer'],
+        //     'state' => ['required', 'string'],
+        //     'country' => ['required', 'string'],
+        //     'city' => ['required', 'string'],
+        //     'npwp' => ['required', 'integer'],
+        //     'enterprise_privy_id' => ['string']
+        // ]);
+
         $validator = Validator::make($request->all(), [
-            'first_name' => ['required', 'string'],
-            'last_name' => ['required', 'string'],
-            'enterprise_name' => ['required', 'string'],
-            'address' => ['required', 'string'],
+            'customer_name' => ['required', 'string'],
             'email' => ['required', 'string'],
-            'zip' => ['required', 'integer'],
-            'state' => ['required', 'string'],
-            'country' => ['required', 'string'],
-            'city' => ['required', 'string'],
-            'npwp' => ['required', 'integer'],
             'enterprise_privy_id' => ['string']
         ]);
-
         if ($validator->fails()) {
             return response()->json([
                 'action' => 'createNewLeads',

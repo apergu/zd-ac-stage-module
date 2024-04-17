@@ -19,10 +19,11 @@ class FreetrialController extends Controller
         Log::debug('--- Privy-Event: Free Trial ---');
         Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
         if (isset($request->zd_lead_id)) {
-            dump('kesini');
+            Log::debug('kesini');
             return $this->lead_update_enterprise_id($request);
         }
-        dump('kesana');
+
+        Log::debug('kesana');
         return $this->lead_create_enterprise_id($request);
     }
 
@@ -170,21 +171,7 @@ class FreetrialController extends Controller
     // Create new lead.
     private function lead_create_enterprise_id($request)
     {
-        // $validator = Validator::make($request->all(), [
-        //     'first_name' => ['required', 'string'],
-        //     'last_name' => ['required', 'string'],
-        //     'enterprise_name' => ['required', 'string'],
-        //     'address' => ['required', 'string'],
-        //     'email' => ['required', 'string'],
-        //     'zip' => ['required', 'integer'],
-        //     'state' => ['required', 'string'],
-        //     'country' => ['required', 'string'],
-        //     'city' => ['required', 'string'],
-        //     'npwp' => ['required', 'integer'],
-        //     'enterprise_privy_id' => ['string']
-        // ]);
 
-        dump('terserah');
         $validator = Validator::make($request->all(), [
             'enterprise_name' => ['required', 'string'],
             'email' => ['required', 'string'],
@@ -213,6 +200,8 @@ class FreetrialController extends Controller
                     $dataLeads[$k] = $v;
                 }
             }
+            Log::debug('----- data leads ----');
+            Log::debug($dataLeads);
             return response()->json([
                 'action' => 'createNewLeads',
                 'status' => 'success',
@@ -262,28 +251,84 @@ class FreetrialController extends Controller
     private function _setUpLeadOnCreatePayload($data)
     {
         $payload = [
-            'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
-            'address' => (object) [
-                'line1' => $data['address'],
-                'city' => $data['city'],
-                'postal_code' => $data['zip'],
-                'state' => $data['state'],
-                'country' => $data['country']
-            ],
             'email' => $data['email'],
             'organization_name' => $data['enterprise_name'],
             'custom_fields' => (object) [
-                'Finance (PIC) Name' => $data['first_name'] . ' ' . $data['last_name'],
-                'Finance (pic) name #1' => $data['first_name'],
-                'Last name #1' => $data['last_name'],
                 'Company name #1' => $data['enterprise_name'],
                 'Email #1' => $data['email'],
-                'NPWP' => $data['npwp'],
                 'Enterprise ID' => $data['enterprise_privy_id']
             ]
         ];
 
+        if (array_key_exists('first_name', $data)) {
+            $payload['first_name'] = $data['first_name'];
+            $new_field_name = 'First name #1';
+            $payload['custom_fields']->{$new_field_name} = $data['first_name'];
+        }
+
+        if (array_key_exists('last_name', $data)) {
+            $payload['last_name'] = $data['last_name'];
+            $new_field_name = 'Last name #1';
+            $payload['custom_fields']->{$new_field_name} = $data['last_name'];
+        }
+
+        if (array_key_exists('first_name', $data) && array_key_exists('last_name', $data)) {
+            $new_field_name = 'Finance (PIC) Name';
+            $payload['custom_fields']->{$new_field_name} = $data['first_name'] . ' ' . $data['last_name'];
+        }
+
+        if (array_key_exists('address', $data)) {
+            $payload['address'] = (object) [
+                'line1' => $data['address'],
+            ];
+        }
+
+        if (array_key_exists('city', $data)) {
+            if ($payload['address']) {
+                $new_field_name = 'city';
+                $payload['address']->{$new_field_name} = $data['city'];
+            } else {
+                $payload['address'] = (object) [
+                    'city' => $data['city'],
+                ];
+            };
+        }
+
+        if (array_key_exists('postal_code', $data)) {
+            if ($payload['address']) {
+                $new_field_name = 'postal_code';
+                $payload['address']->{$new_field_name} = $data['postal_code'];
+            } else {
+                $payload['address'] = (object) [
+                    'postal_code' => $data['postal_code'],
+                ];
+            };
+        }
+
+        if (array_key_exists('state', $data)) {
+            if ($payload['address']) {
+                $new_field_name = 'state';
+                $payload['address']->{$new_field_name} = $data['state'];
+            } else {
+                $data['address'] = (object) [
+                    'state' => $data['state'],
+                ];
+            };
+        }
+        if (array_key_exists('country', $data)) {
+            if ($payload['address']) {
+                $new_field_name = 'country';
+                $payload['address']->{$new_field_name} = $data['country'];
+            } else {
+                $data['address'] = (object) [
+                    'country' => $data['country'],
+                ];
+            };
+        }
+        if (array_key_exists('NPWP', $data)) {
+            $new_field_name = 'NPWP';
+            $payload['custom_fields']->{$new_field_name} = $data['NPWP'];
+        }
         return $payload;
     }
 

@@ -37,7 +37,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN composer install --no-dev --optimize-autoloader
 
 # EXPOSE 8080
-EXPOSE 9002
-CMD ["php-fpm"]
+# EXPOSE 9002
+# CMD ["php-fpm"]
 # CMD ["php artisan serve --host=0.0.0.0 --port=8080"]
-# CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=9002"]
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=9002"]

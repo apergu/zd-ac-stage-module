@@ -339,31 +339,33 @@ class FreetrialController extends Controller
             return false;
         }
         $oldData = $existingData->original['data'];
-        $first_name = !isset($payload['first_name']) || $payload['first_name'] == '' ? $oldData['first_name'] : $payload['first_name'];
-        $last_name = !isset($payload['last_name']) || $payload['last_name'] == '' ? $oldData['last_name'] : $payload['last_name'];
+        Log::debug($oldData);
+        $first_name = !array_key_exists('first_name', $payload) ? $oldData['first_name'] : $payload['first_name'];
+        $last_name = !array_key_exists('last_name', $payload) ? $oldData['last_name'] : $payload['last_name'];
+        $NPWP = !array_key_exists('NPWP', $oldData['custom_fields']) ? '' : $oldData['custom_fields']['NPWP'];
+
         $payload = [
             'first_name' => $oldData['first_name'],
             'last_name' => $oldData['last_name'],
-            'address' => (object) [
-                'line1' => !isset($payload['address']) || $payload['address'] == '' ? $oldData['address']['line1'] : $payload['address'],
-                'city' => !isset($payload['city']) || $payload['city'] == '' ? $oldData['address']['city'] : $payload['city'],
-                'postal_code' => !isset($payload['zip']) || $payload['zip'] == '' ? $oldData['address']['postal_code'] : $payload['zip'],
-                'state' => !isset($payload['state']) || $payload['state'] == '' ? $oldData['address']['state'] : $payload['state'],
-                'country' => !isset($payload['country']) || $payload['country'] == '' ? $oldData['address']['country'] : $payload['country'],
-            ],
             // 'email' => !isset($payload['email']) || $payload['email'] == '' ? $oldData['email'] : $payload['email'],
             'email' => $oldData['email'],
-            // 'organization_name' => !isset($payload['enterprise_name']) || $payload['enterprise_name'] == '' ? $oldData['organization_name'] : $payload['enterprise_name'],
             'organization_name' => $oldData['organization_name'],
             'custom_fields' => (object) [
-                'Finance (PIC) Name' => $first_name . ' ' . $last_name,
-                'Finance (pic) name #1' => $first_name,
+                'Enterprise ID' => !array_key_exists('enterprise_privy_id', $payload) ? $oldData['custom_fields']['Enterprise ID'] : $payload['enterprise_privy_id'],
+                'Company Name - Adonara' => !array_key_exists('enterprise_name', $payload) ? $oldData['custom_fields']['Company name #1'] : $payload['enterprise_name'],
+                'Email - Adonara' => !array_key_exists('email', $payload) ? $oldData['custom_fields']['Email #1'] : $payload['email'],
+                'First name - Adonara' => $oldData['first_name'] == $first_name ? '' : $first_name,
                 'Last name - Adonara' => $oldData['last_name'] == $last_name ? '' : $last_name,
-                'Enterprise ID' => !isset($payload['enterprise_privy_id']) || $payload['enterprise_privy_id'] == '' ? $oldData['custom_fields']['Enterprise ID'] : $payload['enterprise_privy_id'],
-                'Company Name - Adonara' => !isset($payload['enterprise_name']) || $payload['enterprise_name'] == '' ? $oldData['custom_fields']['Company name #1'] : $payload['enterprise_name'],
-                'Email - Adonara' => !isset($payload['email']) || $payload['email'] == '' ? $oldData['custom_fields']['Email #1'] : $payload['email'],
-                'NPWP' => !isset($payload['npwp']) || $payload['npwp'] == '' ? $oldData['custom_fields']['NPWP'] : $payload['npwp'],
+                'NPWP' => !array_key_exists('npwp', $payload) ? $NPWP : $payload['npwp'],
+            ],
+            'address' => (object) [
+                'line1' => !array_key_exists('address', $payload) ? $oldData['address']['line1'] : $payload['address'],
+                'city' => !array_key_exists('city', $payload) ? $oldData['address']['city'] : $payload['city'],
+                'postal_code' => !array_key_exists('zip', $payload) ? $oldData['address']['postal_code'] : $payload['zip'],
+                'state' => !array_key_exists('state', $payload) ? $oldData['address']['state'] : $payload['state'],
+                'country' => !array_key_exists('country', $payload) ? $oldData['address']['country'] : $payload['country'],
             ]
+            // 'organization_name' => !isset($payload['enterprise_name']) || $payload['enterprise_name'] == '' ? $oldData['organization_name'] : $payload['enterprise_name'],
         ];
 
         Log::debug('--- Payload: Update Lead ---');

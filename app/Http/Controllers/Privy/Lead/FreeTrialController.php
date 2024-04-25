@@ -180,6 +180,7 @@ class FreetrialController extends Controller
             Log::debug("Last Name: " . $request->last_name);
 
             Log::debug('--- Split Name: Create New Leads ---', $request->toArray());
+            Log::debug('--- Split Name: Create New Leads ---', $request->toArray());
         }
 
         $validator = Validator::make($request->all(), [

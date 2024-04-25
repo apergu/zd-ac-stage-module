@@ -167,25 +167,22 @@ class FreetrialController extends Controller
     // Create new lead.
     private function lead_create_enterprise_id($request)
     {
+        $payload = $request->all();
+        $payload['first_name'] = $request->first_name;
+        // dd($payload);
         Log::debug('--- Privy-Event: Free Trial ---', $request->toArray());
 
-        if ($request->first_name == null || !$request->last_name == null) {
+        if ($payload['first_name'] == null || !$payload['last_name'] == null) {
             # code...
             Log::debug('--- Split Name: Create New Leads ---');
             $name = explode(' ', $request['enterprise_name']);
             $sliced_name = array_slice($name, 0, -1);
-            $request->merge([
-                'first_name' => implode(' ', $sliced_name),
-                'last_name' => end($name)
-            ]);
-            Log::debug("First Name: " . $request->first_name);
-            Log::debug("Last Name: " . $request->last_name);
-
-            Log::debug('--- Split Name: Create New Leads ---', $request->toArray());
-            Log::debug('--- Split Name: Create New Leads ---', $request->toArray());
+            $payload = $request->all();
+            $payload['first_name'] = implode(' ', $sliced_name);
+            $payload['last_name'] = end($name);
         }
 
-        $validator = Validator::make($request->all(), [
+        $validator = Validator::make($payload, [
             'first_name' => ['required', 'string'],
             'last_name' => ['required', 'string'],
             'enterprise_name' => ['required', 'string'],
@@ -202,7 +199,7 @@ class FreetrialController extends Controller
         Log::debug('--- Validator: Create New Leads ---');
         Log::debug(json_encode($validator->messages()->all(), JSON_PRETTY_PRINT));
 
-        Log::debug('REQUEST: ' . json_encode($request->toArray(), JSON_PRETTY_PRINT));
+        Log::debug('REQUEST: ' . json_encode($payload, JSON_PRETTY_PRINT));
 
         if ($validator->fails()) {
             return response()->json([
@@ -275,15 +272,16 @@ class FreetrialController extends Controller
 
     private function _setUpLeadOnCreatePayload($data)
     {
+        // dd($data);
         $payload = [
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'address' => (object) [
-                'line1' => $data['address'],
-                'city' => $data['city'],
-                'postal_code' => $data['zip'],
-                'state' => $data['state'],
-                'country' => $data['country']
+                'line1' => $data['address'] ?? '',
+                'city' => $data['city'] ?? '',
+                'postal_code' => $data['zip'] ?? '',
+                'state' => $data['state'] ?? '',
+                'country' => $data['country'] ?? '',
             ],
             'email' => $data['email'],
             'organization_name' => $data['enterprise_name'],
@@ -293,7 +291,7 @@ class FreetrialController extends Controller
                 'Last name #1' => $data['last_name'],
                 'Company name #1' => $data['enterprise_name'],
                 'Email #1' => $data['email'],
-                'NPWP' => $data['npwp'],
+                'NPWP' => $data['npwp'] ?? '',
                 'Enterprise ID' => $data['enterprise_privy_id']
             ]
         ];

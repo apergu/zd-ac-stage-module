@@ -191,6 +191,11 @@ class FreetrialController extends Controller
             'enterprise_privy_id' => ['string']
         ]);
 
+        Log::debug('--- Validator: Create New Leads ---');
+        Log::debug(json_encode($validator->messages()->all(), JSON_PRETTY_PRINT));
+
+        Log::debug('REQUEST: ' . json_encode($request->toArray(), JSON_PRETTY_PRINT));
+
         if ($validator->fails()) {
             return response()->json([
                 'action' => 'createNewLeads',

@@ -169,25 +169,26 @@ class FreetrialController extends Controller
     {
         Log::debug('--- Privy-Event: Free Trial ---', $request->toArray());
 
-        if (!$request->has('first_name') || !$request->has('last_name')) {
+        if ($request->first_name == null || !$request->last_name == null) {
             # code...
+            Log::debug('--- Split Name: Create New Leads ---');
             $name = explode(' ', $request['enterprise_name']);
             $sliced_name = array_slice($name, 0, -1);
-            $request['first_name'] = implode(' ', $sliced_name);
-            $request['last_name'] = end($name);
+            $request->first_name = implode(' ', $sliced_name);
+            $request->last_name = end($name);
         }
 
         $validator = Validator::make($request->all(), [
             'first_name' => ['required', 'string'],
             'last_name' => ['required', 'string'],
             'enterprise_name' => ['required', 'string'],
-            'address' => ['string'],
+            // 'address' => ['string'],
             'email' => ['required', 'string'],
-            'zip' => ['integer'],
-            'state' => ['string'],
-            'country' => ['string'],
-            'city' => ['string'],
-            'npwp' => ['integer'],
+            // 'zip' => ['integer'],
+            // 'state' => ['string'],
+            // 'country' => ['string'],
+            // 'city' => ['string'],
+            // 'npwp' => ['integer'],
             'enterprise_privy_id' => ['string']
         ]);
 

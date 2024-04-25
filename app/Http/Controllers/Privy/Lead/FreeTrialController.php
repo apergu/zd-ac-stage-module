@@ -174,8 +174,10 @@ class FreetrialController extends Controller
             Log::debug('--- Split Name: Create New Leads ---');
             $name = explode(' ', $request['enterprise_name']);
             $sliced_name = array_slice($name, 0, -1);
-            $request->first_name = implode(' ', $sliced_name);
-            $request->last_name = end($name);
+            $request->merge([
+                'first_name' => implode(' ', $sliced_name),
+                'last_name' => end($name)
+            ]);
             Log::debug("First Name: " . $request->first_name);
             Log::debug("Last Name: " . $request->last_name);
 

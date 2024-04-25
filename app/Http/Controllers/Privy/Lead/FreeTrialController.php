@@ -167,6 +167,7 @@ class FreetrialController extends Controller
     // Create new lead.
     private function lead_create_enterprise_id($request)
     {
+        Log::debug('--- Privy-Event: Free Trial ---', $request->toArray());
         $validator = Validator::make($request->all(), [
             'first_name' => ['required', 'string'],
             'last_name' => ['required', 'string'],

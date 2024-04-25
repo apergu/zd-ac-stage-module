@@ -1,443 +1,742 @@
-[2023-10-23 01:24:30] local.ERROR: initialize ...
-[2024-03-08 08:23:53] local.ERROR: SQLSTATE[HY000] [2002] Connection refused (Connection: mysql, SQL: select table_name as `name`, (data_length + index_length) as `size`, table_comment as `comment`, engine as `engine`, table_collation as `collation` from information_schema.tables where table_schema = 'dev1_zdac' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED') order by table_name) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 2002): SQLSTATE[HY000] [2002] Connection refused (Connection: mysql, SQL: select table_name as `name`, (data_length + index_length) as `size`, table_comment as `comment`, engine as `engine`, table_collation as `collation` from information_schema.tables where table_schema = 'dev1_zdac' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED') order by table_name) at /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php:822)
+[2024-04-24 09:59:06] local.DEBUG: --- Zendesk-Event: Lead on Create ---  
+[2024-04-24 09:59:06] local.DEBUG: {
+    "zd_lead_id": 163105170,
+    "first_name": "24APR",
+    "last_name": "2024",
+    "status": "New Client - Referral",
+    "email": "24apr@gmail.com",
+    "company_name": "PT 24APR24 Aja",
+    "mobile": null,
+    "phone": "089456",
+    "enterprise_id": "24APR24"
+}  
+[2024-04-24 09:59:06] local.DEBUG: array (
+  'CONTACT ID' => NULL,
+)  
+[2024-04-24 09:59:06] local.DEBUG: --- ZD-Request: Fill LeadID using Update Lead ActiveCampaign Contact ID ---  
+[2024-04-24 09:59:06] local.DEBUG: {
+    "custom_fields": {
+        "Lead ID": 163105170
+    }
+}  
+[2024-04-24 09:59:06] local.DEBUG: --- ZD-Request: Update Lead ActiveCampaign Contact ID ---  
+[2024-04-24 09:59:06] local.ERROR: resource= field= code=not_found message=Not Found {"exception":"[object] (BaseCRM\\Errors\\RequestError(code: 0): resource= field= code=not_found message=Not Found at /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php:286)
 [stacktrace]
-#0 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(976): Illuminate\\Database\\Connection->runQueryCallback()
-#1 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(956): Illuminate\\Database\\Connection->tryAgainIfCausedByLostConnection()
-#2 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate\\Database\\Connection->handleQueryException()
-#3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(424): Illuminate\\Database\\Connection->run()
-#4 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(394): Illuminate\\Database\\Connection->select()
-#5 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(42): Illuminate\\Database\\Connection->selectFromWriteConnection()
-#6 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(165): Illuminate\\Database\\Schema\\MySqlBuilder->getTables()
-#7 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(184): Illuminate\\Database\\Schema\\Builder->hasTable()
-#8 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(700): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
-#9 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(140): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
-#10 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Support/helpers.php(248): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#11 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(159): retry()
-#12 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(116): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
-#13 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(84): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
-#14 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(633): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#15 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(104): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
-#16 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
-#17 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#18 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
-#19 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#20 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
-#21 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
-#22 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
-#23 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(181): Symfony\\Component\\Console\\Command\\Command->run()
-#24 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(1096): Illuminate\\Console\\Command->run()
-#25 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand()
-#26 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
-#27 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
-#28 /home/wandy/Workspace/Apergu/zd-ac-stage-module/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
-#29 {main}
-
-[previous exception] [object] (PDOException(code: 2002): SQLSTATE[HY000] [2002] Connection refused at /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:65)
-[stacktrace]
-#0 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(65): PDO->__construct()
-#1 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(83): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
-#2 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(49): Illuminate\\Database\\Connectors\\Connector->tryAgainIfCausedByLostConnection()
-#3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
-#4 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(184): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
-#5 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
-#6 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1319): call_user_func()
-#7 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(521): Illuminate\\Database\\Connection->getPdo()
-#8 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(416): Illuminate\\Database\\Connection->getPdoForSelect()
-#9 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(809): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
-#10 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(976): Illuminate\\Database\\Connection->runQueryCallback()
-#11 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(956): Illuminate\\Database\\Connection->tryAgainIfCausedByLostConnection()
-#12 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate\\Database\\Connection->handleQueryException()
-#13 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(424): Illuminate\\Database\\Connection->run()
-#14 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(394): Illuminate\\Database\\Connection->select()
-#15 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(42): Illuminate\\Database\\Connection->selectFromWriteConnection()
-#16 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(165): Illuminate\\Database\\Schema\\MySqlBuilder->getTables()
-#17 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(184): Illuminate\\Database\\Schema\\Builder->hasTable()
-#18 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(700): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
-#19 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(140): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
-#20 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Support/helpers.php(248): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#21 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(159): retry()
-#22 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(116): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
-#23 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(84): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
-#24 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(633): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#25 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(104): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
-#26 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
-#27 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#28 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
-#29 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#30 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
-#31 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
-#32 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
-#33 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(181): Symfony\\Component\\Console\\Command\\Command->run()
-#34 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(1096): Illuminate\\Console\\Command->run()
-#35 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand()
-#36 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
-#37 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
-#38 /home/wandy/Workspace/Apergu/zd-ac-stage-module/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
-#39 {main}
+#0 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php(269): BaseCRM\\HttpClient->handleErrorResponse(404, '{\"errors\":[{\"er...', Array)
+#1 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php(160): BaseCRM\\HttpClient->handleResponse(404, '{\"errors\":[{\"er...')
+#2 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php(65): BaseCRM\\HttpClient->request('PUT', '/leads/16310517...', NULL, Array, Array)
+#3 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/LeadsService.php(111): BaseCRM\\HttpClient->put('/leads/16310517...', Array, Array)
+#4 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Zendesk/Lead/OnCreateController.php(251): BaseCRM\\LeadsService->update(163105170, Array)
+#5 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Zendesk/Lead/OnCreateController.php(192): App\\Http\\Controllers\\Zendesk\\Lead\\OnCreateController->updateACContactIDToZD(163105170, Array)
+#6 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Zendesk/Lead/OnCreateController.php(23): App\\Http\\Controllers\\Zendesk\\Lead\\OnCreateController->updateCustomLeadId(Object(Illuminate\\Http\\Request))
+#7 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Zendesk\\Lead\\OnCreateController->index(Object(Illuminate\\Http\\Request))
+#8 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('index', Array)
+#9 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Zendesk\\Lead\\OnCreateController), 'index')
+#10 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#11 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate\\Routing\\Route->run()
+#12 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#13 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Middleware/BasicAuth.php(33): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App\\Http\\Middleware\\BasicAuth->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(135): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#19 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter(Object(Illuminate\\Http\\Request), Object(Closure), 'api', Object(Closure))
+#20 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'api')
+#21 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#23 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#24 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#25 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#26 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#27 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#44 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#45 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/public/index.php(53): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#46 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('/Users/aufulkir...')
+#47 {main}
 "} 
-[2024-03-08 10:41:52] local.ERROR: SQLSTATE[HY000] [2002] Connection refused (Connection: mysql, SQL: select table_name as `name`, (data_length + index_length) as `size`, table_comment as `comment`, engine as `engine`, table_collation as `collation` from information_schema.tables where table_schema = 'dev1_zdac' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED') order by table_name) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 2002): SQLSTATE[HY000] [2002] Connection refused (Connection: mysql, SQL: select table_name as `name`, (data_length + index_length) as `size`, table_comment as `comment`, engine as `engine`, table_collation as `collation` from information_schema.tables where table_schema = 'dev1_zdac' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED') order by table_name) at /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php:822)
+[2024-04-24 09:59:58] local.DEBUG: --- Zendesk-Event: Lead on Create ---  
+[2024-04-24 09:59:58] local.DEBUG: {
+    "zd_lead_id": 163105170,
+    "first_name": "24APR",
+    "last_name": "2024",
+    "status": "New Client - Referral",
+    "email": "24apr@gmail.com",
+    "company_name": "PT 24APR24 Aja",
+    "mobile": null,
+    "phone": "089456",
+    "enterprise_id": "24APR24"
+}  
+[2024-04-24 09:59:58] local.DEBUG: array (
+  'CONTACT ID' => NULL,
+)  
+[2024-04-24 09:59:58] local.DEBUG: --- ZD-Request: Fill LeadID using Update Lead ActiveCampaign Contact ID ---  
+[2024-04-24 09:59:58] local.DEBUG: --- AC-Request: Search Contact By Email ---  
+[2024-04-24 09:59:58] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts?filters[email]=24apr@gmail.com  
+[2024-04-24 09:59:59] local.DEBUG: --- AC-Response: Search Contact By Email ---  
+[2024-04-24 09:59:59] local.DEBUG: [
+    {
+        "cdate": "2024-04-24T04:58:38-05:00",
+        "email": "24apr@gmail.com",
+        "phone": "089456",
+        "firstName": "24APR",
+        "lastName": "2024",
+        "orgid": "0",
+        "orgname": "",
+        "segmentio_id": "",
+        "bounced_hard": "0",
+        "bounced_soft": "0",
+        "bounced_date": null,
+        "ip": "0",
+        "ua": null,
+        "hash": "aa19c8e9a9978525f2eb73e2e31f7de6",
+        "socialdata_lastcheck": null,
+        "email_local": "",
+        "email_domain": "gmail.com",
+        "sentcnt": "0",
+        "rating_tstamp": null,
+        "gravatar": "0",
+        "deleted": "0",
+        "anonymized": "0",
+        "adate": null,
+        "udate": "2024-04-24T04:58:38-05:00",
+        "edate": null,
+        "deleted_at": null,
+        "created_utc_timestamp": "2024-04-24 04:58:38",
+        "updated_utc_timestamp": "2024-04-24 04:58:38",
+        "created_timestamp": "2024-04-24 04:58:38",
+        "updated_timestamp": "2024-04-24 04:58:38",
+        "created_by": null,
+        "updated_by": null,
+        "mpp_tracking": "0",
+        "scoreValues": [],
+        "accountContacts": [],
+        "links": {
+            "bounceLogs": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/bounceLogs",
+            "contactAutomations": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactAutomations?limit=2500&orders%5Blastdate%5D=DESC",
+            "contactData": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactData",
+            "contactGoals": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactGoals",
+            "contactLists": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactLists",
+            "contactLogs": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactLogs",
+            "contactTags": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactTags",
+            "contactDeals": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactDeals",
+            "deals": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/deals",
+            "fieldValues": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/fieldValues",
+            "geoIps": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/geoIps",
+            "notes": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/notes",
+            "organization": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/organization",
+            "plusAppend": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/plusAppend",
+            "trackingLogs": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/trackingLogs",
+            "scoreValues": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/scoreValues",
+            "accountContacts": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/accountContacts",
+            "automationEntryCounts": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/automationEntryCounts"
+        },
+        "id": "340",
+        "organization": null
+    }
+]  
+[2024-04-24 09:59:59] local.DEBUG: --- AC-Request: Update Contact ---  
+[2024-04-24 09:59:59] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/340  
+[2024-04-24 09:59:59] local.DEBUG: {
+    "contact": {
+        "email": "24apr@gmail.com",
+        "firstName": "24APR",
+        "lastName": "2024",
+        "phone": "089456",
+        "fieldValues": [
+            {
+                "field": 1,
+                "value": "PT 24APR24 Aja"
+            },
+            {
+                "field": 2,
+                "value": null
+            },
+            {
+                "field": 3,
+                "value": "New Client - Referral"
+            },
+            {
+                "field": 6,
+                "value": 163105170
+            }
+        ]
+    }
+}  
+[2024-04-24 10:00:00] local.DEBUG: --- AC-Response: Update Contact ---  
+[2024-04-24 10:00:00] local.DEBUG: {
+    "fieldValues": [
+        {
+            "contact": "340",
+            "field": "1",
+            "value": "PT 24APR24 Aja",
+            "cdate": "2024-04-24T04:58:38-05:00",
+            "udate": "2024-04-24T05:00:00-05:00",
+            "created_by": "0",
+            "updated_by": "0",
+            "links": {
+                "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1777\/owner",
+                "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1777\/field"
+            },
+            "id": "1777",
+            "owner": "340"
+        },
+        {
+            "contact": "340",
+            "field": "2",
+            "value": "",
+            "cdate": "2024-04-24T04:58:38-05:00",
+            "udate": "2024-04-24T05:00:00-05:00",
+            "created_by": "0",
+            "updated_by": "0",
+            "links": {
+                "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1778\/owner",
+                "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1778\/field"
+            },
+            "id": "1778",
+            "owner": "340"
+        },
+        {
+            "contact": "340",
+            "field": "3",
+            "value": "New Client - Referral",
+            "cdate": "2024-04-24T04:58:38-05:00",
+            "udate": "2024-04-24T05:00:00-05:00",
+            "created_by": "0",
+            "updated_by": "0",
+            "links": {
+                "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1779\/owner",
+                "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1779\/field"
+            },
+            "id": "1779",
+            "owner": "340"
+        },
+        {
+            "contact": "340",
+            "field": "5",
+            "value": "24APR24",
+            "cdate": "2024-04-24T04:58:38-05:00",
+            "udate": "2024-04-24T04:58:38-05:00",
+            "created_by": null,
+            "updated_by": null,
+            "links": {
+                "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1780\/owner",
+                "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1780\/field"
+            },
+            "id": "1780",
+            "owner": "340"
+        },
+        {
+            "contact": "340",
+            "field": "6",
+            "value": "163105170",
+            "cdate": "2024-04-24T04:58:38-05:00",
+            "udate": "2024-04-24T05:00:00-05:00",
+            "created_by": "0",
+            "updated_by": "0",
+            "links": {
+                "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1781\/owner",
+                "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1781\/field"
+            },
+            "id": "1781",
+            "owner": "340"
+        }
+    ],
+    "contact": {
+        "cdate": "2024-04-24T04:58:38-05:00",
+        "email": "24apr@gmail.com",
+        "phone": "089456",
+        "firstName": "24APR",
+        "lastName": "2024",
+        "orgid": "0",
+        "orgname": "",
+        "segmentio_id": "",
+        "bounced_hard": "0",
+        "bounced_soft": "0",
+        "bounced_date": null,
+        "ip": "0",
+        "ua": null,
+        "hash": "aa19c8e9a9978525f2eb73e2e31f7de6",
+        "socialdata_lastcheck": null,
+        "email_local": "",
+        "email_domain": "gmail.com",
+        "sentcnt": "0",
+        "rating_tstamp": null,
+        "gravatar": "0",
+        "deleted": "0",
+        "anonymized": "0",
+        "adate": null,
+        "udate": "2024-04-24T05:00:00-05:00",
+        "edate": null,
+        "deleted_at": null,
+        "created_utc_timestamp": "2024-04-24 04:58:38",
+        "updated_utc_timestamp": "2024-04-24 05:00:00",
+        "created_timestamp": "2024-04-24 04:58:38",
+        "updated_timestamp": "2024-04-24 05:00:00",
+        "created_by": null,
+        "updated_by": null,
+        "mpp_tracking": "0",
+        "links": {
+            "bounceLogs": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/bounceLogs",
+            "contactAutomations": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactAutomations?limit=2500&orders%5Blastdate%5D=DESC",
+            "contactData": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactData",
+            "contactGoals": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactGoals",
+            "contactLists": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactLists",
+            "contactLogs": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactLogs",
+            "contactTags": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactTags",
+            "contactDeals": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactDeals",
+            "deals": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/deals",
+            "fieldValues": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/fieldValues",
+            "geoIps": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/geoIps",
+            "notes": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/notes",
+            "organization": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/organization",
+            "plusAppend": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/plusAppend",
+            "trackingLogs": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/trackingLogs",
+            "scoreValues": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/scoreValues",
+            "accountContacts": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/accountContacts",
+            "automationEntryCounts": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/automationEntryCounts"
+        },
+        "fieldValues": [
+            "1777",
+            "1778",
+            "1779",
+            "1780",
+            "1781"
+        ],
+        "id": "340",
+        "organization": null
+    }
+}  
+[2024-04-24 10:00:00] local.DEBUG: --- End Of Event ---  
+[2024-04-24 10:03:34] local.DEBUG: --- Zendesk-Event: Lead on Create ---  
+[2024-04-24 10:03:34] local.DEBUG: {
+    "zd_lead_id": 163105170,
+    "first_name": "24APR",
+    "last_name": "2024",
+    "status": "New Client - Referral",
+    "email": "24apr@gmail.com",
+    "company_name": "PT 24APR24 Aja",
+    "mobile": null,
+    "phone": "089456",
+    "enterprise_id": "24APR24"
+}  
+[2024-04-24 10:03:34] local.DEBUG: array (
+  'CONTACT ID' => NULL,
+)  
+[2024-04-24 10:03:34] local.DEBUG: --- ZD-Request: Fill LeadID using Update Lead ActiveCampaign Contact ID ---  
+[2024-04-24 10:03:34] local.DEBUG: {
+    "custom_fields": {
+        "Lead ID": 163105170
+    }
+}  
+[2024-04-24 10:03:34] local.DEBUG: --- ZD-Request: Update Lead ActiveCampaign Contact ID ---  
+[2024-04-24 10:03:34] local.ERROR: resource= field= code=not_found message=Not Found {"exception":"[object] (BaseCRM\\Errors\\RequestError(code: 0): resource= field= code=not_found message=Not Found at /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php:286)
 [stacktrace]
-#0 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(976): Illuminate\\Database\\Connection->runQueryCallback()
-#1 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(956): Illuminate\\Database\\Connection->tryAgainIfCausedByLostConnection()
-#2 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate\\Database\\Connection->handleQueryException()
-#3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(424): Illuminate\\Database\\Connection->run()
-#4 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(394): Illuminate\\Database\\Connection->select()
-#5 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(42): Illuminate\\Database\\Connection->selectFromWriteConnection()
-#6 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(165): Illuminate\\Database\\Schema\\MySqlBuilder->getTables()
-#7 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(184): Illuminate\\Database\\Schema\\Builder->hasTable()
-#8 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(700): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
-#9 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(140): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
-#10 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Support/helpers.php(248): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#11 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(159): retry()
-#12 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(116): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
-#13 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(84): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
-#14 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(633): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#15 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(104): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
-#16 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
-#17 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#18 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
-#19 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#20 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
-#21 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
-#22 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
-#23 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(181): Symfony\\Component\\Console\\Command\\Command->run()
-#24 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(1096): Illuminate\\Console\\Command->run()
-#25 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand()
-#26 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
-#27 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
-#28 /home/wandy/Workspace/Apergu/zd-ac-stage-module/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
-#29 {main}
-
-[previous exception] [object] (PDOException(code: 2002): SQLSTATE[HY000] [2002] Connection refused at /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:65)
-[stacktrace]
-#0 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(65): PDO->__construct()
-#1 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(83): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
-#2 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(49): Illuminate\\Database\\Connectors\\Connector->tryAgainIfCausedByLostConnection()
-#3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
-#4 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(184): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
-#5 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
-#6 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1319): call_user_func()
-#7 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(521): Illuminate\\Database\\Connection->getPdo()
-#8 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(416): Illuminate\\Database\\Connection->getPdoForSelect()
-#9 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(809): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
-#10 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(976): Illuminate\\Database\\Connection->runQueryCallback()
-#11 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(956): Illuminate\\Database\\Connection->tryAgainIfCausedByLostConnection()
-#12 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate\\Database\\Connection->handleQueryException()
-#13 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(424): Illuminate\\Database\\Connection->run()
-#14 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(394): Illuminate\\Database\\Connection->select()
-#15 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(42): Illuminate\\Database\\Connection->selectFromWriteConnection()
-#16 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(165): Illuminate\\Database\\Schema\\MySqlBuilder->getTables()
-#17 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(184): Illuminate\\Database\\Schema\\Builder->hasTable()
-#18 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(700): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
-#19 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(140): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
-#20 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Support/helpers.php(248): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#21 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(159): retry()
-#22 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(116): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
-#23 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(84): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
-#24 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(633): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#25 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(104): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
-#26 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
-#27 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#28 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
-#29 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#30 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
-#31 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
-#32 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
-#33 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(181): Symfony\\Component\\Console\\Command\\Command->run()
-#34 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(1096): Illuminate\\Console\\Command->run()
-#35 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand()
-#36 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
-#37 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
-#38 /home/wandy/Workspace/Apergu/zd-ac-stage-module/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
-#39 {main}
+#0 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php(269): BaseCRM\\HttpClient->handleErrorResponse(404, '{\"errors\":[{\"er...', Array)
+#1 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php(160): BaseCRM\\HttpClient->handleResponse(404, '{\"errors\":[{\"er...')
+#2 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php(65): BaseCRM\\HttpClient->request('PUT', '/leads/16310517...', NULL, Array, Array)
+#3 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/LeadsService.php(111): BaseCRM\\HttpClient->put('/leads/16310517...', Array, Array)
+#4 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Zendesk/Lead/OnCreateController.php(249): BaseCRM\\LeadsService->update(163105170, Array)
+#5 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Zendesk/Lead/OnCreateController.php(191): App\\Http\\Controllers\\Zendesk\\Lead\\OnCreateController->updateACContactIDToZD(163105170, Array)
+#6 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Zendesk/Lead/OnCreateController.php(22): App\\Http\\Controllers\\Zendesk\\Lead\\OnCreateController->updateCustomLeadId(Object(Illuminate\\Http\\Request))
+#7 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Zendesk\\Lead\\OnCreateController->index(Object(Illuminate\\Http\\Request))
+#8 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('index', Array)
+#9 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Zendesk\\Lead\\OnCreateController), 'index')
+#10 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#11 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate\\Routing\\Route->run()
+#12 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#13 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Middleware/BasicAuth.php(33): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App\\Http\\Middleware\\BasicAuth->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(135): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#19 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter(Object(Illuminate\\Http\\Request), Object(Closure), 'api', Object(Closure))
+#20 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'api')
+#21 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#23 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#24 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#25 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#26 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#27 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#44 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#45 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/public/index.php(53): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#46 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('/Users/aufulkir...')
+#47 {main}
 "} 
-[2024-03-08 10:43:00] local.ERROR: SQLSTATE[HY000] [2002] Connection refused (Connection: mysql, SQL: select table_name as `name`, (data_length + index_length) as `size`, table_comment as `comment`, engine as `engine`, table_collation as `collation` from information_schema.tables where table_schema = 'zdac' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED') order by table_name) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 2002): SQLSTATE[HY000] [2002] Connection refused (Connection: mysql, SQL: select table_name as `name`, (data_length + index_length) as `size`, table_comment as `comment`, engine as `engine`, table_collation as `collation` from information_schema.tables where table_schema = 'zdac' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED') order by table_name) at /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php:822)
-[stacktrace]
-#0 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(976): Illuminate\\Database\\Connection->runQueryCallback()
-#1 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(956): Illuminate\\Database\\Connection->tryAgainIfCausedByLostConnection()
-#2 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate\\Database\\Connection->handleQueryException()
-#3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(424): Illuminate\\Database\\Connection->run()
-#4 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(394): Illuminate\\Database\\Connection->select()
-#5 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(42): Illuminate\\Database\\Connection->selectFromWriteConnection()
-#6 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(165): Illuminate\\Database\\Schema\\MySqlBuilder->getTables()
-#7 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(184): Illuminate\\Database\\Schema\\Builder->hasTable()
-#8 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(700): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
-#9 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(140): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
-#10 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Support/helpers.php(248): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#11 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(159): retry()
-#12 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(116): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
-#13 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(84): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
-#14 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(633): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#15 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(104): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
-#16 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
-#17 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#18 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
-#19 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#20 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
-#21 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
-#22 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
-#23 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(181): Symfony\\Component\\Console\\Command\\Command->run()
-#24 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(1096): Illuminate\\Console\\Command->run()
-#25 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand()
-#26 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
-#27 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
-#28 /home/wandy/Workspace/Apergu/zd-ac-stage-module/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
-#29 {main}
-
-[previous exception] [object] (PDOException(code: 2002): SQLSTATE[HY000] [2002] Connection refused at /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:65)
-[stacktrace]
-#0 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(65): PDO->__construct()
-#1 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(83): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
-#2 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(49): Illuminate\\Database\\Connectors\\Connector->tryAgainIfCausedByLostConnection()
-#3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
-#4 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(184): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
-#5 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
-#6 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1319): call_user_func()
-#7 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(521): Illuminate\\Database\\Connection->getPdo()
-#8 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(416): Illuminate\\Database\\Connection->getPdoForSelect()
-#9 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(809): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
-#10 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(976): Illuminate\\Database\\Connection->runQueryCallback()
-#11 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(956): Illuminate\\Database\\Connection->tryAgainIfCausedByLostConnection()
-#12 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate\\Database\\Connection->handleQueryException()
-#13 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(424): Illuminate\\Database\\Connection->run()
-#14 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(394): Illuminate\\Database\\Connection->select()
-#15 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(42): Illuminate\\Database\\Connection->selectFromWriteConnection()
-#16 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(165): Illuminate\\Database\\Schema\\MySqlBuilder->getTables()
-#17 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(184): Illuminate\\Database\\Schema\\Builder->hasTable()
-#18 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(700): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
-#19 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(140): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
-#20 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Support/helpers.php(248): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#21 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(159): retry()
-#22 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(116): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
-#23 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(84): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
-#24 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(633): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#25 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(104): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
-#26 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
-#27 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#28 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
-#29 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#30 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
-#31 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
-#32 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
-#33 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(181): Symfony\\Component\\Console\\Command\\Command->run()
-#34 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(1096): Illuminate\\Console\\Command->run()
-#35 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand()
-#36 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
-#37 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
-#38 /home/wandy/Workspace/Apergu/zd-ac-stage-module/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
-#39 {main}
-"} 
-[2024-03-08 10:43:36] local.ERROR: SQLSTATE[HY000] [2002] Connection refused (Connection: mysql, SQL: select table_name as `name`, (data_length + index_length) as `size`, table_comment as `comment`, engine as `engine`, table_collation as `collation` from information_schema.tables where table_schema = 'zdac' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED') order by table_name) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 2002): SQLSTATE[HY000] [2002] Connection refused (Connection: mysql, SQL: select table_name as `name`, (data_length + index_length) as `size`, table_comment as `comment`, engine as `engine`, table_collation as `collation` from information_schema.tables where table_schema = 'zdac' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED') order by table_name) at /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php:822)
-[stacktrace]
-#0 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(976): Illuminate\\Database\\Connection->runQueryCallback()
-#1 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(956): Illuminate\\Database\\Connection->tryAgainIfCausedByLostConnection()
-#2 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate\\Database\\Connection->handleQueryException()
-#3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(424): Illuminate\\Database\\Connection->run()
-#4 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(394): Illuminate\\Database\\Connection->select()
-#5 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(42): Illuminate\\Database\\Connection->selectFromWriteConnection()
-#6 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(165): Illuminate\\Database\\Schema\\MySqlBuilder->getTables()
-#7 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(184): Illuminate\\Database\\Schema\\Builder->hasTable()
-#8 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(700): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
-#9 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(140): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
-#10 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Support/helpers.php(248): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#11 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(159): retry()
-#12 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(116): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
-#13 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(84): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
-#14 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(633): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#15 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(104): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
-#16 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
-#17 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#18 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
-#19 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#20 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
-#21 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
-#22 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
-#23 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(181): Symfony\\Component\\Console\\Command\\Command->run()
-#24 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(1096): Illuminate\\Console\\Command->run()
-#25 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand()
-#26 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
-#27 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
-#28 /home/wandy/Workspace/Apergu/zd-ac-stage-module/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
-#29 {main}
-
-[previous exception] [object] (PDOException(code: 2002): SQLSTATE[HY000] [2002] Connection refused at /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:65)
-[stacktrace]
-#0 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(65): PDO->__construct()
-#1 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(83): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
-#2 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(49): Illuminate\\Database\\Connectors\\Connector->tryAgainIfCausedByLostConnection()
-#3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
-#4 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(184): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
-#5 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
-#6 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1319): call_user_func()
-#7 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(521): Illuminate\\Database\\Connection->getPdo()
-#8 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(416): Illuminate\\Database\\Connection->getPdoForSelect()
-#9 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(809): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
-#10 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(976): Illuminate\\Database\\Connection->runQueryCallback()
-#11 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(956): Illuminate\\Database\\Connection->tryAgainIfCausedByLostConnection()
-#12 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate\\Database\\Connection->handleQueryException()
-#13 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(424): Illuminate\\Database\\Connection->run()
-#14 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(394): Illuminate\\Database\\Connection->select()
-#15 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(42): Illuminate\\Database\\Connection->selectFromWriteConnection()
-#16 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(165): Illuminate\\Database\\Schema\\MySqlBuilder->getTables()
-#17 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(184): Illuminate\\Database\\Schema\\Builder->hasTable()
-#18 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(700): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
-#19 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(140): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
-#20 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Support/helpers.php(248): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#21 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(159): retry()
-#22 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(116): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
-#23 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(84): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
-#24 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(633): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#25 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(104): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
-#26 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
-#27 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#28 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
-#29 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#30 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
-#31 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
-#32 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
-#33 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(181): Symfony\\Component\\Console\\Command\\Command->run()
-#34 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(1096): Illuminate\\Console\\Command->run()
-#35 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand()
-#36 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
-#37 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
-#38 /home/wandy/Workspace/Apergu/zd-ac-stage-module/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
-#39 {main}
-"} 
-[2024-03-08 10:45:34] local.ERROR: SQLSTATE[HY000] [2002] Connection refused (Connection: mysql, SQL: select table_name as `name`, (data_length + index_length) as `size`, table_comment as `comment`, engine as `engine`, table_collation as `collation` from information_schema.tables where table_schema = 'aczd' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED') order by table_name) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 2002): SQLSTATE[HY000] [2002] Connection refused (Connection: mysql, SQL: select table_name as `name`, (data_length + index_length) as `size`, table_comment as `comment`, engine as `engine`, table_collation as `collation` from information_schema.tables where table_schema = 'aczd' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED') order by table_name) at /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php:822)
-[stacktrace]
-#0 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(976): Illuminate\\Database\\Connection->runQueryCallback()
-#1 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(956): Illuminate\\Database\\Connection->tryAgainIfCausedByLostConnection()
-#2 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate\\Database\\Connection->handleQueryException()
-#3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(424): Illuminate\\Database\\Connection->run()
-#4 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(394): Illuminate\\Database\\Connection->select()
-#5 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(42): Illuminate\\Database\\Connection->selectFromWriteConnection()
-#6 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(165): Illuminate\\Database\\Schema\\MySqlBuilder->getTables()
-#7 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(184): Illuminate\\Database\\Schema\\Builder->hasTable()
-#8 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(700): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
-#9 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(140): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
-#10 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Support/helpers.php(248): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#11 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(159): retry()
-#12 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(116): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
-#13 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(84): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
-#14 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(633): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#15 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(104): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
-#16 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
-#17 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#18 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
-#19 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#20 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
-#21 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
-#22 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
-#23 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(181): Symfony\\Component\\Console\\Command\\Command->run()
-#24 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(1096): Illuminate\\Console\\Command->run()
-#25 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand()
-#26 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
-#27 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
-#28 /home/wandy/Workspace/Apergu/zd-ac-stage-module/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
-#29 {main}
-
-[previous exception] [object] (PDOException(code: 2002): SQLSTATE[HY000] [2002] Connection refused at /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:65)
-[stacktrace]
-#0 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(65): PDO->__construct()
-#1 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(83): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
-#2 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(49): Illuminate\\Database\\Connectors\\Connector->tryAgainIfCausedByLostConnection()
-#3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
-#4 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(184): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
-#5 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
-#6 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1319): call_user_func()
-#7 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(521): Illuminate\\Database\\Connection->getPdo()
-#8 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(416): Illuminate\\Database\\Connection->getPdoForSelect()
-#9 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(809): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
-#10 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(976): Illuminate\\Database\\Connection->runQueryCallback()
-#11 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(956): Illuminate\\Database\\Connection->tryAgainIfCausedByLostConnection()
-#12 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate\\Database\\Connection->handleQueryException()
-#13 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(424): Illuminate\\Database\\Connection->run()
-#14 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Connection.php(394): Illuminate\\Database\\Connection->select()
-#15 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(42): Illuminate\\Database\\Connection->selectFromWriteConnection()
-#16 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(165): Illuminate\\Database\\Schema\\MySqlBuilder->getTables()
-#17 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(184): Illuminate\\Database\\Schema\\Builder->hasTable()
-#18 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(700): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
-#19 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(140): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
-#20 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Support/helpers.php(248): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#21 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(159): retry()
-#22 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(116): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->repositoryExists()
-#23 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(84): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
-#24 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(633): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
-#25 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(104): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
-#26 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
-#27 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#28 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
-#29 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#30 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
-#31 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
-#32 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
-#33 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(181): Symfony\\Component\\Console\\Command\\Command->run()
-#34 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(1096): Illuminate\\Console\\Command->run()
-#35 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand()
-#36 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
-#37 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
-#38 /home/wandy/Workspace/Apergu/zd-ac-stage-module/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
-#39 {main}
-"} 
-[2024-03-08 10:53:47] local.DEBUG: --- ZD Stage Syncing --  
-[2024-03-08 10:53:47] local.ERROR: Class "Database\Seeders\Constant" not found {"exception":"[object] (Error(code: 0): Class \"Database\\Seeders\\Constant\" not found at /home/wandy/Workspace/Apergu/zd-ac-stage-module/database/seeders/StageSeeder.php:27)
-[stacktrace]
-#0 /home/wandy/Workspace/Apergu/zd-ac-stage-module/database/seeders/StageSeeder.php(19): Database\\Seeders\\StageSeeder->ZdStageSyncing()
-#1 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\StageSeeder->run()
-#2 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
-#4 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#5 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
-#6 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(184): Illuminate\\Container\\Container->call()
-#7 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(193): Illuminate\\Database\\Seeder->Illuminate\\Database\\{closure}()
-#8 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(61): Illuminate\\Database\\Seeder->__invoke()
-#9 /home/wandy/Workspace/Apergu/zd-ac-stage-module/database/seeders/DatabaseSeeder.php(15): Illuminate\\Database\\Seeder->call()
-#10 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\DatabaseSeeder->run()
-#11 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#12 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
-#13 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#14 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
-#15 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(184): Illuminate\\Container\\Container->call()
-#16 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(193): Illuminate\\Database\\Seeder->Illuminate\\Database\\{closure}()
-#17 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(70): Illuminate\\Database\\Seeder->__invoke()
-#18 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(155): Illuminate\\Database\\Console\\Seeds\\SeedCommand->Illuminate\\Database\\Console\\Seeds\\{closure}()
-#19 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(71): Illuminate\\Database\\Eloquent\\Model::unguarded()
-#20 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
-#21 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#22 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
-#23 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#24 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
-#25 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
-#26 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
-#27 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Console/Command.php(181): Symfony\\Component\\Console\\Command\\Command->run()
-#28 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(1096): Illuminate\\Console\\Command->run()
-#29 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand()
-#30 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
-#31 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
-#32 /home/wandy/Workspace/Apergu/zd-ac-stage-module/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
-#33 {main}
-"} 
-[2024-03-16 08:38:19] local.ERROR: Command "run" is not defined.
-
-Did you mean one of these?
-    cache:prune-stale-tags
-    model:prune
-    queue:prune-batches
-    queue:prune-failed
-    sanctum:prune-expired
-    schedule:run {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"run\" is not defined.
-
-Did you mean one of these?
-    cache:prune-stale-tags
-    model:prune
-    queue:prune-batches
-    queue:prune-failed
-    sanctum:prune-expired
-    schedule:run at /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php:737)
-[stacktrace]
-#0 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(266): Symfony\\Component\\Console\\Application->find()
-#1 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
-#2 /home/wandy/Workspace/Apergu/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
-#3 /home/wandy/Workspace/Apergu/zd-ac-stage-module/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
-#4 {main}
-"} 
+[2024-04-24 10:04:14] local.DEBUG: --- Zendesk-Event: Lead on Create ---  
+[2024-04-24 10:04:14] local.DEBUG: {
+    "zd_lead_id": 163105170,
+    "first_name": "24APR",
+    "last_name": "2024",
+    "status": "New Client - Referral",
+    "email": "24apr@gmail.com",
+    "company_name": "PT 24APR24 Aja",
+    "mobile": null,
+    "phone": "089456",
+    "enterprise_id": "24APR24"
+}  
+[2024-04-24 10:04:14] local.DEBUG: array (
+  'CONTACT ID' => NULL,
+)  
+[2024-04-24 10:04:14] local.DEBUG: --- ZD-Request: Fill LeadID using Update Lead ActiveCampaign Contact ID ---  
+[2024-04-24 10:04:14] local.DEBUG: {
+    "custom_fields": {
+        "Lead ID": 163105170
+    }
+}  
+[2024-04-24 10:04:14] local.DEBUG: --- ZD-Request: Update Lead ActiveCampaign Contact ID ---  
+[2024-04-24 10:06:05] local.DEBUG: --- Zendesk-Event: Lead on Create ---  
+[2024-04-24 10:06:05] local.DEBUG: {
+    "zd_lead_id": 163105170,
+    "first_name": "24APR",
+    "last_name": "2024",
+    "status": "New Client - Referral",
+    "email": "24apr@gmail.com",
+    "company_name": "PT 24APR24 Aja",
+    "mobile": null,
+    "phone": "089456",
+    "enterprise_id": "24APR24"
+}  
+[2024-04-24 10:06:05] local.DEBUG: array (
+  'CONTACT ID' => NULL,
+)  
+[2024-04-24 10:06:05] local.DEBUG: --- ZD-Request: Fill LeadID using Update Lead ActiveCampaign Contact ID ---  
+[2024-04-24 16:23:13] local.DEBUG: --- Zendesk-Event: Lead on Create ---  
+[2024-04-24 16:23:13] local.DEBUG: {
+    "zd_lead_id": 163105170,
+    "first_name": "24APR",
+    "last_name": "2024",
+    "status": "New Client - Referral",
+    "email": "24apr@gmail.com",
+    "company_name": "PT 24APR24 Aja",
+    "mobile": null,
+    "phone": "089456",
+    "enterprise_id": "24APR24"
+}  
+[2024-04-24 16:23:13] local.DEBUG: array (
+  'CONTACT ID' => NULL,
+)  
+[2024-04-24 16:23:13] local.DEBUG: --- ZD-Request: Fill LeadID using Update Lead ActiveCampaign Contact ID ---  
+[2024-04-24 16:23:13] local.DEBUG: {
+    "custom_fields": {
+        "Lead ID": 163105170
+    }
+}  
+[2024-04-24 16:23:13] local.DEBUG: --- ZD-Request: Update Lead ActiveCampaign Contact ID ---  
+[2024-04-24 16:26:51] local.DEBUG: --- Zendesk-Event: Lead on Create ---  
+[2024-04-24 16:26:51] local.DEBUG: {
+    "zd_lead_id": 163105170,
+    "first_name": "24APR",
+    "last_name": "2024",
+    "status": "New Client - Referral",
+    "email": "24apr@gmail.com",
+    "company_name": "PT 24APR24 Aja",
+    "mobile": null,
+    "phone": "089456",
+    "enterprise_id": "24APR24"
+}  
+[2024-04-24 16:26:51] local.DEBUG: array (
+  'CONTACT ID' => NULL,
+)  
+[2024-04-24 16:26:51] local.DEBUG: --- ZD-Request: Fill LeadID using Update Lead ActiveCampaign Contact ID ---  
+[2024-04-24 16:26:51] local.DEBUG: {
+    "custom_fields": {
+        "Lead ID": 163105170
+    }
+}  
+[2024-04-24 16:26:51] local.DEBUG: --- ZD-Request: Update Lead ActiveCampaign Contact ID ---  
+[2024-04-24 16:27:57] local.DEBUG: --- Zendesk-Event: Lead on Create ---  
+[2024-04-24 16:27:57] local.DEBUG: {
+    "zd_lead_id": 163105170,
+    "first_name": "24APR",
+    "last_name": "2024",
+    "status": "New Client - Referral",
+    "email": "24apr@gmail.com",
+    "company_name": "PT 24APR24 Aja",
+    "mobile": null,
+    "phone": "089456",
+    "enterprise_id": "24APR24"
+}  
+[2024-04-24 16:27:57] local.DEBUG: array (
+  'CONTACT ID' => NULL,
+)  
+[2024-04-24 16:27:57] local.DEBUG: --- ZD-Request: Fill LeadID using Update Lead ActiveCampaign Contact ID ---  
+[2024-04-24 16:27:57] local.DEBUG: {
+    "custom_fields": {
+        "Lead ID": 163105170
+    }
+}  
+[2024-04-24 16:27:57] local.DEBUG: --- ZD-Request: Update Lead ActiveCampaign Contact ID ---  
+[2024-04-24 16:27:58] local.DEBUG: --- ZD-Response: Update Lead ActiveCampaign Contact ID ---  
+[2024-04-24 16:27:58] local.DEBUG: {}  
+[2024-04-24 16:27:58] local.DEBUG: --- AC-Request: Search Contact By Email ---  
+[2024-04-24 16:27:58] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts?filters[email]=24apr@gmail.com  
+[2024-04-24 16:28:00] local.DEBUG: --- AC-Response: Search Contact By Email ---  
+[2024-04-24 16:28:00] local.DEBUG: [
+    {
+        "cdate": "2024-04-24T04:58:38-05:00",
+        "email": "24apr@gmail.com",
+        "phone": "089456",
+        "firstName": "24APR",
+        "lastName": "2024",
+        "orgid": "0",
+        "orgname": "",
+        "segmentio_id": "",
+        "bounced_hard": "0",
+        "bounced_soft": "0",
+        "bounced_date": null,
+        "ip": "0",
+        "ua": "",
+        "hash": "aa19c8e9a9978525f2eb73e2e31f7de6",
+        "socialdata_lastcheck": null,
+        "email_local": "",
+        "email_domain": "gmail.com",
+        "sentcnt": "0",
+        "rating_tstamp": null,
+        "gravatar": "0",
+        "deleted": "0",
+        "anonymized": "0",
+        "adate": null,
+        "udate": "2024-04-24T05:00:00-05:00",
+        "edate": null,
+        "deleted_at": null,
+        "created_utc_timestamp": "2024-04-24 04:58:38",
+        "updated_utc_timestamp": "2024-04-24 05:00:00",
+        "created_timestamp": "2024-04-24 04:58:38",
+        "updated_timestamp": "2024-04-24 05:00:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "mpp_tracking": "0",
+        "scoreValues": [],
+        "accountContacts": [],
+        "links": {
+            "bounceLogs": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/bounceLogs",
+            "contactAutomations": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactAutomations?limit=2500&orders%5Blastdate%5D=DESC",
+            "contactData": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactData",
+            "contactGoals": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactGoals",
+            "contactLists": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactLists",
+            "contactLogs": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactLogs",
+            "contactTags": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactTags",
+            "contactDeals": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactDeals",
+            "deals": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/deals",
+            "fieldValues": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/fieldValues",
+            "geoIps": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/geoIps",
+            "notes": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/notes",
+            "organization": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/organization",
+            "plusAppend": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/plusAppend",
+            "trackingLogs": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/trackingLogs",
+            "scoreValues": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/scoreValues",
+            "accountContacts": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/accountContacts",
+            "automationEntryCounts": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/automationEntryCounts"
+        },
+        "id": "340",
+        "organization": null
+    }
+]  
+[2024-04-24 16:28:00] local.DEBUG: --- AC-Request: Update Contact ---  
+[2024-04-24 16:28:00] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/340  
+[2024-04-24 16:28:00] local.DEBUG: {
+    "contact": {
+        "email": "24apr@gmail.com",
+        "firstName": "24APR",
+        "lastName": "2024",
+        "phone": "089456",
+        "fieldValues": [
+            {
+                "field": 1,
+                "value": "PT 24APR24 Aja"
+            },
+            {
+                "field": 2,
+                "value": null
+            },
+            {
+                "field": 3,
+                "value": "New Client - Referral"
+            },
+            {
+                "field": 6,
+                "value": 163105170
+            }
+        ]
+    }
+}  
+[2024-04-24 16:28:02] local.DEBUG: --- AC-Response: Update Contact ---  
+[2024-04-24 16:28:02] local.DEBUG: {
+    "fieldValues": [
+        {
+            "contact": "340",
+            "field": "1",
+            "value": "PT 24APR24 Aja",
+            "cdate": "2024-04-24T04:58:38-05:00",
+            "udate": "2024-04-24T11:28:01-05:00",
+            "created_by": "0",
+            "updated_by": "0",
+            "links": {
+                "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1777\/owner",
+                "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1777\/field"
+            },
+            "id": "1777",
+            "owner": "340"
+        },
+        {
+            "contact": "340",
+            "field": "2",
+            "value": "",
+            "cdate": "2024-04-24T04:58:38-05:00",
+            "udate": "2024-04-24T11:28:01-05:00",
+            "created_by": "0",
+            "updated_by": "0",
+            "links": {
+                "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1778\/owner",
+                "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1778\/field"
+            },
+            "id": "1778",
+            "owner": "340"
+        },
+        {
+            "contact": "340",
+            "field": "3",
+            "value": "New Client - Referral",
+            "cdate": "2024-04-24T04:58:38-05:00",
+            "udate": "2024-04-24T11:28:01-05:00",
+            "created_by": "0",
+            "updated_by": "0",
+            "links": {
+                "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1779\/owner",
+                "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1779\/field"
+            },
+            "id": "1779",
+            "owner": "340"
+        },
+        {
+            "contact": "340",
+            "field": "5",
+            "value": "24APR24",
+            "cdate": "2024-04-24T04:58:38-05:00",
+            "udate": "2024-04-24T04:58:38-05:00",
+            "created_by": null,
+            "updated_by": null,
+            "links": {
+                "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1780\/owner",
+                "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1780\/field"
+            },
+            "id": "1780",
+            "owner": "340"
+        },
+        {
+            "contact": "340",
+            "field": "6",
+            "value": "163105170",
+            "cdate": "2024-04-24T04:58:38-05:00",
+            "udate": "2024-04-24T11:28:01-05:00",
+            "created_by": "0",
+            "updated_by": "0",
+            "links": {
+                "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1781\/owner",
+                "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/1781\/field"
+            },
+            "id": "1781",
+            "owner": "340"
+        }
+    ],
+    "contact": {
+        "cdate": "2024-04-24T04:58:38-05:00",
+        "email": "24apr@gmail.com",
+        "phone": "089456",
+        "firstName": "24APR",
+        "lastName": "2024",
+        "orgid": "0",
+        "orgname": "",
+        "segmentio_id": "",
+        "bounced_hard": "0",
+        "bounced_soft": "0",
+        "bounced_date": null,
+        "ip": "0",
+        "ua": "",
+        "hash": "aa19c8e9a9978525f2eb73e2e31f7de6",
+        "socialdata_lastcheck": null,
+        "email_local": "",
+        "email_domain": "gmail.com",
+        "sentcnt": "0",
+        "rating_tstamp": null,
+        "gravatar": "0",
+        "deleted": "0",
+        "anonymized": "0",
+        "adate": null,
+        "udate": "2024-04-24T11:28:01-05:00",
+        "edate": null,
+        "deleted_at": null,
+        "created_utc_timestamp": "2024-04-24 04:58:38",
+        "updated_utc_timestamp": "2024-04-24 11:28:01",
+        "created_timestamp": "2024-04-24 04:58:38",
+        "updated_timestamp": "2024-04-24 11:28:01",
+        "created_by": "0",
+        "updated_by": "0",
+        "mpp_tracking": "0",
+        "links": {
+            "bounceLogs": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/bounceLogs",
+            "contactAutomations": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactAutomations?limit=2500&orders%5Blastdate%5D=DESC",
+            "contactData": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactData",
+            "contactGoals": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactGoals",
+            "contactLists": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactLists",
+            "contactLogs": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactLogs",
+            "contactTags": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactTags",
+            "contactDeals": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/contactDeals",
+            "deals": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/deals",
+            "fieldValues": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/fieldValues",
+            "geoIps": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/geoIps",
+            "notes": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/notes",
+            "organization": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/organization",
+            "plusAppend": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/plusAppend",
+            "trackingLogs": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/trackingLogs",
+            "scoreValues": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/scoreValues",
+            "accountContacts": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/accountContacts",
+            "automationEntryCounts": "https:\/\/privy1706071639.api-us1.com\/api\/3\/contacts\/340\/automationEntryCounts"
+        },
+        "fieldValues": [
+            "1777",
+            "1778",
+            "1779",
+            "1780",
+            "1781"
+        ],
+        "id": "340",
+        "organization": null
+    }
+}  
+[2024-04-24 16:28:02] local.DEBUG: --- End Of Event ---  

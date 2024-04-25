@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Zendesk\Lead;
 
 use App\Http\Controllers\Controller;
 use App\Http\Constant;
+use App\Http\Services\ZDLeads;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -188,6 +189,7 @@ class OnCreateController extends Controller
             ]
         ];
 
+        // dd($zdPayloadUpdate);
         $this->updateACContactIDToZD($request->zd_lead_id, $zdPayloadUpdate);
     }
 
@@ -247,8 +249,18 @@ class OnCreateController extends Controller
         $zd_client = new \BaseCRM\Client(['accessToken' => "26bed09778079a78eb96acb73feb1cb2d9b36267e992caa12b0d960c8f760e2c"]);
         $zd_leads = $zd_client->leads;
         $zd_leads = $zd_leads->update($id, $payload);
+        // $zd_leads = new ZDLeads();
+        // // $zd_leads->find($id);
+        // if ($zd_leads->find($id) != null) {
+        //     # code...
+        //     $zd_leads->update($id, $payload);
+        // } else {
+        //     $zd_leads->create($payload);
+        // }
 
         Log::debug('--- ZD-Response: Update Lead ActiveCampaign Contact ID ---');
         Log::debug(json_encode($zd_leads, JSON_PRETTY_PRINT));
     }
+
+    // private function createZDLead
 }

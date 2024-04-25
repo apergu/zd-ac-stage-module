@@ -168,17 +168,26 @@ class FreetrialController extends Controller
     private function lead_create_enterprise_id($request)
     {
         Log::debug('--- Privy-Event: Free Trial ---', $request->toArray());
+
+        if (!$request->has('first_name') || !$request->has('last_name')) {
+            # code...
+            $name = explode(' ', $request['enterprise_name']);
+            $sliced_name = array_slice($name, 0, -1);
+            $request['first_name'] = implode(' ', $sliced_name);
+            $request['last_name'] = end($name);
+        }
+
         $validator = Validator::make($request->all(), [
             'first_name' => ['required', 'string'],
             'last_name' => ['required', 'string'],
             'enterprise_name' => ['required', 'string'],
-            'address' => ['required', 'string'],
+            'address' => ['string'],
             'email' => ['required', 'string'],
-            'zip' => ['required', 'integer'],
-            'state' => ['required', 'string'],
-            'country' => ['required', 'string'],
-            'city' => ['required', 'string'],
-            'npwp' => ['required', 'integer'],
+            'zip' => ['integer'],
+            'state' => ['string'],
+            'country' => ['string'],
+            'city' => ['string'],
+            'npwp' => ['integer'],
             'enterprise_privy_id' => ['string']
         ]);
 

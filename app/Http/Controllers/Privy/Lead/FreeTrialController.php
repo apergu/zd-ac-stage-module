@@ -273,10 +273,11 @@ class FreetrialController extends Controller
     private function _setUpLeadOnCreatePayload($data)
     {
         // dd($data);
+        Log::debug('--- Payload: Create New Leads ---', $data);
         $payload = [
             'first_name' => $data['first_name'] ?? "",
             'last_name' => $data['last_name'] ?? "",
-            'mobile' => $data['phone'],
+            'mobile' => $data['phone'] ?? '',
             'address' => (object) [
                 'line1' => $data['address'] ?? '',
                 'city' => $data['city'] ?? '',

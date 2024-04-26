@@ -189,6 +189,7 @@ class FreetrialController extends Controller
             // 'address' => ['string'],
             'email' => ['required', 'string'],
             'phone' => ['string'],
+            'sub_industry' => ['string'],
             // 'zip' => ['integer'],
             // 'state' => ['string'],
             // 'country' => ['string'],

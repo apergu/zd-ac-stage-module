@@ -276,6 +276,7 @@ class FreetrialController extends Controller
         $payload = [
             'first_name' => $data['first_name'] ?? "",
             'last_name' => $data['last_name'] ?? "",
+            'mobile' => $data['phone'] ?? '',
             'address' => (object) [
                 'line1' => $data['address'] ?? '',
                 'city' => $data['city'] ?? '',
@@ -286,7 +287,6 @@ class FreetrialController extends Controller
             'email' => $data['email'],
             'organization_name' => $data['enterprise_name'],
             'custom_fields' => (object) [
-                'Mobile nummber' => $data['phone'] ?? '',
                 'Finance (PIC) Name' => "",
                 'Finance (pic) name #1' => "",
                 'Last name #1' => $data['last_name'],

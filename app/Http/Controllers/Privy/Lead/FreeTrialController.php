@@ -189,13 +189,13 @@ class FreetrialController extends Controller
             // 'address' => ['string'],
             'email' => ['required', 'string'],
             'phone' => ['string'],
-            'sub_industry' => ['string'],
             // 'zip' => ['integer'],
             // 'state' => ['string'],
             // 'country' => ['string'],
             // 'city' => ['string'],
             // 'npwp' => ['integer'],
-            'enterprise_privy_id' => ['string']
+            'enterprise_privy_id' => ['string'],
+            'sub_industry' => ['string']
         ]);
 
         Log::debug('--- Validator: Create New Leads ---');
@@ -214,7 +214,7 @@ class FreetrialController extends Controller
         // Retrieve the validated input...
         $validated = $validator->validated();
         // Setup payload data
-        $payload = $this->_setUpLeadOnCreatePayload($validated);
+        $payload = $this->_setUpLeadOnCreatePayload($payload);
 
         try {
             $dataLeads = [];

@@ -286,6 +286,7 @@ class FreetrialController extends Controller
             'email' => $data['email'],
             'organization_name' => $data['enterprise_name'],
             'custom_fields' => (object) [
+                'Mobile nummber' => $data['phone'] ?? '',
                 'Finance (PIC) Name' => "",
                 'Finance (pic) name #1' => "",
                 'Last name #1' => $data['last_name'],

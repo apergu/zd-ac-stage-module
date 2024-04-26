@@ -274,8 +274,8 @@ class FreetrialController extends Controller
     {
         // dd($data);
         $payload = [
-            'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
+            'first_name' => $data['first_name'] ?? "",
+            'last_name' => $data['last_name'] ?? "",
             'address' => (object) [
                 'line1' => $data['address'] ?? '',
                 'city' => $data['city'] ?? '',

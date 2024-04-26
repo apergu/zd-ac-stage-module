@@ -783,3 +783,683 @@ initialize...
     }
 }  
 [2024-04-26 07:58:27] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 09:17:39] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 09:17:39] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+15DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+15 DB",
+    "enterprise_privy_id": "ENTQA-260424+15 DB",
+    "first_name": null,
+    "last_name": "26APR24+15 DB",
+    "npwp": null,
+    "state": null,
+    "sub_industry": "Agriculture",
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 09:17:39] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+15DB@gmail.com","enterprise_name":"PT Auful 26APR24+15 DB","enterprise_privy_id":"ENTQA-260424+15 DB","first_name":null,"last_name":"26APR24+15 DB","npwp":null,"state":null,"sub_industry":"Agriculture","zd_lead_id":null,"zip":null} 
+[2024-04-26 09:17:39] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 09:17:39] local.DEBUG: []  
+[2024-04-26 09:17:39] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+15DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+15 DB",
+    "enterprise_privy_id": "ENTQA-260424+15 DB",
+    "first_name": null,
+    "last_name": "26APR24+15 DB",
+    "npwp": null,
+    "state": null,
+    "sub_industry": "Agriculture",
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 09:17:39] local.ERROR: Undefined array key "first_name" {"exception":"[object] (ErrorException(code: 0): Undefined array key \"first_name\" at /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php:278)
+[stacktrace]
+#0 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined array...', '/Users/aufulkir...', 278)
+#1 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(278): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined array...', '/Users/aufulkir...', 278)
+#2 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(216): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->_setUpLeadOnCreatePayload(Array)
+#3 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(23): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->lead_create_enterprise_id(Object(Illuminate\\Http\\Request))
+#4 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->index(Object(Illuminate\\Http\\Request))
+#5 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('index', Array)
+#6 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Privy\\Lead\\FreetrialController), 'index')
+#7 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#8 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate\\Routing\\Route->run()
+#9 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#10 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(135): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#14 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter(Object(Illuminate\\Http\\Request), Object(Closure), 'api', Object(Closure))
+#15 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'api')
+#16 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#18 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#19 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#20 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#21 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#22 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#23 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#39 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#40 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/public/index.php(53): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#41 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('/Users/aufulkir...')
+#42 {main}
+"} 
+[2024-04-26 09:50:46] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 09:50:46] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+16DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+16 DB",
+    "enterprise_privy_id": "ENTQA-260424+16 DB",
+    "first_name": null,
+    "last_name": "26APR24+16 DB",
+    "npwp": null,
+    "state": null,
+    "sub_industry": "Agriculture",
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 09:50:46] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+16DB@gmail.com","enterprise_name":"PT Auful 26APR24+16 DB","enterprise_privy_id":"ENTQA-260424+16 DB","first_name":null,"last_name":"26APR24+16 DB","npwp":null,"state":null,"sub_industry":"Agriculture","zd_lead_id":null,"zip":null} 
+[2024-04-26 09:50:46] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 09:50:46] local.DEBUG: []  
+[2024-04-26 09:50:46] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+16DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+16 DB",
+    "enterprise_privy_id": "ENTQA-260424+16 DB",
+    "first_name": null,
+    "last_name": "26APR24+16 DB",
+    "npwp": null,
+    "state": null,
+    "sub_industry": "Agriculture",
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 09:50:46] local.ERROR: Undefined array key "first_name" {"exception":"[object] (ErrorException(code: 0): Undefined array key \"first_name\" at /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php:278)
+[stacktrace]
+#0 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined array...', '/Users/aufulkir...', 278)
+#1 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(278): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined array...', '/Users/aufulkir...', 278)
+#2 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(216): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->_setUpLeadOnCreatePayload(Array)
+#3 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Privy/Lead/FreeTrialController.php(23): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->lead_create_enterprise_id(Object(Illuminate\\Http\\Request))
+#4 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Privy\\Lead\\FreetrialController->index(Object(Illuminate\\Http\\Request))
+#5 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('index', Array)
+#6 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Privy\\Lead\\FreetrialController), 'index')
+#7 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#8 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate\\Routing\\Route->run()
+#9 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#10 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(135): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#14 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter(Object(Illuminate\\Http\\Request), Object(Closure), 'api', Object(Closure))
+#15 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'api')
+#16 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#18 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#19 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#20 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#21 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#22 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#23 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#39 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#40 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/public/index.php(53): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#41 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('/Users/aufulkir...')
+#42 {main}
+"} 
+[2024-04-26 09:51:40] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 09:51:40] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+17DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+17 DB",
+    "enterprise_privy_id": "ENTQA-260424+17 DB",
+    "first_name": null,
+    "last_name": "26APR24+17 DB",
+    "npwp": null,
+    "state": null,
+    "sub_industry": "Agriculture",
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 09:51:40] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+17DB@gmail.com","enterprise_name":"PT Auful 26APR24+17 DB","enterprise_privy_id":"ENTQA-260424+17 DB","first_name":null,"last_name":"26APR24+17 DB","npwp":null,"state":null,"sub_industry":"Agriculture","zd_lead_id":null,"zip":null} 
+[2024-04-26 09:51:40] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 09:51:40] local.DEBUG: []  
+[2024-04-26 09:51:40] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+17DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+17 DB",
+    "enterprise_privy_id": "ENTQA-260424+17 DB",
+    "first_name": null,
+    "last_name": "26APR24+17 DB",
+    "npwp": null,
+    "state": null,
+    "sub_industry": "Agriculture",
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 09:51:40] local.DEBUG: {
+    "first_name": "",
+    "last_name": "26APR24+17 DB",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful260424+17DB@gmail.com",
+    "organization_name": "PT Auful 26APR24+17 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "",
+        "Finance (pic) name #1": "",
+        "Last name #1": "26APR24+17 DB",
+        "Company name #1": "PT Auful 26APR24+17 DB",
+        "Email #1": "auful260424+17DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-260424+17 DB",
+        "Sub Industry": "Agriculture"
+    }
+}  
+[2024-04-26 09:51:40] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 09:56:22] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 09:56:22] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+18DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+18 DB",
+    "enterprise_privy_id": "ENTQA-260424+18 DB",
+    "first_name": null,
+    "last_name": "26APR24+18 DB",
+    "npwp": null,
+    "state": null,
+    "sub_industry": "Agriculture",
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 09:56:22] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+18DB@gmail.com","enterprise_name":"PT Auful 26APR24+18 DB","enterprise_privy_id":"ENTQA-260424+18 DB","first_name":null,"last_name":"26APR24+18 DB","npwp":null,"state":null,"sub_industry":"Agriculture","zd_lead_id":null,"zip":null} 
+[2024-04-26 09:56:22] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 09:56:22] local.DEBUG: []  
+[2024-04-26 09:56:22] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+18DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+18 DB",
+    "enterprise_privy_id": "ENTQA-260424+18 DB",
+    "first_name": null,
+    "last_name": "26APR24+18 DB",
+    "npwp": null,
+    "state": null,
+    "sub_industry": "Agriculture",
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 09:56:22] local.DEBUG: {
+    "first_name": "",
+    "last_name": "26APR24+18 DB",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful260424+18DB@gmail.com",
+    "organization_name": "PT Auful 26APR24+18 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "",
+        "Finance (pic) name #1": "",
+        "Last name #1": "26APR24+18 DB",
+        "Company name #1": "PT Auful 26APR24+18 DB",
+        "Email #1": "auful260424+18DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-260424+18 DB",
+        "Sub Industry": "Agriculture"
+    }
+}  
+[2024-04-26 09:56:22] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 09:58:49] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 09:58:49] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+19DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+19 DB",
+    "enterprise_privy_id": "ENTQA-260424+19 DB",
+    "first_name": null,
+    "last_name": "26APR24+19 DB",
+    "npwp": null,
+    "state": null,
+    "sub_industry": "Agriculture",
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 09:58:49] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+19DB@gmail.com","enterprise_name":"PT Auful 26APR24+19 DB","enterprise_privy_id":"ENTQA-260424+19 DB","first_name":null,"last_name":"26APR24+19 DB","npwp":null,"state":null,"sub_industry":"Agriculture","zd_lead_id":null,"zip":null} 
+[2024-04-26 09:58:49] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 09:58:49] local.DEBUG: []  
+[2024-04-26 09:58:49] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+19DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+19 DB",
+    "enterprise_privy_id": "ENTQA-260424+19 DB",
+    "first_name": null,
+    "last_name": "26APR24+19 DB",
+    "npwp": null,
+    "state": null,
+    "sub_industry": "Agriculture",
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 09:58:49] local.DEBUG: {
+    "first_name": "",
+    "last_name": "26APR24+19 DB",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful260424+19DB@gmail.com",
+    "organization_name": "PT Auful 26APR24+19 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "",
+        "Finance (pic) name #1": "",
+        "Last name #1": "26APR24+19 DB",
+        "Company name #1": "PT Auful 26APR24+19 DB",
+        "Email #1": "auful260424+19DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-260424+19 DB",
+        "Sub Industry": "Agriculture"
+    }
+}  
+[2024-04-26 09:58:49] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 10:00:51] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 10:00:51] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+20DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+20 DB",
+    "enterprise_privy_id": "ENTQA-260424+20 DB",
+    "first_name": null,
+    "last_name": "26APR24+20 DB",
+    "npwp": null,
+    "state": null,
+    "sub_industry": "Agriculture",
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 10:00:51] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+20DB@gmail.com","enterprise_name":"PT Auful 26APR24+20 DB","enterprise_privy_id":"ENTQA-260424+20 DB","first_name":null,"last_name":"26APR24+20 DB","npwp":null,"state":null,"sub_industry":"Agriculture","zd_lead_id":null,"zip":null} 
+[2024-04-26 10:00:51] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 10:00:51] local.DEBUG: []  
+[2024-04-26 10:00:51] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+20DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+20 DB",
+    "enterprise_privy_id": "ENTQA-260424+20 DB",
+    "first_name": null,
+    "last_name": "26APR24+20 DB",
+    "npwp": null,
+    "state": null,
+    "sub_industry": "Agriculture",
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 10:00:51] local.DEBUG: {
+    "first_name": "",
+    "last_name": "26APR24+20 DB",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful260424+20DB@gmail.com",
+    "organization_name": "PT Auful 26APR24+20 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "",
+        "Finance (pic) name #1": "",
+        "Last name #1": "26APR24+20 DB",
+        "Company name #1": "PT Auful 26APR24+20 DB",
+        "Email #1": "auful260424+20DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-260424+20 DB",
+        "Sub Industry": "Agriculture"
+    }
+}  
+[2024-04-26 10:00:51] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 10:06:09] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 10:06:09] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+21DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+21 DB",
+    "enterprise_privy_id": "ENTQA-260424+21 DB",
+    "first_name": null,
+    "last_name": "26APR24+21 DB",
+    "npwp": null,
+    "state": null,
+    "sub_industry": "Agriculture",
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 10:06:09] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+21DB@gmail.com","enterprise_name":"PT Auful 26APR24+21 DB","enterprise_privy_id":"ENTQA-260424+21 DB","first_name":null,"last_name":"26APR24+21 DB","npwp":null,"state":null,"sub_industry":"Agriculture","zd_lead_id":null,"zip":null} 
+[2024-04-26 10:06:09] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 10:06:09] local.DEBUG: []  
+[2024-04-26 10:06:09] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+21DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+21 DB",
+    "enterprise_privy_id": "ENTQA-260424+21 DB",
+    "first_name": null,
+    "last_name": "26APR24+21 DB",
+    "npwp": null,
+    "state": null,
+    "sub_industry": "Agriculture",
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 10:06:09] local.DEBUG: {
+    "first_name": "",
+    "last_name": "26APR24+21 DB",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful260424+21DB@gmail.com",
+    "organization_name": "PT Auful 26APR24+21 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "",
+        "Finance (pic) name #1": "",
+        "Last name #1": "26APR24+21 DB",
+        "Company name #1": "PT Auful 26APR24+21 DB",
+        "Email #1": "auful260424+21DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-260424+21 DB",
+        "Sub Industry": "Agriculture"
+    }
+}  
+[2024-04-26 10:06:09] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 10:08:09] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 10:08:09] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+22DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+22 DB",
+    "enterprise_privy_id": "ENTQA-260424+22 DB",
+    "first_name": null,
+    "last_name": "26APR24+22 DB",
+    "npwp": null,
+    "state": null,
+    "sub_industry": "Agriculture",
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 10:08:09] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+22DB@gmail.com","enterprise_name":"PT Auful 26APR24+22 DB","enterprise_privy_id":"ENTQA-260424+22 DB","first_name":null,"last_name":"26APR24+22 DB","npwp":null,"state":null,"sub_industry":"Agriculture","zd_lead_id":null,"zip":null} 
+[2024-04-26 10:08:09] local.DEBUG: --- Split Name: Create New Leads ---  
+[2024-04-26 10:08:09] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 10:08:09] local.DEBUG: []  
+[2024-04-26 10:08:09] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+22DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+22 DB",
+    "enterprise_privy_id": "ENTQA-260424+22 DB",
+    "first_name": "PT Auful 26APR24+22",
+    "last_name": "DB",
+    "npwp": null,
+    "state": null,
+    "sub_industry": "Agriculture",
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 10:08:09] local.DEBUG: {
+    "first_name": "PT Auful 26APR24+22",
+    "last_name": "DB",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful260424+22DB@gmail.com",
+    "organization_name": "PT Auful 26APR24+22 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "PT Auful 26APR24+22 DB",
+        "Finance (pic) name #1": "PT Auful 26APR24+22",
+        "Last name #1": "DB",
+        "Company name #1": "PT Auful 26APR24+22 DB",
+        "Email #1": "auful260424+22DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-260424+22 DB",
+        "Sub Industry": "Agriculture"
+    }
+}  
+[2024-04-26 10:08:09] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 10:10:32] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 10:10:32] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+23DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+23 DB",
+    "enterprise_privy_id": "ENTQA-260424+23 DB",
+    "first_name": null,
+    "last_name": "26APR24+23 DB",
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 10:10:32] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+23DB@gmail.com","enterprise_name":"PT Auful 26APR24+23 DB","enterprise_privy_id":"ENTQA-260424+23 DB","first_name":null,"last_name":"26APR24+23 DB","npwp":null,"state":null,"zd_lead_id":null,"zip":null} 
+[2024-04-26 10:10:32] local.DEBUG: --- Split Name: Create New Leads ---  
+[2024-04-26 10:10:32] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 10:10:32] local.DEBUG: []  
+[2024-04-26 10:10:32] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+23DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+23 DB",
+    "enterprise_privy_id": "ENTQA-260424+23 DB",
+    "first_name": "PT Auful 26APR24+23",
+    "last_name": "DB",
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 10:10:32] local.DEBUG: {
+    "first_name": "PT Auful 26APR24+23",
+    "last_name": "DB",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful260424+23DB@gmail.com",
+    "organization_name": "PT Auful 26APR24+23 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "PT Auful 26APR24+23 DB",
+        "Finance (pic) name #1": "PT Auful 26APR24+23",
+        "Last name #1": "DB",
+        "Company name #1": "PT Auful 26APR24+23 DB",
+        "Email #1": "auful260424+23DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-260424+23 DB",
+        "Sub Industry": "Agriculture"
+    }
+}  
+[2024-04-26 10:10:32] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 10:11:57] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 10:11:57] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+24DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+24 DB",
+    "enterprise_privy_id": "ENTQA-260424+24 DB",
+    "first_name": null,
+    "last_name": "26APR24+24 DB",
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 10:11:57] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+24DB@gmail.com","enterprise_name":"PT Auful 26APR24+24 DB","enterprise_privy_id":"ENTQA-260424+24 DB","first_name":null,"last_name":"26APR24+24 DB","npwp":null,"state":null,"zd_lead_id":null,"zip":null} 
+[2024-04-26 10:11:57] local.DEBUG: --- Split Name: Create New Leads ---  
+[2024-04-26 10:11:57] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 10:11:57] local.DEBUG: []  
+[2024-04-26 10:11:57] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+24DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+24 DB",
+    "enterprise_privy_id": "ENTQA-260424+24 DB",
+    "first_name": "PT Auful 26APR24+24",
+    "last_name": "DB",
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 10:11:57] local.DEBUG: {
+    "first_name": "PT Auful 26APR24+24",
+    "last_name": "DB",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful260424+24DB@gmail.com",
+    "organization_name": "PT Auful 26APR24+24 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "PT Auful 26APR24+24 DB",
+        "Finance (pic) name #1": "PT Auful 26APR24+24",
+        "Last name #1": "DB",
+        "Company name #1": "PT Auful 26APR24+24 DB",
+        "Email #1": "auful260424+24DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-260424+24 DB",
+        "Sub Industry": "Agriculture"
+    }
+}  
+[2024-04-26 10:11:57] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 10:13:47] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 10:13:47] local.DEBUG: {
+    "zd_lead_id": null,
+    "first_name": "AUFUL",
+    "last_name": "26 APR EDIT 3",
+    "enterprise_privy_id": "ENTQA-2604243",
+    "enterprise_name": "PT Auful 26APR EDIT 3",
+    "address": "Dummy Address",
+    "email": "auful26apr2@gmail.com",
+    "zip": "10001",
+    "state": "Jakarta Timur",
+    "country": "Indonesia",
+    "city": "Kota Jakarta Timur",
+    "npwp": 1234123412341234
+}  
+[2024-04-26 10:13:47] local.DEBUG: --- Privy-Event: Free Trial --- {"zd_lead_id":null,"first_name":"AUFUL","last_name":"26 APR EDIT 3","enterprise_privy_id":"ENTQA-2604243","enterprise_name":"PT Auful 26APR EDIT 3","address":"Dummy Address","email":"auful26apr2@gmail.com","zip":"10001","state":"Jakarta Timur","country":"Indonesia","city":"Kota Jakarta Timur","npwp":1234123412341234} 
+[2024-04-26 10:13:47] local.DEBUG: --- Split Name: Create New Leads ---  
+[2024-04-26 10:13:47] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 10:13:47] local.DEBUG: []  
+[2024-04-26 10:13:47] local.DEBUG: REQUEST: {
+    "zd_lead_id": null,
+    "first_name": "PT Auful 26APR EDIT",
+    "last_name": "3",
+    "enterprise_privy_id": "ENTQA-2604243",
+    "enterprise_name": "PT Auful 26APR EDIT 3",
+    "address": "Dummy Address",
+    "email": "auful26apr2@gmail.com",
+    "zip": "10001",
+    "state": "Jakarta Timur",
+    "country": "Indonesia",
+    "city": "Kota Jakarta Timur",
+    "npwp": 1234123412341234
+}  
+[2024-04-26 10:13:47] local.DEBUG: {
+    "first_name": "PT Auful 26APR EDIT",
+    "last_name": "3",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful26apr2@gmail.com",
+    "organization_name": "PT Auful 26APR EDIT 3",
+    "custom_fields": {
+        "Finance (PIC) Name": "PT Auful 26APR EDIT 3",
+        "Finance (pic) name #1": "PT Auful 26APR EDIT",
+        "Last name #1": "3",
+        "Company name #1": "PT Auful 26APR EDIT 3",
+        "Email #1": "auful26apr2@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-2604243",
+        "Sub Industry": "Agriculture"
+    }
+}  
+[2024-04-26 10:13:47] local.DEBUG: --- ZD-Request: Create New Leads --  

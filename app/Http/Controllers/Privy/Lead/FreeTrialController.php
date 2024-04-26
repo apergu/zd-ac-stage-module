@@ -168,22 +168,22 @@ class FreetrialController extends Controller
     private function lead_create_enterprise_id($request)
     {
         $payload = $request->all();
-        $payload['first_name'] = $request->first_name;
+        // $payload['first_name'] = $request->first_name;
         // dd($payload);
         Log::debug('--- Privy-Event: Free Trial ---', $request->toArray());
 
-        if ($payload['first_name'] == null || !$payload['last_name'] == null) {
-            # code...
-            Log::debug('--- Split Name: Create New Leads ---');
-            $name = explode(' ', $request['enterprise_name']);
-            $sliced_name = array_slice($name, 0, -1);
-            $payload = $request->all();
-            $payload['first_name'] = implode(' ', $sliced_name);
-            $payload['last_name'] = end($name);
-        }
+        // if ($payload['first_name'] == null || !$payload['last_name'] == null) {
+        //     # code...
+        //     Log::debug('--- Split Name: Create New Leads ---');
+        //     $name = explode(' ', $request['enterprise_name']);
+        //     $sliced_name = array_slice($name, 0, -1);
+        //     $payload = $request->all();
+        //     $payload['first_name'] = implode(' ', $sliced_name);
+        //     $payload['last_name'] = end($name);
+        // }
 
         $validator = Validator::make($payload, [
-            'first_name' => ['required', 'string'],
+            // 'first_name' => ['required', 'string'],
             'last_name' => ['required', 'string'],
             'enterprise_name' => ['required', 'string'],
             // 'address' => ['string'],
@@ -286,8 +286,8 @@ class FreetrialController extends Controller
             'email' => $data['email'],
             'organization_name' => $data['enterprise_name'],
             'custom_fields' => (object) [
-                'Finance (PIC) Name' => $data['first_name'] . ' ' . $data['last_name'],
-                'Finance (pic) name #1' => $data['first_name'],
+                'Finance (PIC) Name' => "",
+                'Finance (pic) name #1' => "",
                 'Last name #1' => $data['last_name'],
                 'Company name #1' => $data['enterprise_name'],
                 'Email #1' => $data['email'],

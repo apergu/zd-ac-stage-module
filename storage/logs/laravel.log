@@ -1,1 +1,785 @@
 initialize...
+[2024-04-25 03:52:49] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-25 03:52:49] local.DEBUG: {
+    "zd_lead_id": null,
+    "first_name": null,
+    "last_name": null,
+    "enterprise_privy_id": "ENTQA-240424+01",
+    "enterprise_name": "PT Auful 24APR24+01",
+    "address": "Dummy Address",
+    "email": "aufulapril241@yopmail.com",
+    "zip": "10001",
+    "state": "Jakarta Timur",
+    "country": "Indonesia",
+    "city": "Kota Jakarta Timur",
+    "npwp": 1234123412341234
+}  
+[2024-04-25 03:52:49] local.DEBUG: --- Privy-Event: Free Trial --- {"zd_lead_id":null,"first_name":null,"last_name":null,"enterprise_privy_id":"ENTQA-240424+01","enterprise_name":"PT Auful 24APR24+01","address":"Dummy Address","email":"aufulapril241@yopmail.com","zip":"10001","state":"Jakarta Timur","country":"Indonesia","city":"Kota Jakarta Timur","npwp":1234123412341234} 
+[2024-04-25 03:52:49] local.DEBUG: --- Split Name: Create New Leads ---  
+[2024-04-25 03:52:49] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-25 03:52:49] local.DEBUG: []  
+[2024-04-25 03:52:49] local.DEBUG: REQUEST: {
+    "zd_lead_id": null,
+    "first_name": "PT Auful",
+    "last_name": "24APR24+01",
+    "enterprise_privy_id": "ENTQA-240424+01",
+    "enterprise_name": "PT Auful 24APR24+01",
+    "address": "Dummy Address",
+    "email": "aufulapril241@yopmail.com",
+    "zip": "10001",
+    "state": "Jakarta Timur",
+    "country": "Indonesia",
+    "city": "Kota Jakarta Timur",
+    "npwp": 1234123412341234
+}  
+[2024-04-25 03:52:49] local.DEBUG: {
+    "first_name": "PT Auful",
+    "last_name": "24APR24+01",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "aufulapril241@yopmail.com",
+    "organization_name": "PT Auful 24APR24+01",
+    "custom_fields": {
+        "Finance (PIC) Name": "PT Auful 24APR24+01",
+        "Finance (pic) name #1": "PT Auful",
+        "Last name #1": "24APR24+01",
+        "Company name #1": "PT Auful 24APR24+01",
+        "Email #1": "aufulapril241@yopmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-240424+01"
+    }
+}  
+[2024-04-25 03:52:49] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-25 03:52:52] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-25 03:52:52] local.DEBUG: {
+    "zd_lead_id": null,
+    "first_name": null,
+    "last_name": null,
+    "enterprise_privy_id": "ENTQA-240424+01",
+    "enterprise_name": "PT Auful 24APR24+01",
+    "address": "Dummy Address",
+    "email": "aufulapril241@yopmail.com",
+    "zip": "10001",
+    "state": "Jakarta Timur",
+    "country": "Indonesia",
+    "city": "Kota Jakarta Timur",
+    "npwp": 1234123412341234
+}  
+[2024-04-25 03:52:52] local.DEBUG: --- Privy-Event: Free Trial --- {"zd_lead_id":null,"first_name":null,"last_name":null,"enterprise_privy_id":"ENTQA-240424+01","enterprise_name":"PT Auful 24APR24+01","address":"Dummy Address","email":"aufulapril241@yopmail.com","zip":"10001","state":"Jakarta Timur","country":"Indonesia","city":"Kota Jakarta Timur","npwp":1234123412341234} 
+[2024-04-25 03:52:52] local.DEBUG: --- Split Name: Create New Leads ---  
+[2024-04-25 03:52:52] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-25 03:52:52] local.DEBUG: []  
+[2024-04-25 03:52:52] local.DEBUG: REQUEST: {
+    "zd_lead_id": null,
+    "first_name": "PT Auful",
+    "last_name": "24APR24+01",
+    "enterprise_privy_id": "ENTQA-240424+01",
+    "enterprise_name": "PT Auful 24APR24+01",
+    "address": "Dummy Address",
+    "email": "aufulapril241@yopmail.com",
+    "zip": "10001",
+    "state": "Jakarta Timur",
+    "country": "Indonesia",
+    "city": "Kota Jakarta Timur",
+    "npwp": 1234123412341234
+}  
+[2024-04-25 03:52:52] local.DEBUG: {
+    "first_name": "PT Auful",
+    "last_name": "24APR24+01",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "aufulapril241@yopmail.com",
+    "organization_name": "PT Auful 24APR24+01",
+    "custom_fields": {
+        "Finance (PIC) Name": "PT Auful 24APR24+01",
+        "Finance (pic) name #1": "PT Auful",
+        "Last name #1": "24APR24+01",
+        "Company name #1": "PT Auful 24APR24+01",
+        "Email #1": "aufulapril241@yopmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-240424+01"
+    }
+}  
+[2024-04-25 03:52:52] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-25 11:40:39] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-25 11:40:39] local.DEBUG: {
+    "zd_lead_id": null,
+    "first_name": "AUFUL",
+    "last_name": "25 APR 01",
+    "enterprise_privy_id": "ENTQA-250424+01",
+    "enterprise_name": "PT Auful 25APR24+01",
+    "address": "Dummy Address",
+    "email": "aufulapril251@yopmail.com",
+    "zip": "10001",
+    "state": "Jakarta Timur",
+    "country": "Indonesia",
+    "city": "Kota Jakarta Timur",
+    "npwp": 1234123412341234
+}  
+[2024-04-25 11:40:39] local.DEBUG: --- Privy-Event: Free Trial --- {"zd_lead_id":null,"first_name":"AUFUL","last_name":"25 APR 01","enterprise_privy_id":"ENTQA-250424+01","enterprise_name":"PT Auful 25APR24+01","address":"Dummy Address","email":"aufulapril251@yopmail.com","zip":"10001","state":"Jakarta Timur","country":"Indonesia","city":"Kota Jakarta Timur","npwp":1234123412341234} 
+[2024-04-25 11:40:39] local.DEBUG: --- Split Name: Create New Leads ---  
+[2024-04-25 11:40:39] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-25 11:40:39] local.DEBUG: []  
+[2024-04-25 11:40:39] local.DEBUG: REQUEST: {
+    "zd_lead_id": null,
+    "first_name": "PT Auful",
+    "last_name": "25APR24+01",
+    "enterprise_privy_id": "ENTQA-250424+01",
+    "enterprise_name": "PT Auful 25APR24+01",
+    "address": "Dummy Address",
+    "email": "aufulapril251@yopmail.com",
+    "zip": "10001",
+    "state": "Jakarta Timur",
+    "country": "Indonesia",
+    "city": "Kota Jakarta Timur",
+    "npwp": 1234123412341234
+}  
+[2024-04-25 11:40:39] local.DEBUG: {
+    "first_name": "PT Auful",
+    "last_name": "25APR24+01",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "aufulapril251@yopmail.com",
+    "organization_name": "PT Auful 25APR24+01",
+    "custom_fields": {
+        "Finance (PIC) Name": "PT Auful 25APR24+01",
+        "Finance (pic) name #1": "PT Auful",
+        "Last name #1": "25APR24+01",
+        "Company name #1": "PT Auful 25APR24+01",
+        "Email #1": "aufulapril251@yopmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-250424+01"
+    }
+}  
+[2024-04-25 11:40:39] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-25 11:40:43] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-25 11:40:43] local.DEBUG: {
+    "zd_lead_id": null,
+    "first_name": "AUFUL",
+    "last_name": "25 APR 01",
+    "enterprise_privy_id": "ENTQA-250424+01",
+    "enterprise_name": "PT Auful 25APR24+01",
+    "address": "Dummy Address",
+    "email": "aufulapril251@yopmail.com",
+    "zip": "10001",
+    "state": "Jakarta Timur",
+    "country": "Indonesia",
+    "city": "Kota Jakarta Timur",
+    "npwp": 1234123412341234
+}  
+[2024-04-25 11:40:43] local.DEBUG: --- Privy-Event: Free Trial --- {"zd_lead_id":null,"first_name":"AUFUL","last_name":"25 APR 01","enterprise_privy_id":"ENTQA-250424+01","enterprise_name":"PT Auful 25APR24+01","address":"Dummy Address","email":"aufulapril251@yopmail.com","zip":"10001","state":"Jakarta Timur","country":"Indonesia","city":"Kota Jakarta Timur","npwp":1234123412341234} 
+[2024-04-25 11:40:43] local.DEBUG: --- Split Name: Create New Leads ---  
+[2024-04-25 11:40:43] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-25 11:40:43] local.DEBUG: []  
+[2024-04-25 11:40:43] local.DEBUG: REQUEST: {
+    "zd_lead_id": null,
+    "first_name": "PT Auful",
+    "last_name": "25APR24+01",
+    "enterprise_privy_id": "ENTQA-250424+01",
+    "enterprise_name": "PT Auful 25APR24+01",
+    "address": "Dummy Address",
+    "email": "aufulapril251@yopmail.com",
+    "zip": "10001",
+    "state": "Jakarta Timur",
+    "country": "Indonesia",
+    "city": "Kota Jakarta Timur",
+    "npwp": 1234123412341234
+}  
+[2024-04-25 11:40:43] local.DEBUG: {
+    "first_name": "PT Auful",
+    "last_name": "25APR24+01",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "aufulapril251@yopmail.com",
+    "organization_name": "PT Auful 25APR24+01",
+    "custom_fields": {
+        "Finance (PIC) Name": "PT Auful 25APR24+01",
+        "Finance (pic) name #1": "PT Auful",
+        "Last name #1": "25APR24+01",
+        "Company name #1": "PT Auful 25APR24+01",
+        "Email #1": "aufulapril251@yopmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-250424+01"
+    }
+}  
+[2024-04-25 11:40:43] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 07:34:09] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 07:34:09] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+5DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+5 DB",
+    "enterprise_privy_id": "ENTQA-260424+5 DB",
+    "first_name": null,
+    "last_name": null,
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:34:09] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+5DB@gmail.com","enterprise_name":"PT Auful 26APR24+5 DB","enterprise_privy_id":"ENTQA-260424+5 DB","first_name":null,"last_name":null,"npwp":null,"state":null,"zd_lead_id":null,"zip":null} 
+[2024-04-26 07:34:09] local.DEBUG: --- Split Name: Create New Leads ---  
+[2024-04-26 07:34:09] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 07:34:09] local.DEBUG: []  
+[2024-04-26 07:34:09] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+5DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+5 DB",
+    "enterprise_privy_id": "ENTQA-260424+5 DB",
+    "first_name": "PT Auful 26APR24+5",
+    "last_name": "DB",
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:34:09] local.DEBUG: {
+    "first_name": "PT Auful 26APR24+5",
+    "last_name": "DB",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful260424+5DB@gmail.com",
+    "organization_name": "PT Auful 26APR24+5 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "PT Auful 26APR24+5 DB",
+        "Finance (pic) name #1": "PT Auful 26APR24+5",
+        "Last name #1": "DB",
+        "Company name #1": "PT Auful 26APR24+5 DB",
+        "Email #1": "auful260424+5DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-260424+5 DB"
+    }
+}  
+[2024-04-26 07:34:09] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 07:36:47] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 07:36:47] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+5DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+5 DB",
+    "enterprise_privy_id": "ENTQA-260424+5 DB",
+    "first_name": null,
+    "last_name": null,
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:36:47] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+5DB@gmail.com","enterprise_name":"PT Auful 26APR24+5 DB","enterprise_privy_id":"ENTQA-260424+5 DB","first_name":null,"last_name":null,"npwp":null,"state":null,"zd_lead_id":null,"zip":null} 
+[2024-04-26 07:36:47] local.DEBUG: --- Split Name: Create New Leads ---  
+[2024-04-26 07:36:47] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 07:36:47] local.DEBUG: []  
+[2024-04-26 07:36:47] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+5DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+5 DB",
+    "enterprise_privy_id": "ENTQA-260424+5 DB",
+    "first_name": "PT Auful 26APR24+5",
+    "last_name": "DB",
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:36:47] local.DEBUG: {
+    "first_name": "PT Auful 26APR24+5",
+    "last_name": "DB",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful260424+5DB@gmail.com",
+    "organization_name": "PT Auful 26APR24+5 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "PT Auful 26APR24+5 DB",
+        "Finance (pic) name #1": "PT Auful 26APR24+5",
+        "Last name #1": "DB",
+        "Company name #1": "PT Auful 26APR24+5 DB",
+        "Email #1": "auful260424+5DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-260424+5 DB"
+    }
+}  
+[2024-04-26 07:36:47] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 07:38:25] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 07:38:25] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+6DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+6 DB",
+    "enterprise_privy_id": "ENTQA-260424+6 DB",
+    "first_name": null,
+    "last_name": null,
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:38:25] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+6DB@gmail.com","enterprise_name":"PT Auful 26APR24+6 DB","enterprise_privy_id":"ENTQA-260424+6 DB","first_name":null,"last_name":null,"npwp":null,"state":null,"zd_lead_id":null,"zip":null} 
+[2024-04-26 07:38:25] local.DEBUG: --- Split Name: Create New Leads ---  
+[2024-04-26 07:38:25] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 07:38:25] local.DEBUG: []  
+[2024-04-26 07:38:25] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+6DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+6 DB",
+    "enterprise_privy_id": "ENTQA-260424+6 DB",
+    "first_name": "PT Auful 26APR24+6",
+    "last_name": "DB",
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:38:25] local.DEBUG: {
+    "first_name": "PT Auful 26APR24+6",
+    "last_name": "DB",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful260424+6DB@gmail.com",
+    "organization_name": "PT Auful 26APR24+6 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "PT Auful 26APR24+6 DB",
+        "Finance (pic) name #1": "PT Auful 26APR24+6",
+        "Last name #1": "DB",
+        "Company name #1": "PT Auful 26APR24+6 DB",
+        "Email #1": "auful260424+6DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-260424+6 DB"
+    }
+}  
+[2024-04-26 07:38:25] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 07:39:45] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 07:39:45] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+7DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+7 DB",
+    "enterprise_privy_id": "ENTQA-260424+7 DB",
+    "first_name": null,
+    "last_name": null,
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:39:45] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+7DB@gmail.com","enterprise_name":"PT Auful 26APR24+7 DB","enterprise_privy_id":"ENTQA-260424+7 DB","first_name":null,"last_name":null,"npwp":null,"state":null,"zd_lead_id":null,"zip":null} 
+[2024-04-26 07:39:45] local.DEBUG: --- Split Name: Create New Leads ---  
+[2024-04-26 07:39:45] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 07:39:45] local.DEBUG: []  
+[2024-04-26 07:39:45] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+7DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+7 DB",
+    "enterprise_privy_id": "ENTQA-260424+7 DB",
+    "first_name": "PT Auful 26APR24+7",
+    "last_name": "DB",
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:39:45] local.DEBUG: {
+    "first_name": "PT Auful 26APR24+7",
+    "last_name": "DB",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful260424+7DB@gmail.com",
+    "organization_name": "PT Auful 26APR24+7 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "PT Auful 26APR24+7 DB",
+        "Finance (pic) name #1": "PT Auful 26APR24+7",
+        "Last name #1": "DB",
+        "Company name #1": "PT Auful 26APR24+7 DB",
+        "Email #1": "auful260424+7DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-260424+7 DB"
+    }
+}  
+[2024-04-26 07:39:45] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 07:41:57] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 07:41:57] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+8DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+8 DB",
+    "enterprise_privy_id": "ENTQA-260424+8 DB",
+    "first_name": null,
+    "last_name": null,
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:41:57] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+8DB@gmail.com","enterprise_name":"PT Auful 26APR24+8 DB","enterprise_privy_id":"ENTQA-260424+8 DB","first_name":null,"last_name":null,"npwp":null,"state":null,"zd_lead_id":null,"zip":null} 
+[2024-04-26 07:41:57] local.DEBUG: --- Split Name: Create New Leads ---  
+[2024-04-26 07:41:57] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 07:41:57] local.DEBUG: []  
+[2024-04-26 07:41:57] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+8DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+8 DB",
+    "enterprise_privy_id": "ENTQA-260424+8 DB",
+    "first_name": "PT Auful 26APR24+8",
+    "last_name": "DB",
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:41:57] local.DEBUG: {
+    "first_name": "PT Auful 26APR24+8",
+    "last_name": "DB",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful260424+8DB@gmail.com",
+    "organization_name": "PT Auful 26APR24+8 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "PT Auful 26APR24+8 DB",
+        "Finance (pic) name #1": "PT Auful 26APR24+8",
+        "Last name #1": "DB",
+        "Company name #1": "PT Auful 26APR24+8 DB",
+        "Email #1": "auful260424+8DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-260424+8 DB"
+    }
+}  
+[2024-04-26 07:41:57] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 07:42:15] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 07:42:15] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+9DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+9 DB",
+    "enterprise_privy_id": "ENTQA-260424+9 DB",
+    "first_name": null,
+    "last_name": null,
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:42:15] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+9DB@gmail.com","enterprise_name":"PT Auful 26APR24+9 DB","enterprise_privy_id":"ENTQA-260424+9 DB","first_name":null,"last_name":null,"npwp":null,"state":null,"zd_lead_id":null,"zip":null} 
+[2024-04-26 07:42:15] local.DEBUG: --- Split Name: Create New Leads ---  
+[2024-04-26 07:42:15] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 07:42:15] local.DEBUG: []  
+[2024-04-26 07:42:15] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+9DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+9 DB",
+    "enterprise_privy_id": "ENTQA-260424+9 DB",
+    "first_name": "PT Auful 26APR24+9",
+    "last_name": "DB",
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:42:15] local.DEBUG: {
+    "first_name": "PT Auful 26APR24+9",
+    "last_name": "DB",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful260424+9DB@gmail.com",
+    "organization_name": "PT Auful 26APR24+9 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "PT Auful 26APR24+9 DB",
+        "Finance (pic) name #1": "PT Auful 26APR24+9",
+        "Last name #1": "DB",
+        "Company name #1": "PT Auful 26APR24+9 DB",
+        "Email #1": "auful260424+9DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-260424+9 DB"
+    }
+}  
+[2024-04-26 07:42:15] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 07:44:56] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 07:44:56] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+10DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+10 DB",
+    "enterprise_privy_id": "ENTQA-260424+10 DB",
+    "first_name": null,
+    "last_name": null,
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:44:56] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+10DB@gmail.com","enterprise_name":"PT Auful 26APR24+10 DB","enterprise_privy_id":"ENTQA-260424+10 DB","first_name":null,"last_name":null,"npwp":null,"state":null,"zd_lead_id":null,"zip":null} 
+[2024-04-26 07:44:56] local.DEBUG: --- Split Name: Create New Leads ---  
+[2024-04-26 07:44:56] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 07:44:56] local.DEBUG: []  
+[2024-04-26 07:44:56] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+10DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+10 DB",
+    "enterprise_privy_id": "ENTQA-260424+10 DB",
+    "first_name": "PT Auful 26APR24+10",
+    "last_name": "DB",
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:44:56] local.DEBUG: {
+    "first_name": "PT Auful 26APR24+10",
+    "last_name": "DB",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful260424+10DB@gmail.com",
+    "organization_name": "PT Auful 26APR24+10 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "PT Auful 26APR24+10 DB",
+        "Finance (pic) name #1": "PT Auful 26APR24+10",
+        "Last name #1": "DB",
+        "Company name #1": "PT Auful 26APR24+10 DB",
+        "Email #1": "auful260424+10DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-260424+10 DB"
+    }
+}  
+[2024-04-26 07:44:56] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 07:45:27] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 07:45:27] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+11DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+11 DB",
+    "enterprise_privy_id": "ENTQA-260424+11 DB",
+    "first_name": null,
+    "last_name": null,
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:45:27] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+11DB@gmail.com","enterprise_name":"PT Auful 26APR24+11 DB","enterprise_privy_id":"ENTQA-260424+11 DB","first_name":null,"last_name":null,"npwp":null,"state":null,"zd_lead_id":null,"zip":null} 
+[2024-04-26 07:45:27] local.DEBUG: --- Split Name: Create New Leads ---  
+[2024-04-26 07:45:27] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 07:45:27] local.DEBUG: []  
+[2024-04-26 07:45:27] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+11DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+11 DB",
+    "enterprise_privy_id": "ENTQA-260424+11 DB",
+    "first_name": "PT Auful 26APR24+11",
+    "last_name": "DB",
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:45:27] local.DEBUG: {
+    "first_name": "PT Auful 26APR24+11",
+    "last_name": "DB",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful260424+11DB@gmail.com",
+    "organization_name": "PT Auful 26APR24+11 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "PT Auful 26APR24+11 DB",
+        "Finance (pic) name #1": "PT Auful 26APR24+11",
+        "Last name #1": "DB",
+        "Company name #1": "PT Auful 26APR24+11 DB",
+        "Email #1": "auful260424+11DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-260424+11 DB"
+    }
+}  
+[2024-04-26 07:45:27] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 07:48:07] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 07:48:07] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+12DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+12 DB",
+    "enterprise_privy_id": "ENTQA-260424+12 DB",
+    "first_name": null,
+    "last_name": null,
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:48:07] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+12DB@gmail.com","enterprise_name":"PT Auful 26APR24+12 DB","enterprise_privy_id":"ENTQA-260424+12 DB","first_name":null,"last_name":null,"npwp":null,"state":null,"zd_lead_id":null,"zip":null} 
+[2024-04-26 07:48:07] local.DEBUG: --- Split Name: Create New Leads ---  
+[2024-04-26 07:48:07] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 07:48:07] local.DEBUG: []  
+[2024-04-26 07:48:07] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+12DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+12 DB",
+    "enterprise_privy_id": "ENTQA-260424+12 DB",
+    "first_name": "PT Auful 26APR24+12",
+    "last_name": "DB",
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:48:07] local.DEBUG: {
+    "first_name": "PT Auful 26APR24+12",
+    "last_name": "DB",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful260424+12DB@gmail.com",
+    "organization_name": "PT Auful 26APR24+12 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "PT Auful 26APR24+12 DB",
+        "Finance (pic) name #1": "PT Auful 26APR24+12",
+        "Last name #1": "DB",
+        "Company name #1": "PT Auful 26APR24+12 DB",
+        "Email #1": "auful260424+12DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-260424+12 DB"
+    }
+}  
+[2024-04-26 07:48:07] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-26 07:58:27] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-26 07:58:27] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+13DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+13 DB",
+    "enterprise_privy_id": "ENTQA-260424+13 DB",
+    "first_name": null,
+    "last_name": null,
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:58:27] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful260424+13DB@gmail.com","enterprise_name":"PT Auful 26APR24+13 DB","enterprise_privy_id":"ENTQA-260424+13 DB","first_name":null,"last_name":null,"npwp":null,"state":null,"zd_lead_id":null,"zip":null} 
+[2024-04-26 07:58:27] local.DEBUG: --- Split Name: Create New Leads ---  
+[2024-04-26 07:58:27] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-26 07:58:27] local.DEBUG: []  
+[2024-04-26 07:58:27] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful260424+13DB@gmail.com",
+    "enterprise_name": "PT Auful 26APR24+13 DB",
+    "enterprise_privy_id": "ENTQA-260424+13 DB",
+    "first_name": "PT Auful 26APR24+13",
+    "last_name": "DB",
+    "npwp": null,
+    "state": null,
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-26 07:58:27] local.DEBUG: {
+    "first_name": "PT Auful 26APR24+13",
+    "last_name": "DB",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": ""
+    },
+    "email": "auful260424+13DB@gmail.com",
+    "organization_name": "PT Auful 26APR24+13 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "PT Auful 26APR24+13 DB",
+        "Finance (pic) name #1": "PT Auful 26APR24+13",
+        "Last name #1": "DB",
+        "Company name #1": "PT Auful 26APR24+13 DB",
+        "Email #1": "auful260424+13DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-260424+13 DB"
+    }
+}  
+[2024-04-26 07:58:27] local.DEBUG: --- ZD-Request: Create New Leads --  

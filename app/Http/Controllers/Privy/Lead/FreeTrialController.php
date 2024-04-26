@@ -172,20 +172,21 @@ class FreetrialController extends Controller
         // dd($payload);
         Log::debug('--- Privy-Event: Free Trial ---', $request->toArray());
 
-        if ($payload['first_name'] == null || !$payload['last_name'] == null) {
-            # code...
-            Log::debug('--- Split Name: Create New Leads ---');
-            $name = explode(' ', $request['enterprise_name']);
-            $sliced_name = array_slice($name, 0, -1);
-            $payload = $request->all();
-            $payload['first_name'] = implode(' ', $sliced_name);
-            $payload['last_name'] = end($name);
-        }
+        // if ($payload['first_name'] == null || !$payload['last_name'] == null) {
+        //     # code...
+        //     Log::debug('--- Split Name: Create New Leads ---');
+        //     $name = explode(' ', $request['enterprise_name']);
+        //     $sliced_name = array_slice($name, 0, -1);
+        //     $payload = $request->all();
+        //     $payload['first_name'] = implode(' ', $sliced_name);
+        //     $payload['last_name'] = end($name);
+        // }
 
         $validator = Validator::make($payload, [
-            'first_name' => ['required', 'string'],
+            // 'first_name' => ['required', 'string'],
             'last_name' => ['required', 'string'],
             'enterprise_name' => ['required', 'string'],
+            'sub_industry' => ['required', 'string'],
             // 'address' => ['string'],
             'email' => ['required', 'string'],
             // 'zip' => ['integer'],
@@ -292,7 +293,8 @@ class FreetrialController extends Controller
                 'Company name #1' => $data['enterprise_name'],
                 'Email #1' => $data['email'],
                 'NPWP' => $data['npwp'] ?? '',
-                'Enterprise ID' => $data['enterprise_privy_id']
+                'Enterprise ID' => $data['enterprise_privy_id'],
+                'Sub Industry' => $data['sub_industry'] ?? 'Agriculture',
             ]
         ];
 

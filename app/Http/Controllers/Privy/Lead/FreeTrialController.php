@@ -314,8 +314,8 @@ class FreetrialController extends Controller
         $first_name = !isset($payload['first_name']) || $payload['first_name'] == '' ? $oldData['first_name'] : $payload['first_name'];
         $last_name = !isset($payload['last_name']) || $payload['last_name'] == '' ? $oldData['last_name'] : $payload['last_name'];
         $payload = [
-            'first_name' => $oldData['first_name'],
-            'last_name' => $oldData['last_name'],
+            'first_name' => $first_name,
+            'last_name' => $last_name,
             'address' => (object) [
                 'line1' => !isset($payload['address']) || $payload['address'] == '' ? $oldData['address']['line1'] : $payload['address'],
                 'city' => !isset($payload['city']) || $payload['city'] == '' ? $oldData['address']['city'] : $payload['city'],
@@ -328,8 +328,8 @@ class FreetrialController extends Controller
             // 'organization_name' => !isset($payload['enterprise_name']) || $payload['enterprise_name'] == '' ? $oldData['organization_name'] : $payload['enterprise_name'],
             'organization_name' => $oldData['organization_name'],
             'custom_fields' => (object) [
-                'Finance (PIC) Name' => $first_name . ' ' . $last_name,
-                'Finance (pic) name #1' => $first_name,
+                'Finance (PIC) Name' => "",
+                'Finance (pic) name #1' => "",
                 'Last name - Adonara' => $oldData['last_name'] == $last_name ? '' : $last_name,
                 'Enterprise ID' => !isset($payload['enterprise_privy_id']) || $payload['enterprise_privy_id'] == '' ? $oldData['custom_fields']['Enterprise ID'] : $payload['enterprise_privy_id'],
                 'Company Name - Adonara' => !isset($payload['enterprise_name']) || $payload['enterprise_name'] == '' ? $oldData['custom_fields']['Company name #1'] : $payload['enterprise_name'],

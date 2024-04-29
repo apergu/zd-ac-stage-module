@@ -214,7 +214,7 @@ class FreetrialController extends Controller
         // Retrieve the validated input...
         $validated = $validator->validated();
         // Setup payload data
-        $payload = $this->_setUpLeadOnCreatePayload($validated);
+        $payload = $this->_setUpLeadOnCreatePayload($payload);
 
         try {
             $dataLeads = [];

@@ -54,7 +54,7 @@ class OnChangeController extends Controller
                     [
                         // Nama perusahaan
                         'field' => 1,
-                        'value' => "TEST UPDATE"
+                        'value' => $request->company_name
                     ],
                     [
                         // Sektor

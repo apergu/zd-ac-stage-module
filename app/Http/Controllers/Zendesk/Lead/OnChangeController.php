@@ -53,11 +53,11 @@ class OnChangeController extends Controller
                     ],
                     [
                         'field' => 1,
-                        'value' => $request->sub_industry
+                        'value' => "TEST UPDATE"
                     ],
                     [
                         'field' => 2,
-                        'value' => "TEST UPDATE"
+                        'value' => $request->sub_industry
                     ]
                 ]
             ]

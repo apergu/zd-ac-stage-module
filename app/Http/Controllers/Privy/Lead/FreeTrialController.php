@@ -331,7 +331,8 @@ class FreetrialController extends Controller
             'custom_fields' => (object) [
                 'Finance (PIC) Name' => "",
                 'Finance (pic) name #1' => "",
-                'Last name - Adonara' => $oldData['last_name'] == $last_name ? '' : $last_name,
+                'First Name - Adonara' => !isset($payload['first_name']) || $payload['first_name'] == '' ? $oldData['first_name'] : $payload['first_name'], // 'First name - Adonara
+                'Last name - Adonara' => !isset($payload['last_name']) || $payload['last_name'] == '' ? $oldData['last_name'] : $payload['last_name'],
                 'Enterprise ID' => !isset($payload['enterprise_privy_id']) || $payload['enterprise_privy_id'] == '' ? $oldData['custom_fields']['Enterprise ID'] : $payload['enterprise_privy_id'],
                 'Company Name - Adonara' => !isset($payload['enterprise_name']) || $payload['enterprise_name'] == '' ? $oldData['custom_fields']['Company name #1'] : $payload['enterprise_name'],
                 'Email - Adonara' => !isset($payload['email']) || $payload['email'] == '' ? $oldData['custom_fields']['Email #1'] : $payload['email'],

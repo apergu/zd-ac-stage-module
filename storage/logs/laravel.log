@@ -1621,3 +1621,313 @@ initialize...
 #41 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('/Users/aufulkir...')
 #42 {main}
 "} 
+[2024-04-29 08:53:11] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-29 08:53:11] local.DEBUG: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful290424DB@gmail.com",
+    "enterprise_name": "PT Auful 29APR24 DB",
+    "enterprise_privy_id": "ENTQA-290424 DB",
+    "first_name": null,
+    "last_name": "29APR24 DB",
+    "npwp": null,
+    "phone": "089126411317126",
+    "state": null,
+    "sub_industry": "Hospital",
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-29 08:53:11] local.DEBUG: --- Privy-Event: Free Trial --- {"address":null,"city":null,"country":"Indonesia","email":"auful290424DB@gmail.com","enterprise_name":"PT Auful 29APR24 DB","enterprise_privy_id":"ENTQA-290424 DB","first_name":null,"last_name":"29APR24 DB","npwp":null,"phone":"089126411317126","state":null,"sub_industry":"Hospital","zd_lead_id":null,"zip":null} 
+[2024-04-29 08:53:11] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-29 08:53:11] local.DEBUG: []  
+[2024-04-29 08:53:11] local.DEBUG: REQUEST: {
+    "address": null,
+    "city": null,
+    "country": "Indonesia",
+    "email": "auful290424DB@gmail.com",
+    "enterprise_name": "PT Auful 29APR24 DB",
+    "enterprise_privy_id": "ENTQA-290424 DB",
+    "first_name": null,
+    "last_name": "29APR24 DB",
+    "npwp": null,
+    "phone": "089126411317126",
+    "state": null,
+    "sub_industry": "Hospital",
+    "zd_lead_id": null,
+    "zip": null
+}  
+[2024-04-29 08:53:11] local.DEBUG: --- Payload: Create New Leads --- {"address":null,"city":null,"country":"Indonesia","email":"auful290424DB@gmail.com","enterprise_name":"PT Auful 29APR24 DB","enterprise_privy_id":"ENTQA-290424 DB","first_name":null,"last_name":"29APR24 DB","npwp":null,"phone":"089126411317126","state":null,"sub_industry":"Hospital","zd_lead_id":null,"zip":null} 
+[2024-04-29 08:53:11] local.DEBUG: {
+    "first_name": "",
+    "last_name": "29APR24 DB",
+    "mobile": "089126411317126",
+    "address": {
+        "line1": "",
+        "city": "",
+        "postal_code": "",
+        "state": "",
+        "country": "Indonesia"
+    },
+    "email": "auful290424DB@gmail.com",
+    "organization_name": "PT Auful 29APR24 DB",
+    "custom_fields": {
+        "Finance (PIC) Name": "",
+        "Finance (pic) name #1": "",
+        "Last name #1": "29APR24 DB",
+        "Company name #1": "PT Auful 29APR24 DB",
+        "Email #1": "auful290424DB@gmail.com",
+        "NPWP": "",
+        "Enterprise ID": "ENTQA-290424 DB",
+        "Sub Industry": "Hospital"
+    }
+}  
+[2024-04-29 08:53:11] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-29 09:16:55] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-29 09:16:55] local.DEBUG: {
+    "address": "Jalan Pemuda Pemudi, Berkah Singgah",
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "email": "permata29@sample4.com",
+    "enterprise_name": "PT AUFUL 29 APR PM",
+    "enterprise_privy_id": "AUF29APR3PM",
+    "first_name": "AUFUL4",
+    "last_name": "29APR24",
+    "npwp": "1920384458201205",
+    "phone": "081249213131213",
+    "state": "Tanah Abang",
+    "sub_industry": "Education",
+    "zd_lead_id": null,
+    "zip": "902124"
+}  
+[2024-04-29 09:16:55] local.DEBUG: --- Privy-Event: Free Trial --- {"address":"Jalan Pemuda Pemudi, Berkah Singgah","city":"Jakarta","country":"Indonesia","email":"permata29@sample4.com","enterprise_name":"PT AUFUL 29 APR PM","enterprise_privy_id":"AUF29APR3PM","first_name":"AUFUL4","last_name":"29APR24","npwp":"1920384458201205","phone":"081249213131213","state":"Tanah Abang","sub_industry":"Education","zd_lead_id":null,"zip":"902124"} 
+[2024-04-29 09:16:55] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-29 09:16:55] local.DEBUG: []  
+[2024-04-29 09:16:55] local.DEBUG: REQUEST: {
+    "address": "Jalan Pemuda Pemudi, Berkah Singgah",
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "email": "permata29@sample4.com",
+    "enterprise_name": "PT AUFUL 29 APR PM",
+    "enterprise_privy_id": "AUF29APR3PM",
+    "first_name": "AUFUL4",
+    "last_name": "29APR24",
+    "npwp": "1920384458201205",
+    "phone": "081249213131213",
+    "state": "Tanah Abang",
+    "sub_industry": "Education",
+    "zd_lead_id": null,
+    "zip": "902124"
+}  
+[2024-04-29 09:16:55] local.DEBUG: --- Payload: Create New Leads --- {"address":"Jalan Pemuda Pemudi, Berkah Singgah","city":"Jakarta","country":"Indonesia","email":"permata29@sample4.com","enterprise_name":"PT AUFUL 29 APR PM","enterprise_privy_id":"AUF29APR3PM","first_name":"AUFUL4","last_name":"29APR24","npwp":"1920384458201205","phone":"081249213131213","state":"Tanah Abang","sub_industry":"Education","zd_lead_id":null,"zip":"902124"} 
+[2024-04-29 09:16:55] local.DEBUG: {
+    "first_name": "AUFUL4",
+    "last_name": "29APR24",
+    "mobile": "081249213131213",
+    "address": {
+        "line1": "Jalan Pemuda Pemudi, Berkah Singgah",
+        "city": "Jakarta",
+        "postal_code": "902124",
+        "state": "Tanah Abang",
+        "country": "Indonesia"
+    },
+    "email": "permata29@sample4.com",
+    "organization_name": "PT AUFUL 29 APR PM",
+    "custom_fields": {
+        "Finance (PIC) Name": "",
+        "Finance (pic) name #1": "",
+        "Last name #1": "29APR24",
+        "Company name #1": "PT AUFUL 29 APR PM",
+        "Email #1": "permata29@sample4.com",
+        "NPWP": "1920384458201205",
+        "Enterprise ID": "AUF29APR3PM",
+        "Sub Industry": "Education"
+    }
+}  
+[2024-04-29 09:16:55] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-29 09:35:51] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-29 09:35:51] local.DEBUG: {
+    "address": "Jalan Pemuda Pemudi, Berkah Singgah",
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "email": "permata29+1@sample4.com",
+    "enterprise_name": "PT AUFUL 29 APR PM+1",
+    "enterprise_privy_id": "AUF29APR3PM+1",
+    "first_name": "AUFUL4",
+    "last_name": "29APR24+1",
+    "npwp": "1920384458201205",
+    "phone": "081249213131213",
+    "state": "Tanah Abang",
+    "sub_industry": "Education",
+    "zd_lead_id": null,
+    "zip": "902124"
+}  
+[2024-04-29 09:35:51] local.DEBUG: --- Privy-Event: Free Trial --- {"address":"Jalan Pemuda Pemudi, Berkah Singgah","city":"Jakarta","country":"Indonesia","email":"permata29+1@sample4.com","enterprise_name":"PT AUFUL 29 APR PM+1","enterprise_privy_id":"AUF29APR3PM+1","first_name":"AUFUL4","last_name":"29APR24+1","npwp":"1920384458201205","phone":"081249213131213","state":"Tanah Abang","sub_industry":"Education","zd_lead_id":null,"zip":"902124"} 
+[2024-04-29 09:35:51] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-29 09:35:51] local.DEBUG: []  
+[2024-04-29 09:35:51] local.DEBUG: REQUEST: {
+    "address": "Jalan Pemuda Pemudi, Berkah Singgah",
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "email": "permata29+1@sample4.com",
+    "enterprise_name": "PT AUFUL 29 APR PM+1",
+    "enterprise_privy_id": "AUF29APR3PM+1",
+    "first_name": "AUFUL4",
+    "last_name": "29APR24+1",
+    "npwp": "1920384458201205",
+    "phone": "081249213131213",
+    "state": "Tanah Abang",
+    "sub_industry": "Education",
+    "zd_lead_id": null,
+    "zip": "902124"
+}  
+[2024-04-29 09:35:51] local.DEBUG: --- Payload: Create New Leads --- {"address":"Jalan Pemuda Pemudi, Berkah Singgah","city":"Jakarta","country":"Indonesia","email":"permata29+1@sample4.com","enterprise_name":"PT AUFUL 29 APR PM+1","enterprise_privy_id":"AUF29APR3PM+1","first_name":"AUFUL4","last_name":"29APR24+1","npwp":"1920384458201205","phone":"081249213131213","state":"Tanah Abang","sub_industry":"Education","zd_lead_id":null,"zip":"902124"} 
+[2024-04-29 09:35:51] local.DEBUG: {
+    "first_name": "AUFUL4",
+    "last_name": "29APR24+1",
+    "mobile": "081249213131213",
+    "address": {
+        "line1": "Jalan Pemuda Pemudi, Berkah Singgah",
+        "city": "Jakarta",
+        "postal_code": "902124",
+        "state": "Tanah Abang",
+        "country": "Indonesia"
+    },
+    "email": "permata29+1@sample4.com",
+    "organization_name": "PT AUFUL 29 APR PM+1",
+    "custom_fields": {
+        "Finance (PIC) Name": "",
+        "Finance (pic) name #1": "",
+        "Last name #1": "29APR24+1",
+        "Company name #1": "PT AUFUL 29 APR PM+1",
+        "Email #1": "permata29+1@sample4.com",
+        "NPWP": "1920384458201205",
+        "Enterprise ID": "AUF29APR3PM+1",
+        "Sub Industry": "Education"
+    }
+}  
+[2024-04-29 09:35:51] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-29 09:55:49] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-29 09:55:49] local.DEBUG: {
+    "address": "Jalan Pemuda Pemudi, Berkah Singgah",
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "email": "permata29+2@sample4.com",
+    "enterprise_name": "PT AUFUL 29 APR PM+2",
+    "enterprise_privy_id": "AUF29APR3PM+2",
+    "first_name": "AUFUL4",
+    "last_name": "29APR24+2",
+    "npwp": "1920384458201205",
+    "phone": "081249213131213",
+    "state": "Tanah Abang",
+    "sub_industry": "Education",
+    "zd_lead_id": null,
+    "zip": "902124"
+}  
+[2024-04-29 09:55:49] local.DEBUG: --- Privy-Event: Free Trial --- {"address":"Jalan Pemuda Pemudi, Berkah Singgah","city":"Jakarta","country":"Indonesia","email":"permata29+2@sample4.com","enterprise_name":"PT AUFUL 29 APR PM+2","enterprise_privy_id":"AUF29APR3PM+2","first_name":"AUFUL4","last_name":"29APR24+2","npwp":"1920384458201205","phone":"081249213131213","state":"Tanah Abang","sub_industry":"Education","zd_lead_id":null,"zip":"902124"} 
+[2024-04-29 09:55:49] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-29 09:55:49] local.DEBUG: []  
+[2024-04-29 09:55:49] local.DEBUG: REQUEST: {
+    "address": "Jalan Pemuda Pemudi, Berkah Singgah",
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "email": "permata29+2@sample4.com",
+    "enterprise_name": "PT AUFUL 29 APR PM+2",
+    "enterprise_privy_id": "AUF29APR3PM+2",
+    "first_name": "AUFUL4",
+    "last_name": "29APR24+2",
+    "npwp": "1920384458201205",
+    "phone": "081249213131213",
+    "state": "Tanah Abang",
+    "sub_industry": "Education",
+    "zd_lead_id": null,
+    "zip": "902124"
+}  
+[2024-04-29 09:55:49] local.DEBUG: --- Payload: Create New Leads --- {"address":"Jalan Pemuda Pemudi, Berkah Singgah","city":"Jakarta","country":"Indonesia","email":"permata29+2@sample4.com","enterprise_name":"PT AUFUL 29 APR PM+2","enterprise_privy_id":"AUF29APR3PM+2","first_name":"AUFUL4","last_name":"29APR24+2","npwp":"1920384458201205","phone":"081249213131213","state":"Tanah Abang","sub_industry":"Education","zd_lead_id":null,"zip":"902124"} 
+[2024-04-29 09:55:49] local.DEBUG: {
+    "first_name": "AUFUL4",
+    "last_name": "29APR24+2",
+    "mobile": "081249213131213",
+    "address": {
+        "line1": "Jalan Pemuda Pemudi, Berkah Singgah",
+        "city": "Jakarta",
+        "postal_code": "902124",
+        "state": "Tanah Abang",
+        "country": "Indonesia"
+    },
+    "email": "permata29+2@sample4.com",
+    "organization_name": "PT AUFUL 29 APR PM+2",
+    "custom_fields": {
+        "Finance (PIC) Name": "",
+        "Finance (pic) name #1": "",
+        "Last name #1": "29APR24+2",
+        "Company name #1": "PT AUFUL 29 APR PM+2",
+        "Email #1": "permata29+2@sample4.com",
+        "NPWP": "1920384458201205",
+        "Enterprise ID": "AUF29APR3PM+2",
+        "Sub Industry": "Education"
+    }
+}  
+[2024-04-29 09:55:49] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-04-29 11:55:32] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-04-29 11:55:32] local.DEBUG: {
+    "address": "Jalan Pemuda Pemudi, Berkah Singgah",
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "email": "permata29+4@sample4.com",
+    "enterprise_name": "PT AUFUL 29 APR PM+4",
+    "enterprise_privy_id": "AUF29APR3PM+4",
+    "first_name": "AUFUL4",
+    "last_name": "29APR24+4",
+    "npwp": "1920384458201205",
+    "phone": "081249213131213",
+    "state": "Tanah Abang",
+    "sub_industry": "Education",
+    "zd_lead_id": null,
+    "zip": "902124"
+}  
+[2024-04-29 11:55:32] local.DEBUG: --- Privy-Event: Free Trial --- {"address":"Jalan Pemuda Pemudi, Berkah Singgah","city":"Jakarta","country":"Indonesia","email":"permata29+4@sample4.com","enterprise_name":"PT AUFUL 29 APR PM+4","enterprise_privy_id":"AUF29APR3PM+4","first_name":"AUFUL4","last_name":"29APR24+4","npwp":"1920384458201205","phone":"081249213131213","state":"Tanah Abang","sub_industry":"Education","zd_lead_id":null,"zip":"902124"} 
+[2024-04-29 11:55:32] local.DEBUG: --- Validator: Create New Leads ---  
+[2024-04-29 11:55:32] local.DEBUG: []  
+[2024-04-29 11:55:32] local.DEBUG: REQUEST: {
+    "address": "Jalan Pemuda Pemudi, Berkah Singgah",
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "email": "permata29+4@sample4.com",
+    "enterprise_name": "PT AUFUL 29 APR PM+4",
+    "enterprise_privy_id": "AUF29APR3PM+4",
+    "first_name": "AUFUL4",
+    "last_name": "29APR24+4",
+    "npwp": "1920384458201205",
+    "phone": "081249213131213",
+    "state": "Tanah Abang",
+    "sub_industry": "Education",
+    "zd_lead_id": null,
+    "zip": "902124"
+}  
+[2024-04-29 11:55:32] local.DEBUG: --- Payload: Create New Leads --- {"address":"Jalan Pemuda Pemudi, Berkah Singgah","city":"Jakarta","country":"Indonesia","email":"permata29+4@sample4.com","enterprise_name":"PT AUFUL 29 APR PM+4","enterprise_privy_id":"AUF29APR3PM+4","first_name":"AUFUL4","last_name":"29APR24+4","npwp":"1920384458201205","phone":"081249213131213","state":"Tanah Abang","sub_industry":"Education","zd_lead_id":null,"zip":"902124"} 
+[2024-04-29 11:55:32] local.DEBUG: {
+    "first_name": "AUFUL4",
+    "last_name": "29APR24+4",
+    "mobile": "081249213131213",
+    "address": {
+        "line1": "Jalan Pemuda Pemudi, Berkah Singgah",
+        "city": "Jakarta",
+        "postal_code": "902124",
+        "state": "Tanah Abang",
+        "country": "Indonesia"
+    },
+    "email": "permata29+4@sample4.com",
+    "organization_name": "PT AUFUL 29 APR PM+4",
+    "custom_fields": {
+        "Finance (PIC) Name": "",
+        "Finance (pic) name #1": "",
+        "Last name #1": "29APR24+4",
+        "Company name #1": "PT AUFUL 29 APR PM+4",
+        "Email #1": "permata29+4@sample4.com",
+        "NPWP": "1920384458201205",
+        "Enterprise ID": "AUF29APR3PM+4",
+        "Sub Industry": "Education"
+    }
+}  
+[2024-04-29 11:55:32] local.DEBUG: --- ZD-Request: Create New Leads --  

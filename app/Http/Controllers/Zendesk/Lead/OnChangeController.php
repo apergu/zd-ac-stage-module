@@ -50,6 +50,14 @@ class OnChangeController extends Controller
                         // 'field' => 7,
                         'field' => 5,
                         'value' => $request->enterprise_id
+                    ],
+                    [
+                        'field' => 1,
+                        'value' => $request->sub_industry
+                    ],
+                    [
+                        'field' => 2,
+                        'value' => $request->company_name
                     ]
                 ]
             ]

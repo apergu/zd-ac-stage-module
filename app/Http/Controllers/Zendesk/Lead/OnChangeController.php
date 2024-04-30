@@ -32,7 +32,7 @@ class OnChangeController extends Controller
 
 
         Log::debug("FINDACACCOUNT");
-        Log::debug(json_encode($findAcAccount, JSON_PRETTY_PRINT));
+        Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
 
 
 
@@ -52,10 +52,12 @@ class OnChangeController extends Controller
                         'value' => $request->enterprise_id
                     ],
                     [
+                        // Nama perusahaan
                         'field' => 1,
                         'value' => "TEST UPDATE"
                     ],
                     [
+                        // Sektor
                         'field' => 2,
                         'value' => $request->sub_industry
                     ]

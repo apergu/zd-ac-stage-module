@@ -94,7 +94,7 @@ class OnCreateController extends Controller
                     'first_name' => $ac_contact['first_name'],
                     'last_name' => $ac_contact['last_name'] ?? '-',
                     'email' => $ac_contact['email'] ?? 'unknown@email.com',
-                    'phone' => $ac_contact['phone'] ?? '',
+                    'mobile' => $ac_contact['phone'] ?? '',
                     // 'organization_name' => $organization['organization_name'],
                     'organization_name' => $ac_contact['fields']['1'] ?? '',
                     'tags' => ['AC Webhook'],

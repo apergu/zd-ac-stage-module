@@ -4,10 +4,11 @@ FROM php:8.1-cli
 ENV PROJECT zdac-module
 
 # Install required PHP extensions and RabbitMQ client
+RUN apt-get update
 RUN apt-get install git
 RUN docker-php-ext-install bcmath pdo pdo_mysql
 RUN apt-get update && apt-get install -y librabbitmq-dev && pecl install amqp
-RUN docker-php-ext-enable amqp
+RUN docker-php-ext-enable amq
 
 # Work Directory
 RUN mkdir -p /var/www/${PROJECT}

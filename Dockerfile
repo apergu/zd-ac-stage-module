@@ -3,9 +3,18 @@ FROM php:8.1-cli
 # Environment
 ENV PROJECT zdac-module
 
+# Install system dependencies for ZIP handling
+RUN apt-get update && apt-get install -y \
+    unzip \
+    libzip-dev \
+    zip \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install the PHP zip extension
+RUN docker-php-ext-install zip
+
 # Install required PHP extensions and RabbitMQ client
-RUN apt-get update
-RUN apt-get install git
 RUN docker-php-ext-install bcmath pdo pdo_mysql
 RUN apt-get update && apt-get install -y librabbitmq-dev && pecl install amqp
 RUN docker-php-ext-enable amq

@@ -9,6 +9,8 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     zip \
     git \
+    librabbitmq-dev \
+    pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
 # Install the PHP zip extension

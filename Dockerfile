@@ -16,8 +16,8 @@ RUN docker-php-ext-install zip
 
 # Install required PHP extensions and RabbitMQ client
 RUN docker-php-ext-install bcmath pdo pdo_mysql
-RUN apt-get update && apt-get install -y librabbitmq-dev && pecl install amqp
-RUN docker-php-ext-enable amq
+RUN  pecl install amqp \
+    && docker-php-ext-enable amqp
 
 # Work Directory
 RUN mkdir -p /var/www/${PROJECT}

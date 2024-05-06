@@ -26,6 +26,8 @@ class OnChangeController extends Controller
         Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
         $payload = [
             'contact' => [
+                'lastName' => $request->last_name,
+                'phone' => $request->phone ?? $request->mobile,
                 'fieldValues' => [
                     [
                         'field' => 1,

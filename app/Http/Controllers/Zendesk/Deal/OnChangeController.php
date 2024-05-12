@@ -9,6 +9,8 @@ use App\Http\Constant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
 /**
  * When stage on deal is changed then update ActiveCampaign deal status.
@@ -17,6 +19,18 @@ class OnChangeController extends Controller
 {
     public function index(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'deal_id' => 'required|max:255',
+            'deal_name' => 'required|max:255',
+            'contact_id' => 'required|max:255',
+            'ac_contact_id' => 'required|max:255',
+            'stage_id' => 'required|max:255',
+        ]);
+
+        if ($validator->fails()) {
+            throw new ValidationException($validator);
+        }
+
         Log::debug('--- Zendesk-Event: Deal On Stage Changed ---');
         Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
 
@@ -65,7 +79,7 @@ class OnChangeController extends Controller
             'Api-Token' => "83098f1b9181f163ee582823ba5bdcde7a02db14d75b8fc3dc2eea91738a49a47e100e68", // SB
             'content-type' => 'application/json',
             'accept' => 'application/json'
-        ])->put(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id, $payload);
+        ])->put(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id, $payload)->throw();
 
         Log::debug('====== TEST ============');
         Log::debug($stage_name);

@@ -8,11 +8,31 @@ use App\Http\Services\ZDLeads;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
 class OnCreateController extends Controller
 {
     public function index(Request $request)
     {
+
+        $validator = Validator::make($request->all(), [
+            'zd_lead_id' => 'required|max:255',
+            'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+            'email' => 'required|max:255',
+            'status' => 'required|max:255',
+            'company_name' => 'required|max:255',
+            'sub_industry' => 'required|max:255',
+            'phone' => 'required|max:255',
+            'enterprise_id' => 'required|max:255',
+            'mobile' => 'required|max:255',
+        ]);
+
+        if ($validator->fails()) {
+            throw new ValidationException($validator);
+        }
+
         Log::debug('--- Zendesk-Event: Lead on Create ---');
         Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
 

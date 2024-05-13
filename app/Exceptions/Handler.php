@@ -37,6 +37,7 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $exception)
     {
         Log::debug("%%%%%%%%%%%%%%% EXCEPTION %%%%%%%%%%%%%%%%%%");
+        Log::debug($exception);
 
         if ($exception instanceof HttpException) {
             $statusCode = $exception->getStatusCode();
@@ -88,7 +89,7 @@ class Handler extends ExceptionHandler
         }
         // Adjusted to match the HTTP error format
         return response()->json([
-            'error' => 'Validation Error',
+            'error' => 'Request Error',
             'status' => $exception->getCode(),
             'message' => $message
         ], $exception->getCode());

@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use App\Http\Constant;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
 /**
  * Receive new created contact from ActiveCampaign and then create new deals to zendesk.
@@ -17,6 +19,26 @@ class OnCreateController extends Controller
     public function index(Request $request)
     {
         Log::debug('--- ActiveCampaign-Event: New Contact Created --');
+        $validator = Validator::make($request->all(), [
+            'type' => 'required|in:subscribe,unsubscribe',
+            'date_time' => 'required|date',
+            'initiated_from' => 'required',
+            'initiated_by' => 'required',
+            'list' => 'required|numeric',
+            'form.id' => 'required|numeric',
+            'contact.id' => 'required|integer',
+            'contact.email' => 'required|email',
+            'contact.first_name' => 'required|string',
+            'contact.last_name' => 'required|string',
+            'contact.phone' => 'required',
+            'contact.ip' => 'required|ip',
+            'contact.fields' => 'required|array',
+            'active_subscriptions' => 'required|array'
+        ]);
+
+        if ($validator->fails()) {
+            throw new ValidationException($validator);
+        }
         // Request is in x-www-form-urlencoded
         // Log::debug($request->getContent());
         Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));

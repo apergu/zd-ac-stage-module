@@ -8,6 +8,8 @@ use App\Http\Constant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
 class OnChangeController extends Controller
 {
@@ -18,10 +20,23 @@ class OnChangeController extends Controller
         Log::debug('--- AC-Request: Update Contact Request --');
         Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
 
-        if ($request->lead_id == null) {
-            # code...
+        $validator = Validator::make($request->all(), [
+            'lead_id' => 'required|max:255',
+            'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+            'ac_contact_id' => 'required|max:255',
+            'status' => 'required|max:255',
+            'enterprise_id' => 'required|max:255',
+        ]);
 
+        if ($validator->fails()) {
+            throw new ValidationException($validator);
         }
+
+        // if ($request->lead_id == null) {
+        //     # code...
+        //
+        // }
 
         $findAcAccount =  Http::withHeaders([
             // 'Api-Token' => "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118",

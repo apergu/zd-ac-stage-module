@@ -24,16 +24,31 @@ class OnCreateController extends Controller
         Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
         $payload = [
             'contact' => [
+                'lastName' => $request->last_name,
+                'phone' => $request->phone ?? $request->mobile,
                 'fieldValues' => [
+                    [
+                        'field' => 1,
+                        'value' => $request->company_name
+                    ],
+                    [
+                        'field' => 2,
+                        'value' => $request->sub_industry
+                    ],
+                    [
+                        // 'field' => 5,
+                        'field' => 3,
+                        'value' => $request->status
+                    ],
                     [
                         // 'field' => 6,
                         'field' => 4, // SB
                         'value' => $stage_name
                     ],
                     [
-                        // 'field' => 9,
-                        'field' => 7, // SB
-                        'value' => $request->deal_id
+                        // 'field' => 7,
+                        'field' => 5, //SB
+                        'value' => $request->enterprise_id
                     ]
                 ]
             ]

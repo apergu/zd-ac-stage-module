@@ -1949,3 +1949,196 @@ initialize...
     "zip": "90202"
 }  
 [2024-05-02 03:43:44] local.DEBUG: --- ZD-Request: Get Lead ---  
+[2024-05-13 09:48:17] local.DEBUG: --- ActiveCampaign-Event: New Contact Created --  
+[2024-05-13 09:48:17] local.DEBUG: {
+    "type": "subscribe",
+    "date_time": "2023-10-31T21:08:03-05:00",
+    "initiated_from": "public",
+    "initiated_by": "contact",
+    "list": "1",
+    "form": {
+        "id": "3"
+    },
+    "contact": {
+        "id": 63,
+        "email": "apiaja@gmail.com",
+        "first_name": "1 API 2",
+        "last_name": "Local",
+        "phone": "+6287856606861",
+        "ip": "203.128.68.17",
+        "tags": null,
+        "fields": {
+            "1": "CV Api Indonesia",
+            "2": "Furniture and Home Furnishing Stores",
+            "5": "New Client - Inbound"
+        }
+    },
+    "active_subscriptions": [
+        "1"
+    ]
+}  
+[2024-05-13 09:48:17] local.DEBUG: --- AC: Contact Section --  
+[2024-05-13 09:48:17] local.DEBUG: {
+    "id": 63,
+    "email": "apiaja@gmail.com",
+    "first_name": "1 API 2",
+    "last_name": "Local",
+    "phone": "+6287856606861",
+    "ip": "203.128.68.17",
+    "tags": null,
+    "fields": {
+        "1": "CV Api Indonesia",
+        "2": "Furniture and Home Furnishing Stores",
+        "5": "New Client - Inbound"
+    }
+}  
+[2024-05-13 09:48:17] local.DEBUG: --- AC-Request: Get Contact Detail  ---  
+[2024-05-13 09:48:17] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/63  
+[2024-05-13 09:48:18] local.DEBUG: --- AC-Response: Get Contact Detail ---  
+[2024-05-13 09:48:18] local.DEBUG: [
+    {
+        "contact": "63",
+        "field": "1",
+        "value": "PT Novita-24 23FEB24",
+        "cdate": "2024-02-23T01:53:08-06:00",
+        "udate": "2024-02-23T01:53:08-06:00",
+        "created_by": null,
+        "updated_by": null,
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/302\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/302\/field"
+        },
+        "id": "302",
+        "owner": "63"
+    },
+    {
+        "contact": "63",
+        "field": "2",
+        "value": "",
+        "cdate": "2024-02-23T01:53:08-06:00",
+        "udate": "2024-02-23T01:53:08-06:00",
+        "created_by": null,
+        "updated_by": null,
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/303\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/303\/field"
+        },
+        "id": "303",
+        "owner": "63"
+    },
+    {
+        "contact": "63",
+        "field": "3",
+        "value": "New Client - Inbound",
+        "cdate": "2024-02-23T01:53:08-06:00",
+        "udate": "2024-02-23T01:56:25-06:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/304\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/304\/field"
+        },
+        "id": "304",
+        "owner": "63"
+    },
+    {
+        "contact": "63",
+        "field": "5",
+        "value": "2188327150",
+        "cdate": "2024-02-23T01:53:08-06:00",
+        "udate": "2024-02-23T01:56:25-06:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/305\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/305\/field"
+        },
+        "id": "305",
+        "owner": "63"
+    },
+    {
+        "contact": "63",
+        "field": "6",
+        "value": "2188327150",
+        "cdate": "2024-02-23T01:53:08-06:00",
+        "udate": "2024-02-23T01:53:08-06:00",
+        "created_by": null,
+        "updated_by": null,
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/306\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/306\/field"
+        },
+        "id": "306",
+        "owner": "63"
+    }
+]  
+[2024-05-13 09:48:18] local.DEBUG: {
+    "organization_name": "PT Novita-24 23FEB24",
+    "sub_industry": "",
+    "enterprise_id": "",
+    "lead_id": ""
+}  
+[2024-05-13 09:48:18] local.DEBUG: --- ZD-Request: Create New Leads --  
+[2024-05-13 09:48:18] local.DEBUG: {
+    "first_name": "1 API 2",
+    "last_name": "Local",
+    "email": "apiaja@gmail.com",
+    "mobile": "+6287856606861",
+    "organization_name": "CV Api Indonesia",
+    "tags": [
+        "AC Webhook"
+    ],
+    "custom_fields": {
+        "Sub Industry": "",
+        "ActiveCampaign Contact ID": 63
+    }
+}  
+[2024-05-13 09:48:19] local.ERROR: resource= field= code=not_found message=Not Found {"exception":"[object] (BaseCRM\\Errors\\RequestError(code: 0): resource= field= code=not_found message=Not Found at /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php:286)
+[stacktrace]
+#0 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php(269): BaseCRM\\HttpClient->handleErrorResponse(404, '{\"errors\":[{\"er...', Array)
+#1 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php(160): BaseCRM\\HttpClient->handleResponse(404, '{\"errors\":[{\"er...')
+#2 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php(49): BaseCRM\\HttpClient->request('POST', '/leads', NULL, Array, Array)
+#3 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/LeadsService.php(65): BaseCRM\\HttpClient->post('/leads', Array, Array)
+#4 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/ActiveCampaign/Contact/OnCreateController.php(110): BaseCRM\\LeadsService->create(Array)
+#5 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\ActiveCampaign\\Contact\\OnCreateController->index(Object(Illuminate\\Http\\Request))
+#6 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('index', Array)
+#7 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\ActiveCampaign\\Contact\\OnCreateController), 'index')
+#8 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#9 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate\\Routing\\Route->run()
+#10 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#11 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Middleware/ApiKeyAuth.php(28): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App\\Http\\Middleware\\ApiKeyAuth->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#13 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(135): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#17 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter(Object(Illuminate\\Http\\Request), Object(Closure), 'api', Object(Closure))
+#18 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'api')
+#19 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#21 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#22 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#23 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#24 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#25 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#42 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#43 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/public/index.php(53): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#44 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('/Users/aufulkir...')
+#45 {main}
+"} 

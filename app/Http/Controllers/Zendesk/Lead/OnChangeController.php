@@ -39,7 +39,7 @@ class OnChangeController extends Controller
         $payload = [
             'contact' => [
                 'firstName'   => $request->first_name,
-                'lastName'    => $request->last_name,
+                'lastName'    =>  $request->last_name_adonara ?? $request->last_name,
                 'fieldValues' => [
                     [
                         // 'field' => 5,

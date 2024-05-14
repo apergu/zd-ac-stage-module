@@ -43,12 +43,16 @@ class OnCreateController extends Controller
                     [
                         // 'field' => 6,
                         'field' => 4, // SB
-                        'value' => $stage_name
+                        'value' => $request->stage_id
                     ],
                     [
                         // 'field' => 7,
                         'field' => 5, //SB
                         'value' => $request->enterprise_id
+                    ],
+                    [
+                        'field' => 7,
+                        'value' => $request->deal_id
                     ]
                 ]
             ]

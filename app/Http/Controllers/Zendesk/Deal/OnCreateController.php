@@ -36,14 +36,9 @@ class OnCreateController extends Controller
                         'value' => $request->sub_industry
                     ],
                     [
-                        // 'field' => 5,
-                        'field' => 3,
-                        'value' => $request->status
-                    ],
-                    [
                         // 'field' => 6,
                         'field' => 4, // SB
-                        'value' => $request->stage_id
+                        'value' => $stage_name
                     ],
                     [
                         // 'field' => 7,

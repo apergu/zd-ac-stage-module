@@ -51,6 +51,7 @@ pipeline {
           withDockerRegistry([ credentialsId: "dockerhub", url: "" ]){
                 dockerImage.push()
                 dockerImage.push("latest")
+                dockerImage.push("staging")
                 dockerImage.push(env.BRANCH_NAME)
           }
         }

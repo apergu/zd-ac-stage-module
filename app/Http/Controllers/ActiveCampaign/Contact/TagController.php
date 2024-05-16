@@ -10,6 +10,8 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
 /**
  * Receive new created contact from ActiveCampaign and then create new deals to zendesk.
@@ -21,6 +23,27 @@ class TagController extends Controller
         Log::debug('--- ActiveCampaign-Event: On Tag Created / Deleted --');
         Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
 
+        $validator = Validator::make($request->all(), [
+            'type' => 'required|in:subscribe,unsubscribe',
+            'date_time' => 'required|date',
+            'initiated_from' => 'required',
+            'initiated_by' => 'required',
+            'list' => 'required|numeric',
+            'form.id' => 'required|numeric',
+            'contact.id' => 'required|integer',
+            'contact.email' => 'required|email|max:50',
+            'contact.first_name' => 'required|string|max:50',
+            'contact.last_name' => 'required|string|max:50',
+            'contact.phone' => 'required|max:15',
+            'contact.ip' => 'required|ip',
+            'contact.fields' => 'required|array',
+            'contact.tags' => 'required|max:100',
+            'active_subscriptions' => 'required|array'
+        ]);
+
+        if ($validator->fails()) {
+            throw new ValidationException($validator);
+        }
         // Retrieve Contact Data
         $ac_contact = $request->contact;
 

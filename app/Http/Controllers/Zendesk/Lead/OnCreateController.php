@@ -17,16 +17,16 @@ class OnCreateController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            'zd_lead_id' => 'required|max:255',
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
-            'email' => 'required|max:255',
-            'status' => 'required|max:255',
-            'company_name' => 'required|max:255',
-            'sub_industry' => 'required|max:255',
-            'phone' => 'required|max:255',
-            'enterprise_id' => 'required|max:255',
-            'mobile' => 'required|max:255',
+            'zd_lead_id' => 'required|max:50',
+            'first_name' => 'required|max:50',
+            'last_name' => 'required|max:50',
+            'email' => 'required|max:50',
+            'status' => 'required|max:50',
+            'company_name' => 'required|max:100',
+            'sub_industry' => 'required|max:100',
+            'phone' => 'required|max:15',
+            'enterprise_id' => 'required|max:50',
+            'mobile' => 'required|max:15',
         ]);
 
         if ($validator->fails()) {

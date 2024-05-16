@@ -37,7 +37,6 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $exception)
     {
         Log::debug("%%%%%%%%%%%%%%% EXCEPTION %%%%%%%%%%%%%%%%%%");
-        Log::debug($exception);
 
         if ($exception instanceof HttpException) {
             $statusCode = $exception->getStatusCode();

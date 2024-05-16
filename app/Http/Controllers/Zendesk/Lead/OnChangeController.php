@@ -21,12 +21,12 @@ class OnChangeController extends Controller
         Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
 
         $validator = Validator::make($request->all(), [
-            'lead_id' => 'required|max:255',
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
-            'ac_contact_id' => 'required|max:255',
-            'status' => 'required|max:255',
-            'enterprise_id' => 'required|max:255',
+            'lead_id' => 'required|max:50',
+            'first_name' => 'required|max:50',
+            'last_name' => 'required|max:50',
+            'ac_contact_id' => 'required|max:50',
+            'status' => 'required|max:50',
+            'enterprise_id' => 'required|max:50',
         ]);
 
         if ($validator->fails()) {

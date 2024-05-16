@@ -20,11 +20,11 @@ class OnChangeController extends Controller
     public function index(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'deal_id' => 'required|max:255',
-            'deal_name' => 'required|max:255',
-            'contact_id' => 'required|max:255',
-            'ac_contact_id' => 'required|max:255',
-            'stage_id' => 'required|max:255',
+            'deal_id' => 'required|max:50',
+            'deal_name' => 'required|max:50',
+            'contact_id' => 'required|max:50',
+            'ac_contact_id' => 'required|max:50',
+            'stage_id' => 'required|max:50',
         ]);
 
         if ($validator->fails()) {

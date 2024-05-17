@@ -49,10 +49,11 @@ pipeline {
           echo "RELEASE"
 
           withDockerRegistry([ credentialsId: "dockerhub", url: "" ]){
-                dockerImage.push()
+                // dockerImage.push()
                 dockerImage.push("latest")
+                dockerImage.push("dev")
                 dockerImage.push("staging")
-                dockerImage.push(env.BRANCH_NAME)
+                // dockerImage.push(env.BRANCH_NAME)
           }
         }
       }

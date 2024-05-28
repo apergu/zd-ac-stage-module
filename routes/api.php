@@ -44,6 +44,14 @@ Route::group(['prefix' => 'v1'], function () {
 
     Route::group(['prefix' => 'privy', 'as' => 'privy.'], function () {
         Route::post('zendesk/lead', [FreeTrialController::class, 'index']);
-        Route::post('erp/topup', [TopupController::class, 'sendTopup']);
+        Route::group(['prefix' => 'erp', 'as' => 'erp.'], function () {
+
+            Route::post('topup', [TopupController::class, 'sendTopup']);
+            Route::post('topup-adendum', [TopupController::class, 'sendTopUpAdendum']);
+            Route::post('check-status', [TopupController::class, 'checkTopUpStatus']);
+            Route::post('void-balance', [TopupController::class, 'voidBalance']);
+            Route::post('topup-reconcile', [TopupController::class, 'topupReconcile']);
+            Route::post('transfer-balance', [TopupController::class, 'transferBalance']);
+        });
     });
 });

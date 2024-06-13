@@ -35,7 +35,6 @@ class Controller extends BaseController
         $stage_name = '';
 
         $response = collect($stages->all());
-        Log::debug(json_encode($response, JSON_PRETTY_PRINT));
         $response->each(function ($val, $key) use ($stage_id, &$stage_name) {
             $stage = $val['data'];
 

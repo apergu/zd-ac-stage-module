@@ -29,7 +29,6 @@ class OnCreateController extends Controller
             'accept' => 'application/json'
         ])->get(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
 
-        Log::debug(json_encode($dataContact->body(), JSON_PRETTY_PRINT));
 
         $payload = [
             'contact' => [

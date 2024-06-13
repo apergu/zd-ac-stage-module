@@ -46,7 +46,7 @@ class OnCreateController extends Controller
                     ],
                     [
                         'field' => 3,
-                        'value' => "Test"
+                        'value' => $dataContact['fieldValues'][3]['value']
                     ],
                     [
                         // 'field' => 6,

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Zendesk\Lead;
 
 use App\Http\Controllers\Controller;
 use App\Http\Constant;
+use App\Http\Requests\CreateLeadRequest;
 use App\Http\Services\ZDLeads;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Log;
 
 class OnCreateController extends Controller
 {
-    public function index(Request $request)
+    public function index(CreateLeadRequest $request)
     {
         Log::debug('--- Zendesk-Event: Lead on Create ---');
         Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));

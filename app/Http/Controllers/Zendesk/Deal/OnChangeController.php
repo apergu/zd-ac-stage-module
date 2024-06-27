@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Models\ZdStage;
 use App\Http\Constant;
+use App\Http\Requests\ChangeDealRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Log;
  */
 class OnChangeController extends Controller
 {
-    public function index(Request $request)
+    public function index(ChangeDealRequest $request)
     {
         Log::debug('--- Zendesk-Event: Deal On Stage Changed ---');
         Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));

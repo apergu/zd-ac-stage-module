@@ -2542,3 +2542,21 @@ initialize...
 #46 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('/Users/aufulkir...')
 #47 {main}
 "} 
+[2024-06-29 17:44:25] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-06-29 17:44:25] local.DEBUG: {
+    "address": "Jalan Kemana No. 12",
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "email": "testmay301JUN@yopmail.com",
+    "enterprise_name": "PT Anjali Logan 301",
+    "enterprise_privy_id": "API15-301JUN",
+    "first_name": "Novita",
+    "last_name": "Update AUL 301JUN",
+    "npwp": "1920384458201112",
+    "phone": "086756312112",
+    "state": "Tanah Hitam",
+    "sub_industry": "Others",
+    "zd_lead_id": "12031283",
+    "zip": "902212"
+}  
+[2024-06-29 17:44:25] local.DEBUG: --- ZD-Request: Get Lead ---  

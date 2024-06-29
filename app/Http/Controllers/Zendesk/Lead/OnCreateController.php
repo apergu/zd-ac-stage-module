@@ -162,11 +162,16 @@ class OnCreateController extends Controller
             'customerName' => $request->company_name,
             'firstName' => $request->first_name,
             'lastName' => $request->last_name,
+            'address' => $request->address ?? "",
             'email' => $request->email,
             'phoneNo' => $request->phone ?? $request->mobile,
             'entityStatus' => '6',
             'crmLeadId' => $request->zd_lead_id,
-            'subIndustry' => $request->sub_industry
+            'subIndustry' => $request->sub_industry,
+            'npwp' => "",
+            'state' => "",
+            'city' => "",
+            'zip' => "",
         ];
 
         $resp = Http::withHeaders([

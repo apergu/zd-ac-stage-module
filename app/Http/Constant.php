@@ -11,7 +11,7 @@ class Constant
     const ZENDESK_ACCESS_TOKEN = "26bed09778079a78eb96acb73feb1cb2d9b36267e992caa12b0d960c8f760e2c"; # SB
     const ZENDESK_URL = "https://api.getbase.com";
 
-    const MIDDLEWARE_URL = "http://apergu.tech:9001/api/v1/top-up-data";
+    const MIDDLEWARE_URL = "http://apergu.tech:9001/api/v1";
     const BASE_URL_PRIVY = "https://stg-b2b-api-service.privy.id";
     // const TOPUP_URL = "/v1/orchestrator-erp-goldengate/webhook/apergu/top-up";
 }

@@ -26,7 +26,7 @@ class CreateLeadRequest extends FormRequest
     {
         return [
             'zd_lead_id' => 'required|integer',
-            'ac_contact_id' => 'required|integer',
+            // 'ac_contact_id' => 'required|integer',
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'status' => 'required|string|max:255',
@@ -35,7 +35,7 @@ class CreateLeadRequest extends FormRequest
             'mobile' => 'required|string|max:255',
             'phone' => 'required|string|max:255',
             'sub_industry' => 'required|string|max:255',
-            'enterprise_id' => 'required|integer',
+            'enterprise_id' => 'required',
         ];
     }
 

@@ -19,9 +19,8 @@ class OnCreateController extends Controller
 
 
         Log::debug(["CONTACT ID" => $request->ac_contact_id]);
-        // $this->postLead($request);
+        $this->postLead($request);
         $this->updateCustomLeadId($request);
-        dd("test");
 
 
         if ($request->ac_contact_id) {
@@ -159,18 +158,21 @@ class OnCreateController extends Controller
     {
         Log::debug('-- ZENDESK ERP LEAD --');
         $payload = [
+            'enterprisePrivyId' => $request->enterprise_id,
             'customerName' => $request->company_name,
-            // 'enterprisePrivyId' => $request->enterprise_id,
-            'customerId' => $request->zd_lead_id,
-            'phoneNo' => $request->mobile,
-            'crmLeadId' => $request->company_name,
-            'entityStatus' => '6'
+            'firstName' => $request->first_name,
+            'lastName' => $request->last_name,
+            'email' => $request->email,
+            'phoneNo' => $request->phone ?? $request->mobile,
+            'entityStatus' => '6',
+            'crmLeadId' => $request->zd_lead_id,
+            'subIndustry' => $request->sub_industry
         ];
 
         $resp = Http::withHeaders([
             'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
             'Content-Type' => 'application/json'
-        ])->post(env('NETSUITE_URL') . '/customer/lead', $payload);
+        ])->post(env('NETSUITE_URL') . '/customer', $payload);
 
         Log::debug('--- ZD-ERP: Post Lead ---');
         $res_json = $resp->json();

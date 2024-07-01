@@ -255,8 +255,10 @@ class OnCreateController extends Controller
         Log::debug('--- ZD-Request: Update Lead ActiveCampaign Contact ID ---');
         // $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
         $zd_client = new \BaseCRM\Client(['accessToken' => "26bed09778079a78eb96acb73feb1cb2d9b36267e992caa12b0d960c8f760e2c"]);
+        // dd($payload);
         $zd_leads = $zd_client->leads;
         $zd_leads = $zd_leads->update($id, $payload);
+
         // $zd_leads = new ZDLeads();
         // // $zd_leads->find($id);
         // if ($zd_leads->find($id) != null) {

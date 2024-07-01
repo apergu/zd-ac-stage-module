@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Constant;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,8 +16,8 @@ class ApiKeyAuth
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $AC_APIKEY = env('AC_APIKEY');
-        $api_key = $request->header('Authorization') ?? $request->get('api_key');
+        $AC_APIKEY = Constant::AC_APIKEY;
+        $api_key = $request->header('x-api-key') ?? $request->get('api_key');
         // Validate
         if ($AC_APIKEY != $api_key) {
             header('HTTP/1.1 401 Authorization Required');

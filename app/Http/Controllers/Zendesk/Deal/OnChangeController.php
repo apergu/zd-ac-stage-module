@@ -129,7 +129,7 @@ class OnChangeController extends Controller
             'customerName' => $request->deal_name,
             'entityStatus' => '13',
             'crmLeadId' => $request->deal_name,
-            'phone' => '12345'
+            'phone' => $request->mobile
         ];
 
         $resp = Http::withHeaders([

@@ -39,7 +39,7 @@ class Controller extends BaseController
         $response->each(function ($val, $key) use ($stage_id, &$stage_name) {
             $stage = $val['data'];
             Log::debug("STAGE ", $stage);
-            Log::debug("STAGE ID ", $stage_id);
+            Log::debug("STAGE ID ", [$stage_id]);
             if ($stage['id'] == $stage_id) {
                 Log::debug(json_encode($stage, JSON_PRETTY_PRINT));
 

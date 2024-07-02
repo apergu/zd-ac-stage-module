@@ -89,16 +89,10 @@ class OnChangeController extends Controller
             foreach ($res_json['fieldValues'] as $rj) {
                 $contact = $rj['contact'];
                 $zdPayloadUpdate = [
-                    'first_name' => $request->first_name,
-                    'last_name' => $request->last_name,
-                    'custom_fields' => (object) [
-                        // 'ActiveCampaign Contact ID' => $contact,
-                        // 'Lead ID' => $request->zd_lead_id
-                        'Enterprise ID' => $request->enterprise_id
-                    ]
+                    "stage_id" => $request->stage_id,
                 ];
             }
-            // $this->updateACContactIDToZD($request->lead_id, $zdPayloadUpdate);
+            $this->updateACContactIDToZD($request->lead_id, $zdPayloadUpdate);
         }
 
         Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
@@ -109,14 +103,14 @@ class OnChangeController extends Controller
     private function updateACContactIDToZD($id, $payload)
     {
         Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
-        Log::debug('--- ZD-Request: Update Lead ActiveCampaign Contact ID ---');
+        Log::debug('--- ZD-Request: Update Deal ActiveCampaign Contact ID ---');
         // $zd_client = new \BaseCRM\Client(['accessToken' => Constant::ZENDESK_ACCESS_TOKEN]);
         $zd_client = new \BaseCRM\Client(['accessToken' => "26bed09778079a78eb96acb73feb1cb2d9b36267e992caa12b0d960c8f760e2c"]);
-        $zd_leads = $zd_client->leads;
-        $zd_leads = $zd_leads->update($id, $payload);
+        $zd_deals = $zd_client->deals;
+        $zd_deals = $zd_deals->update($id, $payload);
 
-        Log::debug('--- ZD-Response: Update Lead ActiveCampaign Contact ID ---');
-        Log::debug(json_encode($zd_leads, JSON_PRETTY_PRINT));
+        Log::debug('--- ZD-Response: Update Deal ActiveCampaign Contact ID ---');
+        Log::debug(json_encode($zd_deals, JSON_PRETTY_PRINT));
     }
 
     public function postCustomer($request)

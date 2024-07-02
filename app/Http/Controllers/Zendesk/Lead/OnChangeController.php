@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Zendesk\Lead;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Http\Constant;
+use App\Http\Requests\ChangeLeadRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
 class OnChangeController extends Controller
 {
-    public function index(Request $request)
+    public function index(ChangeLeadRequest $request)
     {
         Log::debug('--- Zendesk-Event: Lead on Status Changed ---');
         Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));

@@ -92,7 +92,7 @@ class OnChangeController extends Controller
                     "stage_id" => $request->stage_id,
                 ];
             }
-            $this->updateACContactIDToZD($request->lead_id, $zdPayloadUpdate);
+            $this->updateACContactIDToZD($request->deal_id, $zdPayloadUpdate);
         }
 
         Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));

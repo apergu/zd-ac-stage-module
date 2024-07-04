@@ -25,10 +25,10 @@ class ContactCreateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'type' => 'required|string|max:50',
-            'date_time' => 'required|date',
-            'initiated_from' => 'required|string|max:50',
-            'initiated_by' => 'required|string|max:50',
+            // 'type' => 'required|string|max:50',
+            // 'date_time' => 'required|date',
+            // 'initiated_from' => 'required|string|max:50',
+            // 'initiated_by' => 'required|string|max:50',
             'list' => 'required|string|max:50',
             'form' => 'required',
             'form.id' => 'required|integer',
@@ -38,8 +38,8 @@ class ContactCreateRequest extends FormRequest
             'contact.last_name' => 'required|string|max:50',
             'contact.phone' => 'required|string|max:50',
             'contact.ip' => 'required|string|max:50',
-            'contact.field' => 'required',
-            'active_subscription' => 'required|array',
+            'contact.fields' => 'required',
+            'active_subscriptions' => 'required|array',
 
         ];
     }

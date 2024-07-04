@@ -8,13 +8,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use App\Http\Constant;
+use App\Http\Requests\ContactCreateRequest;
 
 /**
  * Receive new created contact from ActiveCampaign and then create new deals to zendesk.
  */
 class OnCreateController extends Controller
 {
-    public function index(Request $request)
+    public function index(ContactCreateRequest $request)
     {
         Log::debug('--- ActiveCampaign-Event: New Contact Created --');
         // Request is in x-www-form-urlencoded

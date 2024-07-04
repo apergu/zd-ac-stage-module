@@ -25,10 +25,10 @@ class ChangeLeadRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'lead_id' => 'required|integer|max:11',
+            'lead_id' => 'required|string|max:255',
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
-            'ac_contact_id' => 'required|integer|max:11',
+            'ac_contact_id' => 'required|string|max:255',
             'status' => 'required|string|max:255',
         ];
     }

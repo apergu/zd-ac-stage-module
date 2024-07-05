@@ -43,6 +43,14 @@ class OnCreateController extends Controller
             'Api-Token' => "83098f1b9181f163ee582823ba5bdcde7a02db14d75b8fc3dc2eea91738a49a47e100e68", // SB
         ])->get(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $ac_contact['id']);
 
+        if ($response->status() == 404) {
+            Log::debug('--- AC-Response: Contact Not Found ---');
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Contact Not Found'
+            ], 404);
+        }
+
         $fieldValues = $response->json('fieldValues');
         Log::debug('--- AC-Response: Get Contact Detail ---');
         Log::debug(json_encode($fieldValues, JSON_PRETTY_PRINT));

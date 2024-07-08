@@ -166,7 +166,7 @@ class OnCreateController extends Controller
             'email' => $request->email,
             'phoneNo' => $request->phone ?? $request->mobile,
             'entityStatus' => '6',
-            'crmLeadId' => $request->zd_lead_id,
+            'crmLeadId' => "$request->zd_lead_id",
             'subIndustry' => $request->sub_industry,
             'npwp' => "",
             'state' => "",

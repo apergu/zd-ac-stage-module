@@ -57,6 +57,7 @@ class Controller extends BaseController
         }
 
         Log::debug('--- ZD-Request: End Get Stages --');
+        Log::debug($stage_name);
 
         return $stage_name;
     }

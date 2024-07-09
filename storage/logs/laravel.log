@@ -1,0 +1,148 @@
+[2024-07-09 18:05:02] local.DEBUG: --- Zendesk-Event: Lead on Create ---  
+[2024-07-09 18:05:02] local.DEBUG: {
+    "company_name": "PT AUFUL 10 JUL 2",
+    "email": "auful10jul2@gmail.com",
+    "first_name": "AUFUL",
+    "last_name": "10 JUL 2",
+    "status": "New Client - Inbound",
+    "sub_industry": "Agriculture",
+    "zd_lead_id": "2202706211"
+}  
+[2024-07-09 18:05:02] local.DEBUG: array (
+  'CONTACT ID' => NULL,
+)  
+[2024-07-09 18:05:02] local.DEBUG: -- ZENDESK ERP LEAD --  
+[2024-07-09 18:05:02] local.DEBUG: --- ZD-ERP: Post Lead ---  
+[2024-07-09 18:05:02] local.DEBUG: {
+    "code": 422,
+    "errors": [
+        {
+            "Description": "required",
+            "field": "PhoneNo"
+        }
+    ],
+    "message": "Validation failed",
+    "success": false
+}  
+[2024-07-09 18:05:02] local.DEBUG: {
+    "code": 422,
+    "errors": [
+        {
+            "Description": "required",
+            "field": "PhoneNo"
+        }
+    ],
+    "message": "Validation failed",
+    "success": false
+}  
+[2024-07-09 18:05:28] local.DEBUG: --- Zendesk-Event: Lead on Create ---  
+[2024-07-09 18:05:28] local.DEBUG: {
+    "company_name": "PT AUFUL 10 JUL 2",
+    "email": "auful10jul2@gmail.com",
+    "first_name": "AUFUL",
+    "last_name": "10 JUL 2",
+    "status": "New Client - Inbound",
+    "sub_industry": "Agriculture",
+    "zd_lead_id": "2202706211"
+}  
+[2024-07-09 18:05:28] local.DEBUG: array (
+  'CONTACT ID' => NULL,
+)  
+[2024-07-09 18:05:28] local.DEBUG: -- ZENDESK ERP LEAD --  
+[2024-07-09 18:05:28] local.DEBUG: --- ZD-ERP: Post Lead ---  
+[2024-07-09 18:05:28] local.DEBUG: {
+    "code": 422,
+    "errors": [
+        {
+            "Description": "required",
+            "field": "PhoneNo"
+        }
+    ],
+    "message": "Validation failed",
+    "success": false
+}  
+[2024-07-09 18:05:28] local.DEBUG: {
+    "code": 422,
+    "errors": [
+        {
+            "Description": "required",
+            "field": "PhoneNo"
+        }
+    ],
+    "message": "Validation failed",
+    "success": false
+}  
+[2024-07-09 18:06:18] local.DEBUG: --- Zendesk-Event: Lead on Create ---  
+[2024-07-09 18:06:18] local.DEBUG: {
+    "company_name": "PT AUFUL 10 JUL 2",
+    "email": "auful10jul2@gmail.com",
+    "first_name": "AUFUL",
+    "last_name": "10 JUL 2",
+    "status": "New Client - Inbound",
+    "sub_industry": "Agriculture",
+    "zd_lead_id": 2202706211
+}  
+[2024-07-09 18:06:18] local.DEBUG: array (
+  'CONTACT ID' => NULL,
+)  
+[2024-07-09 18:06:18] local.DEBUG: -- ZENDESK ERP LEAD --  
+[2024-07-09 18:06:18] local.DEBUG: --- ZD-ERP: Post Lead ---  
+[2024-07-09 18:06:18] local.DEBUG: {
+    "code": 422,
+    "errors": [
+        {
+            "Description": "required",
+            "field": "PhoneNo"
+        }
+    ],
+    "message": "Validation failed",
+    "success": false
+}  
+[2024-07-09 18:06:18] local.DEBUG: {
+    "code": 422,
+    "errors": [
+        {
+            "Description": "required",
+            "field": "PhoneNo"
+        }
+    ],
+    "message": "Validation failed",
+    "success": false
+}  
+[2024-07-09 18:08:39] local.DEBUG: --- Zendesk-Event: Lead on Create ---  
+[2024-07-09 18:08:39] local.DEBUG: {
+    "zd_lead_id": 2202706211,
+    "company_name": "PT AUFUL 10 JUL 2",
+    "email": "auful10jul2@gmail.com",
+    "first_name": "AUFUL",
+    "last_name": "10 JUL 2",
+    "status": "New Client - Inbound",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-09 18:08:39] local.DEBUG: array (
+  'CONTACT ID' => NULL,
+)  
+[2024-07-09 18:08:39] local.DEBUG: -- ZENDESK ERP LEAD --  
+[2024-07-09 18:08:39] local.DEBUG: --- ZD-ERP: Post Lead ---  
+[2024-07-09 18:08:39] local.DEBUG: {
+    "code": 422,
+    "errors": [
+        {
+            "Description": "required",
+            "field": "PhoneNo"
+        }
+    ],
+    "message": "Validation failed",
+    "success": false
+}  
+[2024-07-09 18:08:39] local.DEBUG: {
+    "code": 422,
+    "errors": [
+        {
+            "Description": "required",
+            "field": "PhoneNo"
+        }
+    ],
+    "message": "Validation failed",
+    "success": false
+}  

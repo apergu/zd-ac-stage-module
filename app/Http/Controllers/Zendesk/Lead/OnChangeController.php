@@ -6,12 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Http\Constant;
 use App\Http\Requests\ChangeLeadRequest;
+use App\Http\Services\ZDLeads;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
 class OnChangeController extends Controller
 {
+
+
     public function index(ChangeLeadRequest $request)
     {
         Log::debug('--- Zendesk-Event: Lead on Status Changed ---');
@@ -19,10 +22,6 @@ class OnChangeController extends Controller
         Log::debug('--- AC-Request: Update Contact Request --');
         Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
 
-        if ($request->lead_id == null) {
-            # code...
-
-        }
 
         $findAcAccount =  Http::withHeaders([
             // 'Api-Token' => "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118",
@@ -31,6 +30,28 @@ class OnChangeController extends Controller
             'accept' => 'application/json'
         ])->get(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
 
+        if ($findAcAccount->status() == 404) {
+            # code...
+            Log::debug('--- AC-Response: Contact Not Found ---');
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Contact Not Found'
+            ], 404);
+        }
+        $zdLeads = new ZDLeads();
+        $findLead = $zdLeads->find($request->lead_id);
+
+        Log::debug('--- ZD-Response: Find Lead ---');
+        Log::debug(json_encode($findLead, JSON_PRETTY_PRINT));
+
+        if ($findLead['errors'][0] != null && $findLead['errors'][0]['error']['code'] == 'not_found') {
+            # code...
+            Log::debug('--- ZD-Response: Lead Not Found ---');
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Lead Not Found'
+            ], 404);
+        }
 
         Log::debug("FINDACACCOUNT");
         Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));

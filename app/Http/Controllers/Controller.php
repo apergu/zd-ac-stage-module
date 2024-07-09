@@ -47,6 +47,15 @@ class Controller extends BaseController
             }
         });
 
+        if ($stage_name == '') {
+            # code...
+            Log::debug('--- ZD-Response: Stage Not Found ---');
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Stage Not Found'
+            ], 404);
+        }
+
         Log::debug('--- ZD-Request: End Get Stages --');
 
         return $stage_name;

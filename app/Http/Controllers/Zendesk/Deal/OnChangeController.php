@@ -23,6 +23,8 @@ class OnChangeController extends Controller
 
         $stage_name = $this->ZdStageGet($request->stage_id);
 
+        Log::debug(json_encode($stage_name, JSON_PRETTY_PRINT));
+
         Log::debug('--- AC-Request: Update Contact Request --');
         Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
         $payload = [

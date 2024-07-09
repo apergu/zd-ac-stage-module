@@ -26,10 +26,10 @@ class ChangeLeadRequest extends FormRequest
     {
         return [
             'lead_id' => 'required|string|max:255',
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
-            'ac_contact_id' => 'required|string|max:255',
-            'status' => 'required|string|max:255',
+            'first_name' => 'string|max:255',
+            'last_name' => 'string|max:255',
+            'ac_contact_id' => 'string|max:255',
+            'status' => 'string|max:255',
         ];
     }
 

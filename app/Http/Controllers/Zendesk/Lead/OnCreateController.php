@@ -156,34 +156,42 @@ class OnCreateController extends Controller
 
     private function postLead(Request $request)
     {
-        Log::debug('-- ZENDESK ERP LEAD --');
-        $payload = [
-            'enterprisePrivyId' => $request->enterprise_id,
-            'customerName' => $request->company_name,
-            'firstName' => $request->first_name,
-            'lastName' => $request->last_name,
-            'address' => $request->address ?? "",
-            'email' => $request->email,
-            'phoneNo' => $request->phone ?? $request->mobile,
-            'entityStatus' => '6',
-            'crmLeadId' => "$request->zd_lead_id",
-            'subIndustry' => $request->sub_industry,
-            'npwp' => "",
-            'state' => "",
-            'city' => "",
-            'zip' => "",
-        ];
+        try {
+            //code...
+            Log::debug('-- ZENDESK ERP LEAD --');
+            $payload = [
+                'enterprisePrivyId' => $request->enterprise_id,
+                'customerName' => $request->company_name,
+                'firstName' => $request->first_name,
+                'lastName' => $request->last_name,
+                'address' => $request->address ?? "",
+                'email' => $request->email,
+                'phoneNo' => $request->phone ?? $request->mobile,
+                'entityStatus' => '6',
+                'crmLeadId' => "$request->zd_lead_id",
+                'subIndustry' => $request->sub_industry,
+                'npwp' => "",
+                'state' => "",
+                'city' => "",
+                'zip' => "",
+            ];
 
-        $resp = Http::withHeaders([
-            'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
-            'Content-Type' => 'application/json'
-        ])->post(Constant::MIDDLEWARE_URL . '/customer', $payload);
+            $resp = Http::withHeaders([
+                'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
+                'Content-Type' => 'application/json'
+            ])->post(Constant::MIDDLEWARE_URL . '/customer', $payload);
 
-        Log::debug('--- ZD-ERP: Post Lead ---');
-        $res_json = $resp->json();
-        Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
+            Log::debug('--- ZD-ERP: Post Lead ---');
+            $res_json = $resp->json();
+            Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
-        return $this->responseOK();
+            return $this->responseOK();
+        } catch (\Throwable $th) {
+
+            Log::debug('--- ZD-ERP: Post Lead ---');
+            Log::debug($th);
+            throw $th;
+        }
     }
 
     // Auto Fill Lead ID custom field.

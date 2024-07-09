@@ -168,6 +168,7 @@ class OnCreateController extends Controller
         //code...
         Log::debug('-- ZENDESK ERP LEAD --');
         $payload = [
+            'requestFrom' => 'zendesk',
             'enterprisePrivyId' => $request->enterprise_id,
             'customerName' => $request->company_name,
             'firstName' => $request->first_name,

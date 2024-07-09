@@ -185,7 +185,15 @@ class OnCreateController extends Controller
             $res_json = $resp->json();
             Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
-            return $this->responseOK();
+            if ($res_json["code"] == 200) {
+                # code...
+                return $this->responseOK();
+            } else {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => $res_json["message"]
+                ], $res_json["code"]);
+            }
         } catch (\Throwable $th) {
 
             Log::debug('--- ZD-ERP: Post Lead ---');

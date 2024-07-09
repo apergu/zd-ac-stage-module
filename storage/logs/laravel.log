@@ -459,3 +459,82 @@
 #46 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('/Users/aufulkir...')
 #47 {main}
 "} 
+[2024-07-09 00:06:07] local.DEBUG: --- Zendesk-Event: Lead on Create ---  
+[2024-07-09 00:06:07] local.DEBUG: {
+    "zd_lead_id": 124142,
+    "last_name": "9 JUL 2 CRM",
+    "status": "New Client - Inbound",
+    "email": "auful9julcrm@gmail.com",
+    "company_name": "PT AUFUL 9 JUL 2 CRM",
+    "mobile": "231083921321",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-09 00:06:07] local.DEBUG: array (
+  'CONTACT ID' => NULL,
+)  
+[2024-07-09 00:06:07] local.DEBUG: -- ZENDESK ERP LEAD --  
+[2024-07-09 00:06:07] local.DEBUG: --- ZD-ERP: Post Lead ---  
+[2024-07-09 00:06:07] local.DEBUG: {
+    "code": 409,
+    "data": [],
+    "message": "[err_duplicate] Duplicate data",
+    "success": false
+}  
+[2024-07-09 00:06:07] local.DEBUG: --- ZD-Request: Fill LeadID using Update Lead ActiveCampaign Contact ID ---  
+[2024-07-09 00:06:07] local.DEBUG: {
+    "custom_fields": {
+        "Lead ID": 124142
+    }
+}  
+[2024-07-09 00:06:07] local.DEBUG: --- ZD-Request: Update Lead ActiveCampaign Contact ID ---  
+[2024-07-09 00:06:07] local.ERROR: resource= field= code=not_found message=Not Found {"exception":"[object] (BaseCRM\\Errors\\RequestError(code: 0): resource= field= code=not_found message=Not Found at /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php:286)
+[stacktrace]
+#0 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php(269): BaseCRM\\HttpClient->handleErrorResponse(404, '{\"errors\":[{\"er...', Array)
+#1 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php(160): BaseCRM\\HttpClient->handleResponse(404, '{\"errors\":[{\"er...')
+#2 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php(65): BaseCRM\\HttpClient->request('PUT', '/leads/124142', NULL, Array, Array)
+#3 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/LeadsService.php(111): BaseCRM\\HttpClient->put('/leads/124142', Array, Array)
+#4 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Zendesk/Lead/OnCreateController.php(276): BaseCRM\\LeadsService->update(124142, Array)
+#5 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Zendesk/Lead/OnCreateController.php(217): App\\Http\\Controllers\\Zendesk\\Lead\\OnCreateController->updateACContactIDToZD(124142, Array)
+#6 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Zendesk/Lead/OnCreateController.php(23): App\\Http\\Controllers\\Zendesk\\Lead\\OnCreateController->updateCustomLeadId(Object(App\\Http\\Requests\\CreateLeadRequest))
+#7 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Zendesk\\Lead\\OnCreateController->index(Object(App\\Http\\Requests\\CreateLeadRequest))
+#8 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('index', Array)
+#9 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Zendesk\\Lead\\OnCreateController), 'index')
+#10 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#11 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate\\Routing\\Route->run()
+#12 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#13 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Middleware/BasicAuth.php(33): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App\\Http\\Middleware\\BasicAuth->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(135): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#19 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter(Object(Illuminate\\Http\\Request), Object(Closure), 'api', Object(Closure))
+#20 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'api')
+#21 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#23 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#24 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#25 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#26 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#27 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#44 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#45 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/public/index.php(53): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#46 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('/Users/aufulkir...')
+#47 {main}
+"} 

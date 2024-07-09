@@ -20,7 +20,8 @@ class OnCreateController extends Controller
 
         Log::debug(["CONTACT ID" => $request->ac_contact_id]);
         $dataRes = $this->postLead($request);
-        if ($dataRes['code'] != 200) {
+        Log::debug(json_encode($dataRes, JSON_PRETTY_PRINT));
+        if ($dataRes['code'] != 200 || $dataRes['code'] != 201) {
             # code...
             return $dataRes;
         }
@@ -160,50 +161,36 @@ class OnCreateController extends Controller
 
     private function postLead(Request $request)
     {
-        try {
-            //code...
-            Log::debug('-- ZENDESK ERP LEAD --');
-            $payload = [
-                'enterprisePrivyId' => $request->enterprise_id,
-                'customerName' => $request->company_name,
-                'firstName' => $request->first_name,
-                'lastName' => $request->last_name,
-                'address' => $request->address ?? "",
-                'email' => $request->email,
-                'phoneNo' => $request->phone ?? $request->mobile,
-                'entityStatus' => '6',
-                'crmLeadId' => "$request->zd_lead_id",
-                'subIndustry' => $request->sub_industry,
-                'npwp' => "",
-                'state' => "",
-                'city' => "",
-                'zip' => "",
-            ];
 
-            $resp = Http::withHeaders([
-                'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
-                'Content-Type' => 'application/json'
-            ])->post(Constant::MIDDLEWARE_URL . '/customer', $payload);
+        //code...
+        Log::debug('-- ZENDESK ERP LEAD --');
+        $payload = [
+            'enterprisePrivyId' => $request->enterprise_id,
+            'customerName' => $request->company_name,
+            'firstName' => $request->first_name,
+            'lastName' => $request->last_name,
+            'address' => $request->address ?? "",
+            'email' => $request->email,
+            'phoneNo' => $request->phone ?? $request->mobile,
+            'entityStatus' => '6',
+            'crmLeadId' => "$request->zd_lead_id",
+            'subIndustry' => $request->sub_industry,
+            'npwp' => "",
+            'state' => "",
+            'city' => "",
+            'zip' => "",
+        ];
 
-            Log::debug('--- ZD-ERP: Post Lead ---');
-            $res_json = $resp->json();
-            Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
+        $resp = Http::withHeaders([
+            'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
+            'Content-Type' => 'application/json'
+        ])->post(Constant::MIDDLEWARE_URL . '/customer', $payload);
 
-            if ($res_json["code"] == 200) {
-                # code...
-                return $this->responseOK();
-            } else {
-                return response()->json([
-                    'status' => 'error',
-                    'message' => $res_json["message"]
-                ], $res_json["code"]);
-            }
-        } catch (\Throwable $th) {
+        Log::debug('--- ZD-ERP: Post Lead ---');
+        $res_json = $resp->json();
+        Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
-            Log::debug('--- ZD-ERP: Post Lead ---');
-            Log::debug($th);
-            throw $th;
-        }
+        return $res_json;
     }
 
     // Auto Fill Lead ID custom field.

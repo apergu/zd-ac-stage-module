@@ -32,7 +32,7 @@ class CreateLeadRequest extends FormRequest
             'status' => 'required|string|max:255',
             'email' => 'required|string|max:255',
             'company_name' => 'required|string|max:255',
-            'mobile' => 'required|string|max:255',
+            'mobile' => 'string|max:255',
             'sub_industry' => 'required|string|max:255',
         ];
     }

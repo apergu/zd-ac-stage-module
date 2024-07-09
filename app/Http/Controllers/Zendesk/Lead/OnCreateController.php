@@ -184,6 +184,8 @@ class OnCreateController extends Controller
             'zip' => "",
         ];
 
+        Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
+
         $resp = Http::withHeaders([
             'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
             'Content-Type' => 'application/json'

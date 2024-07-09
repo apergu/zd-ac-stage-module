@@ -1,0 +1,27 @@
+[2024-07-09 00:25:57] local.DEBUG: --- Zendesk-Event: Lead on Create ---  
+[2024-07-09 00:25:57] local.DEBUG: {
+    "zd_lead_id": 124142,
+    "last_name": "9 JUL 2 CRM",
+    "status": "New Client - Inbound",
+    "email": "auful9julcrm@gmail.com",
+    "company_name": "PT AUFUL 9 JUL 2 CRM",
+    "mobile": "231083921321",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-09 00:25:57] local.DEBUG: array (
+  'CONTACT ID' => NULL,
+)  
+[2024-07-09 00:25:57] local.DEBUG: -- ZENDESK ERP LEAD --  
+[2024-07-09 00:25:57] local.DEBUG: --- ZD-ERP: Post Lead ---  
+[2024-07-09 00:25:57] local.DEBUG: {
+    "code": 409,
+    "data": [],
+    "message": "[err_duplicate] Duplicate data",
+    "success": false
+}  
+[2024-07-09 00:25:57] local.DEBUG: {
+    "code": 409,
+    "data": [],
+    "message": "[err_duplicate] Duplicate data",
+    "success": false
+}  

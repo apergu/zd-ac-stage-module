@@ -23,7 +23,10 @@ class OnCreateController extends Controller
         Log::debug(json_encode($dataRes, JSON_PRETTY_PRINT));
         if ($dataRes['code'] != 200 || $dataRes['code'] != 201) {
             # code...
-            return $dataRes;
+            return response()->json([
+                'status' => 'error',
+                'message' => $dataRes['message']
+            ], $dataRes['code']);
         }
         $this->updateCustomLeadId($request);
 

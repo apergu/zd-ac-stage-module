@@ -164,3 +164,21 @@
     "zip": null
 }  
 [2024-07-09 19:34:18] local.DEBUG: --- ZD-Request: Get Lead ---  
+[2024-07-10 03:15:11] local.DEBUG: --- Privy-Event: Free Trial ---  
+[2024-07-10 03:15:11] local.DEBUG: {
+    "address": "Jalan Thamrin No. 90",
+    "city": "Jakarta Utara",
+    "country": "Indonesia",
+    "email": "auful10jul6@yopmail.com",
+    "enterprise_name": "PT AUFUL 10 JUL 6",
+    "enterprise_privy_id": "EIDAPG10JUL",
+    "first_name": "AUFUL",
+    "last_name": "KIROM",
+    "npwp": "208117905653833",
+    "phone": "081598102765",
+    "state": "Jakarta",
+    "sub_industry": "Agriculture",
+    "zd_lead_id": "2202745208",
+    "zip": "36431"
+}  
+[2024-07-10 03:15:11] local.DEBUG: --- ZD-Request: Get Lead ---  

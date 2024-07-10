@@ -44,7 +44,7 @@ class OnChangeController extends Controller
         Log::debug('--- ZD-Response: Find Lead ---');
         Log::debug(json_encode($findLead, JSON_PRETTY_PRINT));
 
-        if ($findLead['errors'][0] != null && $findLead['errors'][0]['error']['code'] == 'not_found') {
+        if (!isset($findLead['data'])) {
             # code...
             Log::debug('--- ZD-Response: Lead Not Found ---');
             return response()->json([

@@ -12,7 +12,7 @@ pipeline {
     // Repository
     // def GIT_CREDENTIAL = "git.dev1.my.id"
     def GIT_HASH = sh(returnStdout: true, script: 'git log -1 --pretty=format:"%h"').trim()
-    DOCKERHUB_CREDENTIALS = credentials('dockerhub-apergu')
+    // DOCKERHUB_CREDENTIALS = credentials('dockerhub')
   }
 
   stages {
@@ -37,10 +37,7 @@ pipeline {
             FAILED_STAGE=env.STAGE_NAME
             echo "BUILD"
 
-             sh label: 'Build Script', script:
-            """
-                docker build -t apergudev/sompo-zd:latest .
-            """
+            dockerImage = docker.build("apergudev/privy-aczd-module:${GIT_HASH}")
         }
       }
     }
@@ -50,15 +47,15 @@ pipeline {
         script {
           FAILED_STAGE=env.STAGE_NAME
           echo "RELEASE"
-        }
 
-        sh label: 'STEP RELEASE', script:
-        """
-          echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin
-          docker push apergudev/privy-aczd-module:latest
-          docker push apergudev/privy-aczd-module:staging
-          docker push apergudev/privy-aczd-module:dev
-        """
+          withDockerRegistry([ credentialsId: "dockerhub-apergu", url: "" ]){
+                // dockerImage.push()
+                dockerImage.push("latest")
+                dockerImage.push("dev")
+                dockerImage.push("staging")
+                // dockerImage.push(env.BRANCH_NAME)
+          }
+        }
       }
     }
   }

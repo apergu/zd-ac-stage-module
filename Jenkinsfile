@@ -26,7 +26,7 @@ pipeline {
         // Install Script
         sh label: 'Preparation Script', script:
         """
-            composer update
+            composer update --ignore-platform-reqs
         """
       }
     }

@@ -34,6 +34,8 @@ class Controller extends BaseController
 
         $stage_name = '';
 
+        $stage_id = (int)$stage_id;
+
         $response = collect($stages->all());
         Log::debug("RESPONSE ", $stages->all());
         $response->each(function ($val, $key) use ($stage_id, &$stage_name) {

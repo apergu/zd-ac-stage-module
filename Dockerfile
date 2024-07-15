@@ -32,7 +32,7 @@ COPY . .
 ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN mv composer.phar /usr/local/bin/composer
 RUN chmod +x /usr/local/bin/composer
-RUN composer install
+RUN composer install --ignore-platform-reqs
 
 EXPOSE 8080
 

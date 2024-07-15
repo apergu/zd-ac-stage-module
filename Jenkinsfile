@@ -40,6 +40,8 @@ pipeline {
              sh label: 'Build Script', script:
             """
                 docker build -t apergudev/privy-aczd-module:latest .
+                docker build -t apergudev/privy-aczd-module:staging .
+                docker build -t apergudev/privy-aczd-module:dev .
             """
         }
       }

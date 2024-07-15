@@ -46,6 +46,11 @@ class ChangeDealRequest extends FormRequest
      */
     protected function failedValidation(Validator $validator): void
     {
-        throw new HttpResponseException(response()->json($validator->errors(), 422));
+        $response = response()->json([
+            'error' => 'Validation Error',
+            'status' => 422,
+            'message' => $validator->errors(),
+        ], 422);
+        throw new HttpResponseException($response);
     }
 }

@@ -48,7 +48,7 @@ pipeline {
           FAILED_STAGE=env.STAGE_NAME
           echo "RELEASE"
 
-          withDockerRegistry([ credentialsId: "dockerhub", url: "" ]){
+          withDockerRegistry([ credentialsId: "dockerhub-apergu", url: "" ]){
                 // dockerImage.push()
                 dockerImage.push("latest")
                 dockerImage.push("dev")

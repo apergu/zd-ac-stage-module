@@ -51,8 +51,9 @@ class Controller extends BaseController
             # code...
             Log::debug('--- ZD-Response: Stage Not Found ---');
             return response()->json([
-                'status' => 'error',
-                'message' => 'Stage Not Found'
+                'error' => 'Stage Not Found',
+                'status' => 404,
+                'message' => 'Stage Not Found',
             ], 404);
         }
 

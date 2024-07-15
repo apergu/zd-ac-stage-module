@@ -18,6 +18,25 @@ class OnCreateController extends Controller
         Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
 
 
+
+        // Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
+        // Log::debug('--- ZD-Request: GET DATA ---');
+
+        // $url = "https://api.getbase.com/v2/leads/" . $request->zd_lead_id;
+        // $resp = Http::withHeaders([
+        //     'Authorization' => 'Bearer 26bed09778079a78eb96acb73feb1cb2d9b36267e992caa12b0d960c8f760e2c',
+        //     'Content-Type' => 'application/json'
+        // ])->get($url);
+        // // Log::debug($resp);
+        // $data = $resp->json();
+        // // dd($data['data']);
+        // if (!isset($data['data'])) {
+        //     # code...
+        //     return response()->json([
+        //         'error' => 'Zendesk Error',
+        //         'message' => 'Lead is Already Exist'
+        //     ], 409);
+        // }
         Log::debug(["CONTACT ID" => $request->ac_contact_id]);
         $dataRes = $this->postLead($request);
         Log::debug(json_encode($dataRes, JSON_PRETTY_PRINT));

@@ -22,13 +22,13 @@ class OnChangeController extends Controller
         Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
 
         $stage_name = $this->ZdStageGet($request->stage_id);
-        if ($stage_name->getStatusCode() != 200 || $stage_name->getStatusCode() != 201) {
-            # code...
-            return response()->json([
-                'status' => 'error',
-                'message' => 'Stage Not Found'
-            ], 404);
-        }
+        // if ($stage_name->getStatusCode() != 200 || $stage_name->getStatusCode() != 201) {
+        //     # code...
+        //     return response()->json([
+        //         'status' => 'error',
+        //         'message' => 'Stage Not Found'
+        //     ], 404);
+        // }
 
         Log::debug(json_encode($stage_name, JSON_PRETTY_PRINT));
 

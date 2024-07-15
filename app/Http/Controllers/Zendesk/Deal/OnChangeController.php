@@ -98,7 +98,7 @@ class OnChangeController extends Controller
             foreach ($res_json['fieldValues'] as $rj) {
                 $contact = $rj['contact'];
                 $zdPayloadUpdate = [
-                    "stage_id" => $request->stage_id,
+                    "stage_id" => (int)$request->stage_id,
                 ];
             }
             $this->updateACContactIDToZD($request->deal_id, $zdPayloadUpdate);

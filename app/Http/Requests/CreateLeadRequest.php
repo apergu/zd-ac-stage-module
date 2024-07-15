@@ -25,15 +25,16 @@ class CreateLeadRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'zd_lead_id' => 'required|integer',
-            // 'ac_contact_id' => 'required|integer',
-            // 'first_name' => 'string|max:255',
-            'last_name' => 'required|string|max:255',
-            'status' => 'required|string|max:255',
-            'email' => 'required|string|max:255',
+            'ac_contact_id' => 'integer',
             'company_name' => 'required|string|max:255',
-            'mobile' => 'string|max:255',
+            'email' => 'required|string|max:255',
+            'enterprise_id' => 'string|max:255',
+            'first_name' => 'string|max:255',
+            'last_name' => 'required|string|max:255',
+            'phone' => 'string|max:255',
+            'status' => 'string|max:255',
             'sub_industry' => 'required|string|max:255',
+            'zd_lead_id' => 'required|integer',
         ];
     }
 
@@ -45,6 +46,11 @@ class CreateLeadRequest extends FormRequest
      */
     protected function failedValidation(Validator $validator): void
     {
-        throw new HttpResponseException(response()->json($validator->errors(), 422));
+        $response = response()->json([
+            'error' => 'Validation Error',
+            'status' => 422,
+            'message' => $validator->errors(),
+        ], 422);
+        throw new HttpResponseException($response);
     }
 }

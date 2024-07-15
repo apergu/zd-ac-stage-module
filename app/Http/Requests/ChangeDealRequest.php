@@ -25,10 +25,16 @@ class ChangeDealRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'deal_id' => 'required|integer',
+            'ac_contact_id' => 'required|string|max:255',
+            'company_name' => 'string|max:255',
+            'deal_id' => 'required|string|max:255',
             'deal_name' => 'required|string|max:255',
-            'ac_contact_id' => 'required|integer',
-            'stage_id' => 'required|integer',
+            'enterprise_id' => 'string|max:255',
+            'last_name_adonara' => 'string|max:255',
+            'phone' => 'string|max:255',
+            'stage_id' => 'required|string|max:255',
+            // 'status' => 'string|max:255',
+            'sub_industry' => 'string|max:255',
         ];
     }
 

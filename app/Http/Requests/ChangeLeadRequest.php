@@ -25,11 +25,15 @@ class ChangeLeadRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'ac_contact_id' => 'required|string|max:255',
+            "company_name" => 'string|max:255',
+            "enterprise_id" => 'string|max:255',
+            'first_name_adonara' => 'string|max:255',
+            'last_name_adonara' => 'string|max:255',
             'lead_id' => 'required|string|max:255',
-            'first_name' => 'string|max:255',
-            'last_name' => 'string|max:255',
-            'ac_contact_id' => 'string|max:255',
+            "phone" => 'string|max:255',
             'status' => 'string|max:255',
+            "sub_industry" => 'string|max:255',
         ];
     }
 
@@ -41,6 +45,12 @@ class ChangeLeadRequest extends FormRequest
      */
     protected function failedValidation(Validator $validator): void
     {
-        throw new HttpResponseException(response()->json($validator->errors(), 422));
+
+        $response = response()->json([
+            'error' => 'Validation Error',
+            'status' => 422,
+            'message' => $validator->errors(),
+        ], 422);
+        throw new HttpResponseException($response);
     }
 }

@@ -47,11 +47,11 @@ class OnChangeController extends Controller
                         'field' => 2,
                         'value' => $request->sub_industry
                     ],
-                    [
-                        // 'field' => 5,
-                        'field' => 3,
-                        'value' => $request->status
-                    ],
+                    // [
+                    //     // 'field' => 5,
+                    //     'field' => 3,
+                    //     'value' => $request->status
+                    // ],
                     [
                         // 'field' => 6,
                         'field' => 4, // SB

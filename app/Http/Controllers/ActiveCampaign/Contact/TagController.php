@@ -4,6 +4,7 @@ namespace App\Http\Controllers\ActiveCampaign\Contact;
 
 use App\Http\Constant;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ContactTagRequest;
 use App\Models\Contact;
 use BaseCRM\Errors\RequestError;
 use Exception;
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Log;
  */
 class TagController extends Controller
 {
-    public function index(Request $request)
+    public function index(ContactTagRequest $request)
     {
         Log::debug('--- ActiveCampaign-Event: On Tag Created / Deleted --');
         Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
@@ -85,7 +86,7 @@ class TagController extends Controller
         return $zd_leads;
     }
 
-    private function zd_lead_add_tag(array $zd_lead, string $tag)
+    private function zd_lead_add_tag(array $zd_lead, $tag)
     {
         Log::debug('--- Check: Existing tags ---');
 
@@ -121,7 +122,7 @@ class TagController extends Controller
         return $zd_leads;
     }
 
-    private function zd_lead_remove_tag(array $zd_lead, string $tag)
+    private function zd_lead_remove_tag(array $zd_lead, $tag)
     {
         Log::debug('--- Check: Existing tags ---');
 

@@ -162,6 +162,32 @@ class OnCreateController extends Controller
         //     return $this->responseError($res_json['errors'][0]['title']);
         // }
 
+        $payloadERP = [
+            "enterprisePrivyId" => $request->enterprise_id,
+            "customerName" => $request->company_name,
+            "firstName" => $request->first_name,
+            "lastName" => $request->last_name,
+            "address" => $request->address ?? "",
+            "email" => $request->email,
+            "phoneNo" => $request->phone ?? $request->mobile,
+            "entityStatus" => "6",
+            "crmLeadId" => $request->zd_lead_id,
+            "subIndustry" => $request->sub_industry
+        ];
+
+        Log::debug(json_encode($payloadERP, JSON_PRETTY_PRINT));
+
+        $respERP = Http::withHeaders([
+            'Authorization
+            ' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
+            'Content-Type' => 'application/json'
+        ])->post(Constant::MIDDLEWARE_URL . '/customer', $payloadERP);
+
+
+        Log::debug('--- ZD-ERP: Post Lead ---');
+        $res_jsonERP = $respERP->json();
+
+        Log::debug(json_encode($res_jsonERP, JSON_PRETTY_PRINT));
 
 
         if ($res_json != null && isset($res_json['fieldValues'])) {

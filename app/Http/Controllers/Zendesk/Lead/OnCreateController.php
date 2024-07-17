@@ -173,7 +173,7 @@ class OnCreateController extends Controller
             "entityStatus" => "6",
             "crmLeadId" => $request->zd_lead_id,
             "subIndustry" => $request->sub_industry,
-            "npwp" => $request->npwp ?? "",
+            "npwp" => $request->npwp,
         ];
 
         Log::debug(json_encode($payloadERP, JSON_PRETTY_PRINT));

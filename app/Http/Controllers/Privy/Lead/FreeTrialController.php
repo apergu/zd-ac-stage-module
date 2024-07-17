@@ -336,7 +336,7 @@ class FreetrialController extends Controller
                 'Enterprise ID' => !isset($payload['enterprise_privy_id']) || $payload['enterprise_privy_id'] == '' ?  ($oldData['custom_fields']['Enterprise ID'] == "" ? "" : $oldData['custom_fields']['Enterprise ID']) : $payload['enterprise_privy_id'],
                 'Company Name - Adonara' => !isset($payload['enterprise_name']) || $payload['enterprise_name'] == '' ? $oldData['custom_fields']['Company name #1'] : $payload['enterprise_name'],
                 'Email - Adonara' => !isset($payload['email']) || $payload['email'] == '' ? $oldData['custom_fields']['Email #1'] : $payload['email'],
-                'NPWP' => !isset($payload['npwp']) || $payload['npwp'] == '' ? $oldData['custom_fields']['NPWP'] : $payload['npwp'],
+                'NPWP' => !isset($payload['npwp']) || $payload['npwp'] == '' ? ($oldData['custom_fields']['NPWP'] == "" ? "" : $oldData['custom_fields']['NPWP']) : $payload['npwp'],
                 'Sub Industry' => $payload['sub_industry'] ?? 'Agriculture',
             ]
         ];

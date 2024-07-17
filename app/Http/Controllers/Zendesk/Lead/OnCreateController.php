@@ -172,7 +172,8 @@ class OnCreateController extends Controller
             "phoneNo" => $request->phone ?? $request->mobile,
             "entityStatus" => "6",
             "crmLeadId" => $request->zd_lead_id,
-            "subIndustry" => $request->sub_industry
+            "subIndustry" => $request->sub_industry,
+            "npwp" => $request->npwp ?? "",
         ];
 
         Log::debug(json_encode($payloadERP, JSON_PRETTY_PRINT));

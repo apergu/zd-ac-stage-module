@@ -181,8 +181,7 @@ class OnCreateController extends Controller
         Log::debug(json_encode($payloadERP, JSON_PRETTY_PRINT));
 
         $respERP = Http::withHeaders([
-            'Authorization
-            ' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
+            'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
             'Content-Type' => 'application/json'
         ])->post(Constant::MIDDLEWARE_URL . '/customer', $payloadERP);
 

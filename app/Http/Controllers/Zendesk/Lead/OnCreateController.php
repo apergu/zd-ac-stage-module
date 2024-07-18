@@ -50,47 +50,47 @@ class OnCreateController extends Controller
         $this->updateCustomLeadId($request);
 
 
-        if ($request->ac_contact_id) {
-            // Validate Contact Id exist
-            Log::debug('--- AC-Request: Get Contact By ID ---');
-            Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
+        // if ($request->ac_contact_id) {
+        //     // Validate Contact Id exist
+        //     Log::debug('--- AC-Request: Get Contact By ID ---');
+        //     Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
 
-            $response = Http::withHeaders([
-                // 'Api-Token' => Constant::ACTIVECAMPAIGN_API_KEY
-                // 'Api-Token' => "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118",
-                'Api-Token' => "83098f1b9181f163ee582823ba5bdcde7a02db14d75b8fc3dc2eea91738a49a47e100e68", // SB
-                'content-type' => 'application/json',
-                'accept' => 'application/json'
-            ])->get(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
-            Log::debug('--- AC-Response: Get Contact By ID ---');
-            $res_json = $response->json();
-            Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
+        //     $response = Http::withHeaders([
+        //         // 'Api-Token' => Constant::ACTIVECAMPAIGN_API_KEY
+        //         // 'Api-Token' => "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118",
+        //         'Api-Token' => "83098f1b9181f163ee582823ba5bdcde7a02db14d75b8fc3dc2eea91738a49a47e100e68", // SB
+        //         'content-type' => 'application/json',
+        //         'accept' => 'application/json'
+        //     ])->get(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
+        //     Log::debug('--- AC-Response: Get Contact By ID ---');
+        //     $res_json = $response->json();
+        //     Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
-            if (isset($res_json['contact'])) {
-                return $this->update_contact($request, $res_json['contact']);
-            }
-        } else {
-            // Validate email if not using contact id
-            Log::debug('--- AC-Request: Search Contact By Email ---');
-            Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts?filters[email]=' . $request->email);
-            $response = Http::withHeaders([
-                // 'Api-Token' => Constant::ACTIVECAMPAIGN_API_KEY
-                // 'Api-Token' => "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118",
-                'Api-Token' => "83098f1b9181f163ee582823ba5bdcde7a02db14d75b8fc3dc2eea91738a49a47e100e68", // SB
-                'content-type' => 'application/json',
-                'accept' => 'application/json'
-            ])->get(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts?filters[email]=' . $request->email);
+        //     if (isset($res_json['contact'])) {
+        //         return $this->update_contact($request, $res_json['contact']);
+        //     }
+        // } else {
+        // Validate email if not using contact id
+        Log::debug('--- AC-Request: Search Contact By Email ---');
+        Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts?filters[email]=' . $request->email);
+        $response = Http::withHeaders([
+            // 'Api-Token' => Constant::ACTIVECAMPAIGN_API_KEY
+            // 'Api-Token' => "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118",
+            'Api-Token' => "83098f1b9181f163ee582823ba5bdcde7a02db14d75b8fc3dc2eea91738a49a47e100e68", // SB
+            'content-type' => 'application/json',
+            'accept' => 'application/json'
+        ])->get(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts?filters[email]=' . $request->email);
 
-            Log::debug('--- AC-Response: Search Contact By Email ---');
-            $contacts = $response->json('contacts');
-            Log::debug(json_encode($contacts, JSON_PRETTY_PRINT));
+        Log::debug('--- AC-Response: Search Contact By Email ---');
+        $contacts = $response->json('contacts');
+        Log::debug(json_encode($contacts, JSON_PRETTY_PRINT));
 
-            // If contact exist update contact
-            if ($contacts != null && count($contacts) > 0) {
-                $contact = $contacts[0];
-                return $this->update_contact($request, $contact);
-            }
+        // If contact exist update contact
+        if ($contacts != null && count($contacts) > 0) {
+            $contact = $contacts[0];
+            return $this->update_contact($request, $contact);
         }
+        // }
         // Create new contact
 
 
@@ -175,6 +175,8 @@ class OnCreateController extends Controller
             "subIndustry" => $request->sub_industry,
             "npwp" => $request->npwp,
         ];
+
+
 
         Log::debug(json_encode($payloadERP, JSON_PRETTY_PRINT));
 

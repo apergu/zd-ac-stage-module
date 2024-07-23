@@ -41,7 +41,7 @@ class OnCreateController extends Controller
         $dataRes = $this->postLead($request);
         Log::debug(json_encode($dataRes, JSON_PRETTY_PRINT));
 
-        if ($dataRes != null) {
+        if (isset($dataRes) && is_array($dataRes) && isset($dataRes['code'])) {
             # code...
             if ($dataRes['code'] != 201) {
                 # code...

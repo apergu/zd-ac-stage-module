@@ -27,6 +27,7 @@ class ContactTagRequest extends FormRequest
         return [
             'contact.id' => 'required|integer',
             'tag' => 'required|string|max:100',
+            'type' => 'required|string|max:50',
         ];
     }
 
@@ -38,6 +39,9 @@ class ContactTagRequest extends FormRequest
             'tag.required' => 'Tag is required',
             'tag.string' => 'Tag must be an string',
             'tag.max' => 'Tag must not exceed 100 characters',
+            'type.required' => 'Type is required',
+            'type.string' => 'Type must be an string',
+            'type.max' => 'Type must not exceed 50 characters',
         ];
     }
 

@@ -30,13 +30,17 @@ class OnCreateController extends Controller
             'accept' => 'application/json'
         ])->get(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);
         $dataAC = $dataContact->json();
-        if (strpos(strtolower($dataAC['message']), 'no result') !== false) {
+
+        if (isset($dataAC['message'])) {
             # code...
-            Log::debug('--- AC-Response: Contact Not Found ---');
-            return response()->json([
-                'status' => 'error',
-                'message' => 'Contact Not Found'
-            ], 404);
+            if (strpos(strtolower($dataAC['message']), 'no result') !== false) {
+                # code...
+                Log::debug('--- AC-Response: Contact Not Found ---');
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Contact Not Found'
+                ], 404);
+            }
         }
 
 

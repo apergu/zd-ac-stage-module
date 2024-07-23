@@ -40,13 +40,18 @@ class OnCreateController extends Controller
         Log::debug(["CONTACT ID" => $request->ac_contact_id]);
         $dataRes = $this->postLead($request);
         Log::debug(json_encode($dataRes, JSON_PRETTY_PRINT));
-        if ($dataRes['code'] != 201) {
+
+        if ($dataRes != null) {
             # code...
-            return response()->json([
-                'status' => 'error',
-                'message' => $dataRes['message']
-            ], $dataRes['code']);
+            if ($dataRes['code'] != 201) {
+                # code...
+                return response()->json([
+                    'status' => 'error',
+                    'message' => $dataRes['message']
+                ], $dataRes['code']);
+            }
         }
+
         $this->updateCustomLeadId($request);
 
 
@@ -149,18 +154,10 @@ class OnCreateController extends Controller
         $res_json = $response->json();
         Log::debug(['RESPONSE URL' => $res_json]);
 
-        // Log::debug("RESPONSE URL", Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts');
-
         Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
         Log::debug(['RESPONSE URL JSON' => $res_json]);
 
-
-        // if (isset($res_json['errors'])) {
-        //     # code...
-        //     Log::debug('--- AC-Request: Create New Contact ---');
-        //     return $this->responseError($res_json['errors'][0]['title']);
-        // }
 
         $payloadERP = [
             "enterprisePrivyId" => $request->enterprise_id,

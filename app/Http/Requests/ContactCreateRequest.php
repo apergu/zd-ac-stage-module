@@ -39,8 +39,8 @@ class ContactCreateRequest extends FormRequest
             'contact.phone' => 'string|max:50',
             'contact.ip' => 'string|max:50',
             'contact.fields' => 'required',
-            'contact.fields.1' => 'required|string|max:50',
-            'contact.fields.2' => 'required|string|max:50',
+            'contact.fields.1' => 'required|string|max:255',
+            'contact.fields.2' => 'required|string|max:255',
             'active_subscriptions' => 'array',
 
         ];
@@ -67,10 +67,10 @@ class ContactCreateRequest extends FormRequest
             'contact.ip.max' => 'IP must not exceed 50 characters',
             'contact.fields.1.required' => 'Company name is required',
             'contact.fields.1.string' => 'Company name must be a string',
-            'contact.fields.1.max' => 'Company name must not exceed 50 characters',
+            'contact.fields.1.max' => 'Company name must not exceed 255 characters',
             'contact.fields.2.required' => 'Subindustry is required',
             'contact.fields.2.string' => 'Subindustry must be a string',
-            'contact.fields.2.max' => 'Subindustry must not exceed 50 characters',
+            'contact.fields.2.max' => 'Subindustry must not exceed 255 characters',
             'active_subscriptions.array' => 'Active Subscriptions must be an array',
         ];
     }

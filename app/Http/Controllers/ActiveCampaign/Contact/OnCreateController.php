@@ -87,8 +87,11 @@ class OnCreateController extends Controller
         ])->get($url);
         // Log::debug($resp);
         $data = $resp->json();
+
+        Log::debug('--- ZD-Response: GET DATA ---');
+        Log::debug(json_encode($data, JSON_PRETTY_PRINT));
         // dd($data['data']);
-        if (!isset($data['data'])) {
+        if ($organization['lead_id'] != '') {
             # code...
             return response()->json([
                 'error' => 'Zendesk Error',

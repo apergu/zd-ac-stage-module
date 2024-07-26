@@ -114,6 +114,23 @@ class OnCreateController extends Controller
 
         Log::debug(json_encode($organization, JSON_PRETTY_PRINT));
 
+        $tags = ['AC Webhook'];
+
+        $url = "https://privy1706071639.api-us1.com/api/3/forms/" . $request->form['id'];
+        $resp = Http::withHeaders([
+            'Api-Token' => '83098f1b9181f163ee582823ba5bdcde7a02db14d75b8fc3dc2eea91738a49a47e100e68',
+            'Content-Type' => 'application/json'
+        ])->get($url);
+        // Log::debug($resp);
+        $data = $resp->json();
+
+        Log::debug('--- ZD-Response: GET DATA ---');
+        Log::debug(json_encode($data, JSON_PRETTY_PRINT));
+
+        if ($data != null) {
+            array_push($tags, $data['form']['name']);
+        }
+
         // Create New Lead to Zendesk
         if ($ac_contact['fields']['1'] != '') {
             # code...
@@ -127,7 +144,7 @@ class OnCreateController extends Controller
                     'mobile' => $ac_contact['phone'] ?? '',
                     // 'organization_name' => $organization['organization_name'],
                     'organization_name' => $ac_contact['fields']['1'] ?? '',
-                    'tags' => ['AC Webhook'],
+                    'tags' => $tags,
                     'custom_fields' => [
                         'Sub Industry' => $organization['sub_industry'],
                         'ActiveCampaign Contact ID' => $ac_contact['id'],

@@ -44,6 +44,8 @@ class OnCreateController extends Controller
         }
 
 
+
+
         $payload = [
             'contact' => [
                 'lastName' => $request->last_name_adonara ?? $request->last_name,
@@ -59,7 +61,7 @@ class OnCreateController extends Controller
                     ],
                     [
                         'field' => 3,
-                        'value' => $dataContact['fieldValues'][2]['value']
+                        'value' => $dataContact['fieldValues'][$this->findFieldValueByKey($dataContact['fieldValues'], "3")]['value']
                     ],
                     [
                         // 'field' => 6,
@@ -98,6 +100,19 @@ class OnCreateController extends Controller
         Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
         return $this->responseOK();
+    }
+
+    private function findFieldValueByKey($fieldValues, $key)
+    {
+        $i = 0;
+        foreach ($fieldValues as $field) {
+            if ($field['field'] == $key) {
+                return $i;
+                // return $field['value'];
+            }
+            $i++;
+        }
+        return null;
     }
 
     private function postLead(Request $request)

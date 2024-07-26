@@ -55,12 +55,12 @@ class OnCreateController extends Controller
             $res_json = $response->json();
             Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
-            $this->update_contact($request, $res_json['contact']);
             if (isset($res_json['contact'])) {
-                return response()->json([
-                    'error' => 'Zendesk Error',
-                    'message' => 'Lead is Already Exist'
-                ], 409);
+                $this->update_contact($request, $res_json['contact']);
+                // return response()->json([
+                //     'error' => 'Zendesk Error',
+                //     'message' => 'Lead is Already Exist'
+                // ], 409);
             }
         } else {
             //     Log::debug('--- AC-Request: Search Contact By Email ---');
@@ -79,10 +79,13 @@ class OnCreateController extends Controller
 
             // If contact exist update contact
             if ($contacts != null && count($contacts) > 0) {
-                return response()->json([
-                    'error' => 'Zendesk Error',
-                    'message' => 'Lead is Already Exist'
-                ], 409);
+                // return response()->json([
+                //     'error' => 'Zendesk Error',
+                //     'message' => 'Lead is Already Exist'
+                // ], 409);
+
+                $contact = $contacts[0];
+                $this->update_contact($request, $contact);
             }
         }
 

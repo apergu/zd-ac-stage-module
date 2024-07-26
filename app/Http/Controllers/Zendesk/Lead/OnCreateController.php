@@ -55,8 +55,8 @@ class OnCreateController extends Controller
             $res_json = $response->json();
             Log::debug(json_encode($res_json, JSON_PRETTY_PRINT));
 
+            $this->update_contact($request, $res_json['contact']);
             if (isset($res_json['contact'])) {
-                // return $this->update_contact($request, $res_json['contact']);
                 return response()->json([
                     'error' => 'Zendesk Error',
                     'message' => 'Lead is Already Exist'

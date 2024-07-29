@@ -23186,3 +23186,78 @@
     ],
     "message": "Validations error"
 }  
+[2024-07-29 03:38:27] local.DEBUG: --- Zendesk-Event: Lead on Status Changed ---  
+[2024-07-29 03:38:27] local.DEBUG: {
+    "ac_contact_id": "921",
+    "company_name": "Test-QIF-240725-010",
+    "enterprise_id": "Test-QIF-240725-010",
+    "first_name_adonara": "Test-QIF-240725-010",
+    "last_name_adonara": "Test-QIF-240725-010",
+    "lead_id": "2205085345",
+    "phone": "08123456789",
+    "status": "New Client - Inbound",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-29 03:38:27] local.DEBUG: --- AC-Request: Update Contact Request --  
+[2024-07-29 03:38:27] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/921  
+[2024-07-29 03:38:28] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-29 03:49:16] local.DEBUG: --- Zendesk-Event: Lead on Status Changed ---  
+[2024-07-29 03:49:16] local.DEBUG: {
+    "ac_contact_id": "921",
+    "company_name": "Test-QIF-240725-010",
+    "enterprise_id": "Test-QIF-240725-010",
+    "first_name_adonara": "Test-QIF-240725-010",
+    "last_name_adonara": "Test-QIF-240725-010",
+    "lead_id": "2205085345",
+    "phone": "08123456789",
+    "status": "New Client - Inbound",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-29 03:49:16] local.DEBUG: --- AC-Request: Update Contact Request --  
+[2024-07-29 03:49:16] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/921  
+[2024-07-29 03:49:17] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-29 03:49:54] local.DEBUG: --- Zendesk-Event: Lead on Status Changed ---  
+[2024-07-29 03:49:54] local.DEBUG: {
+    "ac_contact_id": "921",
+    "company_name": "Test-QIF-240725-010",
+    "enterprise_id": "Test-QIF-240725-010",
+    "first_name_adonara": "Test-QIF-240725-010",
+    "last_name_adonara": "Test-QIF-240725-010",
+    "lead_id": "2205085345",
+    "phone": "08123456789",
+    "status": "New Client - Inbound",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-29 03:49:54] local.DEBUG: --- AC-Request: Update Contact Request --  
+[2024-07-29 03:49:54] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/921  
+[2024-07-29 03:49:55] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-29 03:50:03] local.DEBUG: --- Zendesk-Event: Lead on Status Changed ---  
+[2024-07-29 03:50:03] local.DEBUG: {
+    "ac_contact_id": "921",
+    "company_name": "Test-QIF-240725-010",
+    "enterprise_id": "Test-QIF-240725-010",
+    "first_name_adonara": "Test-QIF-240725-010",
+    "last_name_adonara": "Test-QIF-240725-010",
+    "lead_id": "2205085345AA",
+    "phone": "08123456789",
+    "status": "New Client - Inbound",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-29 03:50:03] local.DEBUG: --- AC-Request: Update Contact Request --  
+[2024-07-29 03:50:03] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/921  
+[2024-07-29 03:50:04] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-29 03:50:15] local.DEBUG: --- Zendesk-Event: Lead on Status Changed ---  
+[2024-07-29 03:50:15] local.DEBUG: {
+    "ac_contact_id": "921",
+    "company_name": "Test-QIF-240725-010",
+    "enterprise_id": "Test-QIF-240725-010",
+    "first_name_adonara": "Test-QIF-240725-010",
+    "last_name_adonara": "Test-QIF-240725-010",
+    "lead_id": "2205085345AA",
+    "phone": "08123456789",
+    "status": "New Client - Inbound",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-29 03:50:15] local.DEBUG: --- AC-Request: Update Contact Request --  
+[2024-07-29 03:50:15] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/921  
+[2024-07-29 03:50:16] local.DEBUG: ------- FIND ACCOUNT ------  

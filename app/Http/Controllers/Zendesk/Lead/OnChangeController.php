@@ -38,6 +38,19 @@ class OnChangeController extends Controller
                 'message' => 'Contact Not Found'
             ], 404);
         }
+
+        if ($findAcAccount['fieldValues'] != null) {
+            # code...
+            $ac_stages = collect($findAcAccount['fieldValues']);
+            Log::debug("------- FIND ACCOUNT ------");
+            if ($ac_stages[4]['value'] != $request->lead_id) {
+                # code...
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Lead ID not match'
+                ], 422);
+            }
+        }
         $zdLeads = new ZDLeads();
         $findLead = $zdLeads->find($request->lead_id);
 

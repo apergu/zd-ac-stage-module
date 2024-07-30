@@ -15,7 +15,7 @@ class Constant
     const ZENDESK_URL = "https://api.getbase.com";
 
     const MIDDLEWARE_URL = "http://apergu.tech:9001/api/v1";
-    const BASE_URL_PRIVY = "https://stg-b2b-api-service.privy.id";
+    const BASE_URL_PRIVY = "http://apergu.tech:8000/apergu-middleware/api/v1";
     // const TOPUP_URL = "/v1/orchestrator-erp-goldengate/webhook/apergu/top-up";
 
 }

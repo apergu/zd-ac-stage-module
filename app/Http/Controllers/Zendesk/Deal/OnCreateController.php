@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Zendesk\Deal;
 
 use App\Http\Controllers\Controller;
 use App\Http\Constant;
+use App\Http\Controllers\Global\GlobalFunctionController;
 use App\Http\Requests\CreateDealRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -44,6 +45,25 @@ class OnCreateController extends Controller
         }
 
 
+        if ($dataAC['fieldValues'] != null) {
+            # code...
+            $ac_stages = collect($dataAC['fieldValues']);
+            Log::debug("------- FIND ACCOUNT ------");
+            if ($ac_stages[GlobalFunctionController::findFieldValueByKey($dataContact['fieldValues'], "4")]['value'] != $request->lead_id) {
+                # code...
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Lead ID not match'
+                ], 422);
+            } else {
+                return response()->json([
+                    'status' => 'success',
+                    'message' => 'MATCH'
+                ], 200);
+            }
+        }
+
+
 
 
         $payload = [
@@ -61,7 +81,7 @@ class OnCreateController extends Controller
                     ],
                     [
                         'field' => 3,
-                        'value' => $dataContact['fieldValues'][$this->findFieldValueByKey($dataContact['fieldValues'], "3")]['value']
+                        'value' => $dataContact['fieldValues'][GlobalFunctionController::findFieldValueByKey($dataContact['fieldValues'], "3")]['value']
                     ],
                     [
                         // 'field' => 6,
@@ -102,18 +122,18 @@ class OnCreateController extends Controller
         return $this->responseOK();
     }
 
-    private function findFieldValueByKey($fieldValues, $key)
-    {
-        $i = 0;
-        foreach ($fieldValues as $field) {
-            if ($field['field'] == $key) {
-                return $i;
-                // return $field['value'];
-            }
-            $i++;
-        }
-        return null;
-    }
+    // private function findFieldValueByKey($fieldValues, $key)
+    // {
+    //     $i = 0;
+    //     foreach ($fieldValues as $field) {
+    //         if ($field['field'] == $key) {
+    //             return $i;
+    //             // return $field['value'];
+    //         }
+    //         $i++;
+    //     }
+    //     return null;
+    // }
 
     private function postLead(Request $request)
     {

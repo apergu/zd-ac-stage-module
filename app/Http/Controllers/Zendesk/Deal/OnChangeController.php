@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Models\ZdStage;
 use App\Http\Constant;
+use App\Http\Controllers\Global\GlobalFunctionController;
 use App\Http\Requests\ChangeDealRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -16,6 +17,9 @@ use Illuminate\Support\Facades\Log;
  */
 class OnChangeController extends Controller
 {
+
+
+
     public function index(ChangeDealRequest $request)
     {
         Log::debug('--- Zendesk-Event: Deal On Stage Changed ---');
@@ -29,6 +33,8 @@ class OnChangeController extends Controller
         //         'message' => 'Stage Not Found'
         //     ], 404);
         // }
+
+
 
         $dataContact = Http::withHeaders([
             // 'Api-Token' => "47b6869d496b7ad646167994d2c70efedd1e0de7a3ea86adf792ccc597501fb62ad98118",
@@ -47,6 +53,25 @@ class OnChangeController extends Controller
                     'status' => 'error',
                     'message' => 'Contact Not Found'
                 ], 404);
+            }
+        }
+        // dd($dataAC['fieldValues']);
+
+        if ($dataAC['fieldValues'] != null) {
+            # code...
+            $ac_stages = collect($dataAC['fieldValues']);
+            Log::debug("------- FIND ACCOUNT ------");
+            if ($ac_stages[GlobalFunctionController::findFieldValueByKey($dataContact['fieldValues'], "4")]['value'] != $request->lead_id && $ac_stages[GlobalFunctionController::findFieldValueByKey($dataContact['fieldValues'], "7")]['value'] != $request->enterprise_id) {
+                # code...
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Lead ID not match'
+                ], 422);
+            } else {
+                return response()->json([
+                    'status' => 'success',
+                    'message' => 'MATCH'
+                ], 200);
             }
         }
 

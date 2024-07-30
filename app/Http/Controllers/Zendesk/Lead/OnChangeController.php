@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Zendesk\Lead;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Http\Constant;
+use App\Http\Controllers\Global\GlobalFunctionController;
 use App\Http\Requests\ChangeLeadRequest;
 use App\Http\Services\ZDLeads;
 use Illuminate\Http\Request;
@@ -43,7 +44,7 @@ class OnChangeController extends Controller
             # code...
             $ac_stages = collect($findAcAccount['fieldValues']);
             Log::debug("------- FIND ACCOUNT ------");
-            if ($ac_stages[4]['value'] != $request->lead_id) {
+            if ($ac_stages[GlobalFunctionController::findFieldValueByKey($findAcAccount['fieldValues'], "4")]['value'] != $request->lead_id) {
                 # code...
                 return response()->json([
                     'status' => 'error',

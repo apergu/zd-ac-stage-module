@@ -40,11 +40,12 @@ class OnChangeController extends Controller
             ], 404);
         }
 
+        // dd()
         if ($findAcAccount['fieldValues'] != null) {
             # code...
             $ac_stages = collect($findAcAccount['fieldValues']);
             Log::debug("------- FIND ACCOUNT ------");
-            if ($ac_stages[GlobalFunctionController::findFieldValueByKey($findAcAccount['fieldValues'], "4")]['value'] != $request->lead_id) {
+            if ($ac_stages[2]['value'] != $request->lead_id) {
                 # code...
                 return response()->json([
                     'status' => 'error',

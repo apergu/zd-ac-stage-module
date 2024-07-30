@@ -61,7 +61,7 @@ class OnChangeController extends Controller
             # code...
             $ac_stages = collect($dataAC['fieldValues']);
             Log::debug("------- FIND ACCOUNT ------");
-            if ($ac_stages[GlobalFunctionController::findFieldValueByKey($dataContact['fieldValues'], "4")]['value'] != $request->lead_id && $ac_stages[GlobalFunctionController::findFieldValueByKey($dataContact['fieldValues'], "7")]['value'] != $request->enterprise_id) {
+            if ($ac_stages[2]['value'] != $request->lead_id && $ac_stages[6]['contact'] != $request->ac_contact_id) {
                 # code...
                 return response()->json([
                     'status' => 'error',

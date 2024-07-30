@@ -23887,3 +23887,88 @@
     "sub_industry": "Agriculture"
 }  
 [2024-07-29 08:25:29] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 07:36:05] local.DEBUG: --- Zendesk-Event: Lead on Status Changed ---  
+[2024-07-30 07:36:05] local.DEBUG: {
+    "ac_contact_id": "75",
+    "company_name": "PT FUSION080",
+    "enterprise_id": "PT FUSION080",
+    "first_name_adonara": "BAYU",
+    "last_name_adonara": "FREETRIALEN",
+    "lead_id": "2188649147",
+    "phone": "08123456789",
+    "status": "New Client - Inbound",
+    "sub_industry": "Others"
+}  
+[2024-07-30 07:36:05] local.DEBUG: --- AC-Request: Update Contact Request --  
+[2024-07-30 07:36:05] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/75  
+[2024-07-30 07:37:13] local.DEBUG: --- Zendesk-Event: Lead on Status Changed ---  
+[2024-07-30 07:37:13] local.DEBUG: {
+    "ac_contact_id": "931",
+    "company_name": "PT FUSION080",
+    "enterprise_id": "PT FUSION080",
+    "first_name_adonara": "BAYU",
+    "last_name_adonara": "FREETRIALEN",
+    "lead_id": "2188649147",
+    "phone": "08123456789",
+    "status": "New Client - Inbound",
+    "sub_industry": "Others"
+}  
+[2024-07-30 07:37:13] local.DEBUG: --- AC-Request: Update Contact Request --  
+[2024-07-30 07:37:13] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/931  
+[2024-07-30 07:41:54] local.DEBUG: --- Zendesk-Event: Lead on Status Changed ---  
+[2024-07-30 07:41:54] local.DEBUG: {
+    "ac_contact_id": "75",
+    "company_name": "PT FUSION080",
+    "enterprise_id": "PT FUSION080",
+    "first_name_adonara": "BAYU",
+    "last_name_adonara": "FREETRIALEN",
+    "lead_id": "2188649147",
+    "phone": "08123456789",
+    "status": "New Client - Inbound",
+    "sub_industry": "Others"
+}  
+[2024-07-30 07:41:54] local.DEBUG: --- AC-Request: Update Contact Request --  
+[2024-07-30 07:41:54] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/75  
+[2024-07-30 07:59:14] local.DEBUG: --- Zendesk-Event: Lead on Status Changed ---  
+[2024-07-30 07:59:14] local.DEBUG: {
+    "ac_contact_id": "75",
+    "company_name": "PT FUSION080",
+    "enterprise_id": "PT FUSION080",
+    "first_name_adonara": "BAYU",
+    "last_name_adonara": "FREETRIALEN",
+    "lead_id": "2188649147",
+    "phone": "08123456789",
+    "status": "New Client - Inbound",
+    "sub_industry": "Others"
+}  
+[2024-07-30 07:59:14] local.DEBUG: --- AC-Request: Update Contact Request --  
+[2024-07-30 07:59:14] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/75  
+[2024-07-30 07:59:27] local.DEBUG: --- Zendesk-Event: Lead on Status Changed ---  
+[2024-07-30 07:59:27] local.DEBUG: {
+    "ac_contact_id": "75",
+    "company_name": "PT FUSION080",
+    "enterprise_id": "PT FUSION080",
+    "first_name_adonara": "BAYU",
+    "last_name_adonara": "FREETRIALEN",
+    "lead_id": "2188649147",
+    "phone": "08123456789",
+    "status": "New Client - Inbound",
+    "sub_industry": "Others"
+}  
+[2024-07-30 07:59:27] local.DEBUG: --- AC-Request: Update Contact Request --  
+[2024-07-30 07:59:27] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/75  
+[2024-07-30 08:00:51] local.DEBUG: --- Zendesk-Event: Lead on Status Changed ---  
+[2024-07-30 08:00:51] local.DEBUG: {
+    "ac_contact_id": "75",
+    "company_name": "PT FUSION080",
+    "enterprise_id": "PT FUSION080",
+    "first_name_adonara": "BAYU",
+    "last_name_adonara": "FREETRIALEN",
+    "lead_id": "2188649147",
+    "phone": "08123456789",
+    "status": "New Client - Inbound",
+    "sub_industry": "Others"
+}  
+[2024-07-30 08:00:51] local.DEBUG: --- AC-Request: Update Contact Request --  
+[2024-07-30 08:00:51] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/75  
+[2024-07-30 08:00:52] local.DEBUG: ------- FIND ACCOUNT ------  

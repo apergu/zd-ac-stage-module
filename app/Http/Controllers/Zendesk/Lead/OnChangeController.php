@@ -119,7 +119,7 @@ class OnChangeController extends Controller
             # code...
             $ac_stages = collect($findAcAccount['fieldValues']);
             Log::debug("------- FIND ACCOUNT ------");
-            Log::debug(json_encode($ac_stages[4], JSON_PRETTY_PRINT));
+            Log::debug(json_encode($ac_stages[2], JSON_PRETTY_PRINT));
             Log::debug("------- END FIND ACCOUNT ------");
 
             if ($res_json != null && isset($res_json['fieldValues'])) {
@@ -132,7 +132,7 @@ class OnChangeController extends Controller
                         'custom_fields' => (object) [
                             // 'ActiveCampaign Contact ID' => $contact,
                             'NPWP' => $request->npwp ?? "",
-                            'Lead ID' => $ac_stages[4]['value'],
+                            'Lead ID' => $ac_stages[2]['value'],
                             'Enterprise ID' => $request->enterprise_id ?? ""
                         ]
                     ];

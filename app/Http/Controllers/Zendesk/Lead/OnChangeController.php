@@ -45,7 +45,7 @@ class OnChangeController extends Controller
             # code...
             $ac_stages = collect($findAcAccount['fieldValues']);
             Log::debug("------- FIND ACCOUNT ------");
-            Log::debug(json_encode($ac_stages[2], JSON_PRETTY_PRINT));
+            Log::debug(json_encode($ac_stages, JSON_PRETTY_PRINT));
 
             if ($ac_stages[2]['value'] != $request->lead_id) {
                 # code...

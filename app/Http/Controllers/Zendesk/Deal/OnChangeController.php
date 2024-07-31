@@ -55,8 +55,6 @@ class OnChangeController extends Controller
                 ], 404);
             }
         }
-        // dd($dataAC['fieldValues']);
-
         if ($dataAC['fieldValues'] != null) {
             # code...
             $ac_stages = collect($dataAC['fieldValues']);

@@ -25,7 +25,7 @@ class OnChangeController extends Controller
         Log::debug('--- Zendesk-Event: Deal On Stage Changed ---');
         Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
 
-        // $stage_name = $this->ZdStageGet($request->stage_id);
+        $stage_name = $this->ZdStageGet($request->stage_id);
         // if ($stage_name->getStatusCode() != 200 || $stage_name->getStatusCode() != 201) {
         //     # code...
         //     return response()->json([

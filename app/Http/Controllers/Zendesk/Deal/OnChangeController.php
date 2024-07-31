@@ -25,7 +25,7 @@ class OnChangeController extends Controller
         Log::debug('--- Zendesk-Event: Deal On Stage Changed ---');
         Log::debug(json_encode($request->toArray(), JSON_PRETTY_PRINT));
 
-        $stage_name = $this->ZdStageGet($request->stage_id);
+        // $stage_name = $this->ZdStageGet($request->stage_id);
         // if ($stage_name->getStatusCode() != 200 || $stage_name->getStatusCode() != 201) {
         //     # code...
         //     return response()->json([
@@ -61,7 +61,8 @@ class OnChangeController extends Controller
             # code...
             $ac_stages = collect($dataAC['fieldValues']);
             Log::debug("------- FIND ACCOUNT ------");
-            if ($ac_stages[2]['value'] != $request->lead_id && $ac_stages[6]['contact'] != $request->ac_contact_id) {
+            if (!GlobalFunctionController::findFieldValueByKey($ac_stages, [$request->deal_id])) {
+                // if ($ac_stages[2]['value'] != $request->lead_id && $ac_stages[6]['contact'] != $request->ac_contact_id) {
                 # code...
                 return response()->json([
                     'status' => 'error',
@@ -75,7 +76,7 @@ class OnChangeController extends Controller
             }
         }
 
-        Log::debug(json_encode($stage_name, JSON_PRETTY_PRINT));
+        // Log::debug(json_encode($stage_name, JSON_PRETTY_PRINT));
 
         Log::debug('--- AC-Request: Update Contact Request --');
         Log::debug(Constant::ACTIVECAMPAIGN_URL . '/api/3/contacts/' . $request->ac_contact_id);

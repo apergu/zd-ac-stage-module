@@ -49,7 +49,7 @@ class OnCreateController extends Controller
             # code...
             $ac_stages = collect($dataAC['fieldValues']);
             Log::debug("------- FIND ACCOUNT ------");
-            if ($ac_stages[2]['value'] != $request->lead_id) {
+            if (!GlobalFunctionController::findFieldValueByKey($ac_stages, [$request->lead_id])) {
                 # code...
                 return response()->json([
                     'status' => 'error',

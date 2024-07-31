@@ -9,16 +9,24 @@ class GlobalFunctionController extends Controller
 {
     //
 
-    public static function findFieldValueByKey($fieldValues, $key)
+    public static function findFieldValueByKey($fieldValues, $find = [])
     {
+        $true = 0;
         $i = 0;
         foreach ($fieldValues as $field) {
-            if ($field['field'] == $key) {
-                return $i;
-                // return $field['value'];
+            if (in_array($field['value'], $find)) {
+                // dd($field['value']);
+                // return true;
+                $true++;
             }
             $i++;
         }
-        return null;
+
+        if ($true == count($find)) {
+            # code...
+            return true;
+        } else {
+            return false;
+        }
     }
 }

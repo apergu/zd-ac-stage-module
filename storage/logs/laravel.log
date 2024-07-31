@@ -23972,3 +23972,957 @@
 [2024-07-30 08:00:51] local.DEBUG: --- AC-Request: Update Contact Request --  
 [2024-07-30 08:00:51] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/75  
 [2024-07-30 08:00:52] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 10:47:06] local.DEBUG: --- Zendesk-Event: Lead on Status Changed ---  
+[2024-07-30 10:47:06] local.DEBUG: {
+    "ac_contact_id": "75",
+    "company_name": "PT FUSION080",
+    "enterprise_id": "PT FUSION080",
+    "first_name_adonara": "BAYU",
+    "last_name_adonara": "FREETRIALEN",
+    "lead_id": "2188649147",
+    "phone": "08123456789",
+    "status": "New Client - Inbound",
+    "sub_industry": "Others"
+}  
+[2024-07-30 10:47:06] local.DEBUG: --- AC-Request: Update Contact Request --  
+[2024-07-30 10:47:06] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/75  
+[2024-07-30 10:47:07] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 10:47:07] local.DEBUG: [
+    {
+        "contact": "75",
+        "field": "1",
+        "value": "PT FUSION080",
+        "cdate": "2024-02-28T00:18:09-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/360\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/360\/field"
+        },
+        "id": "360",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "2",
+        "value": "Others",
+        "cdate": "2024-02-28T00:18:09-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/361\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/361\/field"
+        },
+        "id": "361",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "6",
+        "value": "2188649147",
+        "cdate": "2024-02-28T00:18:12-06:00",
+        "udate": "2024-02-28T00:19:50-06:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/362\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/362\/field"
+        },
+        "id": "362",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "3",
+        "value": "New Client - Inbound",
+        "cdate": "2024-02-28T00:19:50-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/367\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/367\/field"
+        },
+        "id": "367",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "5",
+        "value": "PT FUSION080",
+        "cdate": "2024-07-30T03:10:35-05:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/4963\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/4963\/field"
+        },
+        "id": "4963",
+        "owner": "75"
+    }
+]  
+[2024-07-30 10:47:11] local.DEBUG: --- Zendesk-Event: Lead on Status Changed ---  
+[2024-07-30 10:47:11] local.DEBUG: {
+    "ac_contact_id": "75",
+    "company_name": "PT FUSION080",
+    "enterprise_id": "PT FUSION080",
+    "first_name_adonara": "BAYU",
+    "last_name_adonara": "FREETRIALEN",
+    "lead_id": "2188649147AAA",
+    "phone": "08123456789",
+    "status": "New Client - Inbound",
+    "sub_industry": "Others"
+}  
+[2024-07-30 10:47:11] local.DEBUG: --- AC-Request: Update Contact Request --  
+[2024-07-30 10:47:11] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/75  
+[2024-07-30 10:47:12] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 10:47:12] local.DEBUG: [
+    {
+        "contact": "75",
+        "field": "1",
+        "value": "PT FUSION080",
+        "cdate": "2024-02-28T00:18:09-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/360\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/360\/field"
+        },
+        "id": "360",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "2",
+        "value": "Others",
+        "cdate": "2024-02-28T00:18:09-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/361\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/361\/field"
+        },
+        "id": "361",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "6",
+        "value": "2188649147",
+        "cdate": "2024-02-28T00:18:12-06:00",
+        "udate": "2024-02-28T00:19:50-06:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/362\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/362\/field"
+        },
+        "id": "362",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "3",
+        "value": "New Client - Inbound",
+        "cdate": "2024-02-28T00:19:50-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/367\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/367\/field"
+        },
+        "id": "367",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "5",
+        "value": "PT FUSION080",
+        "cdate": "2024-07-30T03:10:35-05:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/4963\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/4963\/field"
+        },
+        "id": "4963",
+        "owner": "75"
+    }
+]  
+[2024-07-30 10:49:20] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 10:49:20] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999AAA",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 10:49:20] local.DEBUG: --- ZD-Request: Get Stages --  
+[2024-07-30 10:49:21] local.ERROR: resource= field= code=not_found message=Not Found {"exception":"[object] (BaseCRM\\Errors\\RequestError(code: 0): resource= field= code=not_found message=Not Found at /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php:286)
+[stacktrace]
+#0 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php(269): BaseCRM\\HttpClient->handleErrorResponse(404, '{\"errors\":[{\"er...', Array)
+#1 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php(160): BaseCRM\\HttpClient->handleResponse(404, '{\"errors\":[{\"er...')
+#2 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/HttpClient.php(33): BaseCRM\\HttpClient->request('GET', '/stages', Array, NULL, Array)
+#3 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/basecrm/basecrm-php/lib/StagesService.php(40): BaseCRM\\HttpClient->get('/stages', Array, Array)
+#4 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Controller.php(39): BaseCRM\\StagesService->all()
+#5 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Controllers/Zendesk/Deal/OnChangeController.php(28): App\\Http\\Controllers\\Controller->ZdStageGet(34108700)
+#6 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Zendesk\\Deal\\OnChangeController->index(Object(App\\Http\\Requests\\ChangeDealRequest))
+#7 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('index', Array)
+#8 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(259): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Zendesk\\Deal\\OnChangeController), 'index')
+#9 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#10 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate\\Routing\\Route->run()
+#11 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#12 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/app/Http/Middleware/BasicAuth.php(33): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): App\\Http\\Middleware\\BasicAuth->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(125): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#18 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter(Object(Illuminate\\Http\\Request), Object(Closure), 'api', Object(Closure))
+#19 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'api')
+#20 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(805): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#22 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#23 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#24 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#25 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#26 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#43 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#44 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#45 /Users/aufulkirom/Documents/1_WORK/APERGU/PRIVY/zd-ac-stage-module/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('/Users/aufulkir...')
+#46 {main}
+"} 
+[2024-07-30 10:49:36] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 10:49:36] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999AAA",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 10:49:37] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 10:50:39] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 10:50:39] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999AAA",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 10:50:40] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 10:51:00] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 10:51:00] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999AAA",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 10:51:01] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 10:53:04] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 10:53:04] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999AAA",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 10:53:05] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 10:53:21] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 10:53:21] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999AAA",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 10:53:22] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 10:53:34] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 10:53:34] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999AAA",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 10:53:35] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 10:57:10] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 10:57:10] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999AAA",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 10:57:11] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 10:57:15] local.DEBUG: --- Zendesk-Event: Lead on Status Changed ---  
+[2024-07-30 10:57:15] local.DEBUG: {
+    "ac_contact_id": "75",
+    "company_name": "PT FUSION080",
+    "enterprise_id": "PT FUSION080",
+    "first_name_adonara": "BAYU",
+    "last_name_adonara": "FREETRIALEN",
+    "lead_id": "2188649147AAA",
+    "phone": "08123456789",
+    "status": "New Client - Inbound",
+    "sub_industry": "Others"
+}  
+[2024-07-30 10:57:15] local.DEBUG: --- AC-Request: Update Contact Request --  
+[2024-07-30 10:57:15] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/75  
+[2024-07-30 10:57:16] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 10:57:16] local.DEBUG: [
+    {
+        "contact": "75",
+        "field": "1",
+        "value": "PT FUSION080",
+        "cdate": "2024-02-28T00:18:09-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/360\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/360\/field"
+        },
+        "id": "360",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "2",
+        "value": "Others",
+        "cdate": "2024-02-28T00:18:09-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/361\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/361\/field"
+        },
+        "id": "361",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "6",
+        "value": "2188649147",
+        "cdate": "2024-02-28T00:18:12-06:00",
+        "udate": "2024-02-28T00:19:50-06:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/362\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/362\/field"
+        },
+        "id": "362",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "3",
+        "value": "New Client - Inbound",
+        "cdate": "2024-02-28T00:19:50-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/367\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/367\/field"
+        },
+        "id": "367",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "5",
+        "value": "PT FUSION080",
+        "cdate": "2024-07-30T03:10:35-05:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/4963\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/4963\/field"
+        },
+        "id": "4963",
+        "owner": "75"
+    }
+]  
+[2024-07-30 10:57:24] local.DEBUG: --- Zendesk-Event: Lead on Status Changed ---  
+[2024-07-30 10:57:24] local.DEBUG: {
+    "ac_contact_id": "75",
+    "company_name": "PT FUSION080",
+    "enterprise_id": "PT FUSION080",
+    "first_name_adonara": "BAYU",
+    "last_name_adonara": "FREETRIALEN",
+    "lead_id": "2188649147",
+    "phone": "08123456789",
+    "status": "New Client - Inbound",
+    "sub_industry": "Others"
+}  
+[2024-07-30 10:57:24] local.DEBUG: --- AC-Request: Update Contact Request --  
+[2024-07-30 10:57:24] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/75  
+[2024-07-30 10:57:25] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 10:57:25] local.DEBUG: [
+    {
+        "contact": "75",
+        "field": "1",
+        "value": "PT FUSION080",
+        "cdate": "2024-02-28T00:18:09-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/360\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/360\/field"
+        },
+        "id": "360",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "2",
+        "value": "Others",
+        "cdate": "2024-02-28T00:18:09-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/361\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/361\/field"
+        },
+        "id": "361",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "6",
+        "value": "2188649147",
+        "cdate": "2024-02-28T00:18:12-06:00",
+        "udate": "2024-02-28T00:19:50-06:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/362\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/362\/field"
+        },
+        "id": "362",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "3",
+        "value": "New Client - Inbound",
+        "cdate": "2024-02-28T00:19:50-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/367\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/367\/field"
+        },
+        "id": "367",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "5",
+        "value": "PT FUSION080",
+        "cdate": "2024-07-30T03:10:35-05:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/4963\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/4963\/field"
+        },
+        "id": "4963",
+        "owner": "75"
+    }
+]  
+[2024-07-30 10:58:23] local.DEBUG: --- Zendesk-Event: Lead on Status Changed ---  
+[2024-07-30 10:58:23] local.DEBUG: {
+    "ac_contact_id": "75",
+    "company_name": "PT FUSION080",
+    "enterprise_id": "PT FUSION080",
+    "first_name_adonara": "BAYU",
+    "last_name_adonara": "FREETRIALEN",
+    "lead_id": "2188649147",
+    "phone": "08123456789",
+    "status": "New Client - Inbound",
+    "sub_industry": "Others"
+}  
+[2024-07-30 10:58:23] local.DEBUG: --- AC-Request: Update Contact Request --  
+[2024-07-30 10:58:23] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/75  
+[2024-07-30 10:58:24] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 10:58:24] local.DEBUG: [
+    {
+        "contact": "75",
+        "field": "1",
+        "value": "PT FUSION080",
+        "cdate": "2024-02-28T00:18:09-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/360\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/360\/field"
+        },
+        "id": "360",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "2",
+        "value": "Others",
+        "cdate": "2024-02-28T00:18:09-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/361\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/361\/field"
+        },
+        "id": "361",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "6",
+        "value": "2188649147",
+        "cdate": "2024-02-28T00:18:12-06:00",
+        "udate": "2024-02-28T00:19:50-06:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/362\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/362\/field"
+        },
+        "id": "362",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "3",
+        "value": "New Client - Inbound",
+        "cdate": "2024-02-28T00:19:50-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/367\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/367\/field"
+        },
+        "id": "367",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "5",
+        "value": "PT FUSION080",
+        "cdate": "2024-07-30T03:10:35-05:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/4963\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/4963\/field"
+        },
+        "id": "4963",
+        "owner": "75"
+    }
+]  
+[2024-07-30 10:58:33] local.DEBUG: --- Zendesk-Event: Lead on Status Changed ---  
+[2024-07-30 10:58:33] local.DEBUG: {
+    "ac_contact_id": "75",
+    "company_name": "PT FUSION080",
+    "enterprise_id": "PT FUSION080",
+    "first_name_adonara": "BAYU",
+    "last_name_adonara": "FREETRIALEN",
+    "lead_id": "2188649147AA",
+    "phone": "08123456789",
+    "status": "New Client - Inbound",
+    "sub_industry": "Others"
+}  
+[2024-07-30 10:58:33] local.DEBUG: --- AC-Request: Update Contact Request --  
+[2024-07-30 10:58:33] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/75  
+[2024-07-30 10:58:34] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 10:58:34] local.DEBUG: [
+    {
+        "contact": "75",
+        "field": "1",
+        "value": "PT FUSION080",
+        "cdate": "2024-02-28T00:18:09-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/360\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/360\/field"
+        },
+        "id": "360",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "2",
+        "value": "Others",
+        "cdate": "2024-02-28T00:18:09-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/361\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/361\/field"
+        },
+        "id": "361",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "6",
+        "value": "2188649147",
+        "cdate": "2024-02-28T00:18:12-06:00",
+        "udate": "2024-02-28T00:19:50-06:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/362\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/362\/field"
+        },
+        "id": "362",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "3",
+        "value": "New Client - Inbound",
+        "cdate": "2024-02-28T00:19:50-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/367\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/367\/field"
+        },
+        "id": "367",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "5",
+        "value": "PT FUSION080",
+        "cdate": "2024-07-30T03:10:35-05:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/4963\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/4963\/field"
+        },
+        "id": "4963",
+        "owner": "75"
+    }
+]  
+[2024-07-30 10:58:41] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 10:58:41] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999AAA",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 10:58:43] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 10:58:48] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 10:58:48] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999AAA",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 10:58:49] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 10:59:00] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 10:59:00] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999AAA",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 10:59:01] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 10:59:08] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 10:59:08] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999AAA",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 10:59:09] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 11:00:29] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 11:00:29] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 11:00:30] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 11:01:15] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 11:01:15] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 11:01:16] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 11:01:21] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 11:01:22] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 11:01:22] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 11:02:27] local.DEBUG: --- Zendesk-Event: Lead on Status Changed ---  
+[2024-07-30 11:02:27] local.DEBUG: {
+    "ac_contact_id": "75",
+    "company_name": "PT FUSION080",
+    "enterprise_id": "PT FUSION080",
+    "first_name_adonara": "BAYU",
+    "last_name_adonara": "FREETRIALEN",
+    "lead_id": "2188649147AA",
+    "phone": "08123456789",
+    "status": "New Client - Inbound",
+    "sub_industry": "Others"
+}  
+[2024-07-30 11:02:27] local.DEBUG: --- AC-Request: Update Contact Request --  
+[2024-07-30 11:02:27] local.DEBUG: https://privy1706071639.api-us1.com/api/3/contacts/75  
+[2024-07-30 11:02:28] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 11:02:28] local.DEBUG: [
+    {
+        "contact": "75",
+        "field": "1",
+        "value": "PT FUSION080",
+        "cdate": "2024-02-28T00:18:09-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/360\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/360\/field"
+        },
+        "id": "360",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "2",
+        "value": "Others",
+        "cdate": "2024-02-28T00:18:09-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/361\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/361\/field"
+        },
+        "id": "361",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "6",
+        "value": "2188649147",
+        "cdate": "2024-02-28T00:18:12-06:00",
+        "udate": "2024-02-28T00:19:50-06:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/362\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/362\/field"
+        },
+        "id": "362",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "3",
+        "value": "New Client - Inbound",
+        "cdate": "2024-02-28T00:19:50-06:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/367\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/367\/field"
+        },
+        "id": "367",
+        "owner": "75"
+    },
+    {
+        "contact": "75",
+        "field": "5",
+        "value": "PT FUSION080",
+        "cdate": "2024-07-30T03:10:35-05:00",
+        "udate": "2024-07-30T05:46:52-05:00",
+        "created_by": "0",
+        "updated_by": "0",
+        "links": {
+            "owner": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/4963\/owner",
+            "field": "https:\/\/privy1706071639.api-us1.com\/api\/3\/fieldValues\/4963\/field"
+        },
+        "id": "4963",
+        "owner": "75"
+    }
+]  
+[2024-07-30 11:02:47] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 11:02:47] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 11:02:47] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 11:02:54] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 11:02:54] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999AAA",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 11:02:55] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 11:03:00] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 11:03:00] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 11:03:01] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 11:03:40] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 11:03:40] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 11:03:41] local.DEBUG: ------- FIND ACCOUNT ------  
+[2024-07-30 11:03:46] local.DEBUG: --- Zendesk-Event: Deal On Stage Changed ---  
+[2024-07-30 11:03:46] local.DEBUG: {
+    "ac_contact_id": "933",
+    "company_name": "PT MEI 0214",
+    "deal_id": "175082999AA",
+    "deal_name": "PT NVT1 MAY3",
+    "enterprise_id": "API1-30MAY",
+    "last_name_adonara": "SATUH",
+    "phone": "0812347328",
+    "stage_id": "34108700",
+    "sub_industry": "Agriculture"
+}  
+[2024-07-30 11:03:46] local.DEBUG: ------- FIND ACCOUNT ------  

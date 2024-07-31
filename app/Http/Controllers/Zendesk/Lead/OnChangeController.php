@@ -47,12 +47,17 @@ class OnChangeController extends Controller
             Log::debug("------- FIND ACCOUNT ------");
             Log::debug(json_encode($ac_stages, JSON_PRETTY_PRINT));
 
-            if ($ac_stages[2]['value'] != $request->lead_id) {
+            if (!GlobalFunctionController::findFieldValueByKey($ac_stages, [$request->lead_id])) {
                 # code...
                 return response()->json([
                     'status' => 'error',
                     'message' => 'Lead ID not match'
                 ], 422);
+            } else {
+                return response()->json([
+                    'status' => 'success',
+                    'message' => 'Lead ID match'
+                ], 200);
             }
         }
         $zdLeads = new ZDLeads();

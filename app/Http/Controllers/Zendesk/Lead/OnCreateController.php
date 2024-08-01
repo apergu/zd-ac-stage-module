@@ -231,15 +231,15 @@ class OnCreateController extends Controller
 
         Log::debug(json_encode($payloadERP, JSON_PRETTY_PRINT));
 
-        $respERP = Http::withHeaders([
-            'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
-            'Content-Type' => 'application/json'
-        ])->timeout(60)->post(Constant::MIDDLEWARE_URL . '/customer', $payloadERP);
-
         // $respERP = Http::withHeaders([
         //     'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
         //     'Content-Type' => 'application/json'
-        // ])->post(Constant::BASE_URL_PRIVY . '/customer', $payloadERP);
+        // ])->timeout(60)->post(Constant::MIDDLEWARE_URL . '/customer', $payloadERP);
+
+        $respERP = Http::withHeaders([
+            'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
+            'Content-Type' => 'application/json'
+        ])->post(Constant::BASE_URL_PRIVY . '/customer', $payloadERP);
 
 
         Log::debug('--- ZD-ERP: Post Lead ---');
@@ -291,15 +291,15 @@ class OnCreateController extends Controller
 
         Log::debug(json_encode($payload, JSON_PRETTY_PRINT));
 
-        $resp = Http::withHeaders([
-            'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
-            'Content-Type' => 'application/json'
-        ])->timeout(60)->post(Constant::MIDDLEWARE_URL . '/customer', $payload);
-
         // $resp = Http::withHeaders([
         //     'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
         //     'Content-Type' => 'application/json'
-        // ])->post(Constant::BASE_URL_PRIVY . '/customer', $payload);
+        // ])->timeout(60)->post(Constant::MIDDLEWARE_URL . '/customer', $payload);
+
+        $resp = Http::withHeaders([
+            'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
+            'Content-Type' => 'application/json'
+        ])->post(Constant::BASE_URL_PRIVY . '/customer', $payload);
 
         Log::debug('--- ZD-ERP: Post Lead ---');
         $res_json = $resp->json();

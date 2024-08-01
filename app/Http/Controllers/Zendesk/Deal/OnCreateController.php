@@ -55,11 +55,6 @@ class OnCreateController extends Controller
                     'status' => 'error',
                     'message' => 'Lead ID not match'
                 ], 422);
-            } else {
-                return response()->json([
-                    'status' => 'success',
-                    'message' => 'MATCH'
-                ], 200);
             }
         }
 

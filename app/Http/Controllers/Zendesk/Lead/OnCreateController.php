@@ -234,7 +234,7 @@ class OnCreateController extends Controller
         $respERP = Http::withHeaders([
             'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
             'Content-Type' => 'application/json'
-        ])->post(Constant::MIDDLEWARE_URL . '/customer', $payloadERP);
+        ])->timeout(60)->post(Constant::MIDDLEWARE_URL . '/customer', $payloadERP);
 
         // $respERP = Http::withHeaders([
         //     'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
@@ -294,7 +294,7 @@ class OnCreateController extends Controller
         $resp = Http::withHeaders([
             'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
             'Content-Type' => 'application/json'
-        ])->post(Constant::MIDDLEWARE_URL . '/customer', $payload);
+        ])->timeout(60)->post(Constant::MIDDLEWARE_URL . '/customer', $payload);
 
         // $resp = Http::withHeaders([
         //     'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),

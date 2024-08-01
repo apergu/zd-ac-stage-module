@@ -68,6 +68,7 @@ class OnCreateController extends Controller
 
         $payload = [
             'contact' => [
+                'firstName' => $request->first_name_adonara ?? $request->first_name,
                 'lastName' => $request->last_name_adonara ?? $request->last_name,
                 'phone' => $request->phone ?? $request->mobile,
                 'fieldValues' => [

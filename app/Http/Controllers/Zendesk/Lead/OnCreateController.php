@@ -239,7 +239,7 @@ class OnCreateController extends Controller
         $respERP = Http::withHeaders([
             'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
             'Content-Type' => 'application/json'
-        ])->post(Constant::MIDDLEWARE_URL . '/customer', $payloadERP);
+        ])->post(Constant::BASE_URL_PRIVY . '/customer', $payloadERP);
 
 
         Log::debug('--- ZD-ERP: Post Lead ---');
@@ -299,7 +299,7 @@ class OnCreateController extends Controller
         $resp = Http::withHeaders([
             'Authorization' => 'Basic ' . base64_encode(env('BASIC_AUTH_USERNAME') . ':' . env('BASIC_AUTH_PASSWORD')),
             'Content-Type' => 'application/json'
-        ])->post(Constant::MIDDLEWARE_URL . '/customer', $payload);
+        ])->post(Constant::BASE_URL_PRIVY . '/customer', $payload);
 
         Log::debug('--- ZD-ERP: Post Lead ---');
         $res_json = $resp->json();

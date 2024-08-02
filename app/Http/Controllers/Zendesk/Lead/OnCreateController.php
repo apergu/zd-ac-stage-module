@@ -272,21 +272,21 @@ class OnCreateController extends Controller
         //code...
         Log::debug('-- ZENDESK ERP LEAD --');
         $payload = [
-            'requestFrom' => 'zendesk',
-            'enterprisePrivyId' => $request->enterprise_id,
-            'customerName' => $request->company_name,
-            'firstName' => $request->first_name,
-            'lastName' => $request->last_name,
-            'address' => $request->address ?? "",
-            'email' => $request->email,
-            'phoneNo' => $request->phone ?? $request->mobile,
-            'entityStatus' => '6',
-            'crmLeadId' => "$request->zd_lead_id",
-            'subIndustry' => $request->sub_industry,
-            'npwp' => "",
-            'state' => "",
-            'city' => "",
-            'zip' => "",
+            "requestFrom" => "zendesk",
+            "enterprisePrivyId" => $request->enterprise_id,
+            "customerName" => $request->company_name,
+            "firstName" => $request->first_name,
+            "lastName" => $request->last_name,
+            "address" => $request->address ?? "",
+            "email" => $request->email,
+            "phoneNo" => $request->phone ?? $request->mobile,
+            "entityStatus" => "6",
+            "crmLeadId" => "$request->zd_lead_id",
+            "subIndustry" => $request->sub_industry,
+            "npwp" => "",
+            "state" => "",
+            "city" => "",
+            "zip" => "",
         ];
 
         Log::debug(json_encode($payload, JSON_PRETTY_PRINT));

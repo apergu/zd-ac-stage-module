@@ -125,7 +125,6 @@ class OnCreateController extends Controller
         $data = $resp->json();
 
         Log::debug('--- ZD-Response: GET DATA ---');
-        Log::debug(json_encode($data, JSON_PRETTY_PRINT));
 
         if ($data != null) {
             array_push($tags, $data['form']['name']);

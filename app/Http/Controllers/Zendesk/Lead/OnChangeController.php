@@ -53,11 +53,6 @@ class OnChangeController extends Controller
                     'status' => 'error',
                     'message' => 'Lead ID not match'
                 ], 422);
-            } else {
-                return response()->json([
-                    'status' => 'success',
-                    'message' => 'Lead ID match'
-                ], 200);
             }
         }
         $zdLeads = new ZDLeads();

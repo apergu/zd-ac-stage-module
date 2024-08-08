@@ -66,13 +66,13 @@ class OnCreateController extends Controller
             $fields = collect($fieldValues);
 
             $fields->each(function ($v, $k) use (&$organization) {
-                if ($v['id'] == '5265') {
+                if ($v['field'] == '1') {
                     $organization['organization_name'] = $v['value'];
-                } elseif ($v['id'] == '5264') {
+                } elseif ($v['field'] == '2') {
                     $organization['sub_industry'] = $v['value'];
-                } elseif ($v['id'] == '5268') {
+                } elseif ($v['field'] == '5') {
                     $organization['enterprise_id'] = $v['value'];
-                } elseif ($v['id'] == '5269') {
+                } elseif ($v['field'] == '6') {
                     $organization['lead_id'] = $v['value'];
                 }
             });

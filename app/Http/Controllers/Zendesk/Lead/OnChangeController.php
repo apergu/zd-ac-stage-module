@@ -134,7 +134,7 @@ class OnChangeController extends Controller
                         'custom_fields' => (object) [
                             'ActiveCampaign Contact ID' => $contact,
                             'NPWP' => $request->npwp ?? "",
-                            'Lead ID' => $ac_stages[2]['value'],
+                            'Lead ID' => GlobalFunctionController::getValues($ac_stages, 6),
                             'Enterprise ID' => $request->enterprise_id ?? ""
                         ]
                     ];

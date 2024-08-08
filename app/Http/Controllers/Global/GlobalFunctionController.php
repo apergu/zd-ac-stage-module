@@ -29,4 +29,12 @@ class GlobalFunctionController extends Controller
             return false;
         }
     }
+
+    public static function getValues($fieldValues, $id){
+        $fieldValues->each(function ($v, $k) use ($id) {
+            if ($v['field'] == $id) {
+                return $v['value'];
+            }
+        });
+    }
 }
